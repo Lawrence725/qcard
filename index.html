@@ -14,7 +14,7 @@
         <!-- Awesome Icon -->
         <link href="fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="index">
         <!-- Header -->
         <section class="header">
             <div class="bg"></div>
@@ -31,7 +31,8 @@
         <!-- Footer -->
         <section class="footer">
             <button>
-                <span>支付 NT$90 + </span>
+                <span>支付</span>
+                <span> NT$90 + </span>
                 <img src="icon/pointW.svg">
                 <span>100</span>
             </button>
@@ -113,9 +114,10 @@
                         <i class="fa-solid fa-money-bill-wave fa-md"></i>
                         <span>現金</span>
                     </a>
-                    <a class="active">
+                    <a class="active" onclick="popCredit()">
                         <i class="fa-solid fa-credit-card fa-md"></i>
                         <span>信用卡</span>
+                        <i class="fa-solid fa-chevron-right fa-sm"></i>
                     </a>
                 </div>
                 <div class="center">
@@ -167,5 +169,69 @@
                 </div>
             </section>
         </section>
+        <!-- 信用卡popup -->
+        <section id="popCredit" class="popup credit" onclick="popClose(this)">
+            <div class="body">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">信用卡</span>
+                <div class="list">
+                    <a class="active">
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="icon/cVisa.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="icon/cMaster.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="icon/cJcb.svg">
+                    </a>
+                </div>
+                <div class="new">
+                    <span class="title">新增信用卡</span>
+                    <div>
+                        <span>卡號</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>到期日</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                        <div>
+                            <span>CVC / CVV</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                    </div>
+                    <div>
+                        <span>卡片上姓名</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div>
+                        <span>卡片暱稱 (非必填)</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <label class="check">
+                        <input type="checkbox" name="checkbox2" checked> <!-- checked -->
+                        <span class="checkmark checkbox"></span>
+                        <span>儲存信用卡</span>
+                    </label>
+                </div>
+                <div class="button">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確定</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="js/index.js"></script>
     </body>
 </html>
