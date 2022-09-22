@@ -1,0 +1,489 @@
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nF7OG829Oofr2wohFbTp9iFOQ.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nFkOG829Oofr2wohFbTp9i9gwQvDQ.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+:root {
+  --fXXL: clamp(1.6rem, 7vw, 1.7rem);
+  --fXL: clamp(1.4rem, 6vw, 1.5rem);
+  --fL: clamp(1.2rem, 5vw, 1.3rem);
+  --fM: clamp(1rem, 4vw, 1.2rem);
+  --fS: clamp(0.8rem, 3vw, 0.9rem);
+  --fXS: clamp(0.6rem, 3vw, 0.7rem);
+  --c1: #EE6C5F;
+  --c2: linear-gradient(0deg, rgba(238, 108, 95, 0.25), rgba(238, 108, 95, 0.25)), white;
+  --cG1: #333333;
+  --cG2: #4F4F4F;
+  --cG3: #828282;
+  --cG4: #BDBDBD;
+  --cG5: #E0E0E0;
+  --cG6: #F2F2F2;
+  --cBg: #F2F1F6;
+  --cRed: #EB5757;
+  --cGreen: #27AE60;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+select,
+input,
+textarea,
+button {
+  font-family: 'Roboto', 'Noto Sans TC', 'Arial', '微軟正黑體';
+  line-height: 100%;
+}
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul {
+  color: black;
+}
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+}
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+}
+input {
+  border: 0;
+  padding: 0;
+  color: var(--cG1);
+  background-color: transparent;
+}
+input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+input:-webkit-autofill {
+  color: var(--c1) !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  background-clip: content-box !important;
+}
+textarea {
+  border: 0;
+}
+textarea:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 0;
+}
+select:hover {
+  cursor: pointer;
+}
+img {
+  object-fit: cover;
+}
+iframe {
+  border: 0;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box;
+}
+section.header {
+  width: 100%;
+  height: 70px;
+  padding: 20px 20px 30px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+section.header .bg {
+  width: 1500px;
+  height: 1500px;
+  border-radius: 999px;
+  position: absolute;
+  bottom: -5px;
+  background: var(--c2);
+  pointer-events: none;
+  z-index: -1;
+}
+section.header .left,
+section.header .right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+section.header .left a {
+  width: 20px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c1);
+}
+section.header .left span {
+  color: var(--c1);
+  font-size: var(--fL);
+}
+section.header > span {
+  white-space: nowrap;
+  font-size: var(--fXL);
+}
+section.header .right {
+  justify-content: right;
+}
+section.header .right span:first-child {
+  font-size: var(--fM);
+}
+section.header .right span:last-child {
+  font-size: var(--fXL);
+}
+section.footer {
+  width: 100%;
+  padding: 20px 20px 30px;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
+  z-index: 9;
+}
+section.footer button {
+  width: 100%;
+  height: 40px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c1);
+}
+section.footer button span {
+  color: white;
+  font-size: var(--fL);
+}
+section.footer button img {
+  height: 20px;
+  margin: 0 5px;
+}
+section.body {
+  width: 100%;
+  padding: 100px 20px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.body section.account {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.body section.account div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section.body section.account div span:first-child {
+  font-size: var(--fM);
+}
+section.body section.account div span:last-child {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+section.body section.account a {
+  text-decoration: underline !important;
+  color: var(--cG3);
+}
+section.body section.spending,
+section.body section.point,
+section.body section.payment {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+section.body section.spending span.title,
+section.body section.point span.title,
+section.body section.payment span.title {
+  font-size: var(--fM);
+  font-weight: bold;
+  white-space: nowrap;
+}
+section.body section.point div.top {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+section.body section.point div.top span:not(.title) {
+  font-size: var(--fL);
+}
+section.body section.point div.top img {
+  height: 20px;
+}
+section.body section.point div.center {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+section.body section.point div.center a {
+  width: calc(50% - 5px);
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--cBg);
+}
+section.body section.point div.center a.active {
+  border: 1px solid var(--c1);
+}
+section.body section.point div.center a img {
+  width: 20px;
+}
+section.body section.point div.center a div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section.body section.point div.center a div span:first-child {
+  font-size: var(--fS);
+}
+section.body section.point div.center a div span:last-child {
+  font-size: var(--fL);
+}
+section.body section.point div.bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.body section.point div.bottom div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+section.body section.point div.bottom span {
+  font-size: var(--fS);
+  color: var(--cG3);
+  white-space: nowrap;
+}
+section.body section.point div.bottom img {
+  height: 14px;
+}
+section.body section.payment div.top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+section.body section.payment div.top span:not(.title) {
+  font-size: var(--fS);
+  color: var(--cRed);
+  text-align: right;
+  line-height: unset;
+}
+section.body section.payment div.center {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+section.body section.payment div.center a {
+  width: calc(50% - 5px);
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--cBg);
+}
+section.body section.payment div.center a.active {
+  border: 1px solid var(--c1);
+}
+section.body section.payment div.center a img {
+  max-width: 80px;
+  max-height: 24px;
+}
+section.body section.payment div.center a span {
+  font-size: var(--fM);
+}
+section.body section.keyboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section.body section.keyboard div {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+section.body section.keyboard div a {
+  width: 100%;
+  height: 60px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cBg);
+  font-size: var(--fXL);
+}
+section.body section.keyboard div a.minor {
+  background-color: transparent;
+  color: var(--cG3);
+  font-size: var(--fL);
+}
+section.body section.keyboard div a i {
+  color: var(--cG4);
+}
+.disabled {
+  color: var(--cG4) !important;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.disabled * {
+  color: var(--cG4) !important;
+}
+.disabled img {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 2px;
+  font-size: var(--fXL);
+  border: 1px solid var(--cG5);
+}
+.input span {
+  font-size: var(--fM);
+}
+.input input {
+  width: 100%;
+  font-size: var(--fXL);
+}
+.check {
+  width: fit-content;
+  min-height: 20px;
+  padding: 5px 5px 5px 25px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+}
+.check:hover input ~ .checkmark {
+  border: 2px solid var(--cG5);
+  background-color: var(--cG5);
+}
+.check span:last-child {
+  margin-left: 2px;
+}
+.check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  /* Hide the browser's default radio button */
+  /* When the radio button is checked, add a blue background */
+  /* Show the indicator (dot/circle) when checked */
+}
+.check input:checked ~ .checkmark {
+  background-color: var(--c1);
+  border: 2px solid var(--c1);
+}
+.check input:checked ~ .checkmark:after {
+  display: block;
+}
+.check .checkmark.checkbox {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: 7px;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+  background-color: var(--cG5);
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Style the checkmark/indicator */
+}
+.check .checkmark.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check .checkmark.checkbox:after {
+  left: 3px;
+  top: -1px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

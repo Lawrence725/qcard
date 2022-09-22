@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@color: #EE6C5F;
+
+:root {
+    // Font
+    --fXXL: clamp(1.6rem, 7vw, 1.7rem);
+    --fXL:  clamp(1.4rem, 6vw, 1.5rem);
+    --fL:   clamp(1.2rem, 5vw, 1.3rem);
+    --fM:   clamp(1rem, 4vw, 1.2rem);
+    --fS:   clamp(0.8rem, 3vw, 0.9rem);
+    --fXS:  clamp(0.6rem, 3vw, 0.7rem);
+
+    // Color
+    --c1:    @color;
+    --c2:    linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
+    --cG1:   #333333;
+    --cG2:   #4F4F4F;
+    --cG3:   #828282;
+    --cG4:   #BDBDBD;
+    --cG5:   #E0E0E0;
+    --cG6:   #F2F2F2;
+    --cBg:   #F2F1F6;
+    --cRed:  #EB5757;
+    --cGreen:#27AE60;
+}
+
+// Reset
+*                                       { margin: 0; padding: 0; }
+span, p, h1, h2, h3, h4, h5, h6, a,
+select, input, textarea, button         { font-family: 'Roboto', 'Noto Sans TC', 'Arial', '微軟正黑體'; line-height: 100%; }
+span, p, h1, h2, h3, h4, h5, h6, ol, ul { color: black; }
+a                                       { text-decoration: none !important; }
+a:hover                                 { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
+button                                  { border: none; }
+button:hover                            { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
+input                                   { border: 0; padding: 0; color: var(--cG1); background-color: transparent; }
+input:focus                             { box-shadow: none !important; outline: none; }
+input:-webkit-autofill                  { color: var(--c1) !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
+textarea                                { border: 0; }
+textarea:focus                          { box-shadow: none !important; outline: none; }
+select                                  { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
+select:hover                            { cursor: pointer; }
+img                                     { object-fit: cover; }
+iframe                                  { border: 0; }
+*, :after, :before                      { box-sizing: border-box !important; -webkit-box-sizing: border-box; }
+
+// Sections
+section.header { width: 100%; height: 70px; padding: 20px 20px 30px; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9;
+    .bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -5px; background: var(--c2); pointer-events: none; z-index: -1; }
+    .left, .right { width: 100%; display: flex; align-items: center; }
+    .left {
+        a { width: 20px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        span { color: var(--c1); font-size: var(--fL); }}
+    > span { white-space: nowrap; font-size: var(--fXL); }
+    .right { justify-content: right;
+        span:first-child { font-size: var(--fM); }
+        span:last-child { font-size: var(--fXL); }}}
+section.footer { width: 100%; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 9;
+    button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--c1);
+        span { color: white; font-size: var(--fL); }
+        img { height: 20px; margin: 0 5px; }}}
+section.body { width: 100%; padding: 100px 20px 160px; display: flex; flex-direction: column; gap: 30px;
+    section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
+        div { display: flex; flex-direction: column; gap: 5px;
+            span:first-child { font-size: var(--fM); }
+            span:last-child { font-size: var(--fS); color: var(--cG3); }}
+        a { text-decoration: underline !important; color: var(--cG3); }}
+    section.spending, section.point, section.payment { width: 100%; gap: 10px; display: flex; flex-direction: column;
+        span.title { font-size: var(--fM); font-weight: bold; white-space: nowrap; }}
+    section.point {
+        div.top { display: flex; align-items: center; gap: 2px;
+            span:not(.title) { font-size: var(--fL); }
+            img { height: 20px; }}
+        div.center { width: 100%; display: flex; gap: 10px;
+            a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
+                &.active { border: 1px solid var(--c1); }
+                img { width: 20px; }
+                div { display: flex; flex-direction: column; gap: 5px;
+                    span:first-child { font-size: var(--fS); }
+                    span:last-child { font-size: var(--fL); }}}}
+        div.bottom { width: 100%; display: flex; align-items: center; justify-content: space-between;
+            div { display: flex; align-items: center; gap: 2px; }
+            span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
+            img { height: 14px; }}}
+    section.payment {
+        div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
+            span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
+        div.center { width: 100%; display: flex; gap: 10px;
+            a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
+                &.active { border: 1px solid var(--c1); }
+                img { max-width: 80px; max-height: 24px; }
+                span { font-size: var(--fM); }}}}
+    section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
+        div { width: 100%; display: flex; gap: 10px;
+            a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
+                &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
+                i { color: var(--cG4); }}
+        }
+    }
+}
+
+// Components
+.disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
+    *       { color: var(--cG4) !important; }
+    img     { filter: grayscale(100%); opacity: 0.5; }}
+.input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
+    span { font-size: var(--fM); }
+    input { width: 100%; font-size: var(--fXL); }}
+.check { width: fit-content; min-height: 20px; padding: 5px 5px 5px 25px; border-radius: 10px; position: relative; display: flex; align-items: center; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-size: 12px;
+    // &:hover { background: var(--cBg); } 
+    &:hover input ~ .checkmark { border: 2px solid var(--cG5); background-color: var(--cG5); }
+    span:last-child { margin-left: 2px; }
+    input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; /* Hide the browser's default radio button */
+        &:checked ~ .checkmark { background-color: var(--c1); border: 2px solid var(--c1); } /* When the radio button is checked, add a blue background */
+        &:checked ~ .checkmark:after { display: block; } /* Show the indicator (dot/circle) when checked */}
+    .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 7px; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
+        &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
+        &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
