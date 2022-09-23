@@ -167,7 +167,7 @@
                 <div>
                     <a class="minor">清除</a>
                     <a>0</a>
-                    <a class="minor"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                    <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
                 </div>
             </section>
         </section>
@@ -231,6 +231,23 @@
                         <span>確定</span>
                     </button>
                 </div>
+            </div>
+        </section>
+        <!-- 訊息popup -->
+        <section id="popNotice" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">訊息標題</span>
+                    <span>內容說明</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
             </div>
         </section>
         <!-- Script -->
