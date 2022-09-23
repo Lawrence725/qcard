@@ -44,6 +44,8 @@
   --cBg: #F2F1F6;
   --cRed: #EB5757;
   --cGreen: #27AE60;
+  --cOrange: #FF9900;
+  --oBlue: #5CB8B2;
 }
 * {
   margin: 0;
@@ -267,7 +269,8 @@ iframe {
     margin-bottom: -100vh;
   }
 }
-.payment section.header {
+.payment section.header,
+.result section.header {
   width: 100%;
   max-width: 400px;
   height: 70px;
@@ -280,7 +283,8 @@ iframe {
   justify-content: center;
   z-index: 5;
 }
-.payment section.header .bg {
+.payment section.header .bg,
+.result section.header .bg {
   width: 1500px;
   height: 1500px;
   border-radius: 999px;
@@ -291,12 +295,15 @@ iframe {
   z-index: -1;
 }
 .payment section.header .left,
-.payment section.header .right {
+.result section.header .left,
+.payment section.header .right,
+.result section.header .right {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.payment section.header .left a {
+.payment section.header .left a,
+.result section.header .left a {
   width: 20px;
   aspect-ratio: 1/1;
   display: flex;
@@ -304,21 +311,26 @@ iframe {
   justify-content: center;
   color: var(--c1);
 }
-.payment section.header .left span {
+.payment section.header .left span,
+.result section.header .left span {
   color: var(--c1);
   font-size: var(--fL);
 }
-.payment section.header > span {
+.payment section.header > span,
+.result section.header > span {
   white-space: nowrap;
   font-size: var(--fXL);
 }
-.payment section.header .right {
+.payment section.header .right,
+.result section.header .right {
   justify-content: right;
 }
-.payment section.header .right span:first-child {
+.payment section.header .right span:first-child,
+.result section.header .right span:first-child {
   font-size: var(--fM);
 }
-.payment section.header .right span:last-child {
+.payment section.header .right span:last-child,
+.result section.header .right span:last-child {
   font-size: var(--fXL);
 }
 .payment section.footer {
@@ -647,4 +659,158 @@ iframe {
 }
 .payment section.credit div.buttons button:last-child span {
   color: white;
+}
+.result {
+  overflow: auto;
+}
+.result section.main {
+  width: 100%;
+  max-width: 400px;
+  min-height: 100%;
+  padding: 140px 20px 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--cBg);
+}
+.result section.main section.detail {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: white;
+}
+.result section.main section.detail div.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result section.main section.detail div.top span.title {
+  font-size: var(--fXL);
+}
+.result section.main section.detail div.top span.title.green {
+  color: var(--cGreen);
+}
+.result section.main section.detail div.top span.title.orange {
+  color: var(--cOrange);
+}
+.result section.main section.detail div.top span.title.red {
+  color: var(--cRed);
+}
+.result section.main section.detail div.top span.cost {
+  font-size: var(--fXXL);
+}
+.result section.main section.detail div.top span.strong {
+  font-size: var(--fXL);
+  color: var(--cRed);
+}
+.result section.main section.detail div.top > div.icon {
+  width: 100%;
+  margin: -60px 0 5px;
+  display: flex;
+  justify-content: center;
+}
+.result section.main section.detail div.top > div.icon > i {
+  border-radius: 999px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.result section.main section.detail div.top > div.icon > div {
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.result section.main section.detail div.top > div.icon > div.orange {
+  border: 7.5px solid var(--cOrange);
+}
+.result section.main section.detail div.top > div.icon > div.blue {
+  border: 7.5px solid var(--oBlue);
+}
+.result section.main section.detail div.top > div.icon .fa-circle-check {
+  color: var(--cGreen);
+}
+.result section.main section.detail div.top > div.icon .fa-circle-xmark {
+  color: var(--cRed);
+}
+.result section.main section.detail div.top > div.icon .fa-hourglass-half {
+  color: var(--cOrange);
+}
+.result section.main section.detail div.top > div:not(.icon) {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.result section.main section.detail div.top > div:not(.icon) img {
+  height: 14px;
+}
+.result section.main section.detail div.top > div:not(.icon) span {
+  font-size: var(--fM);
+}
+.result section.main section.detail div.center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.result section.main section.detail div.center > div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.result section.main section.detail div.center > div span {
+  font-size: var(--fM);
+  white-space: nowrap;
+}
+.result section.main section.detail div.center > div span:first-child {
+  width: 100%;
+  color: var(--cG3);
+}
+.result section.main section.detail div.center > div img {
+  height: 14px;
+}
+.result section.main section.detail div.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result section.main section.detail div.bottom span.title {
+  font-size: var(--fM);
+  color: var(--c1);
+}
+.result section.main section.detail div.buttons {
+  display: flex;
+  gap: 10px;
+}
+.result section.main section.detail div.buttons button {
+  width: 100%;
+  height: 40px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: var(--fM);
+}
+.result section.main section.detail div.buttons button:first-child {
+  background-color: var(--cBg);
+}
+.result section.main section.detail div.buttons button:first-child span {
+  color: var(--cG2);
+}
+.result section.main section.detail div.buttons button:last-child {
+  background-color: var(--c1);
+}
+.result section.main section.detail div.buttons button:last-child span {
+  color: white;
+}
+.result section.main section.detail div.buttons button i {
+  color: var(--c1);
 }
