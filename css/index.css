@@ -239,7 +239,7 @@ iframe {
   flex-direction: column;
   gap: 20px;
   background-color: white;
-  overflow-y: scroll;
+  overflow-y: auto;
   animation-name: popup;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -465,7 +465,7 @@ iframe {
   font-size: var(--fS);
 }
 .index section.body section.point div.center a div span:last-child {
-  font-size: var(--fL);
+  font-size: var(--fM);
 }
 .index section.body section.point div.bottom {
   width: 100%;

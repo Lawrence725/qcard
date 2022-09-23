@@ -59,7 +59,7 @@ iframe                                  { border: 0; }
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
         &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
 .popup { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 9;
-    .body { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: scroll; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+    .body { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
@@ -103,7 +103,7 @@ iframe                                  { border: 0; }
                 div { display: flex; flex-direction: column; gap: 5px;
                     span { line-height: 100%;
                         &:first-child { font-size: var(--fS); }
-                        &:last-child { font-size: var(--fL); }}}}}
+                        &:last-child { font-size: var(--fM); }}}}}
         div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; align-items: center; gap: 2px; }
             span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
