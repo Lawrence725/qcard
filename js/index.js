@@ -2,19 +2,19 @@ window.onload = popCredit();
 
 // Popup close
 function popClose(e) {
-    if (e.classList.contains('popup'))
+    if (e.classList.contains('pop'))
         window.onclick  = function(event) {
             if (event.target == e) {
                 e.children[0].style.animationName = "popdown";
                 setTimeout(function(){
                     e.style.display = "none";
-                    e.children[0].style.animationName = "popup";
+                    e.children[0].style.animationName = "pop";
                 }, 500); }}
-    else if (!(e.classList.contains('body'))) {
-        e.closest('.popup').children[0].style.animationName = "popdown";
+    else if (!(e.classList.contains('popBody'))) {
+        e.closest('.pop').children[0].style.animationName = "popdown";
         setTimeout(function(){
-            e.closest('.popup').style.display = "none";
-            e.closest('.popup').children[0].style.animationName = "popup";
+            e.closest('.pop').style.display = "none";
+            e.closest('.pop').children[0].style.animationName = "pop";
         }, 500); }
     document.body.style.overflow = "scroll"; }
 

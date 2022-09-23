@@ -33,8 +33,8 @@
   --fM: clamp(1rem, 4vw, 1.2rem);
   --fS: clamp(0.8rem, 3vw, 0.9rem);
   --fXS: clamp(0.6rem, 3vw, 0.7rem);
-  --c1: #EE6C5F;
-  --c2: linear-gradient(0deg, rgba(238, 108, 95, 0.25), rgba(238, 108, 95, 0.25)), white;
+  --c1: #EF6079;
+  --c2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white;
   --cG1: #333333;
   --cG2: #4F4F4F;
   --cG3: #828282;
@@ -215,7 +215,7 @@ iframe {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.popup {
+.pop {
   width: 100%;
   height: 100%;
   padding: 10px;
@@ -228,7 +228,7 @@ iframe {
   justify-content: center;
   z-index: 9;
 }
-.popup .body {
+.pop .popBody {
   width: 100%;
   max-width: 400px;
   max-height: 100%;
@@ -244,7 +244,7 @@ iframe {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
-.popup .body a.close {
+.pop .popBody a.close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -267,7 +267,7 @@ iframe {
     margin-bottom: -100vh;
   }
 }
-.index section.header {
+.payment section.header {
   width: 100%;
   max-width: 400px;
   height: 70px;
@@ -280,7 +280,7 @@ iframe {
   justify-content: center;
   z-index: 5;
 }
-.index section.header .bg {
+.payment section.header .bg {
   width: 1500px;
   height: 1500px;
   border-radius: 999px;
@@ -290,13 +290,13 @@ iframe {
   pointer-events: none;
   z-index: -1;
 }
-.index section.header .left,
-.index section.header .right {
+.payment section.header .left,
+.payment section.header .right {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.index section.header .left a {
+.payment section.header .left a {
   width: 20px;
   aspect-ratio: 1/1;
   display: flex;
@@ -304,24 +304,24 @@ iframe {
   justify-content: center;
   color: var(--c1);
 }
-.index section.header .left span {
+.payment section.header .left span {
   color: var(--c1);
   font-size: var(--fL);
 }
-.index section.header > span {
+.payment section.header > span {
   white-space: nowrap;
   font-size: var(--fXL);
 }
-.index section.header .right {
+.payment section.header .right {
   justify-content: right;
 }
-.index section.header .right span:first-child {
+.payment section.header .right span:first-child {
   font-size: var(--fM);
 }
-.index section.header .right span:last-child {
+.payment section.header .right span:last-child {
   font-size: var(--fXL);
 }
-.index section.footer {
+.payment section.footer {
   width: 100%;
   max-width: 400px;
   padding: 20px 20px 30px;
@@ -334,7 +334,7 @@ iframe {
   box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
   z-index: 5;
 }
-.index section.footer button {
+.payment section.footer button {
   width: 100%;
   height: 40px;
   border-radius: 99px;
@@ -343,15 +343,15 @@ iframe {
   justify-content: center;
   background-color: var(--c1);
 }
-.index section.footer button span {
+.payment section.footer button span {
   color: white;
   font-size: var(--fL);
 }
-.index section.footer button img {
+.payment section.footer button img {
   height: 20px;
   margin: 0 5px;
 }
-.index section.body {
+.payment section.main {
   width: 100%;
   max-width: 400px;
   padding: 100px 20px 160px;
@@ -360,45 +360,45 @@ iframe {
   flex-direction: column;
   gap: 30px;
 }
-.index section.body section.account {
+.payment section.main section.account {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.index section.body section.account div {
+.payment section.main section.account div {
   display: flex;
   flex-direction: column;
 }
-.index section.body section.account div span:first-child {
+.payment section.main section.account div span:first-child {
   font-size: var(--fM);
 }
-.index section.body section.account div span:last-child {
+.payment section.main section.account div span:last-child {
   font-size: var(--fS);
   color: var(--cG3);
 }
-.index section.body section.account a {
+.payment section.main section.account a {
   text-decoration: underline !important;
   color: var(--cG3);
 }
-.index section.body section.spending,
-.index section.body section.point,
-.index section.body section.payment {
+.payment section.main section.spending,
+.payment section.main section.point,
+.payment section.main section.type {
   width: 100%;
   gap: 10px;
   display: flex;
   flex-direction: column;
 }
-.index section.body section.spending span.title,
-.index section.body section.point span.title,
-.index section.body section.payment span.title {
+.payment section.main section.spending span.title,
+.payment section.main section.point span.title,
+.payment section.main section.type span.title {
   font-size: var(--fM);
   font-weight: bold;
   white-space: nowrap;
 }
-.index section.body section.spending .input,
-.index section.body section.point .input,
-.index section.body section.payment .input {
+.payment section.main section.spending .input,
+.payment section.main section.point .input,
+.payment section.main section.type .input {
   width: 100%;
   height: 40px;
   padding: 0 10px;
@@ -410,34 +410,34 @@ iframe {
   font-size: var(--fXL);
   border: 1px solid var(--cG5);
 }
-.index section.body section.spending .input span,
-.index section.body section.point .input span,
-.index section.body section.payment .input span {
+.payment section.main section.spending .input span,
+.payment section.main section.point .input span,
+.payment section.main section.type .input span {
   font-size: var(--fM);
 }
-.index section.body section.spending .input input,
-.index section.body section.point .input input,
-.index section.body section.payment .input input {
+.payment section.main section.spending .input input,
+.payment section.main section.point .input input,
+.payment section.main section.type .input input {
   width: 100%;
   font-size: var(--fXL);
 }
-.index section.body section.point div.top {
+.payment section.main section.point div.top {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.index section.body section.point div.top span:not(.title) {
+.payment section.main section.point div.top span:not(.title) {
   font-size: var(--fL);
 }
-.index section.body section.point div.top img {
+.payment section.main section.point div.top img {
   height: 20px;
 }
-.index section.body section.point div.center {
+.payment section.main section.point div.center {
   width: 100%;
   display: flex;
   gap: 10px;
 }
-.index section.body section.point div.center a {
+.payment section.main section.point div.center a {
   width: calc(50% - 5px);
   height: 50px;
   padding: 0 10px;
@@ -447,65 +447,65 @@ iframe {
   gap: 5px;
   background-color: var(--cBg);
 }
-.index section.body section.point div.center a.active {
+.payment section.main section.point div.center a.active {
   border: 1px solid var(--c1);
 }
-.index section.body section.point div.center a img {
+.payment section.main section.point div.center a img {
   width: 20px;
 }
-.index section.body section.point div.center a div {
+.payment section.main section.point div.center a div {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.index section.body section.point div.center a div span {
+.payment section.main section.point div.center a div span {
   line-height: 100%;
 }
-.index section.body section.point div.center a div span:first-child {
+.payment section.main section.point div.center a div span:first-child {
   font-size: var(--fS);
 }
-.index section.body section.point div.center a div span:last-child {
+.payment section.main section.point div.center a div span:last-child {
   font-size: var(--fM);
 }
-.index section.body section.point div.bottom {
+.payment section.main section.point div.bottom {
   width: 100%;
   margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.index section.body section.point div.bottom div {
+.payment section.main section.point div.bottom div {
   display: flex;
   align-items: center;
   gap: 2px;
 }
-.index section.body section.point div.bottom span {
+.payment section.main section.point div.bottom span {
   font-size: var(--fS);
   color: var(--cG3);
   white-space: nowrap;
 }
-.index section.body section.point div.bottom img {
+.payment section.main section.point div.bottom img {
   height: 14px;
 }
-.index section.body section.payment div.top {
+.payment section.main section.type div.top {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
 }
-.index section.body section.payment div.top span:not(.title) {
+.payment section.main section.type div.top span:not(.title) {
   font-size: var(--fS);
   color: var(--cRed);
   text-align: right;
   line-height: unset;
 }
-.index section.body section.payment div.center {
+.payment section.main section.type div.center {
   width: 100%;
   display: flex;
   gap: 10px;
 }
-.index section.body section.payment div.center a {
+.payment section.main section.type div.center a {
   width: calc(50% - 5px);
   height: 40px;
   padding: 0 10px;
@@ -517,33 +517,33 @@ iframe {
   gap: 5px;
   background-color: var(--cBg);
 }
-.index section.body section.payment div.center a.active {
+.payment section.main section.type div.center a.active {
   border: 1px solid var(--c1);
 }
-.index section.body section.payment div.center a img {
+.payment section.main section.type div.center a img {
   max-width: 80px;
   max-height: 24px;
 }
-.index section.body section.payment div.center a span {
+.payment section.main section.type div.center a span {
   font-size: var(--fM);
 }
-.index section.body section.payment div.center a i.fa-chevron-right {
+.payment section.main section.type div.center a i.fa-chevron-right {
   position: absolute;
   right: 10px;
   color: var(--cG4);
 }
-.index section.body section.keyboard {
+.payment section.main section.keyboard {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.index section.body section.keyboard div {
+.payment section.main section.keyboard div {
   width: 100%;
   display: flex;
   gap: 10px;
 }
-.index section.body section.keyboard div a {
+.payment section.main section.keyboard div a {
   width: 100%;
   height: 60px;
   border-radius: 99px;
@@ -553,24 +553,24 @@ iframe {
   background-color: var(--cBg);
   font-size: var(--fXL);
 }
-.index section.body section.keyboard div a.minor {
+.payment section.main section.keyboard div a.minor {
   background-color: transparent;
   color: var(--cG3);
   font-size: var(--fL);
 }
-.index section.body section.keyboard div a i {
+.payment section.main section.keyboard div a i {
   color: var(--cG4);
 }
-.index section.credit span.title {
+.payment section.credit span.title {
   font-size: var(--fL);
   font-weight: bold;
 }
-.index section.credit div.list {
+.payment section.credit div.list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.index section.credit div.list a {
+.payment section.credit div.list a {
   width: 100%;
   height: 40px;
   padding: 0 10px;
@@ -580,71 +580,71 @@ iframe {
   align-items: center;
   background-color: var(--cBg);
 }
-.index section.credit div.list a.active {
+.payment section.credit div.list a.active {
   border: 1px solid var(--c1);
 }
-.index section.credit div.list a span {
+.payment section.credit div.list a span {
   white-space: nowrap;
 }
-.index section.credit div.list a span:first-child {
+.payment section.credit div.list a span:first-child {
   width: 100%;
   font-size: var(--fM);
 }
-.index section.credit div.list a span:nth-child(2) {
+.payment section.credit div.list a span:nth-child(2) {
   font-size: var(--fS);
   color: var(--cG3);
 }
-.index section.credit div.list a img {
+.payment section.credit div.list a img {
   width: 30px;
 }
-.index section.credit div.new {
+.payment section.credit div.new {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.index section.credit div.new span.title {
+.payment section.credit div.new span.title {
   font-size: var(--fM);
   font-weight: bold;
 }
-.index section.credit div.new span:not(.title) {
+.payment section.credit div.new span:not(.title) {
   color: var(--cG3);
   font-size: var(--fS);
 }
-.index section.credit div.new div input {
+.payment section.credit div.new div input {
   width: 100%;
   height: 30px;
   border-bottom: 1px solid var(--cG4);
   border-radius: 0;
   font-size: var(--fL);
 }
-.index section.credit div.new div:not(.row) {
+.payment section.credit div.new div:not(.row) {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.index section.credit div.new div.row {
+.payment section.credit div.new div.row {
   display: flex;
   gap: 15px;
 }
-.index section.credit div.button {
+.payment section.credit div.buttons {
   display: flex;
   gap: 10px;
 }
-.index section.credit div.button button {
+.payment section.credit div.buttons button {
   width: 100%;
   height: 40px;
   border-radius: 99px;
   font-size: var(--fM);
 }
-.index section.credit div.button button:first-child {
+.payment section.credit div.buttons button:first-child {
   background-color: var(--cBg);
 }
-.index section.credit div.button button:first-child span {
+.payment section.credit div.buttons button:first-child span {
   color: var(--cG2);
 }
-.index section.credit div.button button:last-child {
+.payment section.credit div.buttons button:last-child {
   background-color: var(--c1);
 }
-.index section.credit div.button button:last-child span {
+.payment section.credit div.buttons button:last-child span {
   color: white;
 }

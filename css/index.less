@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
-@color: #EE6C5F;
+// @color: #EE6C5F;
+@color: #EF6079;
 
 :root {
     // Font
@@ -58,14 +59,14 @@ iframe                                  { border: 0; }
     .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
         &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
-.popup { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 9;
-    .body { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+.pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 9;
+    .popBody { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
-// Index
-.index section.header { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
+// 首頁
+.payment section.header { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
     .bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -5px; background: var(--c2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .left {
@@ -75,18 +76,18 @@ iframe                                  { border: 0; }
     .right { justify-content: right;
         span:first-child { font-size: var(--fM); }
         span:last-child { font-size: var(--fXL); }}}
-.index section.footer { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
+.payment section.footer { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
     button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--c1);
         span { color: white; font-size: var(--fL); }
         img { height: 20px; margin: 0 5px; }}}
-.index section.body { width: 100%; max-width: 400px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+.payment section.main { width: 100%; max-width: 400px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
     // 帳號
     section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
         div { display: flex; flex-direction: column;
             span:first-child { font-size: var(--fM); }
             span:last-child { font-size: var(--fS); color: var(--cG3); }}
         a { text-decoration: underline !important; color: var(--cG3); }}
-    section.spending, section.point, section.payment { width: 100%; gap: 10px; display: flex; flex-direction: column;
+    section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
         span.title { font-size: var(--fM); font-weight: bold; white-space: nowrap; }
         .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
             span { font-size: var(--fM); }
@@ -109,7 +110,7 @@ iframe                                  { border: 0; }
             span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
             img { height: 14px; }}}
     // 付款
-    section.payment {
+    section.type {
         div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
             span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
         div.center { width: 100%; display: flex; gap: 10px;
@@ -124,8 +125,7 @@ iframe                                  { border: 0; }
             a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
                 &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
                 i { color: var(--cG4); }}}}}
-// 信用卡
-.index section.credit { 
+.payment section.credit { 
     span.title { font-size: var(--fL); font-weight: bold; }
     div.list { display: flex; flex-direction: column; gap: 10px;
         a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
@@ -140,10 +140,11 @@ iframe                                  { border: 0; }
         div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
         div:not(.row) { width: 100%; display: flex; flex-direction: column; }
         div.row { display: flex; gap: 15px; }}
-    div.button { display: flex; gap: 10px;
+    div.buttons { display: flex; gap: 10px;
         button { width: 100%; height: 40px; border-radius: 99px; font-size: var(--fM);
             &:first-child { background-color: var(--cBg);
                 span { color: var(--cG2); }}
             &:last-child { background-color: var(--c1);
-                span { color: white; }}}}
-}
+                span { color: white; }}}}}
+
+// 付款結果頁

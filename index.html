@@ -11,10 +11,12 @@
         <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
         <!-- CSS -->
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css">
         <!-- Awesome Icon -->
         <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
     </head>
-    <body class="index">
+    <body class="payment">
         <!-- Header -->
         <section class="header">
             <div class="bg"></div>
@@ -37,7 +39,7 @@
                 <span>100</span>
             </button>
         </section>
-        <section class="body">
+        <section class="main">
             <section class="account">
                 <div>
                     <span>陳大文 0987654321 正在付款</span>
@@ -104,7 +106,7 @@
                 </div>
             </section>
             <!-- 付款方式 -->
-            <section class="payment">
+            <section class="type">
                 <div class="top">
                     <span class="title">付款方式</span>
                     <span>目前台灣Pay服務異常，請使用其他付款方式</span>
@@ -170,8 +172,8 @@
             </section>
         </section>
         <!-- 信用卡popup -->
-        <section id="popCredit" class="popup credit" onclick="popClose(this)">
-            <div class="body">
+        <section id="popCredit" class="pop credit" onclick="popClose(this)">
+            <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <span class="title">信用卡</span>
                 <div class="list">
@@ -221,7 +223,7 @@
                         <span>儲存信用卡</span>
                     </label>
                 </div>
-                <div class="button">
+                <div class="buttons">
                     <button onclick="popClose(this)">
                         <span>取消</span>
                     </button>
