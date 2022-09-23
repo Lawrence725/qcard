@@ -1,5 +1,6 @@
 window.onload = function() {
     popNotice();
+    popConfirm();
     popCredit(); }
 
 // Popup close
@@ -23,6 +24,11 @@ function popClose(e) {
 // 訊息popup
 function popNotice() {
     document.getElementById("popNotice").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 訊息popup
+function popConfirm() {
+    document.getElementById("popConfirm").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
 // 信用卡popup

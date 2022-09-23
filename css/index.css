@@ -27,7 +27,7 @@
   src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
 }
 :root {
-  --fXXL: clamp(1.6rem, 7vw, 1.7rem);
+  --fXXL: clamp(1.9rem, 10vw, 2rem);
   --fXL: clamp(1.4rem, 6vw, 1.5rem);
   --fL: clamp(1.2rem, 5vw, 1.3rem);
   --fM: clamp(1rem, 4vw, 1.2rem);
@@ -192,6 +192,20 @@ div.icon .fa-hourglass-half,
 div.icon .fa-exclamation {
   color: var(--cOrange);
 }
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--c1);
+}
+button span {
+  color: white !important;
+  font-size: var(--fM);
+}
 .check {
   width: fit-content;
   min-height: 20px;
@@ -311,8 +325,8 @@ div.icon .fa-exclamation {
     margin-bottom: -100vh;
   }
 }
-.payment section.header,
-.result section.header {
+.payment section.head,
+.result section.head {
   width: 100%;
   max-width: 400px;
   height: 70px;
@@ -325,8 +339,8 @@ div.icon .fa-exclamation {
   justify-content: center;
   z-index: 5;
 }
-.payment section.header .bg,
-.result section.header .bg {
+.payment section.head .bg,
+.result section.head .bg {
   width: 1500px;
   height: 1500px;
   border-radius: 999px;
@@ -336,16 +350,16 @@ div.icon .fa-exclamation {
   pointer-events: none;
   z-index: -1;
 }
-.payment section.header .left,
-.result section.header .left,
-.payment section.header .right,
-.result section.header .right {
+.payment section.head .left,
+.result section.head .left,
+.payment section.head .right,
+.result section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.payment section.header .left a,
-.result section.header .left a {
+.payment section.head .left a,
+.result section.head .left a {
   width: 20px;
   aspect-ratio: 1/1;
   display: flex;
@@ -353,26 +367,26 @@ div.icon .fa-exclamation {
   justify-content: center;
   color: var(--c1);
 }
-.payment section.header .left span,
-.result section.header .left span {
+.payment section.head .left span,
+.result section.head .left span {
   color: var(--c1);
   font-size: var(--fL);
 }
-.payment section.header > span,
-.result section.header > span {
+.payment section.head > span,
+.result section.head > span {
   white-space: nowrap;
   font-size: var(--fXL);
 }
-.payment section.header .right,
-.result section.header .right {
+.payment section.head .right,
+.result section.head .right {
   justify-content: right;
 }
-.payment section.header .right span:first-child,
-.result section.header .right span:first-child {
+.payment section.head .right span:first-child,
+.result section.head .right span:first-child {
   font-size: var(--fM);
 }
-.payment section.header .right span:last-child,
-.result section.header .right span:last-child {
+.payment section.head .right span:last-child,
+.result section.head .right span:last-child {
   font-size: var(--fXL);
 }
 section.pop.notice {
@@ -401,16 +415,7 @@ section.pop.notice div:not(.icon) {
   flex-direction: column;
   align-items: center;
 }
-section.pop.notice button {
-  width: 100%;
-  height: 40px;
-  border-radius: 99px;
-  background-color: var(--c1);
-}
-section.pop.notice button span {
-  color: white !important;
-}
-.payment section.footer {
+.payment section.foot {
   width: 100%;
   max-width: 400px;
   padding: 20px 20px 30px;
@@ -423,22 +428,11 @@ section.pop.notice button span {
   box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
   z-index: 5;
 }
-.payment section.footer button {
-  width: 100%;
-  height: 40px;
-  border-radius: 99px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--c1);
-}
-.payment section.footer button span {
-  color: white;
+.payment section.foot button span {
   font-size: var(--fL);
 }
-.payment section.footer button img {
+.payment section.foot button img {
   height: 20px;
-  margin: 0 5px;
 }
 .payment section.main {
   width: 100%;
@@ -650,16 +644,16 @@ section.pop.notice button span {
 .payment section.main section.keyboard div a i {
   color: var(--cG4);
 }
-.payment section.credit span.title {
+.payment section.pop.credit span.title {
   font-size: var(--fL);
   font-weight: bold;
 }
-.payment section.credit div.list {
+.payment section.pop.credit div.list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.payment section.credit div.list a {
+.payment section.pop.credit div.list a {
   width: 100%;
   height: 40px;
   padding: 0 10px;
@@ -669,73 +663,106 @@ section.pop.notice button span {
   align-items: center;
   background-color: var(--cBg);
 }
-.payment section.credit div.list a.active {
+.payment section.pop.credit div.list a.active {
   border: 1px solid var(--c1);
 }
-.payment section.credit div.list a span {
+.payment section.pop.credit div.list a span {
   white-space: nowrap;
 }
-.payment section.credit div.list a span:first-child {
+.payment section.pop.credit div.list a span:first-child {
   width: 100%;
   font-size: var(--fM);
 }
-.payment section.credit div.list a span:nth-child(2) {
+.payment section.pop.credit div.list a span:nth-child(2) {
   font-size: var(--fS);
   color: var(--cG3);
 }
-.payment section.credit div.list a img {
+.payment section.pop.credit div.list a img {
   width: 30px;
 }
-.payment section.credit div.new {
+.payment section.pop.credit div.new {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.payment section.credit div.new span.title {
+.payment section.pop.credit div.new span.title {
   font-size: var(--fM);
   font-weight: bold;
 }
-.payment section.credit div.new span:not(.title) {
+.payment section.pop.credit div.new span:not(.title) {
   color: var(--cG3);
   font-size: var(--fS);
 }
-.payment section.credit div.new div input {
+.payment section.pop.credit div.new div input {
   width: 100%;
   height: 30px;
   border-bottom: 1px solid var(--cG4);
   border-radius: 0;
   font-size: var(--fL);
 }
-.payment section.credit div.new div:not(.row) {
+.payment section.pop.credit div.new div:not(.row) {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.payment section.credit div.new div.row {
+.payment section.pop.credit div.new div.row {
   display: flex;
   gap: 15px;
 }
-.payment section.credit div.buttons {
+.payment section.pop.credit div.buttons {
   display: flex;
   gap: 10px;
 }
-.payment section.credit div.buttons button {
-  width: 100%;
-  height: 40px;
-  border-radius: 99px;
-  font-size: var(--fM);
-}
-.payment section.credit div.buttons button:first-child {
+.payment section.pop.credit div.buttons button:first-child {
   background-color: var(--cBg);
 }
-.payment section.credit div.buttons button:first-child span {
-  color: var(--cG2);
+.payment section.pop.credit div.buttons button:first-child span {
+  color: var(--cG2) !important;
 }
-.payment section.credit div.buttons button:last-child {
-  background-color: var(--c1);
+.payment section.pop.confirm {
+  align-items: center;
 }
-.payment section.credit div.buttons button:last-child span {
-  color: white;
+.payment section.pop.confirm .popBody {
+  align-items: center;
+}
+.payment section.pop.confirm .popBody > div:not(.buttons) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.payment section.pop.confirm .popBody > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.payment section.pop.confirm .popBody > div span {
+  font-size: var(--fM);
+}
+.payment section.pop.confirm .popBody > div img {
+  height: 14px;
+}
+.payment section.pop.confirm .popBody span.title {
+  font-size: var(--fL);
+  color: var(--cG3);
+}
+.payment section.pop.confirm .popBody span.cost {
+  font-size: var(--fXXL);
+}
+.payment section.pop.confirm .popBody span.subTitle {
+  font-size: var(fS);
+  color: var(--cG3);
+}
+.payment section.pop.confirm .popBody div.buttons {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.payment section.pop.confirm .popBody div.buttons button:first-child {
+  background-color: var(--cBg);
+}
+.payment section.pop.confirm .popBody div.buttons button:first-child span {
+  color: var(--cG2) !important;
 }
 .result {
   overflow: auto;
@@ -829,28 +856,12 @@ section.pop.notice button span {
   display: flex;
   gap: 10px;
 }
-.result section.main section.detail div.buttons button {
-  width: 100%;
-  height: 40px;
-  border-radius: 99px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: var(--fM);
-}
 .result section.main section.detail div.buttons button:first-child {
   background-color: var(--cBg);
 }
 .result section.main section.detail div.buttons button:first-child span {
-  color: var(--cG2);
+  color: var(--cG2) !important;
 }
-.result section.main section.detail div.buttons button:last-child {
-  background-color: var(--c1);
-}
-.result section.main section.detail div.buttons button:last-child span {
-  color: white;
-}
-.result section.main section.detail div.buttons button i {
+.result section.main section.detail div.buttons button:first-child i {
   color: var(--c1);
 }
