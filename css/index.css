@@ -150,7 +150,7 @@ iframe {
   filter: grayscale(100%);
   opacity: 0.5;
 }
-.spinner {
+.loading {
   top: 0;
   left: 0;
   width: 100vw;
@@ -162,7 +162,7 @@ iframe {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.9);
 }
-.spinner > div {
+.loading > div {
   min-width: 120px;
   min-height: 120px;
   border-radius: 20px;
@@ -170,7 +170,7 @@ iframe {
   align-items: center;
   justify-content: center;
 }
-.spinner > div > div {
+.loading > div > div {
   min-width: 100px;
   min-height: 100px;
   border: 3px solid var(--c1);
@@ -179,9 +179,42 @@ iframe {
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
-.spinner > div img {
+.loading > div img {
   width: 80px;
   position: absolute;
+}
+.spinner {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: var(--app-height);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+}
+.spinner > div {
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+.spinner > div > div {
+  min-width: 40px;
+  min-height: 40px;
+  border: 3px solid var(--c1);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 @keyframes spin {
   0% {

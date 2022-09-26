@@ -51,10 +51,13 @@ iframe                                  { border: 0; }
 .disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: var(--cG4) !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
-.spinner { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
+.loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
         > div { min-width: 100px; min-height: 100px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; position: absolute; }}}
+.spinner { top: 0; left: 0; width: 100vw; height: 100vh; height: var(--app-height); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
+    > div { min-width: 80px; min-height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); 
+        > div { min-width: 40px; min-height: 40px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
 div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
