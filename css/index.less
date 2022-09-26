@@ -221,10 +221,12 @@ section.pop.notice { align-items: center;
         > span { white-space: nowrap; font-size: var(--fL); }
         .right a { font-size: var(--fM); color: var(--c1); }}
     section.main { width: 100%; max-width: 400px; padding: 100px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
-        a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white;
-            div.dot { width: 40px; height: 40px; border-radius: 99px; position: absolute; background-color: var(--cBg);
+        a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
+            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
                 &.left { left: -20px; }
                 &.right { right: -20px; }}
+            div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
+                span { font-size: var(--fS); color: white; }}
             div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
                 div { display: flex; flex-direction: column; }}
             img { width: 100px; height: 100px; border-radius: 10px; }
@@ -232,8 +234,4 @@ section.pop.notice { align-items: center;
                 &.title { font-size: var(--fL); color: var(--c1); }
                 &.name { font-size: var(--fS); }
                 &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                &.date { font-size: var(--fS); }
-            }
-        }
-    }
-}
+                &.date { font-size: var(--fS); }}}}}

@@ -965,11 +965,13 @@ section.pop.notice div:not(.icon) {
   align-items: center;
   gap: 10px;
   background-color: white;
+  overflow: hidden;
 }
 .shop section.main a.coupon div.dot {
   width: 40px;
   height: 40px;
   border-radius: 99px;
+  z-index: 2;
   position: absolute;
   background-color: var(--cBg);
 }
@@ -978,6 +980,23 @@ section.pop.notice div:not(.icon) {
 }
 .shop section.main a.coupon div.dot.right {
   right: -20px;
+}
+.shop section.main a.coupon div.label {
+  width: 150px;
+  height: 24px;
+  z-index: 1;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 5px;
+  right: -45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cG4);
+}
+.shop section.main a.coupon div.label span {
+  font-size: var(--fS);
+  color: white;
 }
 .shop section.main a.coupon div.content {
   width: 100%;
