@@ -765,7 +765,10 @@ section.pop.notice div:not(.icon) {
   color: var(--cG2) !important;
 }
 .result {
+  min-width: 100%;
+  min-height: 100%;
   overflow: auto;
+  background-color: var(--cBg);
 }
 .result section.main {
   width: 100%;
@@ -776,7 +779,6 @@ section.pop.notice div:not(.icon) {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: var(--cBg);
 }
 .result section.main section.detail {
   width: 100%;
