@@ -171,7 +171,9 @@ section.pop.notice { align-items: center;
             span:not(.title) { color: var(--cG3); font-size: var(--fS); }
             div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
             div:not(.row) { width: 100%; display: flex; flex-direction: column; }
-            div.row { display: flex; gap: 15px; }}
+            div.row { display: flex; gap: 15px; }
+            iframe { height: 30px !important; 
+                input { border-bottom: 1px solid var(--cG4); font-size: var(--fL); }}}
         div.buttons { display: flex; gap: 10px;
             button:first-child { background-color: var(--cBg);
                 span { color: var(--cG2) !important; }}}}
@@ -190,7 +192,7 @@ section.pop.notice { align-items: center;
                     span { color: var(--cG2) !important; }}}}}}
 
 // 付款結果頁
-.result { min-width: 100%; min-height: 100%; overflow: auto; background-color: var(--cBg);
+.result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head { > span { font-size: var(--fXL); }}
     section.main { width: 100%; max-width: 400px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
@@ -218,7 +220,7 @@ section.pop.notice { align-items: center;
                     i { color: var(--c1); }}}}}}
 
 // 商店頁
-.shop { min-width: 100%; min-height: 100%; overflow: auto; background-color: var(--cBg);
+.shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
         .left a { width: 30px; height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { white-space: nowrap; font-size: var(--fL); }

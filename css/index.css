@@ -797,6 +797,13 @@ section.pop.notice div:not(.icon) {
   display: flex;
   gap: 15px;
 }
+.payment section.pop.credit div.new iframe {
+  height: 30px !important;
+}
+.payment section.pop.credit div.new iframe input {
+  border-bottom: 1px solid var(--cG4);
+  font-size: var(--fL);
+}
 .payment section.pop.credit div.buttons {
   display: flex;
   gap: 10px;
@@ -853,8 +860,8 @@ section.pop.notice div:not(.icon) {
   color: var(--cG2) !important;
 }
 .result {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
   overflow: auto;
   background-color: var(--cBg);
 }
@@ -958,8 +965,8 @@ section.pop.notice div:not(.icon) {
   color: var(--c1);
 }
 .shop {
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
   overflow: auto;
   background-color: var(--cBg);
 }
