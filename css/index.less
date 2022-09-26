@@ -51,6 +51,12 @@ iframe                                  { border: 0; }
 .disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: var(--cG4) !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
+.spinner { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
+    > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
+        > div { min-width: 100px; min-height: 100px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
+        img { width: 80px; position: absolute; }}}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
 div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
     > i { border-radius: 999px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);}
     > div { width: 80px; height: 80px; padding: 20px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
@@ -71,23 +77,17 @@ button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-it
     .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
         &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
-.pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 9;
+.pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment section.head, .result section.head { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
+.payment section.head, .result section.head, .shop section.head { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
     .bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -5px; background: var(--c2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
-    .left {
-        a { width: 20px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; color: var(--c1); }
-        span { color: var(--c1); font-size: var(--fL); }}
-    > span { white-space: nowrap; font-size: var(--fXL); }
-    .right { justify-content: right;
-        span:first-child { font-size: var(--fM); }
-        span:last-child { font-size: var(--fXL); }}}
+    .right { justify-content: right; }}
 section.pop.notice { align-items: center;
     .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible; }
     span.title { font-size: var(--fL); }
@@ -96,91 +96,100 @@ section.pop.notice { align-items: center;
     div:not(.icon) { display: flex; flex-direction: column; align-items: center; }}
 
 // 付款頁
-.payment section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
-    button {
-        span { font-size: var(--fL); }
-        img { height: 20px; }}}
-.payment section.main { width: 100%; max-width: 400px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
-    // 帳號
-    section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
-        div { display: flex; flex-direction: column;
+.payment { overflow: auto;
+    section.head {
+        .left {
+            a { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+            span { color: var(--c1); font-size: var(--fL); }}
+        > span { white-space: nowrap; font-size: var(--fXL); }
+        .right { justify-content: right;
             span:first-child { font-size: var(--fM); }
-            span:last-child { font-size: var(--fS); color: var(--cG3); }}
-        a { text-decoration: underline !important; color: var(--cG3); }}
-    section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
-        span.title { font-size: var(--fM); font-weight: bold; white-space: nowrap; }
-        .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
-            span { font-size: var(--fM); }
-            input { width: 100%; font-size: var(--fXL); }}}
-    // 點數
-    section.point {
-        div.top { display: flex; align-items: center; gap: 5px;
-            span:not(.title) { font-size: var(--fL); }
-            img { height: 20px; }}
-        div.center { width: 100%; display: flex; gap: 10px;
-            a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
-                &.active { border: 1px solid var(--c1); }
-                img { width: 20px; }
-                div { display: flex; flex-direction: column; gap: 5px;
-                    span { line-height: 100%;
-                        &:first-child { font-size: var(--fS); }
-                        &:last-child { font-size: var(--fM); }}}}}
-        div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
-            div { display: flex; align-items: center; gap: 2px; }
-            span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
-            img { height: 14px; }}}
-    // 付款
-    section.type {
-        div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
-            span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
-        div.center { width: 100%; display: flex; gap: 10px;
-            a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
-                &.active { border: 1px solid var(--c1); }
-                img { max-width: 80px; max-height: 24px; }
+            span:last-child { font-size: var(--fXL); }}}
+    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
+        button {
+            span { font-size: var(--fL); }
+            img { height: 20px; }}}
+    section.main { width: 100%; max-width: 400px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+        // 帳號
+        section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
+            div { display: flex; flex-direction: column;
+                span:first-child { font-size: var(--fM); }
+                span:last-child { font-size: var(--fS); color: var(--cG3); }}
+            a { text-decoration: underline !important; color: var(--cG3); }}
+        section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
+            span.title { font-size: var(--fM); font-weight: bold; white-space: nowrap; }
+            .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
                 span { font-size: var(--fM); }
-                i.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
-    // 鍵盤
-    section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
-        div { width: 100%; display: flex; gap: 10px;
-            a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
-                &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
-                i { color: var(--cG4); }}}}}
-.payment section.pop.credit { 
-    span.title { font-size: var(--fL); font-weight: bold; }
-    div.list { display: flex; flex-direction: column; gap: 10px;
-        a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
-            &.active { border: 1px solid var(--c1); }
-            span { white-space: nowrap;
-                &:first-child { width: 100%; font-size: var(--fM); }
-                &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
-            img { width: 30px; }}}
-    div.new { display: flex; flex-direction: column; gap: 10px;
-        span.title { font-size: var(--fM); font-weight: bold; }
-        span:not(.title) { color: var(--cG3); font-size: var(--fS); }
-        div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
-        div:not(.row) { width: 100%; display: flex; flex-direction: column; }
-        div.row { display: flex; gap: 15px; }}
-    div.buttons { display: flex; gap: 10px;
-        button:first-child { background-color: var(--cBg);
-            span { color: var(--cG2) !important; }}}}
-.payment section.pop.confirm { align-items: center;
-    .popBody { align-items: center;
-        > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; gap: 0; }
-            > div { display: flex; align-items: center; gap: 5px;
-                span { font-size: var(--fM); }
-                img { height: 14px; }}
-        span {
-            &.title { font-size: var(--fL); color: var(--cG3); }
-            &.cost { font-size: var(--fXXL); }
-            &.subTitle { font-size: var(fS); color: var(--cG3); }}
-        div.buttons { width: 100%; display: flex; gap: 10px;
+                input { width: 100%; font-size: var(--fXL); }}}
+        // 點數
+        section.point {
+            div.top { display: flex; align-items: center; gap: 5px;
+                span:not(.title) { font-size: var(--fL); }
+                img { height: 20px; }}
+            div.center { width: 100%; display: flex; gap: 10px;
+                a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
+                    &.active { border: 1px solid var(--c1); }
+                    img { width: 20px; }
+                    div { display: flex; flex-direction: column; gap: 5px;
+                        span { line-height: 100%;
+                            &:first-child { font-size: var(--fS); }
+                            &:last-child { font-size: var(--fM); }}}}}
+            div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
+                div { display: flex; align-items: center; gap: 2px; }
+                span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
+                img { height: 14px; }}}
+        // 付款
+        section.type {
+            div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
+                span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
+            div.center { width: 100%; display: flex; gap: 10px;
+                a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
+                    &.active { border: 1px solid var(--c1); }
+                    img { max-width: 80px; max-height: 24px; }
+                    span { font-size: var(--fM); }
+                    i.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
+        // 鍵盤
+        section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
+            div { width: 100%; display: flex; gap: 10px;
+                a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
+                    &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
+                    i { color: var(--cG4); }}}}}
+    section.pop.credit { 
+        span.title { font-size: var(--fL); font-weight: bold; }
+        div.list { display: flex; flex-direction: column; gap: 10px;
+            a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
+                &.active { border: 1px solid var(--c1); }
+                span { white-space: nowrap;
+                    &:first-child { width: 100%; font-size: var(--fM); }
+                    &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
+                img { width: 30px; }}}
+        div.new { display: flex; flex-direction: column; gap: 10px;
+            span.title { font-size: var(--fM); font-weight: bold; }
+            span:not(.title) { color: var(--cG3); font-size: var(--fS); }
+            div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
+            div:not(.row) { width: 100%; display: flex; flex-direction: column; }
+            div.row { display: flex; gap: 15px; }}
+        div.buttons { display: flex; gap: 10px;
             button:first-child { background-color: var(--cBg);
                 span { color: var(--cG2) !important; }}}}
-}
+    section.pop.confirm { align-items: center;
+        .popBody { align-items: center;
+            > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; gap: 0; }
+                > div { display: flex; align-items: center; gap: 5px;
+                    span { font-size: var(--fM); }
+                    img { height: 14px; }}
+            span {
+                &.title { font-size: var(--fL); color: var(--cG3); }
+                &.cost { font-size: var(--fXXL); }
+                &.subTitle { font-size: var(fS); color: var(--cG3); }}
+            div.buttons { width: 100%; display: flex; gap: 10px;
+                button:first-child { background-color: var(--cBg);
+                    span { color: var(--cG2) !important; }}}}}}
 
 // 付款結果頁
 .result { min-width: 100%; min-height: 100%; overflow: auto; background-color: var(--cBg);
-    section.main { width: 100%; max-width: 400px; min-height: 100%; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+    section.head { > span { font-size: var(--fXL); }}
+    section.main { width: 100%; max-width: 400px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
             div.top { display: flex; flex-direction: column; align-items: center;
                 span.title { font-size: var(--fXL);
@@ -189,7 +198,6 @@ section.pop.notice { align-items: center;
                     &.red { color: var(--cRed); }}
                 span.cost { font-size: var(--fXXL); }
                 span.strong { font-size: var(--fXL); color: var(--cRed); }
-
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
                     img { height: 14px; }
                     span { font-size: var(--fM); }}
@@ -205,3 +213,27 @@ section.pop.notice { align-items: center;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
                     i { color: var(--c1); }}}}}}
+
+// 商店頁
+.shop { min-width: 100%; min-height: 100%; overflow: auto; background-color: var(--cBg);
+    section.head {
+        .left a { width: 30px; height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        > span { white-space: nowrap; font-size: var(--fL); }
+        .right a { font-size: var(--fM); color: var(--c1); }}
+    section.main { width: 100%; max-width: 400px; padding: 100px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+        a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white;
+            div.dot { width: 40px; height: 40px; border-radius: 99px; position: absolute; background-color: var(--cBg);
+                &.left { left: -20px; }
+                &.right { right: -20px; }}
+            div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+                div { display: flex; flex-direction: column; }}
+            img { width: 100px; height: 100px; border-radius: 10px; }
+            span {
+                &.title { font-size: var(--fL); color: var(--c1); }
+                &.name { font-size: var(--fS); }
+                &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                &.date { font-size: var(--fS); }
+            }
+        }
+    }
+}

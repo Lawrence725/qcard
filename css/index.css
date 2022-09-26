@@ -150,6 +150,55 @@ iframe {
   filter: grayscale(100%);
   opacity: 0.5;
 }
+.spinner {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.spinner > div {
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner > div > div {
+  min-width: 100px;
+  min-height: 100px;
+  border: 3px solid var(--c1);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+.spinner > div img {
+  width: 80px;
+  position: absolute;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
 div.icon {
   width: 100%;
   margin: -60px 0 5px;
@@ -284,7 +333,7 @@ button span {
   display: none;
   align-items: flex-end;
   justify-content: center;
-  z-index: 9;
+  z-index: 8;
 }
 .pop .popBody {
   width: 100%;
@@ -326,7 +375,8 @@ button span {
   }
 }
 .payment section.head,
-.result section.head {
+.result section.head,
+.shop section.head {
   width: 100%;
   max-width: 400px;
   height: 70px;
@@ -340,7 +390,8 @@ button span {
   z-index: 5;
 }
 .payment section.head .bg,
-.result section.head .bg {
+.result section.head .bg,
+.shop section.head .bg {
   width: 1500px;
   height: 1500px;
   border-radius: 999px;
@@ -352,42 +403,18 @@ button span {
 }
 .payment section.head .left,
 .result section.head .left,
+.shop section.head .left,
 .payment section.head .right,
-.result section.head .right {
+.result section.head .right,
+.shop section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.payment section.head .left a,
-.result section.head .left a {
-  width: 20px;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c1);
-}
-.payment section.head .left span,
-.result section.head .left span {
-  color: var(--c1);
-  font-size: var(--fL);
-}
-.payment section.head > span,
-.result section.head > span {
-  white-space: nowrap;
-  font-size: var(--fXL);
-}
 .payment section.head .right,
-.result section.head .right {
+.result section.head .right,
+.shop section.head .right {
   justify-content: right;
-}
-.payment section.head .right span:first-child,
-.result section.head .right span:first-child {
-  font-size: var(--fM);
-}
-.payment section.head .right span:last-child,
-.result section.head .right span:last-child {
-  font-size: var(--fXL);
 }
 section.pop.notice {
   align-items: center;
@@ -414,6 +441,34 @@ section.pop.notice div:not(.icon) {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.payment {
+  overflow: auto;
+}
+.payment section.head .left a {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c1);
+}
+.payment section.head .left span {
+  color: var(--c1);
+  font-size: var(--fL);
+}
+.payment section.head > span {
+  white-space: nowrap;
+  font-size: var(--fXL);
+}
+.payment section.head .right {
+  justify-content: right;
+}
+.payment section.head .right span:first-child {
+  font-size: var(--fM);
+}
+.payment section.head .right span:last-child {
+  font-size: var(--fXL);
 }
 .payment section.foot {
   width: 100%;
@@ -770,10 +825,12 @@ section.pop.notice div:not(.icon) {
   overflow: auto;
   background-color: var(--cBg);
 }
+.result section.head > span {
+  font-size: var(--fXL);
+}
 .result section.main {
   width: 100%;
   max-width: 400px;
-  min-height: 100%;
   padding: 140px 20px 50px;
   margin: 0 auto;
   display: flex;
@@ -866,4 +923,94 @@ section.pop.notice div:not(.icon) {
 }
 .result section.main section.detail div.buttons button:first-child i {
   color: var(--c1);
+}
+.shop {
+  min-width: 100%;
+  min-height: 100%;
+  overflow: auto;
+  background-color: var(--cBg);
+}
+.shop section.head .left a {
+  width: 30px;
+  height: 30px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c1);
+}
+.shop section.head > span {
+  white-space: nowrap;
+  font-size: var(--fL);
+}
+.shop section.head .right a {
+  font-size: var(--fM);
+  color: var(--c1);
+}
+.shop section.main {
+  width: 100%;
+  max-width: 400px;
+  padding: 100px 20px 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.shop section.main a.coupon {
+  height: 140px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+}
+.shop section.main a.coupon div.dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  position: absolute;
+  background-color: var(--cBg);
+}
+.shop section.main a.coupon div.dot.left {
+  left: -20px;
+}
+.shop section.main a.coupon div.dot.right {
+  right: -20px;
+}
+.shop section.main a.coupon div.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.shop section.main a.coupon div.content div {
+  display: flex;
+  flex-direction: column;
+}
+.shop section.main a.coupon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.shop section.main a.coupon span.title {
+  font-size: var(--fL);
+  color: var(--c1);
+}
+.shop section.main a.coupon span.name {
+  font-size: var(--fS);
+}
+.shop section.main a.coupon span.info {
+  font-size: var(--fS);
+  color: var(--cG3);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.shop section.main a.coupon span.date {
+  font-size: var(--fS);
 }
