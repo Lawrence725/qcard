@@ -30,7 +30,7 @@
 // Reset
 *                                       { margin: 0; padding: 0; }
 span, p, h1, h2, h3, h4, h5, h6, a,
-select, input, textarea, button         { font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體'; }
+select, input, textarea, button         { font-size: var(--fM); font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體'; }
 span, p, h1, h2, h3, h4, h5, h6, ol, ul { color: var(--cG1); }
 a                                       { text-decoration: none !important; }
 a:hover                                 { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
@@ -69,7 +69,12 @@ div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: cen
     .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--cRed); }
     .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }}
 button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--c1);
-    span { color: white !important; font-size: var(--fM); }}
+    span { color: white !important; }}
+div.tabs { width: 100%; height: 30px; display: flex; align-items: flex-start; border-bottom: 1px solid var(--cG5);
+    a.tab { width: 100%; height: 30px; display: flex; align-items: center; justify-content: center;
+        &.active { color: var(--c1); border-bottom: 2px solid var(--c1);
+            span { color: var(--c1); }}
+        span { color: var(--cG4); }}}
 .check { width: fit-content; min-height: 20px; padding: 5px 0 5px 20px; border-radius: 10px; position: relative; display: flex; align-items: center; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-size: 12px;
     // &:hover { background: var(--cBg); } 
     &:hover input ~ .checkmark { border: 2px solid var(--cG5); background-color: var(--cG5); }
@@ -80,6 +85,15 @@ button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-it
     .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
         &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
+div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-items: center;
+    > * { width: 100%; height: 20px; padding: 0 10px; gap: 5px; display: flex; align-items: center; }
+    > *:not(:first-child) { border-left: 1px solid var(--cG5); }
+    span, input { font-size: var(--fS); white-space: nowrap; }
+    i { color: var(--c1); }
+    a.dropdown { justify-content: space-between; }
+    div.search { justify-content: center;
+        input { width: 100%;
+            &::placeholder { color: var(--cG4); }}}}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
@@ -88,13 +102,13 @@ button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-it
 
 // Common
 .payment section.head, .result section.head, .shop section.head { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
-    .bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -5px; background: var(--c2); pointer-events: none; z-index: -1; }
+    .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--c2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
 section.pop.notice { align-items: center;
     .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible; }
     span.title { font-size: var(--fL); }
-    span:not(.title) { font-size: var(--fM); color: var(--cG3); }
+    span:not(.title) { color: var(--cG3); }
     div.icon { display: flex; justify-content: center; margin-top: -60px; }
     div:not(.icon) { display: flex; flex-direction: column; align-items: center; }}
 
@@ -106,7 +120,7 @@ section.pop.notice { align-items: center;
             span { color: var(--c1); font-size: var(--fL); }}
         > span { white-space: nowrap; font-size: var(--fXL); }
         .right { justify-content: right;
-            span:first-child { font-size: var(--fM); }
+            span:first-child { }
             span:last-child { font-size: var(--fXL); }}}
     section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button {
@@ -116,13 +130,13 @@ section.pop.notice { align-items: center;
         // 帳號
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; flex-direction: column;
-                span:first-child { font-size: var(--fM); }
+                span:first-child { }
                 span:last-child { font-size: var(--fS); color: var(--cG3); }}
             a { text-decoration: underline !important; color: var(--cG3); }}
         section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
-            span.title { font-size: var(--fM); font-weight: bold; white-space: nowrap; }
+            span.title { font-weight: bold; white-space: nowrap; }
             .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
-                span { font-size: var(--fM); }
+                span { }
                 input { width: 100%; font-size: var(--fXL); }}}
         // 點數
         section.point {
@@ -136,7 +150,7 @@ section.pop.notice { align-items: center;
                     div { display: flex; flex-direction: column; gap: 5px;
                         span { line-height: 100%;
                             &:first-child { font-size: var(--fS); }
-                            &:last-child { font-size: var(--fM); }}}}}
+                            &:last-child { }}}}}
             div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
                 div { display: flex; align-items: center; gap: 2px; }
                 span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
@@ -149,7 +163,7 @@ section.pop.notice { align-items: center;
                 a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
                     &.active { border: 1px solid var(--c1); }
                     img { max-width: 80px; max-height: 24px; }
-                    span { font-size: var(--fM); }
+                    span { }
                     i.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
         // 鍵盤
         section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
@@ -163,11 +177,11 @@ section.pop.notice { align-items: center;
             a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
                 &.active { border: 1px solid var(--c1); }
                 span { white-space: nowrap;
-                    &:first-child { width: 100%; font-size: var(--fM); }
+                    &:first-child { width: 100%; }
                     &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
                 img { width: 30px; }}}
         div.new { display: flex; flex-direction: column; gap: 10px;
-            span.title { font-size: var(--fM); font-weight: bold; }
+            span.title { font-weight: bold; }
             span:not(.title) { color: var(--cG3); font-size: var(--fS); }
             div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
             div:not(.row) { width: 100%; display: flex; flex-direction: column; }
@@ -187,7 +201,7 @@ section.pop.notice { align-items: center;
         .popBody { align-items: center;
             > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; gap: 0; }
                 > div { display: flex; align-items: center; gap: 5px;
-                    span { font-size: var(--fM); }
+                    span { }
                     img { height: 14px; }}
             span {
                 &.title { font-size: var(--fL); color: var(--cG3); }
@@ -211,15 +225,15 @@ section.pop.notice { align-items: center;
                 span.strong { font-size: var(--fXL); color: var(--cRed); }
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
                     img { height: 14px; }
-                    span { font-size: var(--fM); }}
+                    span { }}
             }
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
-                    span { font-size: var(--fM); white-space: nowrap; }
+                    span { white-space: nowrap; }
                     span:first-child { width: 100%; color: var(--cG3); }
                     img { height: 14px; }}}
             div.bottom { display: flex; flex-direction: column; align-items: center;
-                span.title { font-size: var(--fM); color: var(--c1); }}
+                span.title { color: var(--c1); }}
             div.buttons { display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
@@ -230,8 +244,9 @@ section.pop.notice { align-items: center;
     section.head {
         .left a { width: 30px; height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { white-space: nowrap; font-size: var(--fL); }
-        .right a { font-size: var(--fM); color: var(--c1); }}
-    section.main { width: 100%; max-width: 400px; padding: 100px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+        .right a { color: var(--c1); }}
+    section.main { width: 100%; max-width: 400px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+        button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
         a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
             div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
                 &.left { left: -20px; }
@@ -245,4 +260,8 @@ section.pop.notice { align-items: center;
                 &.title { font-size: var(--fL); color: var(--c1); }
                 &.name { font-size: var(--fS); }
                 &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                &.date { font-size: var(--fS); }}}}}
+                &.date { font-size: var(--fS); }}}}
+    section.pop.category {
+        .popBody { gap: 10px; }
+        span.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--c1); }
+        a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}

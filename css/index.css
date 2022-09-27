@@ -64,6 +64,7 @@ select,
 input,
 textarea,
 button {
+  font-size: var(--fM);
   font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體';
 }
 span,
@@ -286,7 +287,30 @@ button {
 }
 button span {
   color: white !important;
-  font-size: var(--fM);
+}
+div.tabs {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--cG5);
+}
+div.tabs a.tab {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.tabs a.tab.active {
+  color: var(--c1);
+  border-bottom: 2px solid var(--c1);
+}
+div.tabs a.tab.active span {
+  color: var(--c1);
+}
+div.tabs a.tab span {
+  color: var(--cG4);
 }
 .check {
   width: fit-content;
@@ -354,6 +378,44 @@ button span {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+div.filter {
+  width: 100%;
+  height: 20px;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+}
+div.filter > * {
+  width: 100%;
+  height: 20px;
+  padding: 0 10px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+div.filter > *:not(:first-child) {
+  border-left: 1px solid var(--cG5);
+}
+div.filter span,
+div.filter input {
+  font-size: var(--fS);
+  white-space: nowrap;
+}
+div.filter i {
+  color: var(--c1);
+}
+div.filter a.dropdown {
+  justify-content: space-between;
+}
+div.filter div.search {
+  justify-content: center;
+}
+div.filter div.search input {
+  width: 100%;
+}
+div.filter div.search input::placeholder {
+  color: var(--cG4);
 }
 .pop {
   width: 100%;
@@ -425,11 +487,11 @@ button span {
 .payment section.head .bg,
 .result section.head .bg,
 .shop section.head .bg {
-  width: 1500px;
-  height: 1500px;
+  width: 1000px;
+  height: 1000px;
   border-radius: 999px;
   position: absolute;
-  bottom: -5px;
+  bottom: -15px;
   background: var(--c2);
   pointer-events: none;
   z-index: -1;
@@ -462,7 +524,6 @@ section.pop.notice span.title {
   font-size: var(--fL);
 }
 section.pop.notice span:not(.title) {
-  font-size: var(--fM);
   color: var(--cG3);
 }
 section.pop.notice div.icon {
@@ -496,9 +557,6 @@ section.pop.notice div:not(.icon) {
 }
 .payment section.head .right {
   justify-content: right;
-}
-.payment section.head .right span:first-child {
-  font-size: var(--fM);
 }
 .payment section.head .right span:last-child {
   font-size: var(--fXL);
@@ -541,9 +599,6 @@ section.pop.notice div:not(.icon) {
   display: flex;
   flex-direction: column;
 }
-.payment section.main section.account div span:first-child {
-  font-size: var(--fM);
-}
 .payment section.main section.account div span:last-child {
   font-size: var(--fS);
   color: var(--cG3);
@@ -563,7 +618,6 @@ section.pop.notice div:not(.icon) {
 .payment section.main section.spending span.title,
 .payment section.main section.point span.title,
 .payment section.main section.type span.title {
-  font-size: var(--fM);
   font-weight: bold;
   white-space: nowrap;
 }
@@ -580,11 +634,6 @@ section.pop.notice div:not(.icon) {
   gap: 2px;
   font-size: var(--fXL);
   border: 1px solid var(--cG5);
-}
-.payment section.main section.spending .input span,
-.payment section.main section.point .input span,
-.payment section.main section.type .input span {
-  font-size: var(--fM);
 }
 .payment section.main section.spending .input input,
 .payment section.main section.point .input input,
@@ -634,9 +683,6 @@ section.pop.notice div:not(.icon) {
 }
 .payment section.main section.point div.center a div span:first-child {
   font-size: var(--fS);
-}
-.payment section.main section.point div.center a div span:last-child {
-  font-size: var(--fM);
 }
 .payment section.main section.point div.bottom {
   width: 100%;
@@ -694,9 +740,6 @@ section.pop.notice div:not(.icon) {
 .payment section.main section.type div.center a img {
   max-width: 80px;
   max-height: 24px;
-}
-.payment section.main section.type div.center a span {
-  font-size: var(--fM);
 }
 .payment section.main section.type div.center a i.fa-chevron-right {
   position: absolute;
@@ -759,7 +802,6 @@ section.pop.notice div:not(.icon) {
 }
 .payment section.pop.credit div.list a span:first-child {
   width: 100%;
-  font-size: var(--fM);
 }
 .payment section.pop.credit div.list a span:nth-child(2) {
   font-size: var(--fS);
@@ -774,7 +816,6 @@ section.pop.notice div:not(.icon) {
   gap: 10px;
 }
 .payment section.pop.credit div.new span.title {
-  font-size: var(--fM);
   font-weight: bold;
 }
 .payment section.pop.credit div.new span:not(.title) {
@@ -842,9 +883,6 @@ section.pop.notice div:not(.icon) {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-.payment section.pop.confirm .popBody > div span {
-  font-size: var(--fM);
 }
 .payment section.pop.confirm .popBody > div img {
   height: 14px;
@@ -930,9 +968,6 @@ section.pop.notice div:not(.icon) {
 .result section.main section.detail div.top > div:not(.icon) img {
   height: 14px;
 }
-.result section.main section.detail div.top > div:not(.icon) span {
-  font-size: var(--fM);
-}
 .result section.main section.detail div.center {
   display: flex;
   flex-direction: column;
@@ -944,7 +979,6 @@ section.pop.notice div:not(.icon) {
   gap: 2px;
 }
 .result section.main section.detail div.center > div span {
-  font-size: var(--fM);
   white-space: nowrap;
 }
 .result section.main section.detail div.center > div span:first-child {
@@ -960,7 +994,6 @@ section.pop.notice div:not(.icon) {
   align-items: center;
 }
 .result section.main section.detail div.bottom span.title {
-  font-size: var(--fM);
   color: var(--c1);
 }
 .result section.main section.detail div.buttons {
@@ -996,17 +1029,27 @@ section.pop.notice div:not(.icon) {
   font-size: var(--fL);
 }
 .shop section.head .right a {
-  font-size: var(--fM);
   color: var(--c1);
 }
 .shop section.main {
   width: 100%;
   max-width: 400px;
-  padding: 100px 20px 50px;
+  padding: 100px 20px 100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.shop section.main button.action {
+  width: fit-content;
+  padding: 0 15px;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 0);
+  color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+  z-index: 2;
 }
 .shop section.main a.coupon {
   height: 140px;
@@ -1084,4 +1127,17 @@ section.pop.notice div:not(.icon) {
 }
 .shop section.main a.coupon span.date {
   font-size: var(--fS);
+}
+.shop section.pop.category .popBody {
+  gap: 10px;
+}
+.shop section.pop.category span.title {
+  margin-bottom: 5px;
+  font-size: var(--fL);
+  font-weight: bold;
+  color: var(--c1);
+}
+.shop section.pop.category a:not(.close):not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cG5);
 }

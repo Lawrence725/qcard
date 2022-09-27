@@ -26,11 +26,34 @@
                 </a>
             </div>
             <span>我的優惠券</span>
-            <div class="right">
-                <a>交易紀錄</a>
-            </div>
+            <div class="right"></div>
         </section>
         <section class="main">
+            <button class="action">
+                <i class="fa-solid fa-store fa-lg"></i>
+                <span>優惠券商城</span>
+            </button>
+            <div class="tabs">
+                <a class="tab active">
+                    <span>可使用</span>
+                </a>
+                <a class="tab">
+                    <span>已兌換</span>
+                </a>
+                <a class="tab">
+                    <span>已過期</span>
+                </a>
+            </div>
+            <div class="filter">
+                <a class="dropdown" onclick="popCategory()">
+                    <span>全部分類</span>
+                    <i class="fa-solid fa-caret-down fa-sm"></i>
+                </a>
+                <div class="search">
+                    <input type="text" placeholder="店家搜尋" value="">
+                    <a><i class="fa-solid fa-magnifying-glass fa-sm"></i></a>
+                </div>
+            </div>
             <a class="coupon">
                 <div class="dot left"></div>
                 <div class="dot right"></div>
@@ -47,6 +70,9 @@
             <a class="coupon">
                 <div class="dot left"></div>
                 <div class="dot right"></div>
+                <div class="label">
+                    <span>已兌換</span>
+                </div>
                 <div class="content">
                     <div>
                         <span class="title">滿$100折$10</span>
@@ -74,5 +100,24 @@
                 <img src="img/food.png">
             </a>
         </section>
+        <!-- 分類popup -->
+        <section id="popCategory" class="pop category" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">分類</span>
+                <a onclick="popClose(this)"><span class="active">全部分類</span></a>
+                <a onclick="popClose(this)"><span>餐飲業</span></a>
+                <a onclick="popClose(this)"><span>住</span></a>
+                <a onclick="popClose(this)"><span>衣</span></a>
+                <a onclick="popClose(this)"><span>育</span></a>
+                <a onclick="popClose(this)"><span>零售業</span></a>
+                <a onclick="popClose(this)"><span>樂</span></a>
+                <a onclick="popClose(this)"><span>行</span></a>
+                <a onclick="popClose(this)"><span>醫</span></a>
+                <a onclick="popClose(this)"><span>農漁會業者</span></a>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/shop.js"></script>
     </body>
 </html>
