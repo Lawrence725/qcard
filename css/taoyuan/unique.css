@@ -494,6 +494,12 @@
   border-radius: 99px;
   line-height: 16px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.body .index .function .fS img {
+  width: 20px;
+  margin-right: 2px;
 }
 .body .index .point {
   width: calc(100% - 40px);
@@ -1777,7 +1783,7 @@
   padding: 60px 10px 70px !important;
 }
 .body .point_history.main .tabs {
-  height: fit-content;
+  height: 30px;
   border: 1px solid white;
   background: linear-gradient(104.62deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
 }
@@ -1798,16 +1804,21 @@
   width: 20px;
   height: fit-content;
 }
+.body .point_history.main .tabs .fS {
+  font-size: var(--fM);
+}
 .body .point_history.main .tabs .lineV {
-  height: 40px;
-  background-color: var(--cG4);
+  height: 20px;
+  background-color: var(--cG5);
 }
 .body .point_history.main .filter {
   width: 100vw;
   min-height: 40px;
   margin-left: -10px;
+  padding: 0 20px;
   border-radius: 0;
   box-shadow: 0px 10px 20px rgba(55, 84, 170, 0.05);
+  box-sizing: border-box;
   overflow-y: scroll;
 }
 @media (min-width: 1024px), (max-width: 1023px) and (min-width: 768px) {
@@ -1820,8 +1831,14 @@
   height: 0;
   -webkit-appearance: none;
 }
+.body .point_history.main .filter .fM {
+  font-size: var(--fS);
+}
 .body .point_history.main .filter span.fM {
   white-space: nowrap;
+}
+.body .point_history.main .filter .icon {
+  margin: 0;
 }
 .body .point_history.main .filter .lineV {
   height: 20px;
@@ -1832,7 +1849,7 @@
 }
 .body .point_history.main .filter .dropdown select {
   width: fit-content;
-  padding: 0 30px 0 10px;
+  padding: 0 25px 0 10px;
   background-color: transparent;
 }
 .body .point_history.main .records {
@@ -1842,6 +1859,12 @@
 .body .point_history.main .records .img {
   width: 20px;
   height: fit-content;
+  margin: 0 2px 0 0;
+}
+.body .point_history.main .records .type {
+  width: 50px;
+  height: fit-content;
+  margin: 0 10px 0 0;
 }
 .body .point_history.main .records .lineH {
   display: none;
@@ -1867,6 +1890,18 @@
 }
 .body .point_history.popTime .popMain .tabs .tab:hover:not(.active) {
   background-color: var(--cBg);
+}
+.body .point_history.popDetail .popMain {
+  padding: 5px;
+  margin: 0;
+  gap: 10px;
+}
+.body .point_history.popDetail .popMain .cost {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--cG5);
+  border-radius: 0;
+  gap: 5px;
 }
 .body .tickets.main {
   padding: 60px 10px 70px !important;

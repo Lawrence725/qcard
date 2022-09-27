@@ -797,6 +797,18 @@ section.pop.notice div:not(.icon) {
   display: flex;
   gap: 15px;
 }
+.payment section.pop.credit div.new .tpfield {
+  width: 100% !important;
+  height: 30px !important;
+  border-bottom: 1px solid var(--cG4) !important;
+  font-size: var(--fL) !important;
+}
+.payment section.pop.credit div.new .tpfield {
+  width: 100% !important;
+  height: 30px !important;
+  border-bottom: 1px solid #BDBDBD !important;
+  font-size: 5vw !important;
+}
 .payment section.pop.credit div.new iframe {
   height: 30px !important;
 }
