@@ -33,19 +33,19 @@
   --fM: clamp(1rem, 4vw, 1.2rem);
   --fS: clamp(0.8rem, 3vw, 0.9rem);
   --fXS: clamp(0.6rem, 3vw, 0.7rem);
-  --c1: #EF6079 !important;
-  --c2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white !important;
-  --cG1: #333333 !important;
-  --cG2: #4F4F4F !important;
-  --cG3: #828282 !important;
-  --cG4: #BDBDBD !important;
-  --cG5: #E0E0E0 !important;
-  --cG6: #F2F2F2 !important;
-  --cBg: #F2F1F6 !important;
-  --cRed: #EB5757 !important;
-  --cGreen: #27AE60 !important;
-  --cOrange: #FF9900 !important;
-  --oBlue: #5CB8B2 !important;
+  --k1: #EF6079 !important;
+  --k2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white !important;
+  --kG1: #333333 !important;
+  --kG2: #4F4F4F !important;
+  --kG3: #828282 !important;
+  --kG4: #BDBDBD !important;
+  --kG5: #E0E0E0 !important;
+  --kG6: #F2F2F2 !important;
+  --kBg: #F2F1F6 !important;
+  --kRed: #EB5757 !important;
+  --kGreen: #27AE60 !important;
+  --kOrange: #FF9900 !important;
+  --kBlue: #5CB8B2 !important;
 }
 * {
   margin: 0;
@@ -77,7 +77,7 @@ h5,
 h6,
 ol,
 ul {
-  color: var(--cG1);
+  color: var(--kG1);
 }
 a {
   text-decoration: none !important;
@@ -96,7 +96,7 @@ button:hover {
 input {
   border: 0;
   padding: 0;
-  color: var(--cG1);
+  color: var(--kG1);
   background-color: transparent;
 }
 input:focus {
@@ -104,7 +104,7 @@ input:focus {
   outline: none;
 }
 input:-webkit-autofill {
-  color: var(--c1) !important;
+  color: var(--k1) !important;
   background-color: transparent !important;
   box-shadow: 0 0 0px 1000px white inset !important;
   background-clip: content-box !important;
@@ -139,13 +139,13 @@ iframe {
   -webkit-box-sizing: border-box;
 }
 .disabled {
-  color: var(--cG4) !important;
+  color: var(--kG4) !important;
   filter: grayscale(100%);
   opacity: 0.5;
   pointer-events: none;
 }
 .disabled * {
-  color: var(--cG4) !important;
+  color: var(--kG4) !important;
 }
 .disabled img {
   filter: grayscale(100%);
@@ -174,7 +174,7 @@ iframe {
 .loading > div > div {
   min-width: 100px;
   min-height: 100px;
-  border: 3px solid var(--c1);
+  border: 3px solid var(--k1);
   border-top: 3px solid transparent;
   border-radius: 50%;
   -webkit-animation: spin 1s linear infinite;
@@ -211,7 +211,7 @@ iframe {
 .spinner > div > div {
   min-width: 40px;
   min-height: 40px;
-  border: 3px solid var(--c1);
+  border: 3px solid var(--k1);
   border-top: 3px solid transparent;
   border-radius: 50%;
   -webkit-animation: spin 1s linear infinite;
@@ -256,24 +256,24 @@ div.icon > div {
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
 div.icon > div.orange {
-  border: 7.5px solid var(--cOrange);
+  border: 7.5px solid var(--kOrange);
 }
 div.icon > div.blue {
-  border: 7.5px solid var(--oBlue);
+  border: 7.5px solid var(--kBlue);
 }
 div.icon .fa-circle-check {
   border-radius: 99px;
   background-color: white;
-  color: var(--cGreen);
+  color: var(--kGreen);
 }
 div.icon .fa-circle-xmark {
   border-radius: 99px;
   background-color: white;
-  color: var(--cRed);
+  color: var(--kRed);
 }
 div.icon .fa-hourglass-half,
 div.icon .fa-exclamation {
-  color: var(--cOrange);
+  color: var(--kOrange);
 }
 button {
   width: 100%;
@@ -283,34 +283,34 @@ button {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background-color: var(--c1);
+  background-color: var(--k1);
 }
 button span {
   color: white !important;
 }
-div.tabs {
+div.pages {
   width: 100%;
   height: 30px;
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid var(--cG5);
+  border-bottom: 1px solid var(--kG5);
 }
-div.tabs a.tab {
+div.pages a.page {
   width: 100%;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-div.tabs a.tab.active {
-  color: var(--c1);
-  border-bottom: 2px solid var(--c1);
+div.pages a.page.active {
+  color: var(--k1);
+  border-bottom: 2px solid var(--k1);
 }
-div.tabs a.tab.active span {
-  color: var(--c1);
+div.pages a.page.active span {
+  color: var(--k1);
 }
-div.tabs a.tab span {
-  color: var(--cG4);
+div.pages a.page span {
+  color: var(--kG4);
 }
 .check {
   width: fit-content;
@@ -328,8 +328,8 @@ div.tabs a.tab span {
   font-size: 12px;
 }
 .check:hover input ~ .checkmark {
-  border: 2px solid var(--cG5);
-  background-color: var(--cG5);
+  border: 2px solid var(--kG5);
+  background-color: var(--kG5);
 }
 .check span:last-child {
   margin-left: 2px;
@@ -345,8 +345,8 @@ div.tabs a.tab span {
   /* Show the indicator (dot/circle) when checked */
 }
 .check input:checked ~ .checkmark {
-  background-color: var(--c1);
-  border: 2px solid var(--c1);
+  background-color: var(--k1);
+  border: 2px solid var(--k1);
 }
 .check input:checked ~ .checkmark:after {
   display: block;
@@ -359,7 +359,7 @@ div.tabs a.tab span {
   height: 16px;
   width: 16px;
   border-radius: 2px;
-  background-color: var(--cG5);
+  background-color: var(--kG5);
   /* Create the checkmark/indicator (hidden when not checked) */
   /* Style the checkmark/indicator */
 }
@@ -395,7 +395,7 @@ div.filter > * {
   align-items: center;
 }
 div.filter > *:not(:first-child) {
-  border-left: 1px solid var(--cG5);
+  border-left: 1px solid var(--kG5);
 }
 div.filter span,
 div.filter input {
@@ -403,7 +403,7 @@ div.filter input {
   white-space: nowrap;
 }
 div.filter i {
-  color: var(--c1);
+  color: var(--k1);
 }
 div.filter a.dropdown {
   justify-content: space-between;
@@ -415,7 +415,7 @@ div.filter div.search input {
   width: 100%;
 }
 div.filter div.search input::placeholder {
-  color: var(--cG4);
+  color: var(--kG4);
 }
 .pop {
   width: 100%;
@@ -451,7 +451,7 @@ div.filter div.search input::placeholder {
   top: 20px;
   right: 20px;
   border-radius: 99px;
-  color: var(--cG4);
+  color: var(--kG4);
 }
 @keyframes popup {
   0% {
@@ -494,7 +494,7 @@ div.filter div.search input::placeholder {
   border-radius: 999px;
   position: absolute;
   bottom: -15px;
-  background: var(--c2);
+  background: var(--k2);
   pointer-events: none;
   z-index: -1;
 }
@@ -532,7 +532,7 @@ section.pop.notice .popBody span.title {
   font-size: var(--fL);
 }
 section.pop.notice .popBody span:not(.title) {
-  color: var(--cG3);
+  color: var(--kG3);
 }
 section.pop.notice .popBody div.icon {
   display: flex;
@@ -545,10 +545,10 @@ section.pop.notice .popBody > div.buttons {
   gap: 10px;
 }
 section.pop.notice .popBody > div.buttons button:first-child {
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 section.pop.notice .popBody > div.buttons button:first-child span {
-  color: var(--cG2) !important;
+  color: var(--kG2) !important;
 }
 section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
@@ -565,10 +565,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c1);
+  color: var(--k1);
 }
 .payment section.head .left span {
-  color: var(--c1);
+  color: var(--k1);
   font-size: var(--fL);
 }
 .payment section.head > span {
@@ -621,11 +621,11 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .payment section.main section.account div span:last-child {
   font-size: var(--fS);
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .payment section.main section.account a {
   text-decoration: underline !important;
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .payment section.main section.spending,
 .payment section.main section.point,
@@ -653,7 +653,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   justify-content: right;
   gap: 2px;
   font-size: var(--fXL);
-  border: 1px solid var(--cG5);
+  border: 1px solid var(--kG5);
 }
 .payment section.main section.spending .input input,
 .payment section.main section.point .input input,
@@ -685,10 +685,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   gap: 5px;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .payment section.main section.point div.center a.active {
-  border: 1px solid var(--c1);
+  border: 1px solid var(--k1);
 }
 .payment section.main section.point div.center a img {
   width: 20px;
@@ -718,7 +718,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .payment section.main section.point div.bottom span {
   font-size: var(--fS);
-  color: var(--cG3);
+  color: var(--kG3);
   white-space: nowrap;
 }
 .payment section.main section.point div.bottom img {
@@ -733,7 +733,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .payment section.main section.type div.top span:not(.title) {
   font-size: var(--fS);
-  color: var(--cRed);
+  color: var(--kRed);
   text-align: right;
   line-height: unset;
 }
@@ -752,10 +752,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .payment section.main section.type div.center a.active {
-  border: 1px solid var(--c1);
+  border: 1px solid var(--k1);
 }
 .payment section.main section.type div.center a img {
   max-width: 80px;
@@ -764,7 +764,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 .payment section.main section.type div.center a i.fa-chevron-right {
   position: absolute;
   right: 10px;
-  color: var(--cG4);
+  color: var(--kG4);
 }
 .payment section.main section.keyboard {
   width: 100%;
@@ -784,16 +784,16 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
   font-size: var(--fXL);
 }
 .payment section.main section.keyboard div a.minor {
   background-color: transparent;
-  color: var(--cG3);
+  color: var(--kG3);
   font-size: var(--fL);
 }
 .payment section.main section.keyboard div a i {
-  color: var(--cG4);
+  color: var(--kG4);
 }
 .payment section.pop.credit span.title {
   font-size: var(--fL);
@@ -812,10 +812,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   gap: 10px;
   align-items: center;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .payment section.pop.credit div.list a.active {
-  border: 1px solid var(--c1);
+  border: 1px solid var(--k1);
 }
 .payment section.pop.credit div.list a span {
   white-space: nowrap;
@@ -825,7 +825,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .payment section.pop.credit div.list a span:nth-child(2) {
   font-size: var(--fS);
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .payment section.pop.credit div.list a img {
   width: 30px;
@@ -839,13 +839,13 @@ section.pop.notice .popBody > div:not(.buttons) {
   font-weight: bold;
 }
 .payment section.pop.credit div.new span:not(.title) {
-  color: var(--cG3);
+  color: var(--kG3);
   font-size: var(--fS);
 }
 .payment section.pop.credit div.new div input {
   width: 100%;
   height: 30px;
-  border-bottom: 1px solid var(--cG4);
+  border-bottom: 1px solid var(--kG4);
   border-radius: 0;
   font-size: var(--fL);
 }
@@ -861,14 +861,14 @@ section.pop.notice .popBody > div:not(.buttons) {
 .payment section.pop.credit div.new .tpfield {
   width: 100% !important;
   height: 30px !important;
-  border-bottom: 1px solid var(--cG4) !important;
+  border-bottom: 1px solid var(--kG4) !important;
   font-size: var(--fL) !important;
 }
 .payment section.pop.credit div.new iframe {
   height: 30px !important;
 }
 .payment section.pop.credit div.new iframe input {
-  border-bottom: 1px solid var(--cG4);
+  border-bottom: 1px solid var(--kG4);
   font-size: var(--fL);
 }
 .payment section.pop.credit div.buttons {
@@ -876,10 +876,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   gap: 10px;
 }
 .payment section.pop.credit div.buttons button:first-child {
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .payment section.pop.credit div.buttons button:first-child span {
-  color: var(--cG2) !important;
+  color: var(--kG2) !important;
 }
 .payment section.pop.confirm {
   align-items: center;
@@ -903,14 +903,14 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .payment section.pop.confirm .popBody span.title {
   font-size: var(--fL);
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .payment section.pop.confirm .popBody span.cost {
   font-size: var(--fXXL);
 }
 .payment section.pop.confirm .popBody span.subTitle {
   font-size: var(fS);
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .payment section.pop.confirm .popBody div.buttons {
   width: 100%;
@@ -918,16 +918,16 @@ section.pop.notice .popBody > div:not(.buttons) {
   gap: 10px;
 }
 .payment section.pop.confirm .popBody div.buttons button:first-child {
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .payment section.pop.confirm .popBody div.buttons button:first-child span {
-  color: var(--cG2) !important;
+  color: var(--kG2) !important;
 }
 .result {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .result section.head > span {
   font-size: var(--fXL);
@@ -959,20 +959,20 @@ section.pop.notice .popBody > div:not(.buttons) {
   font-size: var(--fXL);
 }
 .result section.main section.detail div.top span.title.green {
-  color: var(--cGreen);
+  color: var(--kGreen);
 }
 .result section.main section.detail div.top span.title.orange {
-  color: var(--cOrange);
+  color: var(--kOrange);
 }
 .result section.main section.detail div.top span.title.red {
-  color: var(--cRed);
+  color: var(--kRed);
 }
 .result section.main section.detail div.top span.cost {
   font-size: var(--fXXL);
 }
 .result section.main section.detail div.top span.strong {
   font-size: var(--fXL);
-  color: var(--cRed);
+  color: var(--kRed);
 }
 .result section.main section.detail div.top > div:not(.icon) {
   display: flex;
@@ -997,7 +997,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .result section.main section.detail div.center > div span:first-child {
   width: 100%;
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .result section.main section.detail div.center > div img {
   height: 14px;
@@ -1008,23 +1008,23 @@ section.pop.notice .popBody > div:not(.buttons) {
   align-items: center;
 }
 .result section.main section.detail div.bottom span.title {
-  color: var(--c1);
+  color: var(--k1);
 }
 .result section.main section.detail div.buttons {
   display: flex;
   gap: 10px;
 }
 .result section.main section.detail div.buttons button:first-child {
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .result section.main section.detail div.buttons button:first-child span {
-  color: var(--cG2) !important;
+  color: var(--kG2) !important;
 }
 .result section.main section.detail div.buttons button:first-child i {
-  color: var(--c1);
+  color: var(--k1);
 }
 .result section.main section.detail div.buttons button:last-child {
-  background-color: var(--c1);
+  background-color: var(--k1);
 }
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
@@ -1045,7 +1045,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .shop section.head .left a {
   min-width: 30px;
@@ -1054,14 +1054,14 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c1);
+  color: var(--k1);
 }
 .shop section.head > span {
   white-space: nowrap;
   font-size: var(--fL);
 }
 .shop section.head .right a {
-  color: var(--c1);
+  color: var(--k1);
 }
 .shop section.main {
   width: 100%;
@@ -1100,7 +1100,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   border-radius: 99px;
   z-index: 2;
   position: absolute;
-  background-color: var(--cBg);
+  background-color: var(--kBg);
 }
 .shop section.main a.coupon div.dot.left {
   left: -20px;
@@ -1119,7 +1119,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--cG4);
+  background-color: var(--kG4);
 }
 .shop section.main a.coupon div.label span {
   font-size: var(--fS);
@@ -1143,14 +1143,14 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .shop section.main a.coupon span.title {
   font-size: var(--fL);
-  color: var(--c1);
+  color: var(--k1);
 }
 .shop section.main a.coupon span.name {
   font-size: var(--fS);
 }
 .shop section.main a.coupon span.info {
   font-size: var(--fS);
-  color: var(--cG3);
+  color: var(--kG3);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1167,16 +1167,19 @@ section.pop.notice .popBody > div:not(.buttons) {
   margin-bottom: 5px;
   font-size: var(--fL);
   font-weight: bold;
-  color: var(--c1);
+  color: var(--k1);
+}
+.shop section.pop.category span.active {
+  color: var(--k1);
 }
 .shop section.pop.category a:not(.close):not(:last-child) {
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--cG5);
+  border-bottom: 1px solid var(--kG5);
 }
 .ticket {
   min-width: 100vw;
   min-height: 100vh;
-  background: var(--c2);
+  background: var(--k2);
 }
 .ticket section.head {
   height: 60px;
@@ -1190,7 +1193,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c1);
+  color: var(--k1);
 }
 .ticket section.head > span {
   font-size: var(--fL);
@@ -1214,7 +1217,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   background-color: white;
 }
 .ticket section.foot button.secondary span {
-  color: var(--c1) !important;
+  color: var(--k1) !important;
 }
 .ticket section.foot button span {
   font-size: var(--fL);
@@ -1244,7 +1247,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   z-index: 2;
   top: 350px;
   position: absolute;
-  background: var(--c2);
+  background: var(--k2);
 }
 .ticket section.main div.coupon div.dot.left {
   left: -20px;
@@ -1263,7 +1266,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--cG4);
+  background-color: var(--kG4);
 }
 .ticket section.main div.coupon div.label span {
   font-size: var(--fL);
@@ -1275,14 +1278,14 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .ticket section.main div.coupon span.title {
   font-size: var(--fXL);
-  color: var(--c1);
+  color: var(--k1);
 }
 .ticket section.main div.coupon span.subtitle {
   font-weight: bold;
-  color: var(--c1);
+  color: var(--k1);
 }
 .ticket section.main div.coupon span.content {
-  color: var(--cG3);
+  color: var(--kG3);
 }
 .ticket section.main div.coupon a {
   text-decoration: underline !important;
@@ -1293,8 +1296,8 @@ section.pop.notice .popBody > div:not(.buttons) {
   gap: 5px;
 }
 .ticket section.main div.coupon hr {
-  border: 1px dashed var(--cG5);
+  border: 1px dashed var(--kG5);
 }
 .ticket section.pop.notice span:not(.title) {
-  color: var(--cRed);
+  color: var(--kRed);
 }
