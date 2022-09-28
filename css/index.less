@@ -237,7 +237,11 @@ section.pop.notice { align-items: center;
                     span { color: var(--cG2) !important; }
                     i { color: var(--c1); }}
                 button:last-child { background-color: var(--c1);
-                    span { color: white !important; }}}}}}
+                    span { color: white !important; }}}}}
+    section.pop.barcode { align-items: center;
+        span { font-size: var(--fL);
+            &:not(.title) { text-align: center; }}
+        img { width: 100%; }}}
 
 // 商店頁
 .shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);

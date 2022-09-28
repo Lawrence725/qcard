@@ -1035,6 +1035,18 @@ section.pop.notice .popBody > div:not(.buttons) {
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
 }
+.result section.pop.barcode {
+  align-items: center;
+}
+.result section.pop.barcode span {
+  font-size: var(--fL);
+}
+.result section.pop.barcode span:not(.title) {
+  text-align: center;
+}
+.result section.pop.barcode img {
+  width: 100%;
+}
 .shop {
   min-width: 100vw;
   min-height: 100vh;

@@ -80,7 +80,7 @@
                 </div>
                 <!-- 按鈕 -->
                 <div class="buttons">
-                    <button>
+                    <button onclick="popBarcode()">
                         <i class="fa-solid fa-barcode"></i>
                         <span>載具條碼</span>
                     </button>
@@ -90,5 +90,16 @@
                 </div>
             </section>
         </section>
+        <!-- 載具條碼popup -->
+        <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">載具條碼</span>
+                <img src="./img/barcode.png">
+                <span>/ASDFGHJ</span>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/pResult.js"></script>
     </body>
 </html>
