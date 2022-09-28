@@ -29,11 +29,15 @@
         </section>
         <!-- Footer -->
         <section class="foot">
+            <button class="secondary" onclick="window.location.href='shop.html'">
+                <span>返回票夾</span>
+            </button>
             <button onclick="popConfirm();">
                 <span>現場兌換</span>
             </button>
         </section>
         <section class="main">
+            <!-- 票券 -->
             <div class="coupon">
                 <div class="dot left"></div>
                 <div class="dot right"></div>
@@ -54,5 +58,27 @@
                 </div>
             </div>
         </section>
+        <!-- 確認popup -->
+        <section id="popConfirm" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">確定使用滿$100折$10？</span>
+                    <span>使用後將無法取消<br>請確認已出示給現場人員</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確定兌換</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/ticket.js"></script>
     </body>
 </html>

@@ -107,11 +107,15 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
 section.pop.notice { align-items: center;
-    .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible; }
-    span.title { font-size: var(--fL); }
-    span:not(.title) { color: var(--cG3); }
-    div.icon { display: flex; justify-content: center; margin-top: -60px; }
-    div:not(.icon) { display: flex; flex-direction: column; align-items: center; }}
+    .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
+        span { text-align: center;
+            &.title { font-size: var(--fL); }
+            &:not(.title) { color: var(--cG3); }}
+        div.icon { display: flex; justify-content: center; margin-top: -60px; }
+        > div.buttons { width: 100%; display: flex; gap: 10px;
+            button:first-child { background-color: var(--cBg);
+                span { color: var(--cG2) !important; }}}
+        > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
 
 // 付款頁
 .payment { overflow: auto;
@@ -231,7 +235,9 @@ section.pop.notice { align-items: center;
             div.buttons { display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
-                    i { color: var(--c1); }}}}}}
+                    i { color: var(--c1); }}
+                button:last-child { background-color: var(--c1);
+                    span { color: white !important; }}}}}}
 
 // 商店頁
 .shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
@@ -265,8 +271,11 @@ section.pop.notice { align-items: center;
     section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { font-size: var(--fL); white-space: nowrap; }}
-    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
-        button span { font-size: var(--fL); }}
+    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
+        button {
+            &.secondary { background-color: white;
+                span { color: var(--c1) !important; }}
+            span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 400px; padding: 60px 20px 90px; margin: 0 auto;
         div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
             div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--c2);
@@ -281,5 +290,5 @@ section.pop.notice { align-items: center;
                 &.content { color: var(--cG3); }}
             a { text-decoration: underline !important; }
             > div { display: flex; flex-direction: column; gap: 5px; }
-            hr { border: 1px dashed var(--cG5); }
-        }}}
+            hr { border: 1px dashed var(--cG5); }}}
+    section.pop.notice { span:not(.title) { color: var(--cRed); }}}
