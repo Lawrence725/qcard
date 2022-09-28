@@ -33,19 +33,19 @@
   --fM: clamp(1rem, 4vw, 1.2rem);
   --fS: clamp(0.8rem, 3vw, 0.9rem);
   --fXS: clamp(0.6rem, 3vw, 0.7rem);
-  --c1: #EF6079;
-  --c2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white;
-  --cG1: #333333;
-  --cG2: #4F4F4F;
-  --cG3: #828282;
-  --cG4: #BDBDBD;
-  --cG5: #E0E0E0;
-  --cG6: #F2F2F2;
-  --cBg: #F2F1F6;
-  --cRed: #EB5757;
-  --cGreen: #27AE60;
-  --cOrange: #FF9900;
-  --oBlue: #5CB8B2;
+  --c1: #EF6079 !important;
+  --c2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white !important;
+  --cG1: #333333 !important;
+  --cG2: #4F4F4F !important;
+  --cG3: #828282 !important;
+  --cG4: #BDBDBD !important;
+  --cG5: #E0E0E0 !important;
+  --cG6: #F2F2F2 !important;
+  --cBg: #F2F1F6 !important;
+  --cRed: #EB5757 !important;
+  --cGreen: #27AE60 !important;
+  --cOrange: #FF9900 !important;
+  --oBlue: #5CB8B2 !important;
 }
 * {
   margin: 0;
@@ -471,7 +471,8 @@ div.filter div.search input::placeholder {
 }
 .payment section.head,
 .result section.head,
-.shop section.head {
+.shop section.head,
+.ticket section.head {
   width: 100%;
   max-width: 400px;
   height: 70px;
@@ -486,7 +487,8 @@ div.filter div.search input::placeholder {
 }
 .payment section.head .bg,
 .result section.head .bg,
-.shop section.head .bg {
+.shop section.head .bg,
+.ticket section.head .bg {
   width: 1000px;
   height: 1000px;
   border-radius: 999px;
@@ -499,16 +501,19 @@ div.filter div.search input::placeholder {
 .payment section.head .left,
 .result section.head .left,
 .shop section.head .left,
+.ticket section.head .left,
 .payment section.head .right,
 .result section.head .right,
-.shop section.head .right {
+.shop section.head .right,
+.ticket section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
 }
 .payment section.head .right,
 .result section.head .right,
-.shop section.head .right {
+.shop section.head .right,
+.ticket section.head .right {
   justify-content: right;
 }
 section.pop.notice {
@@ -540,8 +545,9 @@ section.pop.notice div:not(.icon) {
   overflow: auto;
 }
 .payment section.head .left a {
-  width: 20px;
-  height: 20px;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 99px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1016,8 +1022,8 @@ section.pop.notice div:not(.icon) {
   background-color: var(--cBg);
 }
 .shop section.head .left a {
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   border-radius: 99px;
   display: flex;
   align-items: center;
@@ -1140,4 +1146,118 @@ section.pop.notice div:not(.icon) {
 .shop section.pop.category a:not(.close):not(:last-child) {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--cG5);
+}
+.ticket {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: var(--c2);
+}
+.ticket section.head {
+  height: 60px;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), rgba(255, 255, 255, 0.9);
+}
+.ticket section.head .left a {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c1);
+}
+.ticket section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.ticket section.foot {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 20px 30px;
+  border-radius: 20px 20px 0 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  position: fixed;
+  z-index: 5;
+  background: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), rgba(255, 255, 255, 0.9);
+}
+.ticket section.foot button span {
+  font-size: var(--fL);
+}
+.ticket section.main {
+  width: 100%;
+  max-width: 400px;
+  padding: 60px 20px 90px;
+  margin: 0 auto;
+}
+.ticket section.main div.coupon {
+  width: 100%;
+  min-height: 450px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  overflow: hidden;
+}
+.ticket section.main div.coupon div.dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  z-index: 2;
+  top: 350px;
+  position: absolute;
+  background: var(--c2);
+}
+.ticket section.main div.coupon div.dot.left {
+  left: -20px;
+}
+.ticket section.main div.coupon div.dot.right {
+  right: -20px;
+}
+.ticket section.main div.coupon div.label {
+  width: 200px;
+  height: 34px;
+  z-index: 1;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 10px;
+  right: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cG4);
+}
+.ticket section.main div.coupon div.label span {
+  font-size: var(--fL);
+  color: white;
+}
+.ticket section.main div.coupon img {
+  width: 100%;
+  border-radius: 15px;
+}
+.ticket section.main div.coupon span.title {
+  font-size: var(--fXL);
+  color: var(--c1);
+}
+.ticket section.main div.coupon span.subtitle {
+  font-weight: bold;
+  color: var(--c1);
+}
+.ticket section.main div.coupon span.content {
+  color: var(--cG3);
+}
+.ticket section.main div.coupon a {
+  text-decoration: underline !important;
+}
+.ticket section.main div.coupon > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ticket section.main div.coupon hr {
+  border: 1px dashed var(--cG5);
 }

@@ -12,19 +12,19 @@
     --fXS:  clamp(0.6rem, 3vw, 0.7rem);
 
     // Color
-    --c1:     @color;
-    --c2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
-    --cG1:    #333333;
-    --cG2:    #4F4F4F;
-    --cG3:    #828282;
-    --cG4:    #BDBDBD;
-    --cG5:    #E0E0E0;
-    --cG6:    #F2F2F2;
-    --cBg:    #F2F1F6;
-    --cRed:   #EB5757;
-    --cGreen: #27AE60;
-    --cOrange:#FF9900;
-    --oBlue:  #5CB8B2;
+    --c1:     @color !important;
+    --c2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white !important;
+    --cG1:    #333333 !important;
+    --cG2:    #4F4F4F !important;
+    --cG3:    #828282 !important;
+    --cG4:    #BDBDBD !important;
+    --cG5:    #E0E0E0 !important;
+    --cG6:    #F2F2F2 !important;
+    --cBg:    #F2F1F6 !important;
+    --cRed:   #EB5757 !important;
+    --cGreen: #27AE60 !important;
+    --cOrange:#FF9900 !important;
+    --oBlue:  #5CB8B2 !important;
 }
 
 // Reset
@@ -101,7 +101,8 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment section.head, .result section.head, .shop section.head { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
+.payment section.head, .result section.head, .shop section.head, .ticket section.head
+    { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--c2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
@@ -116,11 +117,10 @@ section.pop.notice { align-items: center;
 .payment { overflow: auto;
     section.head {
         .left {
-            a { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+            a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
             span { color: var(--c1); font-size: var(--fL); }}
         > span { white-space: nowrap; font-size: var(--fXL); }
         .right { justify-content: right;
-            span:first-child { }
             span:last-child { font-size: var(--fXL); }}}
     section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button {
@@ -130,13 +130,11 @@ section.pop.notice { align-items: center;
         // 帳號
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; flex-direction: column;
-                span:first-child { }
                 span:last-child { font-size: var(--fS); color: var(--cG3); }}
             a { text-decoration: underline !important; color: var(--cG3); }}
         section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
             span.title { font-weight: bold; white-space: nowrap; }
             .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
-                span { }
                 input { width: 100%; font-size: var(--fXL); }}}
         // 點數
         section.point {
@@ -149,8 +147,7 @@ section.pop.notice { align-items: center;
                     img { width: 20px; }
                     div { display: flex; flex-direction: column; gap: 5px;
                         span { line-height: 100%;
-                            &:first-child { font-size: var(--fS); }
-                            &:last-child { }}}}}
+                            &:first-child { font-size: var(--fS); }}}}}
             div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
                 div { display: flex; align-items: center; gap: 2px; }
                 span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
@@ -163,7 +160,6 @@ section.pop.notice { align-items: center;
                 a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
                     &.active { border: 1px solid var(--c1); }
                     img { max-width: 80px; max-height: 24px; }
-                    span { }
                     i.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
         // 鍵盤
         section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
@@ -201,7 +197,6 @@ section.pop.notice { align-items: center;
         .popBody { align-items: center;
             > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; gap: 0; }
                 > div { display: flex; align-items: center; gap: 5px;
-                    span { }
                     img { height: 14px; }}
             span {
                 &.title { font-size: var(--fL); color: var(--cG3); }
@@ -224,8 +219,7 @@ section.pop.notice { align-items: center;
                 span.cost { font-size: var(--fXXL); }
                 span.strong { font-size: var(--fXL); color: var(--cRed); }
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
-                    img { height: 14px; }
-                    span { }}
+                    img { height: 14px; }}
             }
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
@@ -242,7 +236,7 @@ section.pop.notice { align-items: center;
 // 商店頁
 .shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
-        .left a { width: 30px; height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { white-space: nowrap; font-size: var(--fL); }
         .right a { color: var(--c1); }}
     section.main { width: 100%; max-width: 400px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
@@ -265,3 +259,27 @@ section.pop.notice { align-items: center;
         .popBody { gap: 10px; }
         span.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--c1); }
         a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}
+
+// 優惠券
+.ticket { min-width: 100vw; min-height: 100vh; background: var(--c2);
+    section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        > span { font-size: var(--fL); white-space: nowrap; }}
+    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
+        button span { font-size: var(--fL); }}
+    section.main { width: 100%; max-width: 400px; padding: 60px 20px 90px; margin: 0 auto;
+        div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
+            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--c2);
+                &.left { left: -20px; }
+                &.right { right: -20px; }}
+            div.label { width: 200px; height: 34px; z-index: 1; transform: rotate(30deg); position: absolute; top: 10px; right: -60px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
+                span { font-size: var(--fL); color: white; }}
+            img { width: 100%; border-radius: 15px; }
+            span {
+                &.title { font-size: var(--fXL); color: var(--c1); }
+                &.subtitle { font-weight: bold; color: var(--c1); }
+                &.content { color: var(--cG3); }}
+            a { text-decoration: underline !important; }
+            > div { display: flex; flex-direction: column; gap: 5px; }
+            hr { border: 1px dashed var(--cG5); }
+        }}}
