@@ -239,7 +239,8 @@ div.icon {
   display: flex;
   justify-content: center;
 }
-div.icon > i {
+div.icon > i,
+div.icon > svg {
   border-radius: 999px;
   background-color: white;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
@@ -402,7 +403,8 @@ div.filter input {
   font-size: var(--fS);
   white-space: nowrap;
 }
-div.filter i {
+div.filter i,
+div.filter svg {
   color: var(--k1);
 }
 div.filter a.dropdown {
@@ -761,7 +763,8 @@ section.pop.notice .popBody > div:not(.buttons) {
   max-width: 80px;
   max-height: 24px;
 }
-.payment section.main section.type div.center a i.fa-chevron-right {
+.payment section.main section.type div.center a i.fa-chevron-right,
+.payment section.main section.type div.center a svg.fa-chevron-right {
   position: absolute;
   right: 10px;
   color: var(--kG4);
@@ -792,7 +795,8 @@ section.pop.notice .popBody > div:not(.buttons) {
   color: var(--kG3);
   font-size: var(--fL);
 }
-.payment section.main section.keyboard div a i {
+.payment section.main section.keyboard div a i,
+.payment section.main section.keyboard div a svg {
   color: var(--kG4);
 }
 .payment section.pop.credit span.title {
@@ -955,6 +959,23 @@ section.pop.notice .popBody > div:not(.buttons) {
   flex-direction: column;
   align-items: center;
 }
+.result section.main section.detail div.top div.icon {
+  animation: spark 1s linear infinite;
+}
+@keyframes spark {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .result section.main section.detail div.top span.title {
   font-size: var(--fXL);
 }
@@ -973,6 +994,18 @@ section.pop.notice .popBody > div:not(.buttons) {
 .result section.main section.detail div.top span.strong {
   font-size: var(--fXL);
   color: var(--kRed);
+  animation: shake 1s linear infinite;
+}
+@keyframes shake {
+  0% {
+    margin-left: -20px;
+  }
+  50% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-left: -20px;
+  }
 }
 .result section.main section.detail div.top > div:not(.icon) {
   display: flex;
@@ -1020,7 +1053,8 @@ section.pop.notice .popBody > div:not(.buttons) {
 .result section.main section.detail div.buttons button:first-child span {
   color: var(--kG2) !important;
 }
-.result section.main section.detail div.buttons button:first-child i {
+.result section.main section.detail div.buttons button:first-child i,
+.result section.main section.detail div.buttons button:first-child svg {
   color: var(--k1);
 }
 .result section.main section.detail div.buttons button:last-child {
