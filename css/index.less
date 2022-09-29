@@ -12,33 +12,33 @@
     --fXS:  clamp(0.6rem, 3vw, 0.7rem);
 
     // Color
-    --k1:     @color;
-    --k2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
-    --kG1:    #333333;
-    --kG2:    #4F4F4F;
-    --kG3:    #828282;
-    --kG4:    #BDBDBD;
-    --kG5:    #E0E0E0;
-    --kG6:    #F2F2F2;
-    --kBg:    #F2F1F6;
-    --kRed:   #EB5757;
-    --kGreen: #27AE60;
-    --kOrange:#FF9900;
-    --kBlue:  #5CB8B2;
+    --c1:     @color;
+    --c2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
+    --cG1:    #333333;
+    --cG2:    #4F4F4F;
+    --cG3:    #828282;
+    --cG4:    #BDBDBD;
+    --cG5:    #E0E0E0;
+    --cG6:    #F2F2F2;
+    --cBg:    #F2F1F6;
+    --cRed:   #EB5757;
+    --cGreen: #27AE60;
+    --cOrange:#FF9900;
+    --cBlue:  #5CB8B2;
 }
 
 // Reset
 *                                       { margin: 0; padding: 0; }
 span, p, h1, h2, h3, h4, h5, h6, a,
 select, input, textarea, button         { font-size: var(--fM); font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體'; }
-span, p, h1, h2, h3, h4, h5, h6, ol, ul { color: var(--kG1); }
+span, p, h1, h2, h3, h4, h5, h6, ol, ul { color: var(--cG1); }
 a                                       { text-decoration: none !important; }
 a:hover                                 { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
 button                                  { border: none; }
 button:hover                            { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
-input                                   { border: 0; padding: 0; color: var(--kG1); background-color: transparent; }
+input                                   { border: 0; padding: 0; color: var(--cG1); background-color: transparent; }
 input:focus                             { box-shadow: none !important; outline: none; }
-input:-webkit-autofill                  { color: var(--k1) !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
+input:-webkit-autofill                  { color: var(--c1) !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
 textarea                                { border: 0; }
 textarea:focus                          { box-shadow: none !important; outline: none; }
 select                                  { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
@@ -48,81 +48,81 @@ iframe                                  { border: 0; }
 *, :after, :before                      { box-sizing: border-box !important; -webkit-box-sizing: border-box; }
 
 // Components
-.disabled   { color: var(--kG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
-    *       { color: var(--kG4) !important; }
+.disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
+    *       { color: var(--cG4) !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
-        > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
+        > div { min-width: 100px; min-height: 100px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; position: absolute; }}}
 .spinner { top: 0; left: 0; width: 100vw; height: 100vh; height: var(--app-height); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
     > div { min-width: 80px; min-height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); 
-        > div { min-width: 40px; min-height: 40px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
+        > div { min-width: 40px; min-height: 40px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
 div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
     > i, > svg { border-radius: 999px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);}
     > div { width: 80px; height: 80px; padding: 20px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
-        &.orange { border: 7.5px solid var(--kOrange); }
-        &.blue { border: 7.5px solid var(--kBlue); }}
-    .fa-circle-check { border-radius: 99px; background-color: white; color: var(--kGreen); }
-    .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--kRed); }
-    .fa-hourglass-half, .fa-exclamation { color: var(--kOrange); }}
-button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--k1);
+        &.orange { border: 7.5px solid var(--cOrange); }
+        &.blue { border: 7.5px solid var(--cBlue); }}
+    .fa-circle-check { border-radius: 99px; background-color: white; color: var(--cGreen); }
+    .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--cRed); }
+    .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }}
+button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--c1);
     span { color: white !important; }}
-div.pages { width: 100%; height: 30px; display: flex; align-items: flex-start; border-bottom: 1px solid var(--kG5);
+div.pages { width: 100%; height: 30px; display: flex; align-items: flex-start; border-bottom: 1px solid var(--cG5);
     a.page { width: 100%; height: 30px; display: flex; align-items: center; justify-content: center;
-        &.active { color: var(--k1); border-bottom: 2px solid var(--k1);
-            span { color: var(--k1); }}
-        span { color: var(--kG4); }}}
+        &.active { color: var(--c1); border-bottom: 2px solid var(--c1);
+            span { color: var(--c1); }}
+        span { color: var(--cG4); }}}
 .check { width: fit-content; min-height: 20px; padding: 5px 0 5px 20px; border-radius: 10px; position: relative; display: flex; align-items: center; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-size: 12px;
-    // &:hover { background: var(--kBg); } 
-    &:hover input ~ .checkmark { border: 2px solid var(--kG5); background-color: var(--kG5); }
+    // &:hover { background: var(--cBg); } 
+    &:hover input ~ .checkmark { border: 2px solid var(--cG5); background-color: var(--cG5); }
     span:last-child { margin-left: 2px; }
     input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; /* Hide the browser's default radio button */
-        &:checked ~ .checkmark { background-color: var(--k1); border: 2px solid var(--k1); } /* When the radio button is checked, add a blue background */
+        &:checked ~ .checkmark { background-color: var(--c1); border: 2px solid var(--c1); } /* When the radio button is checked, add a blue background */
         &:checked ~ .checkmark:after { display: block; } /* Show the indicator (dot/circle) when checked */}
-    .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--kG5);
+    .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
         &:after { left: 3px; top: -1px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } /* Style the checkmark/indicator */}}
 div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-items: center;
     > * { width: 100%; height: 20px; padding: 0 10px; gap: 5px; display: flex; align-items: center; }
-    > *:not(:first-child) { border-left: 1px solid var(--kG5); }
+    > *:not(:first-child) { border-left: 1px solid var(--cG5); }
     span, input { font-size: var(--fS); white-space: nowrap; }
-    i, svg { color: var(--k1); }
+    i, svg { color: var(--c1); }
     a.dropdown { justify-content: space-between; }
     div.search { justify-content: center;
         input { width: 100%;
-            &::placeholder { color: var(--kG4); }}}}
+            &::placeholder { color: var(--cG4); }}}}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
-        a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--kG4); }}}
+        a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
 .payment section.head, .result section.head, .shop section.head, .ticket section.head
     { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
-    .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
+    .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--c2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
 section.pop.notice { align-items: center;
     .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
         span { text-align: center;
             &.title { font-size: var(--fL); }
-            &:not(.title) { color: var(--kG3); }}
+            &:not(.title) { color: var(--cG3); }}
         div.icon { display: flex; justify-content: center; margin-top: -60px; }
         > div.buttons { width: 100%; display: flex; gap: 10px;
-            button:first-child { background-color: var(--kBg);
-                span { color: var(--kG2) !important; }}}
+            button:first-child { background-color: var(--cBg);
+                span { color: var(--cG2) !important; }}}
         > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
 
 // 付款頁
 .payment { overflow: auto;
     section.head {
         .left {
-            a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
-            span { color: var(--k1); font-size: var(--fL); }}
+            a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+            span { color: var(--c1); font-size: var(--fL); }}
         > span { white-space: nowrap; font-size: var(--fXL); }
         .right { justify-content: right;
             span:last-child { font-size: var(--fXL); }}}
@@ -134,11 +134,11 @@ section.pop.notice { align-items: center;
         // 帳號
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; flex-direction: column;
-                span:last-child { font-size: var(--fS); color: var(--kG3); }}
-            a { text-decoration: underline !important; color: var(--kG3); }}
+                span:last-child { font-size: var(--fS); color: var(--cG3); }}
+            a { text-decoration: underline !important; color: var(--cG3); }}
         section.spending, section.point, section.type { width: 100%; gap: 10px; display: flex; flex-direction: column;
             span.title { font-weight: bold; white-space: nowrap; }
-            .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--kG5);
+            .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
                 input { width: 100%; font-size: var(--fXL); }}}
         // 點數
         section.point {
@@ -146,67 +146,67 @@ section.pop.notice { align-items: center;
                 span:not(.title) { font-size: var(--fL); }
                 img { height: 20px; }}
             div.center { width: 100%; display: flex; gap: 10px;
-                a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--kBg);
-                    &.active { border: 1px solid var(--k1); }
+                a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
+                    &.active { border: 1px solid var(--c1); }
                     img { width: 20px; }
                     div { display: flex; flex-direction: column; gap: 5px;
                         span { line-height: 100%;
                             &:first-child { font-size: var(--fS); }}}}}
             div.bottom { width: 100%; margin-top: -10px; display: flex; align-items: center; justify-content: space-between;
                 div { display: flex; align-items: center; gap: 2px; }
-                span { font-size: var(--fS); color: var(--kG3); white-space: nowrap; }
+                span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
                 img { height: 14px; }}}
         // 付款
         section.type {
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
-                span:not(.title) { font-size: var(--fS); color: var(--kRed); text-align: right; line-height: unset; }}
+                span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
             div.center { width: 100%; display: flex; gap: 10px;
-                a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--kBg); 
-                    &.active { border: 1px solid var(--k1); }
+                a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
+                    &.active { border: 1px solid var(--c1); }
                     img { max-width: 80px; max-height: 24px; }
-                    i.fa-chevron-right, svg.fa-chevron-right { position: absolute; right: 10px; color: var(--kG4); }}}}
+                    i.fa-chevron-right, svg.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
         // 鍵盤
         section.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
             div { width: 100%; display: flex; gap: 10px;
-                a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--kBg); font-size: var(--fXL);
-                    &.minor { background-color: transparent; color: var(--kG3); font-size: var(--fL); }
-                    i, svg { color: var(--kG4); }}}}}
+                a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
+                    &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
+                    i, svg { color: var(--cG4); }}}}}
     section.pop.credit { 
         span.title { font-size: var(--fL); font-weight: bold; }
         div.list { display: flex; flex-direction: column; gap: 10px;
-            a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--kBg);
-                &.active { border: 1px solid var(--k1); }
+            a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
+                &.active { border: 1px solid var(--c1); }
                 span { white-space: nowrap;
                     &:first-child { width: 100%; }
-                    &:nth-child(2) { font-size: var(--fS); color: var(--kG3); }}
+                    &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
                 img { width: 30px; }}}
         div.new { display: flex; flex-direction: column; gap: 10px;
             span.title { font-weight: bold; }
-            span:not(.title) { color: var(--kG3); font-size: var(--fS); }
-            div input { width: 100%; height: 30px; border-bottom: 1px solid var(--kG4); border-radius: 0; font-size: var(--fL); }
+            span:not(.title) { color: var(--cG3); font-size: var(--fS); }
+            div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
             div:not(.row) { width: 100%; display: flex; flex-direction: column; }
             div.row { display: flex; gap: 15px; }
-            .tpfield { width: 100% !important; height: 30px !important; border-bottom: 1px solid var(--kG4) !important; font-size: var(--fL) !important; }
+            .tpfield { width: 100% !important; height: 30px !important; border-bottom: 1px solid var(--cG4) !important; font-size: var(--fL) !important; }
             iframe { height: 30px !important; 
-                input { border-bottom: 1px solid var(--kG4); font-size: var(--fL); }}}
+                input { border-bottom: 1px solid var(--cG4); font-size: var(--fL); }}}
         div.buttons { display: flex; gap: 10px;
-            button:first-child { background-color: var(--kBg);
-                span { color: var(--kG2) !important; }}}}
+            button:first-child { background-color: var(--cBg);
+                span { color: var(--cG2) !important; }}}}
     section.pop.confirm { align-items: center;
         .popBody { align-items: center;
             > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; gap: 0; }
                 > div { display: flex; align-items: center; gap: 5px;
                     img { height: 14px; }}
             span {
-                &.title { font-size: var(--fL); color: var(--kG3); }
+                &.title { font-size: var(--fL); color: var(--cG3); }
                 &.cost { font-size: var(--fXXL); }
-                &.subTitle { font-size: var(fS); color: var(--kG3); }}
+                &.subTitle { font-size: var(fS); color: var(--cG3); }}
             div.buttons { width: 100%; display: flex; gap: 10px;
-                button:first-child { background-color: var(--kBg);
-                    span { color: var(--kG2) !important; }}}}}}
+                button:first-child { background-color: var(--cBg);
+                    span { color: var(--cG2) !important; }}}}}}
 
 // 付款結果頁
-.result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--kBg);
+.result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head { > span { font-size: var(--fXL); }}
     section.main { width: 100%; max-width: 400px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
@@ -214,11 +214,11 @@ section.pop.notice { align-items: center;
                 div.icon { animation: spark 1s linear infinite; }
                 @keyframes spark { 0% { opacity: 1; } 25% { opacity: 1; } 50% { opacity: 0; }100% { opacity: 1; }}
                 span.title { font-size: var(--fXL);
-                    &.green { color: var(--kGreen); }
-                    &.orange { color: var(--kOrange); }
-                    &.red { color: var(--kRed); }}
+                    &.green { color: var(--cGreen); }
+                    &.orange { color: var(--cOrange); }
+                    &.red { color: var(--cRed); }}
                 span.cost { font-size: var(--fXXL); }
-                span.strong { font-size: var(--fXL); color: var(--kRed); animation: shake 1s linear infinite; }
+                span.strong { font-size: var(--fXL); color: var(--cRed); animation: shake 1s linear infinite; }
                 @keyframes shake { 0% { margin-left: -20px; } 50% { margin-left: 20px; } 100% { margin-left: -20px; }}
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
                     img { height: 14px; }}
@@ -226,15 +226,15 @@ section.pop.notice { align-items: center;
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
                     span { white-space: nowrap; }
-                    span:first-child { width: 100%; color: var(--kG3); }
+                    span:first-child { width: 100%; color: var(--cG3); }
                     img { height: 14px; }}}
             div.bottom { display: flex; flex-direction: column; align-items: center;
-                span.title { color: var(--k1); }}
+                span.title { color: var(--c1); }}
             div.buttons { display: flex; gap: 10px;
-                button:first-child { background-color: var(--kBg);
-                    span { color: var(--kG2) !important; }
-                    i, svg { color: var(--k1); }}
-                button:last-child { background-color: var(--k1);
+                button:first-child { background-color: var(--cBg);
+                    span { color: var(--cG2) !important; }
+                    i, svg { color: var(--c1); }}
+                button:last-child { background-color: var(--c1);
                     span { color: white !important; }}}}}
     section.pop.barcode { align-items: center;
         span { font-size: var(--fL);
@@ -242,57 +242,57 @@ section.pop.notice { align-items: center;
         img { width: 100%; }}}
 
 // 商店頁
-.shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--kBg);
+.shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
-        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { white-space: nowrap; font-size: var(--fL); }
-        .right a { color: var(--k1); }}
+        .right a { color: var(--c1); }}
     section.main { width: 100%; max-width: 400px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
         button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
         a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
-            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--kBg);
+            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
                 &.left { left: -20px; }
                 &.right { right: -20px; }}
-            div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--kG4);
+            div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
                 span { font-size: var(--fS); color: white; }}
             div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
                 div { display: flex; flex-direction: column; }}
             img { width: 100px; height: 100px; border-radius: 10px; }
             span {
-                &.title { font-size: var(--fL); color: var(--k1); }
+                &.title { font-size: var(--fL); color: var(--c1); }
                 &.name { font-size: var(--fS); }
-                &.info { font-size: var(--fS); color: var(--kG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 &.date { font-size: var(--fS); }}}}
     section.pop.category {
         .popBody { gap: 10px; }
         span {
-            &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
-            &.active { color: var(--k1); }}
-        a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--kG5); }}}
+            &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--c1); }
+            &.active { color: var(--c1); }}
+        a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}
 
 // 優惠券
-.ticket { min-width: 100vw; min-height: 100vh; background: var(--k2);
+.ticket { min-width: 100vw; min-height: 100vh; background: var(--c2);
     section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
-        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
         > span { font-size: var(--fL); white-space: nowrap; }}
     section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         button {
             &.secondary { background-color: white;
-                span { color: var(--k1) !important; }}
+                span { color: var(--c1) !important; }}
             span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 400px; padding: 60px 20px 90px; margin: 0 auto;
         div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
-            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--k2);
+            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--c2);
                 &.left { left: -20px; }
                 &.right { right: -20px; }}
-            div.label { width: 200px; height: 34px; z-index: 1; transform: rotate(30deg); position: absolute; top: 10px; right: -60px; display: flex; align-items: center; justify-content: center; background-color: var(--kG4);
+            div.label { width: 200px; height: 34px; z-index: 1; transform: rotate(30deg); position: absolute; top: 10px; right: -60px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
                 span { font-size: var(--fL); color: white; }}
             img { width: 100%; border-radius: 15px; }
             span {
-                &.title { font-size: var(--fXL); color: var(--k1); }
-                &.subtitle { font-weight: bold; color: var(--k1); }
-                &.content { color: var(--kG3); }}
+                &.title { font-size: var(--fXL); color: var(--c1); }
+                &.subtitle { font-weight: bold; color: var(--c1); }
+                &.content { color: var(--cG3); }}
             a { text-decoration: underline !important; }
             > div { display: flex; flex-direction: column; gap: 5px; }
-            hr { border: 1px dashed var(--kG5); }}}
-    section.pop.notice { span:not(.title) { color: var(--kRed); }}}
+            hr { border: 1px dashed var(--cG5); }}}
+    section.pop.notice { span:not(.title) { color: var(--cRed); }}}
