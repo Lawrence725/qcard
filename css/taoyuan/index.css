@@ -1,5 +1,7 @@
 :root {
   --app-height: 100%;
+  --k1: #EF6079;
+  --k2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -13,7 +15,8 @@
   --cBg: #F2F1F6;
   --cRed: #EB5757;
   --cGreen: #27AE60;
-  --cOrange: #F2994A;
+  --cOrange: #FF9900;
+  --cBlue: #5CB8B2;
   --fXXL: 1.6rem;
   --fXL: 1.4rem;
   --fL: 1.2rem;

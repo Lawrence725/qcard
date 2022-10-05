@@ -12,8 +12,12 @@
     --fXS:  clamp(0.6rem, 3vw, 0.7rem);
 
     // Color
-    --c1:     @color;
-    --c2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
+    --k1:     @color;
+    --k2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
+    --c1:     #EF6079;
+    --c2:     #F3CBC7;
+    --c3:     #5CB8B2;
+    --c4:     #333F48;
     --cG1:    #333333;
     --cG2:    #4F4F4F;
     --cG3:    #828282;
@@ -38,7 +42,7 @@ button                                  { border: none; }
 button:hover                            { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
 input                                   { border: 0; padding: 0; color: var(--cG1); background-color: transparent; }
 input:focus                             { box-shadow: none !important; outline: none; }
-input:-webkit-autofill                  { color: var(--c1) !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
+input:-webkit-autofill                  { color: var(--k1) !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
 textarea                                { border: 0; }
 textarea:focus                          { box-shadow: none !important; outline: none; }
 select                                  { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
@@ -53,11 +57,11 @@ iframe                                  { border: 0; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
-        > div { min-width: 100px; min-height: 100px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
+        > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; position: absolute; }}}
 .spinner { top: 0; left: 0; width: 100vw; height: 100vh; height: var(--app-height); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
     > div { min-width: 80px; min-height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); 
-        > div { min-width: 40px; min-height: 40px; border: 3px solid var(--c1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
+        > div { min-width: 40px; min-height: 40px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
 div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
@@ -68,19 +72,19 @@ div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: cen
     .fa-circle-check { border-radius: 99px; background-color: white; color: var(--cGreen); }
     .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--cRed); }
     .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }}
-button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--c1);
+button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--k1);
     span { color: white !important; }}
 div.pages { width: 100%; height: 30px; display: flex; align-items: flex-start; border-bottom: 1px solid var(--cG5);
     a.page { width: 100%; height: 30px; display: flex; align-items: center; justify-content: center;
-        &.active { color: var(--c1); border-bottom: 2px solid var(--c1);
-            span { color: var(--c1); }}
+        &.active { color: var(--k1); border-bottom: 2px solid var(--k1);
+            span { color: var(--k1); }}
         span { color: var(--cG4); }}}
 .check { width: fit-content; min-height: 20px; padding: 5px 0 5px 20px; border-radius: 10px; position: relative; display: flex; align-items: center; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-size: 12px;
     // &:hover { background: var(--cBg); } 
     &:hover input ~ .checkmark { border: 2px solid var(--cG5); background-color: var(--cG5); }
     span:last-child { margin-left: 2px; }
     input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; /* Hide the browser's default radio button */
-        &:checked ~ .checkmark { background-color: var(--c1); border: 2px solid var(--c1); } /* When the radio button is checked, add a blue background */
+        &:checked ~ .checkmark { background-color: var(--k1); border: 2px solid var(--k1); } /* When the radio button is checked, add a blue background */
         &:checked ~ .checkmark:after { display: block; } /* Show the indicator (dot/circle) when checked */}
     .checkmark.checkbox { position: absolute; top: auto; bottom: auto; left: 0; height: 16px; width: 16px; border-radius: 2px; background-color: var(--cG5);
         &:after { content: ""; position: absolute; display: none; } /* Create the checkmark/indicator (hidden when not checked) */
@@ -89,7 +93,7 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
     > * { width: 100%; height: 20px; padding: 0 10px; gap: 5px; display: flex; align-items: center; }
     > *:not(:first-child) { border-left: 1px solid var(--cG5); }
     span, input { font-size: var(--fS); white-space: nowrap; }
-    i, svg { color: var(--c1); }
+    i, svg { color: var(--k1); }
     a.dropdown { justify-content: space-between; }
     div.search { justify-content: center;
         input { width: 100%;
@@ -103,7 +107,7 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
 // Common
 .payment section.head, .result section.head, .shop section.head, .ticket section.head
     { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
-    .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--c2); pointer-events: none; z-index: -1; }
+    .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
 section.pop.notice { align-items: center;
@@ -121,8 +125,8 @@ section.pop.notice { align-items: center;
 .payment { overflow: auto;
     section.head {
         .left {
-            a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
-            span { color: var(--c1); font-size: var(--fL); }}
+            a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
+            span { color: var(--k1); font-size: var(--fL); }}
         > span { white-space: nowrap; font-size: var(--fXL); }
         .right { justify-content: right;
             span:last-child { font-size: var(--fXL); }}}
@@ -147,7 +151,7 @@ section.pop.notice { align-items: center;
                 img { height: 20px; }}
             div.center { width: 100%; display: flex; gap: 10px;
                 a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
-                    &.active { border: 1px solid var(--c1); }
+                    &.active { border: 1px solid var(--k1); }
                     img { width: 20px; }
                     div { display: flex; flex-direction: column; gap: 5px;
                         span { line-height: 100%;
@@ -162,7 +166,7 @@ section.pop.notice { align-items: center;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }}
             div.center { width: 100%; display: flex; gap: 10px;
                 a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
-                    &.active { border: 1px solid var(--c1); }
+                    &.active { border: 1px solid var(--k1); }
                     img { max-width: 80px; max-height: 24px; }
                     i.fa-chevron-right, svg.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
         // 鍵盤
@@ -175,7 +179,7 @@ section.pop.notice { align-items: center;
         span.title { font-size: var(--fL); font-weight: bold; }
         div.list { display: flex; flex-direction: column; gap: 10px;
             a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
-                &.active { border: 1px solid var(--c1); }
+                &.active { border: 1px solid var(--k1); }
                 span { white-space: nowrap;
                     &:first-child { width: 100%; }
                     &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
@@ -229,12 +233,12 @@ section.pop.notice { align-items: center;
                     span:first-child { width: 100%; color: var(--cG3); }
                     img { height: 14px; }}}
             div.bottom { display: flex; flex-direction: column; align-items: center;
-                span.title { color: var(--c1); }}
+                span.title { color: var(--k1); }}
             div.buttons { display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
-                    i, svg { color: var(--c1); }}
-                button:last-child { background-color: var(--c1);
+                    i, svg { color: var(--k1); }}
+                button:last-child { background-color: var(--k1);
                     span { color: white !important; }}}}}
     section.pop.barcode { align-items: center;
         span { font-size: var(--fL);
@@ -244,9 +248,9 @@ section.pop.notice { align-items: center;
 // 商店頁
 .shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
-        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { white-space: nowrap; font-size: var(--fL); }
-        .right a { color: var(--c1); }}
+        .right a { color: var(--k1); }}
     section.main { width: 100%; max-width: 400px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
         button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
         a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
@@ -259,38 +263,38 @@ section.pop.notice { align-items: center;
                 div { display: flex; flex-direction: column; }}
             img { width: 100px; height: 100px; border-radius: 10px; }
             span {
-                &.title { font-size: var(--fL); color: var(--c1); }
+                &.title { font-size: var(--fL); color: var(--k1); }
                 &.name { font-size: var(--fS); }
                 &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 &.date { font-size: var(--fS); }}}}
     section.pop.category {
         .popBody { gap: 10px; }
         span {
-            &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--c1); }
-            &.active { color: var(--c1); }}
+            &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
+            &.active { color: var(--k1); }}
         a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}
 
 // 優惠券
-.ticket { min-width: 100vw; min-height: 100vh; background: var(--c2);
+.ticket { min-width: 100vw; min-height: 100vh; background: var(--k2);
     section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
-        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--c1); }
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { font-size: var(--fL); white-space: nowrap; }}
     section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         button {
             &.secondary { background-color: white;
-                span { color: var(--c1) !important; }}
+                span { color: var(--k1) !important; }}
             span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 400px; padding: 60px 20px 90px; margin: 0 auto;
         div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
-            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--c2);
+            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--k2);
                 &.left { left: -20px; }
                 &.right { right: -20px; }}
             div.label { width: 200px; height: 34px; z-index: 1; transform: rotate(30deg); position: absolute; top: 10px; right: -60px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
                 span { font-size: var(--fL); color: white; }}
             img { width: 100%; border-radius: 15px; }
             span {
-                &.title { font-size: var(--fXL); color: var(--c1); }
-                &.subtitle { font-weight: bold; color: var(--c1); }
+                &.title { font-size: var(--fXL); color: var(--k1); }
+                &.subtitle { font-weight: bold; color: var(--k1); }
                 &.content { color: var(--cG3); }}
             a { text-decoration: underline !important; }
             > div { display: flex; flex-direction: column; gap: 5px; }
