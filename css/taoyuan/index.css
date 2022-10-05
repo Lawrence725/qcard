@@ -28,10 +28,11 @@ html,
 body,
 .marginX {
   width: 100vw;
-  /* height: 100vh; height: var(--app-height); */
+  height: 100vh;
+  height: var(--app-height);
   padding: 0 !important;
   margin: 0 !important;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 body,
 h1,
@@ -49,7 +50,8 @@ span {
   font-family: 'Noto Sans TC', 'Arial', '微軟正黑體', '新細明體', 'sans-serif';
 }
 .body {
-  /* height: 100vh; height: var(--app-height); */
+  height: 100vh;
+  height: var(--app-height);
   display: flex;
   flex-direction: column;
   background: url(../img/bg.png);
