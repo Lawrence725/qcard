@@ -2957,7 +2957,7 @@
   margin: 0 5px 0 0;
 }
 .body .store.main {
-  padding: 0 10px 10px !important;
+  padding: 0 10px 80px !important;
   position: relative;
   align-items: center;
 }
@@ -3044,6 +3044,10 @@
 .body .store.main .tabs .lineV {
   height: 20px;
   background-color: var(--cG5) !important;
+}
+.body .store.main .detail a.iconButton {
+  margin: 0 5px;
+  background: white;
 }
 .body .store.main .testImg {
   width: 100% !important;

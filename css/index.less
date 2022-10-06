@@ -99,14 +99,14 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
         input { width: 100%;
             &::placeholder { color: var(--cG4); }}}}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
-    .popBody { width: 100%; max-width: 400px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+    .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
 .payment section.head, .result section.head, .tickets section.head, .ticket section.head
-    { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
+    { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
@@ -130,11 +130,11 @@ section.pop.notice { align-items: center;
         > span { white-space: nowrap; font-size: var(--fXL); }
         .right { justify-content: right;
             span:last-child { font-size: var(--fXL); }}}
-    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
+    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button {
             span { font-size: var(--fL); }
             img { height: 20px; }}}
-    section.main { width: 100%; max-width: 400px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+    section.main { width: 100%; max-width: 430px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         // 帳號
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; flex-direction: column;
@@ -212,7 +212,7 @@ section.pop.notice { align-items: center;
 // 付款結果頁
 .result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head { > span { font-size: var(--fXL); }}
-    section.main { width: 100%; max-width: 400px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+    section.main { width: 100%; max-width: 430px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
             div.top { display: flex; flex-direction: column; align-items: center;
                 div.icon { animation: spark 1s linear infinite; }
@@ -245,13 +245,41 @@ section.pop.notice { align-items: center;
             &:not(.title) { text-align: center; }}
         img { width: 100%; }}}
 
+// 商店頁
+.store { min-width: 100vw; overflow: auto; background-color: var(--cBg);
+    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
+    section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: -1;
+        div.content { width: 100%; max-width: 430px; height: 100%;
+            img { width: 100%; height: 100%; }}}
+    section.main { width: 100%; max-width: 430px; padding: 0 20px 140px; margin: 200px auto 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
+        section.info { display: flex; flex-direction: column; align-items: center; gap: 5px;
+            div.logo { min-height: 60px; margin-top: -50px;
+                img { width: 100px; height: 100px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+            span.title { font-size: var(--fXL); font-weight: bold; }
+            div.features { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+                div { display: flex; align-items: center; gap: 5px;
+                    &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
+                    img { height: 20px; }
+                    i { color: var(--k1); }
+                    span { white-space: nowrap; }}}}
+        section.detail { display: flex; flex-direction: column; gap: 10px;
+            span.title { font-weight: bold; margin-bottom: 10px; }
+            div { display: flex; gap: 10px;
+                span { width: 100%; }
+                a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
+                    &:last-child { color: var(--k1); }}}}}
+    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
+        button { display: flex; align-items: center; gap: 10px;
+            span { font-size: var(--fL); }
+            i { color: white; }}}}
+
 // 票券列表
 .tickets { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { white-space: nowrap; font-size: var(--fL); }
         .right a { color: var(--k1); }}
-    section.main { width: 100%; max-width: 400px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+    section.main { width: 100%; max-width: 430px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
         button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
         a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
             div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
@@ -279,12 +307,12 @@ section.pop.notice { align-items: center;
     section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { font-size: var(--fL); white-space: nowrap; }}
-    section.foot { width: 100%; max-width: 400px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
+    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         button {
             &.secondary { background-color: white;
                 span { color: var(--k1) !important; }}
             span { font-size: var(--fL); }}}
-    section.main { width: 100%; max-width: 400px; padding: 60px 20px 90px; margin: 0 auto;
+    section.main { width: 100%; max-width: 430px; padding: 60px 20px 90px; margin: 0 auto;
         div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
             div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--k2);
                 &.left { left: -20px; }
