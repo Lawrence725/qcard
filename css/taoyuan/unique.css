@@ -250,8 +250,7 @@
   margin: 0 0 0 1px;
 }
 .body .landing {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   padding: 0 !important;
   align-items: center;
   justify-content: space-around;
@@ -276,8 +275,7 @@
   color: white !important;
 }
 .body .errors.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   padding: 50px 0 !important;
   align-items: center;
   justify-content: space-around;
@@ -358,8 +356,7 @@
   color: white !important;
 }
 .body .video.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 0 70px;
   padding: 0;
   align-items: center;
@@ -449,8 +446,7 @@
   object-fit: cover;
 }
 .body .new.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0 10px 10px !important;
   border-radius: 20px;
@@ -1482,8 +1478,7 @@
   position: absolute;
 }
 .body .scan_point.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0px;
 }
@@ -1617,8 +1612,7 @@
   margin-top: 30px;
 }
 .body .point_code.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0px;
   overflow-y: hidden;
@@ -1675,8 +1669,7 @@
   margin: 2px 1px;
 }
 .body .point_success.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0;
   overflow-y: hidden;
@@ -1981,8 +1974,7 @@
   overflow-y: auto;
 }
 .body .ticket.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 15px 70px;
   padding: 0 10px 10px !important;
   border-radius: 20px;
@@ -2526,8 +2518,7 @@
   border-radius: 10px;
 }
 .body .scan_tickets.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 0;
   padding: 0px;
   overflow-y: hidden;
@@ -2609,8 +2600,7 @@
   overflow-y: auto;
 }
 .body .stamp.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 15px 70px;
   padding: 10px 20px !important;
   border-radius: 20px;
@@ -3248,8 +3238,7 @@
   border-top: 1px solid var(--cG4);
 }
 .body .activity_detail.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0 10px 10px !important;
   border-radius: 20px;
@@ -3385,8 +3374,7 @@
   background-color: var(--c1);
 }
 .body .activity_question.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 10px !important;
   border-radius: 20px;
@@ -3491,8 +3479,7 @@
   margin-left: 0;
 }
 .body .code.main {
-  height: 100vh;
-  height: var(--app-height);
+  /* height: 100vh; height: var(--app-height); */
   margin: 60px 20px 20px;
   padding: 0px;
   overflow-y: hidden;
