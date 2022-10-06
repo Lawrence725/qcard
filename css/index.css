@@ -477,7 +477,7 @@ div.filter div.search input::placeholder {
 }
 .payment section.head,
 .result section.head,
-.shop section.head,
+.tickets section.head,
 .ticket section.head {
   width: 100%;
   max-width: 400px;
@@ -493,7 +493,7 @@ div.filter div.search input::placeholder {
 }
 .payment section.head .bg,
 .result section.head .bg,
-.shop section.head .bg,
+.tickets section.head .bg,
 .ticket section.head .bg {
   width: 1000px;
   height: 1000px;
@@ -506,11 +506,11 @@ div.filter div.search input::placeholder {
 }
 .payment section.head .left,
 .result section.head .left,
-.shop section.head .left,
+.tickets section.head .left,
 .ticket section.head .left,
 .payment section.head .right,
 .result section.head .right,
-.shop section.head .right,
+.tickets section.head .right,
 .ticket section.head .right {
   width: 100%;
   display: flex;
@@ -518,7 +518,7 @@ div.filter div.search input::placeholder {
 }
 .payment section.head .right,
 .result section.head .right,
-.shop section.head .right,
+.tickets section.head .right,
 .ticket section.head .right {
   justify-content: right;
 }
@@ -1079,13 +1079,13 @@ section.pop.notice .popBody > div:not(.buttons) {
 .result section.pop.barcode img {
   width: 100%;
 }
-.shop {
+.tickets {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
   background-color: var(--cBg);
 }
-.shop section.head .left a {
+.tickets section.head .left a {
   min-width: 30px;
   min-height: 30px;
   border-radius: 99px;
@@ -1094,14 +1094,14 @@ section.pop.notice .popBody > div:not(.buttons) {
   justify-content: center;
   color: var(--k1);
 }
-.shop section.head > span {
+.tickets section.head > span {
   white-space: nowrap;
   font-size: var(--fL);
 }
-.shop section.head .right a {
+.tickets section.head .right a {
   color: var(--k1);
 }
-.shop section.main {
+.tickets section.main {
   width: 100%;
   max-width: 400px;
   padding: 100px 20px 100px;
@@ -1110,7 +1110,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   flex-direction: column;
   gap: 20px;
 }
-.shop section.main button.action {
+.tickets section.main button.action {
   width: fit-content;
   padding: 0 15px;
   position: fixed;
@@ -1121,7 +1121,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
   z-index: 2;
 }
-.shop section.main a.coupon {
+.tickets section.main a.coupon {
   height: 140px;
   padding: 10px 30px;
   border-radius: 20px;
@@ -1132,7 +1132,7 @@ section.pop.notice .popBody > div:not(.buttons) {
   background-color: white;
   overflow: hidden;
 }
-.shop section.main a.coupon div.dot {
+.tickets section.main a.coupon div.dot {
   width: 40px;
   height: 40px;
   border-radius: 99px;
@@ -1140,13 +1140,13 @@ section.pop.notice .popBody > div:not(.buttons) {
   position: absolute;
   background-color: var(--cBg);
 }
-.shop section.main a.coupon div.dot.left {
+.tickets section.main a.coupon div.dot.left {
   left: -20px;
 }
-.shop section.main a.coupon div.dot.right {
+.tickets section.main a.coupon div.dot.right {
   right: -20px;
 }
-.shop section.main a.coupon div.label {
+.tickets section.main a.coupon div.label {
   width: 150px;
   height: 24px;
   z-index: 1;
@@ -1159,11 +1159,11 @@ section.pop.notice .popBody > div:not(.buttons) {
   justify-content: center;
   background-color: var(--cG4);
 }
-.shop section.main a.coupon div.label span {
+.tickets section.main a.coupon div.label span {
   font-size: var(--fS);
   color: white;
 }
-.shop section.main a.coupon div.content {
+.tickets section.main a.coupon div.content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1171,17 +1171,17 @@ section.pop.notice .popBody > div:not(.buttons) {
   justify-content: center;
   gap: 2px;
 }
-.shop section.main a.coupon div.content div {
+.tickets section.main a.coupon div.content div {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.shop section.main a.coupon img {
+.tickets section.main a.coupon img {
   width: 100px;
   height: 100px;
   border-radius: 10px;
 }
-.shop section.main a.coupon span.title {
+.tickets section.main a.coupon span.title {
   font-size: var(--fM);
   color: var(--k1);
   display: -webkit-box;
@@ -1190,10 +1190,10 @@ section.pop.notice .popBody > div:not(.buttons) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.shop section.main a.coupon span.name {
+.tickets section.main a.coupon span.name {
   font-size: var(--fS);
 }
-.shop section.main a.coupon span.info {
+.tickets section.main a.coupon span.info {
   font-size: var(--fS);
   color: var(--cG3);
   display: -webkit-box;
@@ -1202,22 +1202,22 @@ section.pop.notice .popBody > div:not(.buttons) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.shop section.main a.coupon span.date {
+.tickets section.main a.coupon span.date {
   font-size: var(--fS);
 }
-.shop section.pop.category .popBody {
+.tickets section.pop.category .popBody {
   gap: 10px;
 }
-.shop section.pop.category span.title {
+.tickets section.pop.category span.title {
   margin-bottom: 5px;
   font-size: var(--fL);
   font-weight: bold;
   color: var(--k1);
 }
-.shop section.pop.category span.active {
+.tickets section.pop.category span.active {
   color: var(--k1);
 }
-.shop section.pop.category a:not(.close):not(:last-child) {
+.tickets section.pop.category a:not(.close):not(:last-child) {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--cG5);
 }

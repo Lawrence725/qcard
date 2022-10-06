@@ -105,7 +105,7 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment section.head, .result section.head, .shop section.head, .ticket section.head
+.payment section.head, .result section.head, .tickets section.head, .ticket section.head
     { width: 100%; max-width: 400px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
@@ -245,8 +245,8 @@ section.pop.notice { align-items: center;
             &:not(.title) { text-align: center; }}
         img { width: 100%; }}}
 
-// 商店頁
-.shop { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+// 票券列表
+.tickets { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { white-space: nowrap; font-size: var(--fL); }
@@ -274,7 +274,7 @@ section.pop.notice { align-items: center;
             &.active { color: var(--k1); }}
         a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}
 
-// 優惠券
+// 票券
 .ticket { min-width: 100vw; min-height: 100vh; background: var(--k2);
     section.head { height: 60px; padding: 20px; background: linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), fade(white, 90%);
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
