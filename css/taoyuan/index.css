@@ -52,7 +52,8 @@ span {
   /* height: 100vh; height: var(--app-height); */
   display: flex;
   flex-direction: column;
-  background: url(../img/bg.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #EF6079;
+  /* background: url(../img/bg.png); */
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -330,7 +331,8 @@ span {
   padding: 0 10px;
   z-index: 6;
   position: fixed;
-  background: url(../img/bg.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #EF6079;
+  /* background: url(../img/bg.png); */
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
@@ -344,7 +346,8 @@ span {
   bottom: 0;
   z-index: 6x;
   position: fixed;
-  background: url(../img/bg.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #EF6079;
+  /* background: url(../img/bg.png); */
   background-position: bottom;
   background-attachment: fixed;
   background-size: cover;
@@ -1201,7 +1204,8 @@ span {
   top: 0;
   left: 0;
   width: 100vw;
-  /* height: 100vh; height: var(--app-height); */
+  height: 100vh;
+  /* height: var(--app-height); */
   position: fixed;
   display: flex;
   align-items: center;
