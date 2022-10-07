@@ -1151,6 +1151,9 @@ section.pop.notice .popBody > div:not(.buttons) {
   border-radius: 20px;
   filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
 }
+.store section.main section.info span {
+  text-align: center;
+}
 .store section.main section.info span.title {
   font-size: var(--fXL);
   font-weight: bold;
