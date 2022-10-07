@@ -1122,6 +1122,7 @@ section.pop.notice .popBody > div:not(.buttons) {
 }
 .store section.main {
   width: 100%;
+  min-height: unset;
   max-width: 430px;
   padding: 0 20px 140px;
   margin: 200px auto 0;
