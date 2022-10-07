@@ -59,7 +59,7 @@ iframe                                  { border: 0; }
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
         > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; position: absolute; }}}
-.spinner { top: 0; left: 0; width: 100vw; height: 100vh; height: var(--app-height); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
+.spinner { top: 0; left: 0; width: 100vw; height: 100vh; /* height: var(--app-height); */ position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
     > div { min-width: 80px; min-height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); 
         > div { min-width: 40px; min-height: 40px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -246,12 +246,12 @@ section.pop.notice { align-items: center;
         img { width: 100%; }}}
 
 // 商店頁
-.store { min-width: 100vw; overflow: auto; background-color: var(--cBg);
-    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
-    section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: -1;
+.store { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 3; }
+    section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: 1;
         div.content { width: 100%; max-width: 430px; height: 100%;
             img { width: 100%; height: 100%; }}}
-    section.main { width: 100%; max-width: 430px; padding: 0 20px 140px; margin: 200px auto 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
+    section.main { width: 100%; max-width: 430px; padding: 0 20px 140px; margin: 200px auto 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
         section.info { display: flex; flex-direction: column; align-items: center; gap: 5px;
             div.logo { min-height: 60px; margin-top: -50px;
                 img { width: 100px; height: 100px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
@@ -260,7 +260,7 @@ section.pop.notice { align-items: center;
                 div { display: flex; align-items: center; gap: 5px;
                     &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
                     img { height: 20px; }
-                    i { color: var(--k1); }
+                    i, svg { color: var(--k1); }
                     span { white-space: nowrap; }}}}
         section.detail { display: flex; flex-direction: column; gap: 10px;
             span.title { font-weight: bold; margin-bottom: 10px; }
@@ -271,7 +271,7 @@ section.pop.notice { align-items: center;
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button { display: flex; align-items: center; gap: 10px;
             span { font-size: var(--fL); }
-            i { color: white; }}}}
+            i, svg { color: white; }}}}
 
 // 票券列表
 .tickets { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
