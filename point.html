@@ -10,8 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
         <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/taoyuan/index.css">
-        <link rel="stylesheet" href="./css/taoyuan/unique.css">
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
         <link rel="stylesheet" href="./css/index.css">
         <!-- Awesome Icon -->
         <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
@@ -42,10 +42,10 @@
                     <span>期限</span>
                 </a>
             </div>
-            <!-- <a class="dateRange">
+            <a class="dateRange" onclick="popDateRange()">
                 <span>2022/01/01 - 2022/02/28</span>
                 <i class="fa-regular fa-calendar"></i>
-            </a> -->
+            </a>
             <div class="item">
                 <div class="left">
                     <span>消費項目名稱</span>
@@ -77,5 +77,33 @@
                 </div>
             </div>
         </section>
+        <!-- 日期popup -->
+        <section id="popDateRange" class="pop dateRange" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">日期</span>
+                <div class="tabs">
+                    <a class="active"><span>近一週</span></a>
+                    <a><span>近一個月</span></a>
+                    <a><span>近三個月</span></a>
+                    <a><span>自訂日期</span></a>
+                </div>
+                <div class="dateRange">
+                    <input type="date" value="2022-01-01">
+                    <span>-</span>
+                    <input type="date" value="2022-12-31">
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確認</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/point.js"></script>
     </body>
 </html>

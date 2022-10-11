@@ -101,7 +101,7 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
             &::placeholder { color: var(--cG4); }}}}
 a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(--cG5); border-radius: 10px; display: flex; align-items: center; justify-content: space-between;
     span { color: var(--cG3); }
-    i { color: var(--k1); }}
+    i, svg { color: var(--k1); }}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
@@ -141,7 +141,8 @@ section.pop.notice { align-items: center;
 section.pop.notification .popBody { 
     span.title { font-size: var(--fL); font-weight: bold; }
     a:not(.close) { display: flex; align-items: center; gap: 10px;
-        div.dot { width: 8px; height: 8px; border-radius: 99px; background-color: var(--cRed); }
+        div.dot { width: 8px; height: 8px; border-radius: 99px;
+            &.active { background-color: var(--cRed); }}
         div.left { display: flex; flex-direction: column;
             span { font-size: var(--fL);
                 &:not(:first-child) { font-size: var(--fS); color: var(--cG3); }}}
@@ -150,8 +151,18 @@ section.pop.notification .popBody {
                 span { font-size: var(--fL); }
                 img { width: 20px; }}
             > span { font-size: var(--fS); color: var(--cG3); }}}
-    a:not(:last-child) { &:not(.close) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }}
-}
+    a:not(:last-child) { &:not(.close) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }}}
+section.pop.dateRange {
+    span.title { font-size: var(--fL); } 
+    div.tabs { width: 100%; display: flex; align-items: center; 
+        a { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center;
+            &.active { background: var(--k2);
+                span { color: var(--k1); }}}}
+    div.dateRange { width: 100%; height: 30px; padding: 0 20px; border-bottom: 1px solid var(--cG5); position: relative; display: flex; align-items: center; justify-content: space-around;
+        input { text-align: center; }}
+    div.buttons { width: 100%; display: flex; gap: 10px;
+        button:first-child { background-color: var(--cBg);
+            span { color: var(--cG2) !important; }}}}
 section.pop.barcode { align-items: center;
     span { font-size: var(--fL);
         &:not(.title) { text-align: center; }}
