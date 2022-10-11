@@ -99,6 +99,9 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
     div.search { justify-content: center;
         input { width: 100%;
             &::placeholder { color: var(--cG4); }}}}
+a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(--cG5); border-radius: 10px; display: flex; align-items: center; justify-content: space-between;
+    span { color: var(--cG3); }
+    i { color: var(--k1); }}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
@@ -106,8 +109,8 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment section.head, .result section.head, .tickets section.head, .ticket section.head
-    { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; z-index: 5;
+.payment section.head, .result section.head, .coin section.head, .tickets section.head, .ticket section.head
+    { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
@@ -294,14 +297,14 @@ section.pop.barcode { align-items: center;
             div.logo { min-height: 60px; margin-top: -50px;
                 img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
             span { text-align: center;
-                &.title { font-size: var(--fXL); font-weight: bold; background-color: var(--cBg); }}
+                &.title { font-size: var(--fXL); font-weight: bold; }}
             div.features { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
                 div { display: flex; align-items: center; gap: 5px;
                     &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
                     img { height: 20px; }
                     i, svg { color: var(--k1); }
                     span { white-space: nowrap; }}}}
-        section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg);
+        section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center;
             a { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;
                 div.icon { width: 50px; height: 50px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; background-color: white;
                     &.line i, &.line svg { color: #06C755; }
@@ -335,6 +338,24 @@ section.pop.barcode { align-items: center;
         button { display: flex; align-items: center; gap: 10px;
             span { font-size: var(--fL); }
             i, svg { color: white; }}}}
+
+// 點數
+.coin { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    section.head {
+        .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
+        > span { white-space: nowrap; font-size: var(--fL);
+            &.content { font-size: var(--fXL); font-weight: bold; }}
+        > img { height: 28px; }}
+    section.main { width: 100%; max-width: 430px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+        div.item { width: 100%; display: flex; align-items: center; justify-content: space-between;
+            &:not(:last-child) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }
+            div.left { display: flex; flex-direction: column;
+                span { font-size: var(--fL);
+                    &.content { font-size: var(--fS); color: var(--cG3); }}}
+            div.right { display: flex; align-items: center; gap: 5px;
+                span { font-size: var(--fL); font-weight: bold;
+                    &.negative { color: var(--cRed); }}
+                img { height: 20px; }}}}}
 
 // 票券列表
 .tickets { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
