@@ -1,5 +1,6 @@
 window.onload = function() {
-    popConfirm(); }
+    popConfirm();
+    popBarcode(); }
 
 // Popup close
 function popClose(e) {
@@ -22,4 +23,9 @@ function popClose(e) {
 // 分類popup
 function popConfirm() {
     document.getElementById("popConfirm").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 會員條碼popup
+function popBarcode() {
+    document.getElementById("popBarcode").style.display = "flex";
     document.body.style.overflow = "hidden"; }

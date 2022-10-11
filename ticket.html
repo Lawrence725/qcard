@@ -72,9 +72,31 @@
                     <button onclick="popClose(this)">
                         <span>取消</span>
                     </button>
-                    <button onclick="popClose(this)">
+                    <button onclick="popBarcode()">
                         <span>確定兌換</span>
                     </button>
+                </div>
+            </div>
+        </section>
+        <!-- 優惠券條碼popup -->
+        <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">滿$100折$10</span>
+                <img src="./img/barcode.png">
+                <div class="action">
+                    <div class="left">
+                        <a class="active">
+                            <i class="fa-solid fa-barcode fa-xl"></i>
+                        </a>
+                        <a>
+                            <i class="fa-solid fa-qrcode fa-xl"></i>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span>04:54 更新</span>
+                        <a><i class="fa-solid fa-arrows-rotate fa-lg"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
