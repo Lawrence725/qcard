@@ -1357,50 +1357,57 @@ section.pop.barcode div.action div.right span {
 .login section.main {
   width: 100%;
   max-width: 430px;
+  min-height: 100vh;
   padding: 70px 30px 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 30px;
+}
+.login section.main div.inputs {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 }
-.login section.main div.input {
+.login section.main div.inputs div.input {
   display: flex;
   flex-direction: column;
 }
-.login section.main div.input span.title {
+.login section.main div.inputs div.input span.title {
   color: var(--k1);
 }
-.login section.main div.input span.title span {
+.login section.main div.inputs div.input span.title span {
   color: var(--cG3);
   font-size: var(--fXS);
 }
-.login section.main div.input > div:not(.error) {
+.login section.main div.inputs div.input > div:not(.error) {
   gap: 10px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--cG5);
 }
-.login section.main div.input > div:not(.error) input {
+.login section.main div.inputs div.input > div:not(.error) input {
   width: 100%;
   height: 40px;
   font-size: var(--fL);
   border-radius: 0;
 }
-.login section.main div.input > div:not(.error) input.code {
+.login section.main div.inputs div.input > div:not(.error) input.code {
   width: 60px;
   height: 30px;
   border-right: 1px solid var(--cG5);
 }
-.login section.main div.input > div:not(.error) button {
+.login section.main div.inputs div.input > div:not(.error) button {
   width: fit-content;
   height: 30px;
   padding: 0 10px;
 }
-.login section.main div.input > div:not(.error) button span {
+.login section.main div.inputs div.input > div:not(.error) button span {
   color: white;
   white-space: nowrap;
 }
-.login section.main div.input > div:not(.error) a.delete {
+.login section.main div.inputs div.input > div:not(.error) a.delete {
   width: 30px;
   height: 30px;
   display: flex;
@@ -1408,14 +1415,14 @@ section.pop.barcode div.action div.right span {
   justify-content: center;
   color: var(--cG4);
 }
-.login section.main div.input > div.error {
+.login section.main div.inputs div.input > div.error {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   margin-top: -1.5px;
   border-top: 2px solid var(--cRed);
 }
-.login section.main div.input > div.error span {
+.login section.main div.inputs div.input > div.error span {
   color: var(--cRed);
   font-size: var(--fS);
 }
@@ -1423,7 +1430,7 @@ section.pop.barcode div.action div.right span {
   width: 100vw;
   max-width: 430px;
   height: 250px;
-  margin: 20px -30px 0;
+  margin-left: -30px;
   padding-top: 20px;
   position: relative;
   display: flex;
