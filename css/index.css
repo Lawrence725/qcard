@@ -1567,7 +1567,7 @@ section.pop.barcode div.action div.right span {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
-  background-color: var(--cBg);
+  background-color: white;
 }
 .coin section.head .left a {
   min-width: 30px;
