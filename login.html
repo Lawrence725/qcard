@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="login">
+        <!-- Header -->
+        <section class="head">
+            <div class="left">
+                <a href="javascript:history.back()">
+                    <i class="fa-solid fa-chevron-left fa-lg"></i>
+                </a>
+            </div>
+            <span>填寫會員資料</span>
+            <div class="right"></div>
+        </section>
+        <section class="main">
+            <div class="input">
+                <span class="title">手機號碼</span>
+                <div>
+                    <input class="code" type="text" value="+886">
+                    <input type="number" value="0987654321">
+                </div>
+            </div>
+            <div class="input">
+                <span class="title">姓名</span>
+                <div>
+                    <input type="text" value="">
+                </div>
+            </div>
+            <div class="input">
+                <span class="title">驗證碼</span>
+                <div>
+                    <input type="text" value="" placeholder="123456">
+                    <button><span>傳送驗證碼</span></button>
+                </div>
+            </div>
+            <div class="input">
+                <span class="title">密碼</span>
+                <div>
+                    <input type="password" value="123456">
+                </div>
+            </div>
+            <div class="input">
+                <span class="title">確認密碼</span>
+                <div>
+                    <input type="password" value="123456">
+                    <a class="delete"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                </div>
+                <div class="error">
+                    <span>密碼錯誤</span>
+                </div>
+            </div>
+            <div class="input">
+                <span class="title">推薦碼 <span>非必填</span></span>
+                <div>
+                    <input type="text" value="">
+                </div>
+            </div>
+            <div class="action">
+                <div class="bg"></div>
+                <button>
+                    <span>會員註冊</span>
+                </button>
+                <span>按下註冊按鈕，即表示您確認已詳閱並且同意<br>
+                    <a>《服務條款》</a>和<a>《隱私權政策》</a></span>
+            </div>
+        </section>
+    </body>
+</html>

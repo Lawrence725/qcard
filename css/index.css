@@ -505,6 +505,7 @@ a.dateRange svg {
 }
 .payment section.head,
 .result section.head,
+.login section.head,
 .coin section.head,
 .tickets section.head,
 .ticket section.head {
@@ -523,6 +524,7 @@ a.dateRange svg {
 }
 .payment section.head .bg,
 .result section.head .bg,
+.login section.head .bg,
 .coin section.head .bg,
 .tickets section.head .bg,
 .ticket section.head .bg {
@@ -537,11 +539,13 @@ a.dateRange svg {
 }
 .payment section.head .left,
 .result section.head .left,
+.login section.head .left,
 .coin section.head .left,
 .tickets section.head .left,
 .ticket section.head .left,
 .payment section.head .right,
 .result section.head .right,
+.login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
 .ticket section.head .right {
@@ -551,6 +555,7 @@ a.dateRange svg {
 }
 .payment section.head .right,
 .result section.head .right,
+.login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
 .ticket section.head .right {
@@ -1328,6 +1333,134 @@ section.pop.barcode div.action div.right span {
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
 }
+.login {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+}
+.login section.head {
+  background: rgba(255, 255, 255, 0.95);
+}
+.login section.head .left a {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--k1);
+}
+.login section.head > span {
+  white-space: nowrap;
+  font-size: var(--fL);
+}
+.login section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 30px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.login section.main div.input {
+  display: flex;
+  flex-direction: column;
+}
+.login section.main div.input span.title {
+  color: var(--k1);
+}
+.login section.main div.input span.title span {
+  color: var(--cG3);
+  font-size: var(--fXS);
+}
+.login section.main div.input > div:not(.error) {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cG5);
+}
+.login section.main div.input > div:not(.error) input {
+  width: 100%;
+  height: 40px;
+  font-size: var(--fL);
+  border-radius: 0;
+}
+.login section.main div.input > div:not(.error) input.code {
+  width: 60px;
+  height: 30px;
+  border-right: 1px solid var(--cG5);
+}
+.login section.main div.input > div:not(.error) button {
+  width: fit-content;
+  height: 30px;
+  padding: 0 10px;
+}
+.login section.main div.input > div:not(.error) button span {
+  color: white;
+  white-space: nowrap;
+}
+.login section.main div.input > div:not(.error) a.delete {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cG4);
+}
+.login section.main div.input > div.error {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -1.5px;
+  border-top: 2px solid var(--cRed);
+}
+.login section.main div.input > div.error span {
+  color: var(--cRed);
+  font-size: var(--fS);
+}
+.login section.main div.action {
+  width: 100vw;
+  max-width: 430px;
+  height: 250px;
+  margin: 20px -30px 0;
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.login section.main div.action .bg {
+  width: 1000px;
+  height: 1000px;
+  margin-right: 150px;
+  border-radius: 999px;
+  top: 0;
+  position: absolute;
+  background: var(--k1);
+  pointer-events: none;
+  z-index: -1;
+}
+.login section.main div.action button {
+  width: 200px;
+  min-height: 40px;
+  background-color: white;
+}
+.login section.main div.action button span {
+  color: var(--k1) !important;
+}
+.login section.main div.action > span {
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG5);
+}
+.login section.main div.action > span a {
+  font-size: var(--fS);
+  color: white;
+}
 .store {
   min-width: 100vw;
   min-height: 100vh;
@@ -1616,7 +1749,6 @@ section.pop.barcode div.action div.right span {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
-  background-color: white;
 }
 .coin section.head .left a {
   min-width: 30px;
