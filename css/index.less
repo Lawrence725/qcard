@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
-// @color: #EE6C5F;
-@color: #EF6079;
+// @color: #EE6C5F; //Qcard
+// @color: #EF6079; //桃園
+@color: #DD9A8A; //米哥
 
 :root {
     // Font
@@ -36,7 +37,7 @@
 span, p, h1, h2, h3, h4, h5, h6, a,
 select, input, textarea, button         { font-size: var(--fM); font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體'; }
 span, p, h1, h2, h3, h4, h5, h6, ol, ul { color: var(--cG1); }
-a                                       { text-decoration: none !important; }
+a                                       { color: inherit; text-decoration: none !important; }
 a:hover                                 { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
 button                                  { border: none; }
 button:hover                            { cursor: pointer; box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }
@@ -64,7 +65,7 @@ iframe                                  { border: 0; }
         > div { min-width: 40px; min-height: 40px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
-div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
+.popBody div.icon, .result div.icon { width: 100%; margin: -60px 0 5px; display: flex; justify-content: center;
     > i, > svg { border-radius: 999px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);}
     > div { width: 80px; height: 80px; padding: 20px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
         &.orange { border: 7.5px solid var(--cOrange); }
@@ -120,6 +121,20 @@ section.pop.notice { align-items: center;
             button:first-child { background-color: var(--cBg);
                 span { color: var(--cG2) !important; }}}
         > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
+a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
+    div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
+        &.left { left: -20px; }
+        &.right { right: -20px; }}
+    div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
+        span { font-size: var(--fS); color: white; }}
+    div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 2px;
+        div { display: flex; flex-direction: column; gap: 2px; }}
+    img { width: 100px; height: 100px; border-radius: 10px; }
+    span {
+        &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        &.name { font-size: var(--fS); }
+        &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        &.date { font-size: var(--fS); }}}
 
 // 付款頁
 .payment { overflow: auto;
@@ -252,23 +267,47 @@ section.pop.notice { align-items: center;
         div.content { width: 100%; max-width: 430px; height: 100%;
             img { width: 100%; height: 100%; }}}
     section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 200px auto 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
-        section.info { display: flex; flex-direction: column; align-items: center; gap: 5px;
+        section.info { padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 5px;
             div.logo { min-height: 60px; margin-top: -50px;
-                img { width: 100px; height: 100px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+                img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
             span { text-align: center;
-                &.title { font-size: var(--fXL); font-weight: bold; }}
-            div.features { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+                &.title { font-size: var(--fXL); font-weight: bold; background-color: var(--cBg); }}
+            div.features { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
                 div { display: flex; align-items: center; gap: 5px;
                     &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
                     img { height: 20px; }
                     i, svg { color: var(--k1); }
                     span { white-space: nowrap; }}}}
+        section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg);
+            a { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;
+                div.icon { width: 50px; height: 50px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; background-color: white;
+                    &.line i, &.line svg { color: #06C755; }
+                    i, svg { color: var(--k1); }
+                    img { height: 24px; }
+                    div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border-radius: 99px; top: -5px; left: 35px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
+                        span { color: white; font-size: var(--fS); font-weight: bold; }}}
+                span { font-size: var(--fS); }}}
+        section.point { display: flex; flex-direction: column; gap: 10px;
+            > span.title { font-weight: bold; }
+            a.point { width: 100%; padding: 10px; border-radius: 20px; display: flex; align-items: center; gap: 10px; background-color: white;
+                img { width: 40px; }
+                > div { width: 100%; display: flex; flex-direction: column;
+                    span:not(.title) { font-size: var(--fS); color: var(--cG3); }}
+                > span { font-size: var(--fL); color: var(--k1); }
+                > i, > svg { color: var(--cG4); }}}
+        section.coupon { display: flex; flex-direction: column; gap: 10px;
+            div.top {  display: flex; align-items: center; justify-content: space-between;
+                span.title { font-weight: bold; }
+                i, svg { color: var(--k1); }}}
         section.detail { display: flex; flex-direction: column; gap: 10px;
             span.title { font-weight: bold; margin-bottom: 10px; }
             div { display: flex; gap: 10px;
                 span { width: 100%; }
                 a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
-                    &:last-child { color: var(--k1); }}}}}
+                    &:last-child { color: var(--k1); }}}
+            div.branch a { color: var(--k1); }
+            div.map { width: 100%; height: 250px; border-radius: 20px; overflow: hidden;
+                img { width: 100%; height: 100%; }}}}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button { display: flex; align-items: center; gap: 10px;
             span { font-size: var(--fL); }
@@ -281,21 +320,7 @@ section.pop.notice { align-items: center;
         > span { white-space: nowrap; font-size: var(--fL); }
         .right a { color: var(--k1); }}
     section.main { width: 100%; max-width: 430px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
-        button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }
-        a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
-            div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
-                &.left { left: -20px; }
-                &.right { right: -20px; }}
-            div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
-                span { font-size: var(--fS); color: white; }}
-            div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 2px;
-                div { display: flex; flex-direction: column; gap: 2px; }}
-            img { width: 100px; height: 100px; border-radius: 10px; }
-            span {
-                &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                &.name { font-size: var(--fS); }
-                &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                &.date { font-size: var(--fS); }}}}
+        button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }}
     section.pop.category {
         .popBody { gap: 10px; }
         span {
