@@ -1,5 +1,6 @@
 window.onload = function() {
-    popBarcode(); }
+    popBarcode();
+    popNotification(); }
 
 // Popup close
 function popClose(e) {
@@ -19,7 +20,12 @@ function popClose(e) {
         }, 500); }
     document.body.style.overflow = "scroll"; }
 
-// 載具條碼popup
+// 會員條碼popup
 function popBarcode() {
     document.getElementById("popBarcode").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 通知popup
+function popNotification() {
+    document.getElementById("popNotification").style.display = "flex";
     document.body.style.overflow = "hidden"; }

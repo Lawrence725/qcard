@@ -533,45 +533,6 @@ div.filter div.search input::placeholder {
 .ticket section.head .right {
   justify-content: right;
 }
-section.pop.notice {
-  align-items: center;
-}
-section.pop.notice .popBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: visible;
-}
-section.pop.notice .popBody span {
-  text-align: center;
-}
-section.pop.notice .popBody span.title {
-  font-size: var(--fL);
-}
-section.pop.notice .popBody span:not(.title) {
-  color: var(--cG3);
-}
-section.pop.notice .popBody div.icon {
-  display: flex;
-  justify-content: center;
-  margin-top: -60px;
-}
-section.pop.notice .popBody > div.buttons {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-}
-section.pop.notice .popBody > div.buttons button:first-child {
-  background-color: var(--cBg);
-}
-section.pop.notice .popBody > div.buttons button:first-child span {
-  color: var(--cG2) !important;
-}
-section.pop.notice .popBody > div:not(.buttons) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 a.coupon {
   height: 140px;
   padding: 10px 30px;
@@ -655,6 +616,140 @@ a.coupon span.info {
 }
 a.coupon span.date {
   font-size: var(--fS);
+}
+section.pop.notice {
+  align-items: center;
+}
+section.pop.notice .popBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: visible;
+}
+section.pop.notice .popBody span {
+  text-align: center;
+}
+section.pop.notice .popBody span.title {
+  font-size: var(--fL);
+}
+section.pop.notice .popBody span:not(.title) {
+  color: var(--cG3);
+}
+section.pop.notice .popBody div.icon {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+}
+section.pop.notice .popBody > div.buttons {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+section.pop.notice .popBody > div.buttons button:first-child {
+  background-color: var(--cBg);
+}
+section.pop.notice .popBody > div.buttons button:first-child span {
+  color: var(--cG2) !important;
+}
+section.pop.notice .popBody > div:not(.buttons) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.pop.notification .popBody span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+section.pop.notification .popBody a:not(.close) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+section.pop.notification .popBody a:not(.close) div.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background-color: var(--cRed);
+}
+section.pop.notification .popBody a:not(.close) div.left {
+  display: flex;
+  flex-direction: column;
+}
+section.pop.notification .popBody a:not(.close) div.left span {
+  font-size: var(--fL);
+}
+section.pop.notification .popBody a:not(.close) div.left span:not(:first-child) {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+section.pop.notification .popBody a:not(.close) div.right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+section.pop.notification .popBody a:not(.close) div.right > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+section.pop.notification .popBody a:not(.close) div.right > div span {
+  font-size: var(--fL);
+}
+section.pop.notification .popBody a:not(.close) div.right > div img {
+  width: 20px;
+}
+section.pop.notification .popBody a:not(.close) div.right > span {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+section.pop.notification .popBody a:not(:last-child):not(.close) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cG5);
+}
+section.pop.barcode {
+  align-items: center;
+}
+section.pop.barcode span {
+  font-size: var(--fL);
+}
+section.pop.barcode span:not(.title) {
+  text-align: center;
+}
+section.pop.barcode img {
+  width: 100%;
+}
+section.pop.barcode div.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.pop.barcode div.action i,
+section.pop.barcode div.action svg {
+  color: var(--k1);
+}
+section.pop.barcode div.action div.left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+section.pop.barcode div.action div.left a:not(.active) i::before,
+section.pop.barcode div.action div.left a:not(.active) svg::before {
+  color: var(--cG4);
+}
+section.pop.barcode div.action div.left a:last-child i::before,
+section.pop.barcode div.action div.left a:last-child svg::before {
+  padding-left: 15px;
+  border-left: 1px solid var(--cG5);
+}
+section.pop.barcode div.action div.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+section.pop.barcode div.action div.right span {
+  font-size: var(--fXS);
+  color: var(--cG3);
 }
 .payment {
   overflow: auto;
@@ -1162,18 +1257,6 @@ a.coupon span.date {
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
 }
-.result section.pop.barcode {
-  align-items: center;
-}
-.result section.pop.barcode span {
-  font-size: var(--fL);
-}
-.result section.pop.barcode span:not(.title) {
-  text-align: center;
-}
-.result section.pop.barcode img {
-  width: 100%;
-}
 .store {
   min-width: 100vw;
   min-height: 100vh;
@@ -1220,7 +1303,8 @@ a.coupon span.date {
   min-height: unset;
   max-width: 430px;
   padding: 0 20px 140px;
-  margin: 200px auto 0;
+  margin: 180px auto 0;
+  border-radius: 20px 20px 0 0;
   display: flex;
   flex-direction: column;
   gap: 30px;

@@ -17,7 +17,7 @@
         <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
     </head>
     <body class="store">
-        <a class="back" href="javascript:history.back()">
+        <a class="back" href="index.html">
             <i class="fa-solid fa-chevron-left fa-lg"></i>
         </a>
         <section class="cover">
@@ -72,7 +72,7 @@
                     <div class="icon"><i class="fa-solid fa-plus fa-xl"></i></div>
                     <span>加入會員</span>
                 </a>
-                <a>
+                <a onclick="popBarcode()">
                     <div class="icon"><i class="fa-solid fa-barcode fa-xl"></i></div>
                     <span>會員條碼</span>
                 </a>
@@ -84,7 +84,7 @@
                     <div class="icon"><img src="./icon/qc.svg"></div>
                     <span>線上點餐</span>
                 </a>
-                <a>
+                <a onclick="popNotification();">
                     <div class="icon">
                         <i class="fa-solid fa-bell fa-xl"></i>
                         <div class="notice">
@@ -204,5 +204,79 @@
                 <span>線上點餐</span>
             </button>
         </section> -->
+        <!-- 通知popup -->
+        <section id="popNotification" class="pop notification" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">通知</span>
+                <a>
+                    <div class="dot"></div>
+                    <div class="left">
+                        <span>獲得點數</span>
+                        <span>點數名稱</span>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <span>800</span>
+                            <img src="./icon/mPoint.svg">
+                        </div>
+                        <span>2022-01-15  10:30</span>
+                    </div>
+                </a>
+                <a>
+                    <div class="dot"></div>
+                    <div class="left">
+                        <span>獲得優惠券</span>
+                        <span>優惠券名稱</span>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <span>800</span>
+                            <img src="./icon/mTicket.svg">
+                        </div>
+                        <span>2022-01-15  10:30</span>
+                    </div>
+                </a>
+                <a>
+                    <div class="dot"></div>
+                    <div class="left">
+                        <span>獲得點數</span>
+                        <span>點數名稱</span>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <span>800</span>
+                            <img src="./icon/mPoint.svg">
+                        </div>
+                        <span>2022-01-15  10:30</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- 會員條碼popup -->
+        <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">會員條碼</span>
+                <img src="./img/barcode.png">
+                <span>/ASDFGHJ</span>
+                <div class="action">
+                    <div class="left">
+                        <a class="active">
+                            <i class="fa-solid fa-barcode fa-xl"></i>
+                        </a>
+                        <a>
+                            <i class="fa-solid fa-qrcode fa-xl"></i>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span>04:54 更新</span>
+                        <a><i class="fa-solid fa-arrows-rotate fa-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/store.js"></script>
     </body>
 </html>

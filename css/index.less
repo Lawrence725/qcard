@@ -111,16 +111,6 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
-section.pop.notice { align-items: center;
-    .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
-        span { text-align: center;
-            &.title { font-size: var(--fL); }
-            &:not(.title) { color: var(--cG3); }}
-        div.icon { display: flex; justify-content: center; margin-top: -60px; }
-        > div.buttons { width: 100%; display: flex; gap: 10px;
-            button:first-child { background-color: var(--cBg);
-                span { color: var(--cG2) !important; }}}
-        > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
 a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
     div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
         &.left { left: -20px; }
@@ -135,6 +125,43 @@ a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: rel
         &.name { font-size: var(--fS); }
         &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.date { font-size: var(--fS); }}}
+section.pop.notice { align-items: center;
+    .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
+        span { text-align: center;
+            &.title { font-size: var(--fL); }
+            &:not(.title) { color: var(--cG3); }}
+        div.icon { display: flex; justify-content: center; margin-top: -60px; }
+        > div.buttons { width: 100%; display: flex; gap: 10px;
+            button:first-child { background-color: var(--cBg);
+                span { color: var(--cG2) !important; }}}
+        > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
+section.pop.notification .popBody { 
+    span.title { font-size: var(--fL); font-weight: bold; }
+    a:not(.close) { display: flex; align-items: center; gap: 10px;
+        div.dot { width: 8px; height: 8px; border-radius: 99px; background-color: var(--cRed); }
+        div.left { display: flex; flex-direction: column;
+            span { font-size: var(--fL);
+                &:not(:first-child) { font-size: var(--fS); color: var(--cG3); }}}
+        div.right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end;
+            > div { display: flex; align-items: center; gap: 5px;
+                span { font-size: var(--fL); }
+                img { width: 20px; }}
+            > span { font-size: var(--fS); color: var(--cG3); }}}
+    a:not(:last-child) { &:not(.close) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }}
+}
+section.pop.barcode { align-items: center;
+    span { font-size: var(--fL);
+        &:not(.title) { text-align: center; }}
+    img { width: 100%; }
+    div.action { display: flex; align-items: center; justify-content: space-between;
+        i, svg { color: var(--k1); }
+        div.left { display: flex; align-items: center; gap: 15px;
+            a:not(.active) {
+                i::before, svg::before { color: var(--cG4); }}
+            a:last-child {
+                i::before, svg::before { padding-left: 15px; border-left: 1px solid var(--cG5); }}}
+        div.right { display: flex; align-items: center; gap: 10px;
+            span { font-size: var(--fXS); color: var(--cG3); }}}}
 
 // 付款頁
 .payment { overflow: auto;
@@ -254,11 +281,7 @@ a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: rel
                     span { color: var(--cG2) !important; }
                     i, svg { color: var(--k1); }}
                 button:last-child { background-color: var(--k1);
-                    span { color: white !important; }}}}}
-    section.pop.barcode { align-items: center;
-        span { font-size: var(--fL);
-            &:not(.title) { text-align: center; }}
-        img { width: 100%; }}}
+                    span { color: white !important; }}}}}}
 
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
@@ -266,7 +289,7 @@ a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: rel
     section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: 1;
         div.content { width: 100%; max-width: 430px; height: 100%;
             img { width: 100%; height: 100%; }}}
-    section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 200px auto 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
+    section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 180px auto 0; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
         section.info { padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 5px;
             div.logo { min-height: 60px; margin-top: -50px;
                 img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
