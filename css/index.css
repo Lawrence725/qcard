@@ -27,12 +27,12 @@
   src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
 }
 :root {
-  --fXXL: clamp(1.9rem, 10vw, 2rem);
-  --fXL: clamp(1.4rem, 6vw, 1.5rem);
-  --fL: clamp(1.2rem, 5vw, 1.3rem);
-  --fM: clamp(1rem, 4vw, 1.2rem);
-  --fS: clamp(0.8rem, 3vw, 0.9rem);
-  --fXS: clamp(0.6rem, 3vw, 0.7rem);
+  --fXXL: 1.9rem;
+  --fXL: 1.4rem;
+  --fL: 1.2rem;
+  --fM: 1rem;
+  --fS: 0.8rem;
+  --fXS: 0.6rem;
   --k1: #DD9A8A;
   --k2: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), white;
   --c1: #EF6079;
@@ -732,7 +732,7 @@ section.pop.notification .popBody a.item div.left span {
   font-size: var(--fL);
 }
 section.pop.notification .popBody a.item div.left span:not(:first-child) {
-  font-size: var(--fS);
+  font-size: var(--fM);
   color: var(--cG3);
 }
 section.pop.notification .popBody a.item div.right {
@@ -748,9 +748,10 @@ section.pop.notification .popBody a.item div.right > div {
 }
 section.pop.notification .popBody a.item div.right > div span {
   font-size: var(--fL);
+  font-weight: bold;
 }
 section.pop.notification .popBody a.item div.right > div img {
-  width: 20px;
+  width: 24px;
 }
 section.pop.notification .popBody a.item div.right > span {
   font-size: var(--fS);
@@ -2013,10 +2014,10 @@ section.pop.barcode div.action div.right svg {
   flex-direction: column;
 }
 .coin section.main div.item div.left span {
-  font-size: var(--fM);
+  font-size: var(--fL);
 }
 .coin section.main div.item div.left span.content {
-  font-size: var(--fS);
+  font-size: var(--fM);
   color: var(--cG3);
 }
 .coin section.main div.item div.right {

@@ -5,12 +5,18 @@
 
 :root {
     // Font
-    --fXXL: clamp(1.9rem, 10vw, 2.0rem);
-    --fXL:  clamp(1.4rem, 6vw, 1.5rem);
-    --fL:   clamp(1.2rem, 5vw, 1.3rem);
-    --fM:   clamp(1rem, 4vw, 1.2rem);
-    --fS:   clamp(0.8rem, 3vw, 0.9rem);
-    --fXS:  clamp(0.6rem, 3vw, 0.7rem);
+    // --fXXL: clamp(1.9rem, 10vw, 2.0rem);
+    // --fXL:  clamp(1.4rem, 6vw, 1.5rem);
+    // --fL:   clamp(1.2rem, 5vw, 1.3rem);
+    // --fM:   clamp(1rem, 4vw, 1.2rem);
+    // --fS:   clamp(0.8rem, 3vw, 0.9rem);
+    // --fXS:  clamp(0.6rem, 3vw, 0.7rem);
+    --fXXL: 1.9rem;
+    --fXL:  1.4rem;
+    --fL:   1.2rem;
+    --fM:   1rem;
+    --fS:   0.8rem;
+    --fXS:  0.6rem;
 
     // Color
     --k1:     @color;
@@ -151,11 +157,11 @@ section.pop.notification .popBody {
             &.active { background-color: var(--cRed); }}
         div.left { display: flex; flex-direction: column;
             span { font-size: var(--fL);
-                &:not(:first-child) { font-size: var(--fS); color: var(--cG3); }}}
+                &:not(:first-child) { font-size: var(--fM); color: var(--cG3); }}}
         div.right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end;
             > div { display: flex; align-items: center; gap: 5px;
-                span { font-size: var(--fL); }
-                img { width: 20px; }}
+                span { font-size: var(--fL); font-weight: bold; }
+                img { width: 24px; }}
             > span { font-size: var(--fS); color: var(--cG3); }}}}
 section.pop.dateRange {
     span.title { font-size: var(--fL); } 
@@ -429,8 +435,8 @@ section.pop.barcode { align-items: center;
         div.item { width: 100%; display: flex; align-items: center; justify-content: space-between;
             &:not(:last-child) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }
             div.left { display: flex; flex-direction: column;
-                span { font-size: var(--fM);
-                    &.content { font-size: var(--fS); color: var(--cG3); }}}
+                span { font-size: var(--fL);
+                    &.content { font-size: var(--fM); color: var(--cG3); }}}
             div.right { display: flex; align-items: center; gap: 5px;
                 span { font-size: var(--fL); font-weight: bold;
                     &.negative { color: var(--cRed); }}
