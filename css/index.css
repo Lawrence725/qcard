@@ -1333,6 +1333,182 @@ section.pop.barcode div.action div.right span {
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
 }
+.welcome {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  background-color: var(--cBg);
+}
+.welcome section.main {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  padding: 30px 30px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-image: url(../img/pattern.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.welcome section.main div.top {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.welcome section.main div.top img.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.welcome section.main div.top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.welcome section.main div.top > div div.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.welcome section.main div.top > div div.item > div.icon {
+  min-width: 60px;
+  min-height: 60px;
+  border: 1px solid var(--cG5);
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.welcome section.main div.top > div div.item > div.icon img {
+  width: 30px;
+}
+.welcome section.main div.top > div div.item > div:not(.icon) {
+  display: flex;
+  flex-direction: column;
+}
+.welcome section.main div.top > div div.item > div:not(.icon) span {
+  font-size: var(--fS);
+}
+.welcome section.main div.top > div div.item > div:not(.icon) span.title {
+  font-size: var(--fL);
+  color: var(--k1);
+}
+.welcome section.main div.action {
+  width: 100vw;
+  max-width: 430px;
+  height: 400px;
+  margin-left: -30px;
+  padding: 50px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.welcome section.main div.action > * {
+  z-index: 1;
+}
+.welcome section.main div.action div.bg {
+  width: 1000px;
+  height: 1000px;
+  margin-right: 150px;
+  border-radius: 999px;
+  top: 0;
+  position: absolute;
+  background: var(--k1);
+  pointer-events: none;
+  z-index: 0;
+}
+.welcome section.main div.action button {
+  width: 250px;
+  min-height: 40px;
+  background-color: white;
+}
+.welcome section.main div.action button.signin {
+  border-radius: 5px;
+}
+.welcome section.main div.action button.signin.line {
+  background-color: #06C755;
+}
+.welcome section.main div.action button.signin.line > div {
+  background-color: #06C755;
+  position: relative;
+}
+.welcome section.main div.action button.signin.line > div div.white {
+  width: 26px;
+  height: 26px;
+  border-radius: 99px;
+  position: absolute;
+  background-color: white;
+}
+.welcome section.main div.action button.signin.line > div i,
+.welcome section.main div.action button.signin.line > div svg {
+  color: #06C755;
+  z-index: 1;
+}
+.welcome section.main div.action button.signin.line span {
+  color: white !important;
+}
+.welcome section.main div.action button.signin > div {
+  min-width: 50px;
+  height: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome section.main div.action button.signin > div i,
+.welcome section.main div.action button.signin > div svg {
+  color: var(--k1);
+}
+.welcome section.main div.action button.signin span {
+  width: 100%;
+}
+.welcome section.main div.action button span {
+  color: var(--k1) !important;
+}
+.welcome section.main div.action > span {
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG5);
+}
+.welcome section.main div.action > span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+  color: white;
+}
+.welcome section.main div.action > span a {
+  font-size: var(--fS);
+  color: white;
+}
+.welcome section.main div.action > a {
+  border-radius: 999px;
+}
+.welcome section.main div.action > a i,
+.welcome section.main div.action > a svg {
+  color: white;
+}
+.welcome section.main div.action div.service {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.welcome section.main div.action div.service img {
+  width: 20px;
+}
+.welcome section.main div.action div.service span {
+  color: white;
+  font-size: var(--fS);
+}
 .login {
   min-width: 100vw;
   min-height: 100vh;
@@ -1440,7 +1616,7 @@ section.pop.barcode div.action div.right span {
   gap: 20px;
   overflow: hidden;
 }
-.login section.main div.action .bg {
+.login section.main div.action div.bg {
   width: 1000px;
   height: 1000px;
   margin-right: 150px;
@@ -1452,7 +1628,7 @@ section.pop.barcode div.action div.right span {
   z-index: -1;
 }
 .login section.main div.action button {
-  width: 200px;
+  width: 250px;
   min-height: 40px;
   background-color: white;
 }

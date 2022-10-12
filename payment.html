@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="payment">
+        <!-- Loading -->
+            <!-- <div class="loading"><div>
+                <img src="icon/favicon.svg">
+            <div></div></div></div> -->
+            <!-- 桃園版 -->
+            <!-- <div class="spinner"><div><div></div></div></div> -->
+        <!-- Header -->
+        <section class="head">
+            <div class="bg"></div>
+            <div class="left">
+                <a><i class="fa-solid fa-chevron-left fa-lg"></i></a>
+                <span>特約店家名稱</span>
+            </div>
+            <span>特約店家名稱</span>
+            <div class="right">
+                <span>NT$</span>
+                <span>100</span>
+            </div>
+        </section>
+        <!-- Footer -->
+        <section class="foot">
+            <button onclick="popConfirm();">
+                <span>支付</span>
+                <span> NT$90 + </span>
+                <img src="./icon/pointW.svg">
+                <span>100</span>
+            </button>
+        </section>
+        <section class="main">
+            <section class="account">
+                <div>
+                    <span>陳大文 0987654321 正在付款</span>
+                    <span>請於12:30前完成付款</span>
+                </div>
+                <a href="index.html">登出</a>
+            </section>
+            <!-- 消費金額 -->
+            <section class="spending">
+                <span class="title">消費金額</span>
+                <div class="input">
+                    <span>NT$</span>
+                    <input type="number" placeholder="0" value="" pattern="\d*">
+                </div>
+            </section>
+            <!-- 點數 -->
+            <section class="point">
+                <div class="top">
+                    <span class="title">點數</span>
+                    <img src="./icon/ptTaoyuan.svg">
+                    <span>100</span>
+                </div>
+                <div class="center">
+                    <a class="active">
+                        <img src="./icon/point.svg">
+                        <div>
+                            <span>點數</span>
+                            <span>100</span>
+                        </div>
+                    </a>
+                    <a>
+                        <img src="./icon/ptTaoyuan.svg">
+                        <div>
+                            <span>紅利桃子</span>
+                            <span>100</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/point.svg">
+                        <div>
+                            <span>點數名稱</span>
+                            <span>前往開通</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="input">
+                    <span>NT$</span>
+                    <input type="number" placeholder="0" value="1" pattern="\d*" disabled>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <img src="./icon/point.svg">
+                        <span>1 = NT$1</span>
+                    </div>
+                    <div>
+                        <label class="check">
+                            <input type="checkbox" name="checkbox1" checked> <!-- checked -->
+                            <span class="checkmark checkbox"></span>
+                            <span>使用全部</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <!-- 付款方式 -->
+            <section class="type">
+                <div class="top">
+                    <span class="title">付款方式</span>
+                    <span>目前台灣Pay服務異常，請使用其他付款方式</span>
+                </div>
+                <div class="center">
+                    <a>
+                        <i class="fa-solid fa-money-bill-wave fa-md"></i>
+                        <span>現金</span>
+                    </a>
+                    <a class="active" onclick="popCredit()">
+                        <i class="fa-solid fa-credit-card fa-md"></i>
+                        <span>信用卡</span>
+                        <i class="fa-solid fa-chevron-right fa-sm"></i>
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/pApple.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pGoogle.svg">
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/pLine.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pJko.svg">
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/pEasy.svg">
+                    </a>
+                    <a class="disabled">
+                        <img src="./icon/pTaiwan.svg">
+                    </a>
+                </div>
+            </section>
+            <!-- 鍵盤 -->
+            <section class="keyboard">
+                <div>
+                    <a>1</a>
+                    <a>2</a>
+                    <a>3</a>
+                </div>
+                <div>
+                    <a>4</a>
+                    <a>5</a>
+                    <a>6</a>
+                </div>
+                <div>
+                    <a>7</a>
+                    <a>8</a>
+                    <a>9</a>
+                </div>
+                <div>
+                    <a class="minor">清除</a>
+                    <a>0</a>
+                    <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+            </section>
+        </section>
+        <!-- 信用卡popup -->
+        <section id="popCredit" class="pop credit" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">信用卡</span>
+                <div class="list">
+                    <a class="active">
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cVisa.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cMaster.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cJcb.svg">
+                    </a>
+                </div>
+                <div class="new">
+                    <span class="title">新增信用卡</span>
+                    <div>
+                        <span>卡號</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>到期日</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                        <div>
+                            <span>CVC / CVV</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                    </div>
+                    <div>
+                        <span>卡片上姓名</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div>
+                        <span>卡片暱稱 (非必填)</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <label class="check">
+                        <input type="checkbox" name="checkbox2" checked> <!-- checked -->
+                        <span class="checkmark checkbox"></span>
+                        <span>儲存信用卡</span>
+                    </label>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確定</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 確認popup -->
+        <section id="popConfirm" class="pop confirm" onclick="popClose(this)">
+            <div class="popBody">
+                <span class="title">即將支付</span>
+                <div>
+                    <span class="cost">NT$100</span>
+                    <div>
+                        <img src="./icon/pLine.svg">
+                        <span>NT$90</span>
+                        <span>+</span>
+                        <img src="./icon/point.svg">
+                        <span>10</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="subTitle">給</span>
+                    <span class="title">特約店家名稱</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="window.location.href='pResult.html'">
+                        <span>確定送出</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 訊息popup -->
+        <section id="popNotice" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">訊息標題</span>
+                    <span>內容說明</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/index.js"></script>
+    </body>
+</html>

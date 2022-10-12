@@ -298,6 +298,41 @@ section.pop.barcode { align-items: center;
                     span { color: white !important; }}}}}}
 
 // 登入
+.welcome { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    section.main { width: 100%; max-width: 430px; min-height: 100vh; padding: 30px 30px 0; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; background-image: url(../img/pattern.png); background-position: center; background-attachment: fixed; background-size: cover;
+        div.top { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 40px;
+            img.logo { width: 150px; height: 150px; border-radius: 20px; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
+            > div { display: flex; flex-direction: column; gap: 20px;
+                div.item { display: flex; align-items: center; gap: 10px;
+                    > div.icon { min-width: 60px; min-height: 60px; border: 1px solid var(--cG5); border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white;
+                        img { width: 30px; }}
+                    > div:not(.icon) { display: flex; flex-direction: column;
+                        span { font-size: var(--fS);
+                            &.title { font-size: var(--fL); color: var(--k1); }}}}}}
+        div.action { width: 100vw; max-width: 430px; height: 400px; margin-left: -30px; padding: 50px 20px; position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; overflow: hidden;
+            > * { z-index: 1; }
+            div.bg { width: 1000px; height: 1000px; margin-right: 150px; border-radius: 999px; top: 0; position: absolute; background: var(--k1); pointer-events: none; z-index: 0; }
+            button { width: 250px; min-height: 40px; background-color: white;
+                &.signin { border-radius: 5px;
+                    &.line { background-color: #06C755;
+                        > div { background-color: #06C755; position: relative;
+                            div.white { width: 26px; height: 26px; border-radius: 99px; position: absolute; background-color: white; }
+                            i, svg { color: #06C755; z-index: 1; }}
+                        span { color: white !important; }}
+                    > div { min-width: 50px; height: 40px; border-right: 1px solid rgba(0, 0, 0, 0.08); border-radius: 5px 0 0 5px; display: flex; align-items: center; justify-content: center;
+                        i, svg { color: var(--k1); }}
+                    span { width: 100%; }}
+                span { color: var(--k1) !important; }}
+            > span { font-size: var(--fS); text-align: center; color: var(--cG5);
+                &.title { font-size: var(--fL); font-weight: bold; color: white; }
+                a { font-size: var(--fS); color: white; }}
+            > a { border-radius: 999px;
+                i, svg { color: white; }}
+            div.service { display: flex; align-items: center; gap: 2px;
+                img { width: 20px; }
+                span { color: white; font-size: var(--fS); }}}}}
+
+// 登入
 .login { min-width: 100vw; min-height: 100vh; overflow: auto;
     section.head { background: rgba(255, 255, 255, 0.95);
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
@@ -316,8 +351,8 @@ section.pop.barcode { align-items: center;
                 > div.error { width: 100%; display: flex; justify-content: flex-end; margin-top: -1.5px; border-top: 2px solid var(--cRed);
                     span { color: var(--cRed); font-size: var(--fS); }}}}
         div.action { width: 100vw; max-width: 430px; height: 250px; margin-left: -30px; padding-top: 20px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; overflow: hidden;
-            .bg { width: 1000px; height: 1000px; margin-right: 150px; border-radius: 999px; top: 0; position: absolute; background: var(--k1); pointer-events: none; z-index: -1; }
-            button { width: 200px; min-height: 40px; background-color: white;
+            div.bg { width: 1000px; height: 1000px; margin-right: 150px; border-radius: 999px; top: 0; position: absolute; background: var(--k1); pointer-events: none; z-index: -1; }
+            button { width: 250px; min-height: 40px; background-color: white;
                 span { color: var(--k1) !important; }}
             > span { font-size: var(--fS); text-align: center; color: var(--cG5);
                 a { font-size: var(--fS); color: white; }}}}}
