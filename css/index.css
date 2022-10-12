@@ -1588,8 +1588,7 @@ section.pop.barcode div.action div.right svg {
   color: var(--k1);
 }
 .login section.main div.inputs div.input span.title span {
-  color: var(--cG3);
-  font-size: var(--fXS);
+  color: var(--cRed);
 }
 .login section.main div.inputs div.input > div:not(.error) {
   gap: 10px;
@@ -1602,6 +1601,9 @@ section.pop.barcode div.action div.right svg {
   height: 40px;
   font-size: var(--fL);
   border-radius: 0;
+}
+.login section.main div.inputs div.input > div:not(.error) input::placeholder {
+  color: var(--cG4);
 }
 .login section.main div.inputs div.input > div:not(.error) input.code {
   width: 60px;
