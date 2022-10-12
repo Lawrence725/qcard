@@ -679,10 +679,16 @@ section.pop.notice .popBody > div.buttons {
   display: flex;
   gap: 10px;
 }
-section.pop.notice .popBody > div.buttons button:first-child {
+section.pop.notice .popBody > div.buttons button {
   background-color: var(--cBg);
 }
-section.pop.notice .popBody > div.buttons button:first-child span {
+section.pop.notice .popBody > div.buttons button:last-child {
+  background-color: var(--k1);
+}
+section.pop.notice .popBody > div.buttons button:last-child span {
+  color: white !important;
+}
+section.pop.notice .popBody > div.buttons button span {
   color: var(--cG2) !important;
 }
 section.pop.notice .popBody > div:not(.buttons) {
