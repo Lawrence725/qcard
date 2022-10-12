@@ -1465,6 +1465,7 @@ section.pop.barcode div.action div.right svg {
   width: 250px;
   min-height: 40px;
   background-color: white;
+  color: var(--k1);
 }
 .welcome section.main div.action button.signin {
   border-radius: 5px;
