@@ -568,6 +568,7 @@ a.coupon {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   background-color: white;
   overflow: hidden;
@@ -645,6 +646,11 @@ a.coupon span.info {
 a.coupon span.date {
   font-size: var(--fS);
 }
+a.coupon span.none {
+  font-size: var(--fM);
+  color: var(--k1);
+  text-align: center;
+}
 section.pop.notice {
   align-items: center;
 }
@@ -688,54 +694,61 @@ section.pop.notification .popBody span.title {
   font-size: var(--fL);
   font-weight: bold;
 }
-section.pop.notification .popBody a:not(.close) {
+section.pop.notification .popBody a.read {
+  display: flex;
+  justify-content: center;
+}
+section.pop.notification .popBody a.read span {
+  color: var(--k1);
+}
+section.pop.notification .popBody a.item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-section.pop.notification .popBody a:not(.close) div.dot {
-  width: 8px;
-  height: 8px;
+section.pop.notification .popBody a.item:not(:last-child) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cG5);
+}
+section.pop.notification .popBody a.item div.dot {
+  min-width: 8px;
+  min-height: 8px;
   border-radius: 99px;
 }
-section.pop.notification .popBody a:not(.close) div.dot.active {
+section.pop.notification .popBody a.item div.dot.active {
   background-color: var(--cRed);
 }
-section.pop.notification .popBody a:not(.close) div.left {
+section.pop.notification .popBody a.item div.left {
   display: flex;
   flex-direction: column;
 }
-section.pop.notification .popBody a:not(.close) div.left span {
+section.pop.notification .popBody a.item div.left span {
   font-size: var(--fL);
 }
-section.pop.notification .popBody a:not(.close) div.left span:not(:first-child) {
+section.pop.notification .popBody a.item div.left span:not(:first-child) {
   font-size: var(--fS);
   color: var(--cG3);
 }
-section.pop.notification .popBody a:not(.close) div.right {
+section.pop.notification .popBody a.item div.right {
   margin-left: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-section.pop.notification .popBody a:not(.close) div.right > div {
+section.pop.notification .popBody a.item div.right > div {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-section.pop.notification .popBody a:not(.close) div.right > div span {
+section.pop.notification .popBody a.item div.right > div span {
   font-size: var(--fL);
 }
-section.pop.notification .popBody a:not(.close) div.right > div img {
+section.pop.notification .popBody a.item div.right > div img {
   width: 20px;
 }
-section.pop.notification .popBody a:not(.close) div.right > span {
+section.pop.notification .popBody a.item div.right > span {
   font-size: var(--fS);
   color: var(--cG3);
-}
-section.pop.notification .popBody a:not(:last-child):not(.close) {
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--cG5);
 }
 section.pop.dateRange span.title {
   font-size: var(--fL);
@@ -792,31 +805,42 @@ section.pop.barcode span {
 section.pop.barcode span:not(.title) {
   text-align: center;
 }
-section.pop.barcode img {
+section.pop.barcode div.code {
   width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+section.pop.barcode div.code img.barcode {
+  width: 100%;
+}
+section.pop.barcode div.code img.qrcode {
+  height: 200px;
 }
 section.pop.barcode div.action {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-section.pop.barcode div.action i,
-section.pop.barcode div.action svg {
-  color: var(--k1);
-}
 section.pop.barcode div.action div.left {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-section.pop.barcode div.action div.left a:not(.active) i::before,
-section.pop.barcode div.action div.left a:not(.active) svg::before {
-  color: var(--cG4);
+section.pop.barcode div.action div.left a.active i,
+section.pop.barcode div.action div.left a.active svg {
+  color: var(--k1);
 }
-section.pop.barcode div.action div.left a:last-child i::before,
-section.pop.barcode div.action div.left a:last-child svg::before {
+section.pop.barcode div.action div.left a:last-child {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
+}
+section.pop.barcode div.action div.left a i,
+section.pop.barcode div.action div.left a svg {
+  color: var(--cG4);
 }
 section.pop.barcode div.action div.right {
   display: flex;
@@ -826,6 +850,10 @@ section.pop.barcode div.action div.right {
 section.pop.barcode div.action div.right span {
   font-size: var(--fS);
   color: var(--cG3);
+}
+section.pop.barcode div.action div.right i,
+section.pop.barcode div.action div.right svg {
+  color: var(--k1);
 }
 .payment {
   overflow: auto;
@@ -1870,14 +1898,14 @@ section.pop.barcode div.action div.right span {
   font-weight: bold;
   margin-bottom: 10px;
 }
-.store section.main section.detail div {
+.store section.main section.detail > div {
   display: flex;
   gap: 10px;
 }
-.store section.main section.detail div span {
+.store section.main section.detail > div span {
   width: 100%;
 }
-.store section.main section.detail div a {
+.store section.main section.detail > div a {
   min-width: 34px;
   height: 34px;
   border-radius: 99px;
@@ -1887,7 +1915,7 @@ section.pop.barcode div.action div.right span {
   background-color: white;
   color: var(--cG4);
 }
-.store section.main section.detail div a:last-child {
+.store section.main section.detail > div a:last-child {
   color: var(--k1);
 }
 .store section.main section.detail div.branch a {
@@ -1977,7 +2005,7 @@ section.pop.barcode div.action div.right span {
   flex-direction: column;
 }
 .coin section.main div.item div.left span {
-  font-size: var(--fL);
+  font-size: var(--fM);
 }
 .coin section.main div.item div.left span.content {
   font-size: var(--fS);

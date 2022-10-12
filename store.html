@@ -161,10 +161,22 @@
                     </div>
                     <img src="img/food.png">
                 </a>
+                <a class="coupon">
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <span class="none">暫無優惠券<br>敬請期待</span>
+                </a>
             </section>
             <!-- 商店資訊 -->
             <section class="detail">
                 <span class="title">商店資訊</span>
+                <!-- 地圖 -->
+                <div class="map">
+                    <!-- ********** 「分店」地圖放這裡            ********** -->
+                    <!-- ********** width+height設成100% ********** -->
+                    <!-- ********** 下面img拿掉           ********** -->
+                    <img src="./img/map.png">
+                </div>
                 <!-- 分店 -->
                 <div class="branch">
                     <span>米哥烘焙坊 台北店</span>
@@ -187,13 +199,6 @@
                     <a><i class="fa-solid fa-copy"></i></a>
                     <a><i class="fa-solid fa-phone"></i></a>
                 </div>
-                <!-- 地圖 -->
-                <div class="map">
-                    <!-- ********** 「分店」地圖放這裡            ********** -->
-                    <!-- ********** width+height設成100% ********** -->
-                    <!-- ********** 下面img拿掉           ********** -->
-                    <img src="./img/map.png">
-                </div>
             </section>
         </section>
         <!-- Footer -->
@@ -209,7 +214,10 @@
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <span class="title">通知</span>
-                <a>
+                <a class="read">
+                    <span>全部已讀</span>
+                </a>
+                <a class="item">
                     <div class="dot active"></div>
                     <div class="left">
                         <span>獲得點數</span>
@@ -223,7 +231,7 @@
                         <span>2022-01-15  10:30</span>
                     </div>
                 </a>
-                <a>
+                <a class="item">
                     <div class="dot active"></div>
                     <div class="left">
                         <span>獲得優惠券</span>
@@ -237,7 +245,7 @@
                         <span>2022-01-15  10:30</span>
                     </div>
                 </a>
-                <a>
+                <a class="item">
                     <div class="dot"></div>
                     <div class="left">
                         <span>獲得點數</span>
@@ -258,8 +266,12 @@
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <span class="title">會員條碼</span>
-                <img src="./img/barcode.png">
-                <span>/ASDFGHJ</span>
+                <div class="code">
+                    <!-- Barcode/QRcode二擇一 -->
+                    <img class="barcode" src="./img/barcode.png">
+                    <!-- <img class="qrcode" src="./img/qrcode.png"> -->
+                    <span>/ASDFGHJ</span>
+                </div>
                 <div class="action">
                     <div class="left">
                         <a class="active">

@@ -114,7 +114,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
-a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; gap: 10px; background-color: white; overflow: hidden;
+a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden;
     div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
         &.left { left: -20px; }
         &.right { right: -20px; }}
@@ -127,7 +127,8 @@ a.coupon { height: 140px; padding: 10px 30px; border-radius: 20px; position: rel
         &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.name { font-size: var(--fS); }
         &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-        &.date { font-size: var(--fS); }}}
+        &.date { font-size: var(--fS); }
+        &.none { font-size: var(--fM); color: var(--k1); text-align: center; }}}
 section.pop.notice { align-items: center;
     .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
         span { text-align: center;
@@ -140,8 +141,11 @@ section.pop.notice { align-items: center;
         > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
 section.pop.notification .popBody { 
     span.title { font-size: var(--fL); font-weight: bold; }
-    a:not(.close) { display: flex; align-items: center; gap: 10px;
-        div.dot { width: 8px; height: 8px; border-radius: 99px;
+    a.read { display: flex; justify-content: center;
+        span { color: var(--k1); }}
+    a.item { display: flex; align-items: center; gap: 10px;
+        &:not(:last-child) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }
+        div.dot { min-width: 8px; min-height: 8px; border-radius: 99px;
             &.active { background-color: var(--cRed); }}
         div.left { display: flex; flex-direction: column;
             span { font-size: var(--fL);
@@ -150,8 +154,7 @@ section.pop.notification .popBody {
             > div { display: flex; align-items: center; gap: 5px;
                 span { font-size: var(--fL); }
                 img { width: 20px; }}
-            > span { font-size: var(--fS); color: var(--cG3); }}}
-    a:not(:last-child) { &:not(.close) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }}}
+            > span { font-size: var(--fS); color: var(--cG3); }}}}
 section.pop.dateRange {
     span.title { font-size: var(--fL); } 
     div.tabs { width: 100%; display: flex; align-items: center; 
@@ -166,16 +169,18 @@ section.pop.dateRange {
 section.pop.barcode { align-items: center;
     span { font-size: var(--fL);
         &:not(.title) { text-align: center; }}
-    img { width: 100%; }
+    div.code { width: 100%; height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+        img.barcode { width: 100%; }
+        img.qrcode { height: 200px; }}
     div.action { display: flex; align-items: center; justify-content: space-between;
-        i, svg { color: var(--k1); }
         div.left { display: flex; align-items: center; gap: 15px;
-            a:not(.active) {
-                i::before, svg::before { color: var(--cG4); }}
-            a:last-child {
-                i::before, svg::before { padding-left: 15px; border-left: 1px solid var(--cG5); }}}
+            a {
+                &.active { i, svg { color: var(--k1); }}
+                &:last-child { padding-left: 15px; border-left: 1px solid var(--cG5); }
+                i, svg { color: var(--cG4); }}}
         div.right { display: flex; align-items: center; gap: 10px;
-            span { font-size: var(--fS); color: var(--cG3); }}}}
+            span { font-size: var(--fS); color: var(--cG3); }
+            i, svg { color: var(--k1); }}}}
 
 // 付款頁
 .payment { overflow: auto;
@@ -398,7 +403,7 @@ section.pop.barcode { align-items: center;
                 i, svg { color: var(--k1); }}}
         section.detail { display: flex; flex-direction: column; gap: 10px;
             span.title { font-weight: bold; margin-bottom: 10px; }
-            div { display: flex; gap: 10px;
+            > div { display: flex; gap: 10px;
                 span { width: 100%; }
                 a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
                     &:last-child { color: var(--k1); }}}
@@ -421,7 +426,7 @@ section.pop.barcode { align-items: center;
         div.item { width: 100%; display: flex; align-items: center; justify-content: space-between;
             &:not(:last-child) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }
             div.left { display: flex; flex-direction: column;
-                span { font-size: var(--fL);
+                span { font-size: var(--fM);
                     &.content { font-size: var(--fS); color: var(--cG3); }}}
             div.right { display: flex; align-items: center; gap: 5px;
                 span { font-size: var(--fL); font-weight: bold;
