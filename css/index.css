@@ -563,7 +563,7 @@ a.dateRange svg {
 }
 a.coupon {
   height: 140px;
-  padding: 10px 30px;
+  padding: 0 30px;
   border-radius: 20px;
   position: relative;
   display: flex;
