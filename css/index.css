@@ -2101,7 +2101,7 @@ section.pop.barcode div.action div.right svg {
 .ticket section.head {
   height: 60px;
   padding: 20px;
-  background: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), rgba(255, 255, 255, 0.9);
+  background: var(--k2);
 }
 .ticket section.head .left a {
   min-width: 30px;
@@ -2128,7 +2128,7 @@ section.pop.barcode div.action div.right svg {
   display: flex;
   gap: 10px;
   z-index: 5;
-  background: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), rgba(255, 255, 255, 0.9);
+  background: var(--k2);
 }
 .ticket section.foot button.secondary {
   background-color: white;
