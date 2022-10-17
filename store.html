@@ -270,12 +270,26 @@
         <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
-                <span class="title">會員條碼</span>
+                <!-- <span class="title">會員條碼</span> -->
+                <div class="pages">
+                    <a class="page active">
+                        <span>會員條碼</span>
+                    </a>
+                    <a class="page">
+                        <span>載具條碼</span>
+                    </a>
+                </div>
                 <div class="code">
-                    <!-- Barcode/QRcode二擇一 -->
-                    <img class="barcode" src="./img/barcode.png">
-                    <!-- <img class="qrcode" src="./img/qrcode.png"> -->
-                    <span>/ASDFGHJ</span>
+                    <!-- ********** v會員資料v ********** -->
+                    <div>
+                        <img src="./img/profile.png">
+                        <span>陳大文</span>
+                    </div>
+                    <!-- ********** vBarcode/QRcode二擇一v ********** -->
+                    <img class="qrcode" src="./img/qrcode.png">
+                    <!-- <img class="barcode" src="./img/barcode.png"> -->
+                    <!-- ********** v代碼v ********** -->
+                    <!-- <span>/ASDFGHJ</span> -->
                 </div>
                 <div class="action">
                     <div class="left">
