@@ -202,6 +202,15 @@ section.pop.intro { height: 100%; padding: 50px 25px; align-items: center;
                     &.active { background-color: var(--k1); }}}
             a { width: 100%; display: flex;
                 &.right { justify-content: flex-end; }}}}}
+section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
+    .popBody { height: 100%; gap: 10px; align-items: center; justify-content: space-between; overflow: hidden;
+        img { max-width: 100%; max-height: 90%; aspect-ratio: 9/16; border-radius: 10px; }
+        div.buttons { width: 100%; display: flex; align-items: center; gap: 10px;
+            button { width: 100%; background-color: var(--cBg);
+                &:last-child { background-color: var(--k1);
+                    span { color: white !important; }}
+                span { color: var(--cG2) !important; }}
+        }}}
 
 // 付款頁
 .payment { overflow: auto;

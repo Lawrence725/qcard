@@ -1,7 +1,8 @@
 window.onload = function() {
     popBarcode();
     popNotification();
-    popIntro(); }
+    popIntro();
+    popVisit(); }
 
 // Popup close
 function popClose(e) {
@@ -34,4 +35,9 @@ function popNotification() {
 // 首次加入popup
 function popIntro() {
     document.getElementById("popIntro").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 訪客模式popup
+function popVisit() {
+    document.getElementById("popVisit").style.display = "flex";
     document.body.style.overflow = "hidden"; }

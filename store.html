@@ -79,7 +79,7 @@
                     <div class="icon"><i class="fa-solid fa-barcode fa-xl"></i></div>
                     <span>會員條碼</span>
                 </a>
-                <a onclick="popIntro()">
+                <a onclick="popVisit()">
                     <div class="icon line"><i class="fa-brands fa-line fa-xl"></i></div>
                     <span>官方Line</span>
                 </a>
@@ -324,6 +324,16 @@
                 </div>
                 <!-- ********** v最後一頁才出現v ********** -->
                 <button onclick="popClose(this)"><span>開始</span></button>
+            </div>
+        </section>
+        <!-- 訪客模式popup -->
+        <section id="popVisit" class="pop visit">
+            <div class="popBody">
+                <img src="./img/food.png">
+                <div class="buttons">
+                    <button onclick="popClose(this)"><span>略過</span></button>
+                    <button onclick="popClose(this)"><span>前往註冊</span></button>
+                </div>
             </div>
         </section>
         <!-- Script -->
