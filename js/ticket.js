@@ -1,6 +1,7 @@
 window.onload = function() {
     popConfirm();
-    popBarcode(); }
+    popBarcode();
+    popStore(); }
 
 // Popup close
 function popClose(e) {
@@ -28,4 +29,9 @@ function popConfirm() {
 // 會員條碼popup
 function popBarcode() {
     document.getElementById("popBarcode").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 會員條碼popup
+function popStore() {
+    document.getElementById("popStore").style.display = "flex";
     document.body.style.overflow = "hidden"; }

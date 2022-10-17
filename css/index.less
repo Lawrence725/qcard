@@ -371,59 +371,6 @@ section.pop.barcode { align-items: center;
             > span { font-size: var(--fS); text-align: center; color: var(--cG5);
                 a { font-size: var(--fS); color: white; }}}}}
 
-// 商店頁
-.store { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
-    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 3; }
-    section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: 1;
-        div.content { width: 100%; max-width: 430px; height: 100%;
-            img { width: 100%; height: 100%; }}}
-    section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 180px auto 0; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
-        section.info { padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 5px;
-            div.logo { min-height: 60px; margin-top: -50px;
-                img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
-            span { text-align: center;
-                &.title { font-size: var(--fXL); font-weight: bold; }}
-            div.features { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
-                div { display: flex; align-items: center; gap: 5px;
-                    &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
-                    img { height: 20px; }
-                    i, svg { color: var(--k1); }
-                    span { white-space: nowrap; }}}}
-        section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center;
-            a { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;
-                div.icon { width: 50px; height: 50px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; background-color: white;
-                    &.line i, &.line svg { color: #06C755; }
-                    i, svg { color: var(--k1); }
-                    img { height: 24px; }
-                    div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border-radius: 99px; top: -5px; left: 35px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
-                        span { color: white; font-size: var(--fS); font-weight: bold; }}}
-                span { font-size: var(--fS); }}}
-        section.point { display: flex; flex-direction: column; gap: 10px;
-            > span.title { font-weight: bold; }
-            a.point { width: 100%; padding: 10px; border-radius: 20px; display: flex; align-items: center; gap: 10px; background-color: white;
-                img { width: 40px; }
-                > div { width: 100%; display: flex; flex-direction: column;
-                    span:not(.title) { font-size: var(--fS); color: var(--cG3); }}
-                > span { font-size: var(--fL); color: var(--k1); }
-                > i, > svg { color: var(--cG4); }}}
-        section.coupon { display: flex; flex-direction: column; gap: 10px;
-            div.top {  display: flex; align-items: center; justify-content: space-between;
-                span.title { font-weight: bold; }
-                i, svg { color: var(--k1); }}}
-        section.detail { display: flex; flex-direction: column; gap: 10px;
-            span.title { font-weight: bold; margin-bottom: 10px; }
-            > div { display: flex; gap: 10px;
-                span { width: 100%; }
-                a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
-                    &:last-child { color: var(--k1); }}}
-            div.branch a { color: var(--k1); }
-            div.map { width: 100%; height: 250px; border-radius: 20px; overflow: hidden;
-                img { width: 100%; height: 100%; }}}}
-    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
-        button { display: flex; align-items: center; gap: 10px;
-            span { font-size: var(--fL); }
-            i, svg { color: white; }}}}
-
 // 點數
 .coin { min-width: 100vw; min-height: 100vh; overflow: auto;
     section.head {
@@ -483,3 +430,58 @@ section.pop.barcode { align-items: center;
             > div { display: flex; flex-direction: column; gap: 5px; }
             hr { border: 1px dashed var(--cG5); }}}
     section.pop.notice { span:not(.title) { color: var(--cRed); }}}
+
+// 商店頁
+.store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 3; }
+    section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: 1;
+        div.content { width: 100%; max-width: 430px; height: 100%;
+            img { width: 100%; height: 100%; }}}
+    section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 180px auto 0; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
+        section.info { padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 5px;
+            div.logo { min-height: 60px; margin-top: -50px;
+                img { height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+            span { text-align: center;
+                &.title { font-size: var(--fXL); font-weight: bold; }}
+            div.features { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+                div { display: flex; align-items: center; gap: 5px;
+                    &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
+                    img { height: 20px; }
+                    i, svg { color: var(--k1); }
+                    span { white-space: nowrap; }}}}
+        section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center;
+            a { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;
+                div.icon { width: 50px; height: 50px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; background-color: white;
+                    &.line i, &.line svg { color: #06C755; }
+                    i, svg { color: var(--k1); }
+                    img { height: 24px; }
+                    div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border-radius: 99px; top: -5px; left: 35px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
+                        span { color: white; font-size: var(--fS); font-weight: bold; }}}
+                span { font-size: var(--fS); }}}
+        section.point { display: flex; flex-direction: column; gap: 10px;
+            > span.title { font-weight: bold; }
+            a.point { width: 100%; padding: 10px; border-radius: 20px; display: flex; align-items: center; gap: 10px; background-color: white;
+                img { width: 40px; }
+                > div { width: 100%; display: flex; flex-direction: column;
+                    span:not(.title) { font-size: var(--fS); color: var(--cG3); }}
+                > span { font-size: var(--fL); color: var(--k1); }
+                > i, > svg { color: var(--cG4); }}}
+        section.coupon { display: flex; flex-direction: column; gap: 10px;
+            div.top {  display: flex; align-items: center; justify-content: space-between;
+                span.title { font-weight: bold; }
+                i, svg { color: var(--k1); }}}
+        section.detail { display: flex; flex-direction: column; gap: 10px;
+            span.title { font-weight: bold; margin-bottom: 10px; }
+            > div { display: flex; gap: 10px;
+                span { width: 100%; }
+                a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
+                    &:last-child { color: var(--k1); }}}
+            div.branch a { color: var(--k1); }
+            div.map { width: 100%; height: 250px; border-radius: 20px; overflow: hidden;
+                img { width: 100%; height: 100%; }}}}
+    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background: var(--k2); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
+        button { display: flex; align-items: center; gap: 10px;
+            span { font-size: var(--fL); }
+            i, svg { color: white; }}}}
+section.pop.popStore { padding: 0;
+    div.store { background-color: transparent; }}

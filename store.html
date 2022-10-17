@@ -18,14 +18,14 @@
     </head>
     <body class="store">
         <a class="back" href="index.html">
-            <i class="fa-solid fa-chevron-left fa-lg"></i>
+            <i class="fa-solid fa-chevron-down fa-lg"></i>
         </a>
+        <!-- Banner -->
         <section class="cover">
             <div class="content">
-                <!-- ********** 「單店」地圖放這裡            ********** -->
-                <!-- ********** width+height設成100% ********** -->
-                <!-- ********** 下面img拿掉           ********** -->
-                <img src="./img/foodL.png">
+                <!-- ********** Popup形式不顯示Banner ********** -->
+                <!-- ********** 保留空的div.content      ********** -->
+                <!-- <img src="./img/foodL.png"> -->
             </div>
         </section>
         <!-- Main -->
@@ -51,8 +51,10 @@
                         <img src="./icon/mStamp.svg">
                         <span>集章</span>
                     </div>
-                    <!-- ********** 桃園內容 ********** -->
-                    <!-- <div>
+                </div>
+                <!-- ********** v桃園內容v ********** -->
+                <div class="features">
+                    <div>
                         <img src="./icon/ptTaoyuan.svg">
                         <span>紅利桃子</span>
                     </div>
@@ -63,8 +65,9 @@
                     <div>
                         <i class="fa-solid fa-utensils"></i>
                         <span>線上點餐</span>
-                    </div> -->
+                    </div>
                 </div>
+                <!-- ********** ^桃園內容^ ********** -->
             </section>
             <!-- 按鈕 -->
             <section class="actions">
@@ -172,7 +175,7 @@
                 <span class="title">商店資訊</span>
                 <!-- 地圖 -->
                 <div class="map">
-                    <!-- ********** 「分店」地圖放這裡            ********** -->
+                    <!-- ********** 地圖放這裡            ********** -->
                     <!-- ********** width+height設成100% ********** -->
                     <!-- ********** 下面img拿掉           ********** -->
                     <img src="./img/map.png">
@@ -200,13 +203,14 @@
             </section>
         </section>
         <!-- Footer -->
-        <!-- ********** 桃園內容 ********** -->
-        <!-- <section class="foot">
-            <button onclick="window.location.href='tickets.html'">
+        <!-- ********** v桃園內容v ********** -->
+        <section class="foot">
+            <button onclick="window.location.href='ticket.html'">
                 <i class="fa-solid fa-utensils fa-lg"></i>
                 <span>線上點餐</span>
             </button>
-        </section> -->
+        </section>
+        <!-- ********** ^桃園內容^ ********** -->
         <!-- 通知popup -->
         <section id="popNotification" class="pop notification" onclick="popClose(this)">
             <div class="popBody">
