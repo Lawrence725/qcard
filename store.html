@@ -310,13 +310,20 @@
         <!-- 首次加入popup -->
         <section id="popIntro" class="pop intro">
             <div class="popBody">
-                <span class="title">標題</span>
                 <img src="./img/food.png">
-                <div>
-                    <a><i class="fa-solid fa-arrow-left fa-xl"></i></a>
-                    <a onclick="popClose(this)"><span>開始體驗</span></a>
-                    <a><i class="fa-solid fa-arrow-right fa-xl"></i></a>
+                <div class="next">
+                    <a><i class="fa-solid fa-chevron-left"></i></a>
+                    <div class="dots">
+                        <div class="active"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <a class="right"><i class="fa-solid fa-chevron-right"></i></a>
                 </div>
+                <!-- ********** v最後一頁才出現v ********** -->
+                <button onclick="popClose(this)"><span>開始</span></button>
             </div>
         </section>
         <!-- Script -->
