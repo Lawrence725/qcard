@@ -862,6 +862,44 @@ section.pop.barcode div.action div.right i,
 section.pop.barcode div.action div.right svg {
   color: var(--k1);
 }
+section.pop.intro {
+  height: 100%;
+  padding: 50px 25px;
+  align-items: center;
+}
+section.pop.intro .popBody {
+  height: 100%;
+  padding-bottom: 30px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background: var(--k2);
+}
+section.pop.intro .popBody span.title {
+  font-size: var(--fXL);
+}
+section.pop.intro .popBody img {
+  max-width: 100%;
+  max-height: 80%;
+  aspect-ratio: 9/16;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+section.pop.intro .popBody div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.pop.intro .popBody div a {
+  display: flex;
+  color: var(--k1);
+}
+section.pop.intro .popBody div a span {
+  font-size: var(--fL);
+  color: var(--k1);
+}
 .payment {
   overflow: auto;
 }

@@ -1,6 +1,7 @@
 window.onload = function() {
     popBarcode();
-    popNotification(); }
+    popNotification();
+    popIntro(); }
 
 // Popup close
 function popClose(e) {
@@ -28,4 +29,9 @@ function popBarcode() {
 // 通知popup
 function popNotification() {
     document.getElementById("popNotification").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 首次加入popup
+function popIntro() {
+    document.getElementById("popIntro").style.display = "flex";
     document.body.style.overflow = "hidden"; }

@@ -189,6 +189,16 @@ section.pop.barcode { align-items: center;
         div.right { display: flex; align-items: center; gap: 10px;
             span { font-size: var(--fS); color: var(--cG3); }
             i, svg { color: var(--k1); }}}}
+section.pop.intro { height: 100%; padding: 50px 25px; align-items: center;
+    .popBody { height: 100%; padding-bottom: 30px; gap: 10px; align-items: center; justify-content: space-between; overflow: hidden; background: var(--k2);
+        span.title { font-size: var(--fXL); }
+        img { max-width: 100%; max-height: 80%; aspect-ratio: 9/16; border: 2px solid white; border-radius: 10px; }
+        div { width: 100%; display: flex; align-items: center; justify-content: space-between;
+            a { display: flex; color: var(--k1);
+                span { font-size: var(--fL); color: var(--k1); }}
+        }
+    }
+}
 
 // 付款頁
 .payment { overflow: auto;

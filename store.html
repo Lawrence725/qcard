@@ -79,7 +79,7 @@
                     <div class="icon"><i class="fa-solid fa-barcode fa-xl"></i></div>
                     <span>會員條碼</span>
                 </a>
-                <a>
+                <a onclick="popIntro()">
                     <div class="icon line"><i class="fa-brands fa-line fa-xl"></i></div>
                     <span>官方Line</span>
                 </a>
@@ -290,6 +290,18 @@
                         <span>04:54 更新</span>
                         <a><i class="fa-solid fa-arrows-rotate fa-lg"></i></a>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- 首次加入popup -->
+        <section id="popIntro" class="pop intro">
+            <div class="popBody">
+                <span class="title">標題</span>
+                <img src="./img/food.png">
+                <div>
+                    <a><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+                    <a onclick="popClose(this)"><span>開始體驗</span></a>
+                    <a><i class="fa-solid fa-arrow-right fa-xl"></i></a>
                 </div>
             </div>
         </section>
