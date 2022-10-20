@@ -204,13 +204,18 @@ section.pop.intro { height: 100%; padding: 50px 25px; align-items: center;
                 &.right { justify-content: flex-end; }}}}}
 section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
     .popBody { height: 100%; gap: 10px; align-items: center; justify-content: space-between; overflow: hidden;
-        img { max-width: 100%; max-height: 90%; aspect-ratio: 9/16; border-radius: 10px; }
+        img { max-width: 100%; max-height: 80%; aspect-ratio: 9/16; border-radius: 10px; }
+        div.next { width: 100%; display: flex; align-items: center; justify-content: space-between; color: var(--k1);
+            div.dots { display: flex; align-items: center; gap: 5px;
+                div { min-width: 6px; min-height: 6px; border-radius: 99px; background-color: var(--cG5);
+                    &.active { background-color: var(--k1); }}}
+            a { width: 100%; display: flex;
+                &.right { justify-content: flex-end; }}}
         div.buttons { width: 100%; display: flex; align-items: center; gap: 10px;
             button { width: 100%; background-color: var(--cBg);
                 &:last-child { background-color: var(--k1);
                     span { color: white !important; }}
-                span { color: var(--cG2) !important; }}
-        }}}
+                span { color: var(--cG2) !important; }}}}}
 
 // 付款頁
 .payment { overflow: auto;
