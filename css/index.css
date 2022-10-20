@@ -33,8 +33,8 @@
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #DD9A8A;
-  --k2: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), white;
+  --k1: #EF6079;
+  --k2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -880,25 +880,30 @@ section.pop.barcode div.action div.right svg {
   color: var(--k1);
 }
 section.pop.intro {
+  width: 100%;
   height: 100%;
-  padding: 50px 25px;
+  padding: 0;
   align-items: center;
 }
 section.pop.intro .popBody {
+  width: 100%;
   height: 100%;
+  padding: 0;
+  border-radius: 0;
+  position: relative;
   gap: 10px;
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
 }
 section.pop.intro .popBody img {
-  max-width: 100%;
-  max-height: 80%;
-  aspect-ratio: 9/16;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 section.pop.intro .popBody div.next {
-  width: 100%;
+  width: 90%;
+  bottom: 25px;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -919,11 +924,20 @@ section.pop.intro .popBody div.next div.dots div.active {
   background-color: var(--k1);
 }
 section.pop.intro .popBody div.next a {
-  width: 100%;
+  width: 30px;
+  height: 30px;
+  border-radius: 99px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
-section.pop.intro .popBody div.next a.right {
-  justify-content: flex-end;
+section.pop.intro .popBody button {
+  width: 150px;
+  bottom: 80px;
+  position: absolute;
+}
+section.pop.intro .popBody button span {
+  font-size: var(--fL);
 }
 section.pop.visit {
   height: 100%;
