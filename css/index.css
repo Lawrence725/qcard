@@ -55,6 +55,9 @@
   margin: 0;
   padding: 0;
 }
+*:visited {
+  color: inherit;
+}
 span,
 p,
 h1,
@@ -935,6 +938,7 @@ section.pop.intro .popBody button {
   width: 150px;
   bottom: 80px;
   position: absolute;
+  z-index: 100;
 }
 section.pop.intro .popBody button span {
   font-size: var(--fL);
@@ -953,7 +957,7 @@ section.pop.visit .popBody {
 }
 section.pop.visit .popBody img {
   max-width: 100%;
-  max-height: 80%;
+  max-height: 90%;
   aspect-ratio: 9/16;
   border-radius: 10px;
 }

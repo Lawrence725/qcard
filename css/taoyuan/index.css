@@ -251,13 +251,17 @@ span {
   box-sizing: unset;
   -webkit-box-sizing: unset;
 }
+.body *:visited {
+  color: inherit;
+}
 .body .header {
-  width: calc(100% - 20px);
+  width: 100%;
   height: fit-content;
   padding: 10px 10px 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .body .header .img {
   width: fit-content;
@@ -1326,7 +1330,7 @@ span {
 }
 .body .popup .popBody {
   min-width: 300px;
-  max-width: 100%;
+  max-width: 748px;
   height: fit-content;
   max-height: calc(100% - 60px);
   padding: 10px;
