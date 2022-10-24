@@ -1113,6 +1113,8 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.type .input input {
   width: 100%;
   font-size: var(--fXL);
+  color: var(--cG1) !important;
+  opacity: 1 !important;
 }
 .payment section.main section.point div.top {
   display: flex;
