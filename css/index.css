@@ -1930,6 +1930,11 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 20px;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .tickets section.main > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
 .tickets section.main button.action {
   width: fit-content;
   padding: 0 15px;
@@ -1940,9 +1945,20 @@ section.pop.visit .popBody div.buttons button span {
   color: white;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
   z-index: 2;
+  white-space: nowrap;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .tickets section.main button.action {
+    width: auto !important;
+  }
 }
 .tickets section.pop.category .popBody {
   gap: 10px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .tickets section.pop.category .popBody > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 .tickets section.pop.category span.title {
   margin-bottom: 5px;
@@ -1994,6 +2010,11 @@ section.pop.visit .popBody div.buttons button span {
   z-index: 5;
   background: var(--k2);
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .ticket section.foot > *:not(:last-child) {
+    margin-right: 10px;
+  }
+}
 .ticket section.foot button.secondary {
   background-color: white;
 }
@@ -2020,6 +2041,11 @@ section.pop.visit .popBody div.buttons button span {
   gap: 20px;
   background-color: white;
   overflow: hidden;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .ticket section.main div.coupon > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 .ticket section.main div.coupon div.dot {
   width: 40px;
@@ -2057,6 +2083,12 @@ section.pop.visit .popBody div.buttons button span {
   width: 100%;
   border-radius: 15px;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .ticket section.main div.coupon img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
 .ticket section.main div.coupon span.title {
   font-size: var(--fXL);
   color: var(--k1);
@@ -2075,6 +2107,11 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .ticket section.main div.coupon > div > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
 }
 .ticket section.main div.coupon hr {
   border: 1px dashed var(--cG5);
@@ -2143,6 +2180,11 @@ section.pop.visit .popBody div.buttons button span {
   position: relative;
   overflow: visible;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
 .store section.main section.info {
   padding: 0 40px;
   display: flex;
@@ -2173,10 +2215,20 @@ section.pop.visit .popBody div.buttons button span {
   gap: 10px;
   flex-wrap: wrap;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.info div.features > *:not(:last-child) {
+    margin-right: 10px;
+  }
+}
 .store section.main section.info div.features div {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.info div.features div > *:not(:last-child) {
+    margin-right: 5px;
+  }
 }
 .store section.main section.info div.features div:not(:first-child) {
   padding-left: 10px;
@@ -2204,6 +2256,11 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.actions a > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
 }
 .store section.main section.actions a div.icon {
   width: 50px;
@@ -2253,6 +2310,11 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 10px;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.point > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
 .store section.main section.point > span.title {
   font-weight: bold;
 }
@@ -2264,6 +2326,11 @@ section.pop.visit .popBody div.buttons button span {
   align-items: center;
   gap: 10px;
   background-color: white;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.point a.point > *:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 .store section.main section.point a.point img {
   width: 40px;
@@ -2290,6 +2357,11 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 10px;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.coupon > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
 .store section.main section.coupon div.top {
   display: flex;
   align-items: center;
@@ -2307,6 +2379,11 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 10px;
 }
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.detail > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
 .store section.main section.detail span.title {
   font-weight: bold;
   margin-bottom: 10px;
@@ -2314,6 +2391,11 @@ section.pop.visit .popBody div.buttons button span {
 .store section.main section.detail > div {
   display: flex;
   gap: 10px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.main section.detail > div > *:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 .store section.main section.detail > div span {
   width: 100%;
@@ -2361,6 +2443,11 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .store section.foot button > *:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 .store section.foot button span {
   font-size: var(--fL);

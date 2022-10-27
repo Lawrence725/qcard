@@ -425,9 +425,12 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         > span { white-space: nowrap; font-size: var(--fL); }
         .right a { color: var(--k1); }}
     section.main { width: 100%; max-width: 430px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
-        button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; }}
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 20px; }}
+        button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; white-space: nowrap;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { width: auto !important; }}}
     section.pop.category {
-        .popBody { gap: 10px; }
+        .popBody { gap: 10px;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}}
         span {
             &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
             &.active { color: var(--k1); }}
@@ -439,24 +442,28 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
         > span { font-size: var(--fL); white-space: nowrap; }}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; border-radius: 20px 20px 0 0; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: var(--k2);
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
         button {
             &.secondary { background-color: white;
                 span { color: var(--k1) !important; }}
             span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 430px; padding: 60px 20px 90px; margin: 0 auto;
         div.coupon { width: 100%; min-height: 450px; padding: 20px 30px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow: hidden;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 20px; }}
             div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; top: 350px; position: absolute; background: var(--k2);
                 &.left { left: -20px; }
                 &.right { right: -20px; }}
             div.label { width: 200px; height: 34px; z-index: 1; transform: rotate(30deg); position: absolute; top: 10px; right: -60px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
                 span { font-size: var(--fL); color: white; }}
-            img { width: 100%; border-radius: 15px; }
+            img { width: 100%; border-radius: 15px;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { width: 50%; margin: 0 auto; }}
             span {
                 &.title { font-size: var(--fXL); color: var(--k1); }
                 &.subtitle { font-weight: bold; color: var(--k1); }
                 &.content { color: var(--cG3); }}
             a { text-decoration: underline !important; }
-            > div { display: flex; flex-direction: column; gap: 5px; }
+            > div { display: flex; flex-direction: column; gap: 5px;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 5px; }}}
             hr { border: 1px dashed var(--cG5); }}}
     section.pop.notice { span:not(.title) { color: var(--cRed); }}}
 
@@ -467,19 +474,23 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.content { width: 100%; max-width: 430px; height: 100%;
             img { width: 100%; height: 100%; }}}
     section.main { width: 100%; min-height: unset; max-width: 430px; padding: 0 20px 140px; margin: 180px auto 0; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 30px; background-color: var(--cBg); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 30px; }}
         section.info { padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 5px;
             div.logo { min-height: 60px; margin-top: -50px;
                 img { height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
             span { text-align: center;
                 &.title { font-size: var(--fXL); font-weight: bold; }}
             div.features { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
                 div { display: flex; align-items: center; gap: 5px;
+                    @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 5px; }}
                     &:not(:first-child) { padding-left: 10px; border-left: 2px solid var(--cG5); }
                     img { height: 20px; }
                     i, svg { color: var(--k1); }
                     span { white-space: nowrap; }}}}
         section.actions { padding: 0 10px; display: flex; align-items: center; justify-content: center;
             a { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 5px; }}
                 div.icon { width: 50px; height: 50px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; background-color: white;
                     &.line i, &.line svg { color: #06C755; }
                     i, svg { color: var(--k1); }
@@ -488,20 +499,25 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                         span { color: white; font-size: var(--fS); font-weight: bold; }}}
                 span { font-size: var(--fS); }}}
         section.point { display: flex; flex-direction: column; gap: 10px;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}
             > span.title { font-weight: bold; }
             a.point { width: 100%; padding: 10px; border-radius: 20px; display: flex; align-items: center; gap: 10px; background-color: white;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
                 img { width: 40px; }
                 > div { width: 100%; display: flex; flex-direction: column;
                     span:not(.title) { font-size: var(--fS); color: var(--cG3); }}
                 > span { font-size: var(--fL); color: var(--k1); }
                 > i, > svg { color: var(--cG4); }}}
         section.coupon { display: flex; flex-direction: column; gap: 10px;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}
             div.top {  display: flex; align-items: center; justify-content: space-between;
                 span.title { font-weight: bold; }
                 i, svg { color: var(--k1); }}}
         section.detail { display: flex; flex-direction: column; gap: 10px;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}
             span.title { font-weight: bold; margin-bottom: 10px; }
             > div { display: flex; gap: 10px;
+                @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
                 span { width: 100%; }
                 a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
                     &:last-child { color: var(--k1); }}}
@@ -510,6 +526,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 img { width: 100%; height: 100%; }}}}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background: var(--k2); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
         button { display: flex; align-items: center; gap: 10px;
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
             span { font-size: var(--fL); }
             i, svg { color: white; }}}}
 section.pop.popStore { padding: 0;
