@@ -520,7 +520,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             span.title { font-weight: bold; margin-bottom: 10px; }
             > div { display: flex; gap: 10px;
                 @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
-                span { width: 100%; }
+                span { width: 100%;
+                    &.right { text-align: end; }}
                 a { min-width: 34px; height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; color: var(--cG4);
                     &:last-child { color: var(--k1); }}}
             div.branch a { color: var(--k1); }

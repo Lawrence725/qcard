@@ -2410,6 +2410,9 @@ section.pop.visit .popBody div.buttons button span {
 .store section.main section.detail > div span {
   width: 100%;
 }
+.store section.main section.detail > div span.right {
+  text-align: end;
+}
 .store section.main section.detail > div a {
   min-width: 34px;
   height: 34px;
