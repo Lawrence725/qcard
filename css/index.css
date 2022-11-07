@@ -33,8 +33,8 @@
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #FF9900;
-  --k2: linear-gradient(0deg, rgba(255, 153, 0, 0.25), rgba(255, 153, 0, 0.25)), white;
+  --k1: #EE6C5F;
+  --k2: linear-gradient(0deg, rgba(238, 108, 95, 0.25), rgba(238, 108, 95, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -1076,6 +1076,46 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 30px;
 }
+.payment section.main section.spending,
+.payment section.main section.point,
+.payment section.main section.type,
+.payment section.main section.phone {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.payment section.main section.spending span.title,
+.payment section.main section.point span.title,
+.payment section.main section.type span.title,
+.payment section.main section.phone span.title {
+  font-weight: bold;
+  white-space: nowrap;
+}
+.payment section.main section.spending .input,
+.payment section.main section.point .input,
+.payment section.main section.type .input,
+.payment section.main section.phone .input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 2px;
+  font-size: var(--fXL);
+  border: 1px solid var(--cG5);
+}
+.payment section.main section.spending .input input,
+.payment section.main section.point .input input,
+.payment section.main section.type .input input,
+.payment section.main section.phone .input input {
+  width: 100%;
+  font-size: var(--fXL);
+  color: var(--cG1) !important;
+  opacity: 1 !important;
+}
 .payment section.main section.join {
   width: 100%;
   height: 50px;
@@ -1125,59 +1165,6 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.account a {
   text-decoration: underline !important;
   color: var(--cG3);
-}
-.payment section.main section.spending,
-.payment section.main section.point,
-.payment section.main section.type,
-.payment section.main section.phone {
-  width: 100%;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.payment section.main section.spending span.title,
-.payment section.main section.point span.title,
-.payment section.main section.type span.title,
-.payment section.main section.phone span.title {
-  font-weight: bold;
-  white-space: nowrap;
-}
-.payment section.main section.spending span.gap,
-.payment section.main section.point span.gap,
-.payment section.main section.type span.gap,
-.payment section.main section.phone span.gap {
-  margin: 0 5px;
-  color: var(--cG5);
-}
-.payment section.main section.spending .input,
-.payment section.main section.point .input,
-.payment section.main section.type .input,
-.payment section.main section.phone .input {
-  width: 100%;
-  height: 40px;
-  padding: 0 10px;
-  border-radius: 99px;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  gap: 2px;
-  font-size: var(--fXL);
-  border: 1px solid var(--cG5);
-}
-.payment section.main section.spending .input input,
-.payment section.main section.point .input input,
-.payment section.main section.type .input input,
-.payment section.main section.phone .input input {
-  width: 100%;
-  font-size: var(--fXL);
-  color: var(--cG1) !important;
-  opacity: 1 !important;
-}
-.payment section.main section.spending .input input.fit,
-.payment section.main section.point .input input.fit,
-.payment section.main section.type .input input.fit,
-.payment section.main section.phone .input input.fit {
-  width: 40px;
 }
 .payment section.main section.point div.top {
   display: flex;
@@ -1317,6 +1304,16 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.keyboard div a i,
 .payment section.main section.keyboard div a svg {
   color: var(--cG4);
+}
+.payment section.main section.phone span.gap {
+  margin: 0 5px;
+  color: var(--cG5);
+}
+.payment section.main section.phone input {
+  font-size: var(--fL) !important;
+}
+.payment section.main section.phone input.fit {
+  width: 40px;
 }
 .payment section.main section.policy {
   width: 100%;

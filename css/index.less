@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
-// @color: #EE6C5F; //Qcard
-@color: #FF9900; //快一點
+@color: #EE6C5F; //Qcard
+// @color: #FF9900; //快一點
 // @color: #EF6079; //桃園
 // @color: #DD9A8A; //米哥
 
@@ -236,6 +236,10 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             span { font-size: var(--fL); }
             img { height: 20px; }}}
     section.main { width: 100%; max-width: 430px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+        section.spending, section.point, section.type, section.phone { width: 100%; gap: 10px; display: flex; flex-direction: column;
+            span.title { font-weight: bold; white-space: nowrap; }
+            .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
+                input { width: 100%; font-size: var(--fXL); color: var(--cG1) !important; opacity: 1 !important; }}}
         // 登入
         section.join { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--k1); border-radius: 99px; display: flex; align-items: center; justify-content: space-between; position: relative; background-color: var(--cBg); overflow: hidden;
             > * { z-index: 2; }
@@ -248,12 +252,6 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div { display: flex; flex-direction: column;
                 span:last-child { font-size: var(--fS); color: var(--cG3); }}
             a { text-decoration: underline !important; color: var(--cG3); }}
-        section.spending, section.point, section.type, section.phone { width: 100%; gap: 10px; display: flex; flex-direction: column;
-            span.title { font-weight: bold; white-space: nowrap; }
-            span.gap { margin: 0 5px; color: var(--cG5); }
-            .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
-                input { width: 100%; font-size: var(--fXL); color: var(--cG1) !important; opacity: 1 !important;
-                    &.fit { width: 40px; }}}}
         // 點數
         section.point {
             div.top { display: flex; align-items: center; gap: 5px;
@@ -286,6 +284,11 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);
                     &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
                     i, svg { color: var(--cG4); }}}}
+        // 會員集點
+        section.phone {
+            span.gap { margin: 0 5px; color: var(--cG5); }
+            input { font-size: var(--fL) !important;
+                &.fit { width: 40px; }}}
         // 條款
         section.policy { width: 100%; display: flex; flex-direction: column; align-items: center;
             span { font-size: var(--fS); text-align: center; color: var(--cG4);
