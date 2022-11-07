@@ -1267,7 +1267,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.type div.center a img {
   max-width: 80px;
-  max-height: 24px;
+  max-height: 30px;
 }
 .payment section.main section.type div.center a i.fa-chevron-right,
 .payment section.main section.type div.center a svg.fa-chevron-right {
