@@ -1,7 +1,11 @@
 window.onload = function() {
-    popNotice();
-    popConfirm();
-    popCredit(); }
+    // popNotice();
+    popError();
+    popRefund();
+    popOrder();
+    // popConfirm();
+    // popCredit();
+}
 
 // Popup close
 function popClose(e) {
@@ -24,6 +28,21 @@ function popClose(e) {
 // 訊息popup
 function popNotice() {
     document.getElementById("popNotice").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 公告popup
+function popError() {
+    document.getElementById("popError").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 點餐須知popup
+function popOrder() {
+    document.getElementById("popOrder").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 退款popup
+function popRefund() {
+    document.getElementById("popRefund").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
 // 訊息popup

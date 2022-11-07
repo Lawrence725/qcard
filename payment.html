@@ -26,15 +26,18 @@
         <!-- Header -->
         <section class="head">
             <div class="bg"></div>
-            <div class="left">
+            <!-- <div class="left">
                 <a><i class="fa-solid fa-chevron-left fa-lg"></i></a>
                 <span>特約店家名稱</span>
+            </div> -->
+            <div class="center">
+                <span>特約店家名稱</span>
+                <span class="price">NT$100</span>
             </div>
-            <span>特約店家名稱</span>
-            <div class="right">
+            <!-- <div class="right">
                 <span>NT$</span>
                 <span>100</span>
-            </div>
+            </div> -->
         </section>
         <!-- Footer -->
         <section class="foot">
@@ -46,6 +49,13 @@
             </button>
         </section>
         <section class="main">
+            <!-- 登入 -->
+            <section class="join" onclick="window.location.href='welcome.html'">
+                <img src="./img/pattern-s.png">
+                <span>加入<span>Qcard</span>會員獲得更多優惠</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </section>
+            <!-- 登出 -->
             <section class="account">
                 <div>
                     <span>陳大文 0987654321 正在付款</span>
@@ -95,12 +105,13 @@
                 </div>
                 <div class="input">
                     <span>NT$</span>
-                    <input type="number" placeholder="0" value="1" pattern="\d*" disabled>
+                    <input type="number" placeholder="0" value="10" pattern="\d*" disabled>
                 </div>
                 <div class="bottom">
                     <div>
+                        <span>=</span>
                         <img src="./icon/point.svg">
-                        <span>1 = NT$1</span>
+                        <span>10</span>
                     </div>
                     <div>
                         <label class="check">
@@ -115,7 +126,8 @@
             <section class="type">
                 <div class="top">
                     <span class="title">付款方式</span>
-                    <span>目前台灣Pay服務異常，請使用其他付款方式</span>
+                    <!-- <span>目前台灣Pay服務異常，請使用其他付款方式</span> -->
+                    <a onclick="popError()"><i class="fa-solid fa-triangle-exclamation fa-lg"></i></a>
                 </div>
                 <div class="center">
                     <a>
@@ -175,6 +187,21 @@
                     <a>0</a>
                     <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
                 </div>
+            </section>
+            <!-- 會員電話 -->
+            <section class="phone">
+                <span class="title">會員集點</span>
+                <div class="input">
+                    <span>+</span>
+                    <input class="fit" type="number" placeholder="0" value="886" pattern="\d*">
+                    <span class="gap">|</span>
+                    <input type="number" placeholder="輸入手機號碼" value="" pattern="\d*">
+                </div>
+            </section>
+            <!-- 條款 -->
+            <section class="policy">
+                <span>按下支付按鈕，即表示您確認已詳閱並且同意<br>
+                    <a onclick="popOrder()">《線上點餐需知》</a>和<a onclick="popRefund()">《退款流程及方式》</a></span>
             </section>
         </section>
         <!-- 信用卡popup -->
@@ -267,6 +294,62 @@
                 </div>
             </div>
         </section>
+        <!-- 點餐須知popup -->
+        <section id="popOrder" class="pop notice order" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <span class="title">線上點餐須知</span>
+                </div>
+                <div class="content">
+                    <span class="header">一、點餐說明</span>
+                    <span class="subheader">一般點餐訂購流程</span>
+                    <span>選擇用方式 -> 選購餐點 -> 前往結帳 -> 填寫資料  -> 選擇付款方式 -> 一鍵下訂 -> 選擇付款方式 -> 購物需知確認 -> 訂購完成</span>
+                    <span class="subheader">訂單查詢</span>
+                    <span>當您完成訂購程序後，您可以利用頁面下方選單的「訂單」訂單查詢功能，查詢目前的訂單狀態。</span>
+                    <span class="header">二、付款方式</span>
+                    <span>目前提供多種支付方式。</span>
+                    <span class="subheader">信用卡線上刷卡</span>
+                    <span>您可使用信用卡的線上刷卡服務，當您在結帳頁面進行信用卡相關資料填寫時，請務必詳實填寫正確資料，以利銀行做信用卡資料的審核。</span>
+                    <span>※【提醒您】使用信用卡付費時，依據信用卡定型化契約第六條（契約雙方之基本義務）之規定：銀行僅授權持卡人本人在信用卡有效期限內分別使用，不得讓與、轉借、提供擔保或以其他方式將信用卡之占有轉讓予第三人或交其使用。</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+        <!-- 公告popup -->
+        <section id="popError" class="pop notice error" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <div><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">重要公告</span>
+                </div>
+                <html>
+                    <p style="color: #828282; text-align: center;">接獲銀行端通知，目前信用卡、Apple Pay、以Google Pay服務可能會有刷卡失敗的狀況，請大家選擇其他支付方式，造成不便，敬請見諒</p>
+                    <p style="color: #828282; text-align: center;">如有疑慮，可來電<a href="tel:02-77515336" style="color: red;">02-77515336</a>，或透過我們的<a style="color: red;">LINE客服</a>詢問。</p>
+                </html>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+        <!-- 退款popup -->
+        <section id="popRefund" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <span class="title">退款流程及方式</span>
+                </div>
+                <ol>
+                    <li>已經完成接單的訂單，無法線上退款。</li>
+                    <li>若需退單退款，請直接聯絡門市人員，門市人員確認訂單狀況，會協助進行退單退款。</li>
+                </ol>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
         <!-- 訊息popup -->
         <section id="popNotice" class="pop notice" onclick="popClose(this)">
             <div class="popBody">
@@ -285,6 +368,6 @@
             </div>
         </section>
         <!-- Script -->
-        <script src="./js/index.js"></script>
+        <script src="./js/payment.js"></script>
     </body>
 </html>

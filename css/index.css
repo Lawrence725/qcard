@@ -33,8 +33,8 @@
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #EF6079;
-  --k2: linear-gradient(0deg, rgba(239, 96, 121, 0.25), rgba(239, 96, 121, 0.25)), white;
+  --k1: #FF9900;
+  --k2: linear-gradient(0deg, rgba(255, 153, 0, 0.25), rgba(255, 153, 0, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -70,7 +70,9 @@ a,
 select,
 input,
 textarea,
-button {
+button,
+ol,
+ul {
   font-size: var(--fM);
   font-family: 'Noto Sans TC', 'Roboto', 'Arial', '微軟正黑體';
 }
@@ -672,6 +674,9 @@ section.pop.notice .popBody span.title {
 section.pop.notice .popBody span:not(.title) {
   color: var(--cG3);
 }
+section.pop.notice .popBody ol {
+  padding-left: 20px;
+}
 section.pop.notice .popBody div.icon {
   display: flex;
   justify-content: center;
@@ -1011,6 +1016,9 @@ section.pop.visit .popBody div.buttons button span {
 .payment {
   overflow: auto;
 }
+.payment section.head {
+  padding: 10px 20px 0;
+}
 .payment section.head .left a {
   min-width: 30px;
   min-height: 30px;
@@ -1024,9 +1032,15 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--k1);
   font-size: var(--fL);
 }
-.payment section.head > span {
-  white-space: nowrap;
-  font-size: var(--fXL);
+.payment section.head .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payment section.head .center span.price {
+  margin-top: -5px;
+  font-size: var(--fXXL);
+  color: var(--k1);
 }
 .payment section.head .right {
   justify-content: right;
@@ -1062,6 +1076,38 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 30px;
 }
+.payment section.main section.join {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--k1);
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: var(--cBg);
+  overflow: hidden;
+}
+.payment section.main section.join > * {
+  z-index: 2;
+}
+.payment section.main section.join img {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.payment section.main section.join span {
+  font-size: var(--fL);
+}
+.payment section.main section.join span span {
+  font-weight: bold;
+  color: var(--k1);
+}
+.payment section.main section.join i {
+  color: var(--cG4);
+}
 .payment section.main section.account {
   width: 100%;
   display: flex;
@@ -1082,7 +1128,8 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending,
 .payment section.main section.point,
-.payment section.main section.type {
+.payment section.main section.type,
+.payment section.main section.phone {
   width: 100%;
   gap: 10px;
   display: flex;
@@ -1090,13 +1137,22 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending span.title,
 .payment section.main section.point span.title,
-.payment section.main section.type span.title {
+.payment section.main section.type span.title,
+.payment section.main section.phone span.title {
   font-weight: bold;
   white-space: nowrap;
 }
+.payment section.main section.spending span.gap,
+.payment section.main section.point span.gap,
+.payment section.main section.type span.gap,
+.payment section.main section.phone span.gap {
+  margin: 0 5px;
+  color: var(--cG5);
+}
 .payment section.main section.spending .input,
 .payment section.main section.point .input,
-.payment section.main section.type .input {
+.payment section.main section.type .input,
+.payment section.main section.phone .input {
   width: 100%;
   height: 40px;
   padding: 0 10px;
@@ -1110,11 +1166,18 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending .input input,
 .payment section.main section.point .input input,
-.payment section.main section.type .input input {
+.payment section.main section.type .input input,
+.payment section.main section.phone .input input {
   width: 100%;
   font-size: var(--fXL);
   color: var(--cG1) !important;
   opacity: 1 !important;
+}
+.payment section.main section.spending .input input.fit,
+.payment section.main section.point .input input.fit,
+.payment section.main section.type .input input.fit,
+.payment section.main section.phone .input input.fit {
+  width: 40px;
 }
 .payment section.main section.point div.top {
   display: flex;
@@ -1136,7 +1199,7 @@ section.pop.visit .popBody div.buttons button span {
   width: calc(50% - 5px);
   height: 50px;
   padding: 0 10px;
-  border-radius: 20px;
+  border-radius: 99px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1191,6 +1254,9 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cRed);
   text-align: right;
   line-height: unset;
+}
+.payment section.main section.type div.top i {
+  color: var(--cRed);
 }
 .payment section.main section.type div.center {
   width: 100%;
@@ -1251,6 +1317,21 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.keyboard div a i,
 .payment section.main section.keyboard div a svg {
   color: var(--cG4);
+}
+.payment section.main section.policy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payment section.main section.policy span {
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG4);
+}
+.payment section.main section.policy span a {
+  font-size: var(--fS);
+  color: var(--k1);
 }
 .payment section.pop.credit span.title {
   font-size: var(--fL);
@@ -1379,6 +1460,36 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.confirm .popBody div.buttons button:first-child span {
   color: var(--cG2) !important;
+}
+.payment section.pop.notice.error .icon div {
+  border: 7.5px solid var(--cRed);
+}
+.payment section.pop.notice.error .icon div i {
+  color: var(--cRed);
+}
+.payment section.pop.notice.order .popBody {
+  overflow-y: scroll;
+}
+.payment section.pop.notice.order .popBody div.content {
+  align-items: flex-start;
+  gap: 10px;
+}
+.payment section.pop.notice.order .popBody div.content span {
+  margin-left: 24px;
+  color: var(--cG3);
+  text-align: left;
+}
+.payment section.pop.notice.order .popBody div.content span.header {
+  margin-left: 0;
+  font-size: var(--fL);
+  color: var(--cG1);
+}
+.payment section.pop.notice.order .popBody div.content span.subheader {
+  font-weight: bold;
+  color: var(--cG1);
+}
+.payment section.pop.notice.order .popBody button {
+  min-height: 40px;
 }
 .result {
   min-width: 100vw;
@@ -1687,6 +1798,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .welcome section.main div.action div.service img {
   width: 20px;
+  margin: 0 5px;
 }
 .welcome section.main div.action div.service span {
   color: white;
