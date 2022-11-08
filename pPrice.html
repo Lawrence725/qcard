@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="price">
+        <!-- Header -->
+        <section class="head">
+            <div class="bg"></div>
+            <span>特約店家名稱</span>
+        </section>
+        <!-- Footer -->
+        <section class="foot">
+            <button onclick="window.location.href='payment.html'">
+                <span>確認金額</span>
+            </button>
+        </section>
+        <!-- Main -->
+        <section class="main">
+            <span class="title">輸入消費金額</span>
+            <span class="cost">NT$0</span>
+            <div class="keyboard">
+                <div>
+                    <a>1</a>
+                    <a>2</a>
+                    <a>3</a>
+                </div>
+                <div>
+                    <a>4</a>
+                    <a>5</a>
+                    <a>6</a>
+                </div>
+                <div>
+                    <a>7</a>
+                    <a>8</a>
+                    <a>9</a>
+                </div>
+                <div>
+                    <a class="minor">清除</a>
+                    <a>0</a>
+                    <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
