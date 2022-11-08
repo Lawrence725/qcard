@@ -76,7 +76,21 @@
                 <!-- 回饋 -->
                 <div class="bottom">
                     <span class="title">本次消費回饋</span>
-                    <!-- ＊後續補上＊ -->
+                    <div>
+                        <img src="./icon/mPoint.svg">
+                        <span>筷點</span>
+                        <span>+10</span>
+                    </div>
+                    <div>
+                        <img src="./icon/mTicket.svg">
+                        <span>優惠券</span>
+                        <span>滿$100折$10</span>
+                    </div>
+                    <div>
+                        <img src="./icon/mStamp.svg">
+                        <span>集章</span>
+                        <span>新春集章活動 x1</span>
+                    </div>
                 </div>
                 <!-- 按鈕 -->
                 <div class="buttons">
@@ -89,6 +103,18 @@
                     </button>
                 </div>
             </section>
+            <!-- 邀請好友 -->
+            <a class="invite" onclick="popInvite()">
+                <img src="./img/patternSG.png">
+                <span>邀請好友加入<span>Qcard</span>獲得更多優惠</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <!-- 加入會員 -->
+            <a class="join" href="welcome.html">
+                <img src="./img/patternST.png">
+                <span>加入<span>Qcard</span>會員獲得更多優惠</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
         </section>
         <!-- 載具條碼popup -->
         <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
@@ -98,6 +124,30 @@
                 <div class="code">
                     <img class="barcode" src="./img/barcode.png">
                     <span>/ASDFGHJ</span>
+                </div>
+            </div>
+        </section>
+        <!-- 邀請好友popup -->
+        <section id="popInvite" class="pop notice invite" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <div>
+                    <div class="icon">
+                        <div><img src="./icon/favicon.svg"></div>
+                    </div>
+                    <span class="title">邀請好友加入Qcard獲得更多優惠</span>
+                </div>
+                <div class="action">
+                    <button>
+                        <span>我的邀請碼 ASDFGH</span>
+                        <span class="note">已複製</span> <!-- 點選後才出現 -->
+                        <i class="fa-solid fa-copy"></i>
+                    </button>
+                    <button>
+                        <i class="fa-brands fa-line fa-2x"></i>
+                        <span>Line邀請好友</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>

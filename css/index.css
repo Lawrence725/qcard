@@ -139,6 +139,9 @@ select:hover {
 img {
   object-fit: cover;
 }
+i {
+  text-decoration: none !important;
+}
 iframe {
   border: 0;
 }
@@ -486,10 +489,15 @@ a.dateRange svg {
   animation-iteration-count: 1;
 }
 .pop .popBody a.close {
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: 20px;
   right: 20px;
   border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--cG4);
 }
 @keyframes popup {
@@ -1145,7 +1153,8 @@ section.pop.visit .popBody div.buttons button span {
   font-weight: bold;
   color: var(--k1);
 }
-.payment section.main section.join i {
+.payment section.main section.join i,
+.payment section.main section.join svg {
   color: var(--cG4);
 }
 .payment section.main section.account {
@@ -1242,7 +1251,8 @@ section.pop.visit .popBody div.buttons button span {
   text-align: right;
   line-height: unset;
 }
-.payment section.main section.type div.top i {
+.payment section.main section.type div.top i,
+.payment section.main section.type div.top svg {
   color: var(--cRed);
 }
 .payment section.main section.type div.center {
@@ -1461,7 +1471,8 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.pop.notice.error .icon div {
   border: 7.5px solid var(--cRed);
 }
-.payment section.pop.notice.error .icon div i {
+.payment section.pop.notice.error .icon div i,
+.payment section.pop.notice.error .icon div svg {
   color: var(--cRed);
 }
 .payment section.pop.notice.order .popBody {
@@ -1574,7 +1585,7 @@ section.pop.visit .popBody div.buttons button span {
   gap: 2px;
 }
 .result section.main section.detail div.top > div:not(.icon) img {
-  height: 14px;
+  height: 18px;
 }
 .result section.main section.detail div.center {
   display: flex;
@@ -1594,12 +1605,35 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cG3);
 }
 .result section.main section.detail div.center > div img {
-  height: 14px;
+  height: 18px;
 }
 .result section.main section.detail div.bottom {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--cG5);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
+}
+.result section.main section.detail div.bottom > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.result section.main section.detail div.bottom > div span {
+  white-space: nowrap;
+}
+.result section.main section.detail div.bottom > div span:nth-child(2) {
+  width: 100%;
+  color: var(--cG3);
+}
+.result section.main section.detail div.bottom > div img {
+  min-width: 24px;
+  height: 18px;
+  object-fit: contain;
 }
 .result section.main section.detail div.bottom span.title {
   color: var(--k1);
@@ -1623,6 +1657,110 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
+}
+.result section.main a.invite {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--k1);
+  border-radius: 99px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  overflow: hidden;
+}
+.result section.main a.invite > * {
+  z-index: 2;
+}
+.result section.main a.invite img {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.result section.main a.invite span {
+  font-size: var(--fL);
+}
+.result section.main a.invite span span {
+  font-weight: bold;
+  color: var(--k1);
+}
+.result section.main a.invite i,
+.result section.main a.invite svg {
+  color: var(--cG4);
+}
+.result section.main a.join {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border-radius: 99px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--k1);
+  overflow: hidden;
+}
+.result section.main a.join > * {
+  z-index: 2;
+}
+.result section.main a.join img {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.result section.main a.join span {
+  font-size: var(--fL);
+  color: white;
+}
+.result section.main a.join span span {
+  font-weight: bold;
+}
+.result section.main a.join i,
+.result section.main a.join svg {
+  color: rgba(255, 255, 255, 0.5);
+}
+.result section.pop.invite div.action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.result section.pop.invite div.action button {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--cBg);
+}
+.result section.pop.invite div.action button span {
+  width: 100%;
+  color: var(--cG1) !important;
+  text-align: start;
+  white-space: nowrap;
+}
+.result section.pop.invite div.action button span.note {
+  width: fit-content;
+  font-size: var(--fS);
+  color: var(--cG3) !important;
+}
+.result section.pop.invite div.action button i,
+.result section.pop.invite div.action button svg {
+  color: var(--cG3);
+}
+.result section.pop.invite div.action button i.fa-line,
+.result section.pop.invite div.action button svg.fa-line {
+  outline: 5px solid var(--cBg);
+  outline-offset: -2.5px;
+  color: var(--cBg);
+}
+.result section.pop.invite div.action button i.fa-line::before,
+.result section.pop.invite div.action button svg.fa-line::before {
+  border-radius: 99px;
+  background-color: #06C755;
 }
 .welcome {
   min-width: 100vw;

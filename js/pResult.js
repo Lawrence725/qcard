@@ -1,4 +1,5 @@
 window.onload = function() {
+    popInvite();
     popBarcode(); }
 
 // Popup close
@@ -22,4 +23,9 @@ function popClose(e) {
 // 載具條碼popup
 function popBarcode() {
     document.getElementById("popBarcode").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 邀請好友popup
+function popInvite() {
+    document.getElementById("popInvite").style.display = "flex";
     document.body.style.overflow = "hidden"; }

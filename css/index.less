@@ -57,6 +57,7 @@ textarea:focus                          { box-shadow: none !important; outline: 
 select                                  { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
 select:hover                            { cursor: pointer; }
 img                                     { object-fit: cover; }
+i                                       { text-decoration: none !important; }
 iframe                                  { border: 0; }
 *, :after, :before                      { box-sizing: border-box !important; -webkit-box-sizing: border-box; }
 
@@ -112,7 +113,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     i, svg { color: var(--k1); }}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
-        a.close { position: absolute; top: 20px; right: 20px; border-radius: 99px; color: var(--cG4); }}}
+        a.close { width: 20px; height: 20px; position: absolute; top: 20px; right: 20px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--cG4); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
@@ -246,7 +247,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             img { width: 100%; left: 0; top: 0; position: absolute; }
             span { font-size: var(--fL);
                 span { font-weight: bold; color: var(--k1); }}
-            i { color: var(--cG4); }}
+            i, svg { color: var(--cG4); }}
         // 登出
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
             div { display: flex; flex-direction: column;
@@ -272,7 +273,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         section.type {
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }
-                i { color: var(--cRed); }}
+                i, svg { color: var(--cRed); }}
             div.center { width: 100%; display: flex; gap: 10px;
                 a { width: calc(50% - 5px); height: 40px; padding: 0 10px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
                     &.active { border: 1px solid var(--k1); }
@@ -329,7 +330,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     span { color: var(--cG2) !important; }}}}}
     section.pop.notice.error {
         .icon div { border: 7.5px solid var(--cRed);
-            i { color: var(--cRed); }}}
+            i, svg { color: var(--cRed); }}}
     section.pop.notice.order .popBody { overflow-y: scroll;
         div.content { align-items: flex-start; gap: 10px;
             span { margin-left: 24px; color: var(--cG3); text-align: left;
@@ -353,21 +354,46 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 span.strong { font-size: var(--fXL); color: var(--cRed); animation: shake 1s linear infinite; }
                 @keyframes shake { 0% { margin-left: -20px; } 50% { margin-left: 20px; } 100% { margin-left: -20px; }}
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
-                    img { height: 14px; }}
+                    img { height: 18px; }}
             }
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
                     span { white-space: nowrap; }
                     span:first-child { width: 100%; color: var(--cG3); }
-                    img { height: 14px; }}}
-            div.bottom { display: flex; flex-direction: column; align-items: center;
+                    img { height: 18px; }}}
+            div.bottom { width: 100%; padding: 10px 15px; border: 1px solid var(--cG5); border-radius: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;
+                > div { width: 100%; display: flex; align-items: center; gap: 2px;
+                    span { white-space: nowrap; }
+                    span:nth-child(2) { width: 100%; color: var(--cG3); }
+                    img { min-width: 24px; height: 18px; object-fit: contain; }}
                 span.title { color: var(--k1); }}
             div.buttons { display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
                     i, svg { color: var(--k1); }}
                 button:last-child { background-color: var(--k1);
-                    span { color: white !important; }}}}}}
+                    span { color: white !important; }}}}
+        a.invite { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--k1); border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: white; overflow: hidden;
+            > * { z-index: 2; }
+            img { width: 100%; left: 0; top: 0; position: absolute; }
+            span { font-size: var(--fL);
+                span { font-weight: bold; color: var(--k1); }}
+            i, svg { color: var(--cG4); }}
+        a.join { width: 100%; height: 50px; padding: 0 15px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: var(--k1); overflow: hidden;
+            > * { z-index: 2; }
+            img { width: 100%; left: 0; top: 0; position: absolute; }
+            span { font-size: var(--fL); color: white;
+                span { font-weight: bold; }}
+            i, svg { color: rgba(255, 255, 255, 0.5); }}}
+    section.pop.invite {
+        div.action { width: 100%; display: flex; flex-direction: column; gap: 10px;
+            button { padding: 0 15px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
+                span { width: 100%; color: var(--cG1) !important; text-align: start; white-space: nowrap;
+                    &.note { width: fit-content; font-size: var(--fS); color: var(--cG3) !important; }}
+                i, svg { color: var(--cG3);
+                &.fa-line { outline: 5px solid var(--cBg); outline-offset: -2.5px; color: var(--cBg);
+                    &::before { border-radius: 99px; background-color: #06C755; }}}}}
+    }}
 
 // 登入
 .welcome { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
