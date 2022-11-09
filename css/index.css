@@ -1758,8 +1758,10 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.pop.invite div.action button i.fa-line,
 .result section.pop.invite div.action button svg.fa-line {
-  outline: 5px solid var(--cBg);
-  outline-offset: -2.5px;
+  outline: 6px solid var(--cBg);
+  outline-offset: -4px;
+  border-radius: 99px;
+  background-color: #06C755;
   color: var(--cBg);
 }
 .result section.pop.invite div.action button i.fa-line::before,
