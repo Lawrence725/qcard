@@ -1790,12 +1790,12 @@ section.pop.visit .popBody div.buttons button span {
 .price section.main {
   width: 100%;
   max-width: 430px;
-  padding: 140px 20px 50px;
+  padding: 130px 20px 50px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
 }
 .price section.main span.title {
   font-size: var(--fL);
