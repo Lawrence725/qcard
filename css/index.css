@@ -522,7 +522,8 @@ a.dateRange svg {
 .login section.head,
 .coin section.head,
 .tickets section.head,
-.ticket section.head {
+.ticket section.head,
+.news section.head {
   width: 100%;
   max-width: 430px;
   height: 70px;
@@ -542,7 +543,8 @@ a.dateRange svg {
 .login section.head .bg,
 .coin section.head .bg,
 .tickets section.head .bg,
-.ticket section.head .bg {
+.ticket section.head .bg,
+.news section.head .bg {
   width: 1000px;
   height: 1000px;
   border-radius: 999px;
@@ -559,13 +561,15 @@ a.dateRange svg {
 .coin section.head .left,
 .tickets section.head .left,
 .ticket section.head .left,
+.news section.head .left,
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
 .login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
-.ticket section.head .right {
+.ticket section.head .right,
+.news section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
@@ -576,7 +580,8 @@ a.dateRange svg {
 .login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
-.ticket section.head .right {
+.ticket section.head .right,
+.news section.head .right {
   justify-content: right;
 }
 a.coupon {
@@ -3193,4 +3198,62 @@ section.pop.popStore {
 }
 section.pop.popStore div.store {
   background-color: transparent;
+}
+.news {
+  min-height: 100vh;
+  background: var(--k2);
+}
+.news section.head {
+  background: var(--k2);
+}
+.news section.head i,
+.news section.head svg {
+  color: var(--k1);
+}
+.news section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.news section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news section.main div.item {
+  padding: 10px;
+  border-radius: 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.news section.main div.item img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+.news section.main div.item span.title {
+  font-size: var(--fL);
+}
+.news section.main div.item > span:not(.title) {
+  color: var(--cG3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news section.main div.item a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news section.main div.item a > * {
+  color: var(--k1);
 }
