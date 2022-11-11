@@ -195,6 +195,7 @@ iframe {
 }
 .loading > div img {
   width: 80px;
+  border-radius: 99px;
   position: absolute;
 }
 .spinner {
@@ -3252,6 +3253,139 @@ section.pop.popStore {
 }
 section.pop.popStore div.store {
   background-color: transparent;
+}
+.location {
+  overflow: auto;
+  background: var(--k2);
+}
+.location a.back {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  position: fixed;
+  top: 10px;
+  left: 15.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--k1);
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+  z-index: 3;
+}
+.location section.cover {
+  width: 100%;
+  max-width: 430px;
+  aspect-ratio: 4/3;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.location section.cover img {
+  width: 100%;
+  height: 100%;
+}
+.location section.main {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 430px;
+  padding: 20px;
+  margin: 280px auto 0;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--k2);
+  box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1);
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+.location section.main .item {
+  padding: 10px;
+  border-radius: 27px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.location section.main .item.min a.top i,
+.location section.main .item.min a.top svg {
+  transform: rotate(180deg);
+}
+.location section.main .item.min div:not(.top) {
+  display: none;
+}
+.location section.main .item a.top {
+  width: 100%;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+}
+.location section.main .item a.top i,
+.location section.main .item a.top svg {
+  color: var(--k1);
+}
+.location section.main .item span {
+  width: 100%;
+}
+.location section.main .item span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.location section.main .item span.copy {
+  width: fit-content;
+  font-size: var(--fS);
+  color: var(--cG3);
+  white-space: nowrap;
+}
+.location section.main .item span:not(.title) {
+  color: var(--cG3);
+}
+.location section.main .item span:last-child {
+  text-align: end;
+}
+.location section.main .item div {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.location section.main .item div.time {
+  align-items: flex-start;
+}
+.location section.main .item div.map {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.location section.main .item div.map img {
+  width: 100%;
+  height: 100%;
+}
+.location section.main .item div a {
+  min-width: 34px;
+  min-height: 34px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cBg);
+}
+.location section.main .item div a i,
+.location section.main .item div a svg {
+  color: var(--cG4);
+}
+.location section.main .item div a:last-child {
+  background: var(--k2);
+}
+.location section.main .item div a:last-child i,
+.location section.main .item div a:last-child svg {
+  color: var(--k1);
+}
+.location section.main .item div a.dropdown {
+  background: transparent;
 }
 .news {
   min-height: 100vh;

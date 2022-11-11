@@ -68,7 +68,7 @@ iframe                                  { border: 0; }
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
         > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
-        img { width: 80px; position: absolute; }}}
+        img { width: 80px; border-radius: 99px; position: absolute; }}}
 .spinner { top: 0; left: 0; width: 100vw; height: 100vh; /* height: var(--app-height); */ position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(255,255,255,0.75); backdrop-filter: blur(4px);
     > div { min-width: 80px; min-height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); 
         > div { min-width: 40px; min-height: 40px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
@@ -689,11 +689,36 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div.top { gap: 5px; display: flex; align-items: center;
                 span { font-size: var(--fXL); }}
             div.bottom { width: 100%; display: flex; align-items: center;
-                span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}
-        }
-    }}
+                span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}}}}
 section.pop.popStore { padding: 0;
     div.store { background-color: transparent; }}
+
+// 分店資訊
+.location { overflow: auto; background: var(--k2);
+    a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 3; }
+    section.cover { width: 100%; max-width: 430px; aspect-ratio: 4/3; position: fixed; top: 0; left: 50%; transform: translate(-50%, 0);
+        img { width: 100%; height: 100%; }}
+    section.main { width: 100%; min-height: 100vh; max-width: 430px; padding: 20px; margin: 280px auto 0; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 20px; background: var(--k2); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 2; position: relative; overflow: visible;
+        .item { padding: 10px; border-radius: 27px; gap: 10px; display: flex; flex-direction: column; background-color: white;
+            &.min {
+                a.top { i, svg { transform: rotate(180deg); }}
+                div:not(.top) { display: none; }}
+            a.top { width: 100%; padding-right: 5px; display: flex; align-items: center;
+                i, svg { color: var(--k1); }}
+            span { width: 100%;
+                &.title { font-size: var(--fL); font-weight: bold; }
+                &.copy { width: fit-content; font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
+                &:not(.title) { color: var(--cG3); }
+                &:last-child { text-align: end; }}
+            div { gap: 10px; display: flex; align-items: center;
+                &.time { align-items: flex-start; }
+                &.map { width: 100%; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden;
+                    img { width: 100%; height: 100%; }}
+                a { min-width: 34px; min-height: 34px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background: var(--cBg);
+                    i, svg { color: var(--cG4); }
+                    &:last-child { background: var(--k2);
+                        i, svg { color: var(--k1); }}
+                    &.dropdown { background: transparent; }}}}}}
 
 // 最新消息
 .news { min-height: 100vh; background: var(--k2);
