@@ -2517,10 +2517,12 @@ section.pop.visit .popBody div.buttons button span {
   overflow-x: hidden;
 }
 .store.v2 section.main {
-  margin: 85px auto 0;
-  padding: 0 25px 50px;
+  margin: 0 auto;
+  padding: 85px 25px 50px;
+  border-radius: 0;
   box-shadow: none;
   background-color: transparent;
+  overflow-x: hidden;
 }
 .store.v2 section.main section.card {
   width: 100%;
