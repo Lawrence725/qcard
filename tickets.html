@@ -25,14 +25,16 @@
                     <i class="fa-solid fa-chevron-left fa-lg"></i>
                 </a>
             </div>
-            <span>我的票券</span>
+            <span>我的優惠券</span> <!-- 我的集章 -->
             <div class="right"></div>
         </section>
         <section class="main">
-            <button class="action">
+            <!-- ********** v桃園內容v ********** -->
+            <!-- <button class="action">
                 <i class="fa-solid fa-store fa-lg"></i>
                 <span>票券商城</span>
-            </button>
+            </button> -->
+            <!-- ********** ^桃園內容^ ********** -->
             <div class="pages">
                 <a class="page active">
                     <span>可使用</span>
@@ -44,7 +46,8 @@
                     <span>已過期</span>
                 </a>
             </div>
-            <div class="filter">
+            <!-- ********** v桃園內容v ********** -->
+            <!-- <div class="filter">
                 <a class="dropdown" onclick="popCategory()">
                     <span>全部分類</span>
                     <i class="fa-solid fa-caret-down fa-sm"></i>
@@ -53,7 +56,8 @@
                     <input type="text" placeholder="店家搜尋" value="">
                     <a><i class="fa-solid fa-magnifying-glass fa-sm"></i></a>
                 </div>
-            </div>
+            </div> -->
+            <!-- ********** ^桃園內容^ ********** -->
             <a class="coupon" href="ticket.html">
                 <div class="dot left"></div>
                 <div class="dot right"></div>
@@ -99,13 +103,62 @@
                 </div>
                 <img src="img/food.png">
             </a>
-            <div class="none">
-                <img src="./icon/tkTaoyuan.svg"> <!-- mTicket.svg -->
+            <!-- 集章 -->
+            <a class="coupon stamp" href="">
+                <div class="dot left"></div>
+                <div class="dot right"></div>
+                <div class="content">
+                    <div>
+                        <span class="title">滿$100折$10</span>
+                        <span class="name">麥町吐司工房新莊中原店</span>
+                    </div>
+                    <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
+                    <span class="date">集章時間 2021/10/01 - 2022/01/22</span>
+                    <div class="count">
+                        <img src="./img/stamp.png">
+                        <div class="bar"><div></div></div>
+                        <span>8/20</span>
+                    </div>
+                </div>
+            </a>
+            <a class="coupon stamp" href="">
+                <div class="dot left"></div>
+                <div class="dot right"></div>
+                <div class="label">
+                    <span>已過期</span>
+                </div>
+                <div class="content">
+                    <div>
+                        <span class="title">滿$100折$10滿$100折$10滿$100折$10滿$100折$10滿$100折$10滿$100折$10</span>
+                        <span class="name">麥町吐司工房新莊中原店</span>
+                    </div>
+                    <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
+                    <span class="date">集章時間 2021/10/01 - 2022/01/22</span>
+                    <div class="count">
+                        <img src="./img/stamp.png">
+                        <div class="bar"><div></div></div>
+                        <span>8/20</span>
+                    </div>
+                </div>
+            </a>
+            <!-- ********** v桃園內容v ********** -->
+            <!-- <div class="none">
+                <img src="./icon/tkTaoyuan.svg">
                 <span>目前尚無票券<br>點擊下方「票券商城」<br>立即使用點數購買</span>
+            </div> -->
+            <!-- ********** ^桃園內容^ ********** -->
+            <div class="none">
+                <img src="./icon/mTicket.svg">
+                <span>目前尚無優惠券</span>
+            </div>
+            <div class="none">
+                <img src="./icon/mStamp.svg">
+                <span>目前尚無集章</span>
             </div>
         </section>
+        <!-- ********** v桃園內容v ********** -->
         <!-- 分類popup -->
-        <section id="popCategory" class="pop category" onclick="popClose(this)">
+        <!-- <section id="popCategory" class="pop category" onclick="popClose(this)">
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <span class="title">分類</span>
@@ -120,8 +173,9 @@
                 <a onclick="popClose(this)"><span>醫</span></a>
                 <a onclick="popClose(this)"><span>農漁會業者</span></a>
             </div>
-        </section>
+        </section> -->
         <!-- Script -->
-        <script src="./js/tickets.js"></script>
+        <!-- <script src="./js/tickets.js"></script> -->
+        <!-- ********** ^桃園內容^ ********** -->
     </body>
 </html>

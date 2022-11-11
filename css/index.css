@@ -590,7 +590,7 @@ a.coupon {
   gap: 10px;
   background-color: white;
   overflow: hidden;
-  z-index: -1;
+  z-index: 3;
 }
 a.coupon.stamp {
   height: 180px;
@@ -2310,6 +2310,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .tickets section.main div.none {
   margin: 100px 0;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2317,6 +2318,7 @@ section.pop.visit .popBody div.buttons button span {
 .tickets section.main div.none span {
   text-align: center;
   font-size: var(--fL);
+  color: var(--cG3);
 }
 .tickets section.main button.action {
   width: fit-content;
@@ -2525,7 +2527,7 @@ section.pop.visit .popBody div.buttons button span {
   border-radius: 0;
   box-shadow: none;
   background-color: transparent;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 .store.v2 section.main section.card {
   width: 100%;
@@ -2674,6 +2676,7 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   justify-content: center;
   position: sticky;
+  z-index: 5;
 }
 .store.v2 section.main section.tabs div.bg {
   width: 1500px;

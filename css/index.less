@@ -123,7 +123,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
-a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden; z-index: -1;
+a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden; z-index: 3;
     &.stamp { height: 180px;
         div.count { margin-bottom: 5px; gap: 10px; display: flex; align-items: center;
             img { width: 40px; height: 40px; border-radius: 10px; }
@@ -507,8 +507,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         .right a { color: var(--k1); }}
     section.main { width: 100%; max-width: 430px; padding: 100px 20px 100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
         @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 20px; }}
-        div.none { margin: 100px 0; display: flex; flex-direction: column; align-items: center;
-            span { text-align: center; font-size: var(--fL); }}
+        div.none { margin: 100px 0; gap: 10px; display: flex; flex-direction: column; align-items: center;
+            span { text-align: center; font-size: var(--fL); color: var(--cG3); }}
         button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; white-space: nowrap;
             @supports (-webkit-touch-callout: none) and (not (translate: none)) { width: auto !important; }}}
     section.pop.category {
@@ -553,7 +553,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
     &.v2 { min-width: unset; min-height: unset; max-height: unset; background: var(--k2); overflow-x: hidden;
-        section.main { margin: 0 auto; padding: 85px 25px 50px; border-radius: 0; box-shadow: none; background-color: transparent; overflow-x: hidden;
+        section.main { margin: 0 auto; padding: 85px 25px 50px; border-radius: 0; box-shadow: none; background-color: transparent; overflow-x: clip;
             section.card { width: 100%; padding: 10px; border-radius: 30px 30px 20px 20px; gap: 15px; position: relative; display: flex; flex-direction: column; background-color: white; z-index: 6;
                 div.top { width: 100%; padding: 0 10px; gap: 20px; display: flex; align-items: flex-end;
                     span { width: 100%; font-size: var(--fXL); font-weight: bold; }
@@ -584,7 +584,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     .flickity-page-dots { bottom: 5px;
                         .dot { margin: 0 5px; border: 1px solid white; background-color: white; opacity: 1; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
                             &.is-selected { background-color: var(--k1); }}}}}
-            section.tabs { top: 20px; display: flex; justify-content: center; position: sticky;
+            section.tabs { top: 20px; display: flex; justify-content: center; position: sticky; z-index: 5;
                 div.bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -20px; background: var(--k1); pointer-events: none; z-index: 5; }
                 a { width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 6;
                     &:not(.active) { opacity: 0.4; }
