@@ -4,5 +4,4 @@ function drop(e) {
         e.parentElement.classList.add('dropup'); }
     else {
         e.parentElement.classList.remove('dropup');
-        e.parentElement.classList.add('dropdown'); }
-}
+        e.parentElement.classList.add('dropdown'); }}
