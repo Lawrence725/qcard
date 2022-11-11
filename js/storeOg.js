@@ -42,18 +42,3 @@ function popIntro() {
 function popVisit() {
     document.getElementById("popVisit").style.display = "flex";
     document.body.style.overflow = "hidden"; }
-
-// Carousel
-// https://flickity.metafizzy.co
-var flkty = new Flickity( '.menus', {
-    cellAlign: 'left',
-    contain: true,
-    pageDots: false
-});
-var flkty = new Flickity( '.carousel', {
-    cellAlign: 'left',
-    contain: true,
-    wrapAround: true,
-    prevNextButtons: false,
-    autoPlay: true
-});

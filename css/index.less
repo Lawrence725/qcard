@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
-@color: #EE6C5F; //Qcard
+// @color: #EE6C5F; //Qcard
 // @color: #FF9900; //快一點
 // @color: #EF6079; //桃園
-// @color: #DD9A8A; //米哥
+@color: #DD9A8A; //米哥
 
 :root {
     // Font
@@ -123,15 +123,21 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
     .left, .right { width: 100%; display: flex; align-items: center; }
     .right { justify-content: right; }}
-a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden;
+a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden; z-index: -1;
+    &.stamp { height: 180px;
+        div.count { margin-bottom: 5px; gap: 10px; display: flex; align-items: center;
+            img { width: 40px; height: 40px; border-radius: 10px; }
+            div.bar { width: 100%; border-radius: 99px; background-color: var(--cG5); overflow: hidden;
+                div { width: 50%; height: 8px; border-radius: 99px; background-color: var(--k1); }}
+            span { font-weight: bold; color: var(--k1); }}}
     div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
         &.left { left: -20px; }
         &.right { right: -20px; }}
     div.label { width: 150px; height: 24px; z-index: 1; transform: rotate(30deg); position: absolute; top: 5px; right: -45px; display: flex; align-items: center; justify-content: center; background-color: var(--cG4);
         span { font-size: var(--fS); color: white; }}
     div.content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 2px;
-        div { display: flex; flex-direction: column; gap: 2px; }}
-    img { width: 100px; height: 100px; border-radius: 10px; }
+        > div:not(.count) { display: flex; flex-direction: column; gap: 2px; }}
+    > img { width: 100px; height: 100px; border-radius: 10px; }
     span {
         &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.name { font-size: var(--fS); }
@@ -540,6 +546,69 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+    &.v2 { background: var(--k2); overflow-x: hidden;
+        section.main { margin: 85px auto 0; padding: 0 25px 50px; box-shadow: none; background-color: transparent;
+            section.card { width: 100%; padding: 10px; border-radius: 30px 30px 20px 20px; gap: 15px; position: relative; display: flex; flex-direction: column; background-color: white; z-index: 6;
+                div.top { width: 100%; padding: 0 10px; gap: 20px; display: flex; align-items: flex-end;
+                    span { width: 100%; font-size: var(--fXL); font-weight: bold; }
+                    div { height: 40px; display: flex; align-items: flex-end;
+                        img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}}
+                div.menus {
+                    div.menu { width: 100%; padding-top: 10px; gap: 20px 0; display: flex; align-items: center; flex-wrap: wrap;
+                        a { min-width: 25%; position: relative; gap: 5px; display: flex; flex-direction: column; align-items: center;
+                            i, svg { color: var(--k1); }
+                            &:nth-child(1) { i, svg { color: #F5B7A6; }}
+                            &:nth-child(2) { i, svg { color: #BDD7EE; }}
+                            &:nth-child(3) { i, svg { color: #FFD965; }}
+                            &:nth-child(5) { i, svg { color: #F7CBAC; }}
+                            &:nth-child(6) { i, svg { color: #C5E0B3; }}
+                            &:nth-child(7) { i, svg { color: #CCC1D9; }}
+                            i { line-height: normal; }
+                            > span { font-size: var(--fS); color: var(--cG3); }
+                            div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border: 1px solid white; border-radius: 99px; top: -10px; left: 53%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
+                                span { color: white; font-size: var(--fS); font-weight: bold; }}}}
+                    .flickity-button { background: transparent; }
+                    .flickity-prev-next-button { width: 30px; height: 30px; }
+                    .flickity-prev-next-button.previous { left: -10px; }
+                    .flickity-prev-next-button.next { right: -10px; }
+                    .flickity-button-icon { fill: var(--k1); }
+                    .flickity-button:disabled { display: none; }}
+                div.carousel {
+                    img { width: 100%; aspect-ratio: 16/9; border-radius: 10px; }
+                    .flickity-page-dots { bottom: 5px;
+                        .dot { margin: 0 5px; border: 1px solid white; background-color: white; opacity: 1; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+                            &.is-selected { background-color: var(--k1); }}}}}
+            section.tabs { top: 20px; display: flex; justify-content: center; position: sticky;
+                div.bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -20px; background: var(--k1); pointer-events: none; z-index: 5; }
+                a { width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 6;
+                    &:not(.active) { opacity: 0.4; }
+                    &:nth-child(3) { margin-top: 10px; }
+                    img { height: 40px; }
+                    span { color: white;
+                        span { font-size: var(--fXL); font-weight: bold; }}}}
+            section.point { margin-top: 10px; gap: 15px;
+                a.header { height: 100px; padding: 10px; border-radius: 45px 30px 20px 20px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; background-color: white;
+                    > div { width: 100%; height: 50px; padding-right: 10px; border-radius: 45px 25px 25px 5px; gap: 15px; display: flex; align-items: center; background-color: var(--cBg);
+                        > div { height: 50px; display: flex; align-items: flex-start;
+                            img { height: 90px; margin: -5px; border: 5px solid white; border-radius: 999px; background-color: white; }}
+                        span { width: 100%;
+                            &.title { font-size: var(--fL); }
+                            &:not(.title) { font-size: var(--fXXL); color: var(--k1); text-align: end; }}}
+                    > span { color: var(--cG3); }}
+                div.list { padding: 0 5px 15px; border-bottom: 1px solid white; display: flex; align-items: center; justify-content: space-between;
+                    div { display: flex; flex-direction: column;
+                        span:first-child { font-size: var(--fL); }
+                        span:last-child { color: var(--cG3); }}
+                    > span { font-size: var(--fXL); color: var(--k1); }}
+                div.action { display: flex;
+                    a { width: 100%; gap: 5px; display: flex; align-items: center; justify-content: center;
+                        i, svg { color: var(--k1); }
+                        span { color: var(--cG3); }}}}
+            section.coupon { margin-top: 10px; gap: 15px;
+                a.list { width: 100%; gap: 5px; display: flex; align-items: center; justify-content: center;
+                    i, svg { color: var(--k1); }
+                    span { color: var(--cG3); }}
+                a.coupon div.dot { background: var(--k2); }}}}
     a.back { width: 40px; height: 40px; border-radius: 99px; position: fixed; top: 10px; left: 15.5px; display: flex; align-items: center; justify-content: center; color: var(--k1); background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 3; }
     section.cover { width: 100%; height: 200px; margin: 0 auto; position: fixed; top: 0; left: 0; display: flex; justify-content: center; z-index: 1;
         div.content { width: 100%; max-width: 430px; height: 100%;

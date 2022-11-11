@@ -33,8 +33,8 @@
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #EE6C5F;
-  --k2: linear-gradient(0deg, rgba(238, 108, 95, 0.25), rgba(238, 108, 95, 0.25)), white;
+  --k1: #DD9A8A;
+  --k2: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -590,6 +590,37 @@ a.coupon {
   gap: 10px;
   background-color: white;
   overflow: hidden;
+  z-index: -1;
+}
+a.coupon.stamp {
+  height: 180px;
+}
+a.coupon.stamp div.count {
+  margin-bottom: 5px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+a.coupon.stamp div.count img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+a.coupon.stamp div.count div.bar {
+  width: 100%;
+  border-radius: 99px;
+  background-color: var(--cG5);
+  overflow: hidden;
+}
+a.coupon.stamp div.count div.bar div {
+  width: 50%;
+  height: 8px;
+  border-radius: 99px;
+  background-color: var(--k1);
+}
+a.coupon.stamp div.count span {
+  font-weight: bold;
+  color: var(--k1);
 }
 a.coupon div.dot {
   width: 40px;
@@ -630,12 +661,12 @@ a.coupon div.content {
   justify-content: center;
   gap: 2px;
 }
-a.coupon div.content div {
+a.coupon div.content > div:not(.count) {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-a.coupon img {
+a.coupon > img {
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -2458,6 +2489,306 @@ section.pop.visit .popBody div.buttons button span {
   animation-name: popup;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+}
+.store.v2 {
+  background: var(--k2);
+  overflow-x: hidden;
+}
+.store.v2 section.main {
+  margin: 85px auto 0;
+  padding: 0 25px 50px;
+  box-shadow: none;
+  background-color: transparent;
+}
+.store.v2 section.main section.card {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px 30px 20px 20px;
+  gap: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 6;
+}
+.store.v2 section.main section.card div.top {
+  width: 100%;
+  padding: 0 10px;
+  gap: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+.store.v2 section.main section.card div.top span {
+  width: 100%;
+  font-size: var(--fXL);
+  font-weight: bold;
+}
+.store.v2 section.main section.card div.top div {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+.store.v2 section.main section.card div.top div img {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
+}
+.store.v2 section.main section.card div.menus div.menu {
+  width: 100%;
+  padding-top: 10px;
+  gap: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.store.v2 section.main section.card div.menus div.menu a {
+  min-width: 25%;
+  position: relative;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.store.v2 section.main section.card div.menus div.menu a i,
+.store.v2 section.main section.card div.menus div.menu a svg {
+  color: var(--k1);
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(1) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(1) svg {
+  color: #F5B7A6;
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(2) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(2) svg {
+  color: #BDD7EE;
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(3) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(3) svg {
+  color: #FFD965;
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(5) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(5) svg {
+  color: #F7CBAC;
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(6) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(6) svg {
+  color: #C5E0B3;
+}
+.store.v2 section.main section.card div.menus div.menu a:nth-child(7) i,
+.store.v2 section.main section.card div.menus div.menu a:nth-child(7) svg {
+  color: #CCC1D9;
+}
+.store.v2 section.main section.card div.menus div.menu a i {
+  line-height: normal;
+}
+.store.v2 section.main section.card div.menus div.menu a > span {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+.store.v2 section.main section.card div.menus div.menu a div.notice {
+  width: fit-content;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px 2px;
+  border: 1px solid white;
+  border-radius: 99px;
+  top: -10px;
+  left: 53%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cRed);
+}
+.store.v2 section.main section.card div.menus div.menu a div.notice span {
+  color: white;
+  font-size: var(--fS);
+  font-weight: bold;
+}
+.store.v2 section.main section.card div.menus .flickity-button {
+  background: transparent;
+}
+.store.v2 section.main section.card div.menus .flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+}
+.store.v2 section.main section.card div.menus .flickity-prev-next-button.previous {
+  left: -10px;
+}
+.store.v2 section.main section.card div.menus .flickity-prev-next-button.next {
+  right: -10px;
+}
+.store.v2 section.main section.card div.menus .flickity-button-icon {
+  fill: var(--k1);
+}
+.store.v2 section.main section.card div.menus .flickity-button:disabled {
+  display: none;
+}
+.store.v2 section.main section.card div.carousel img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+.store.v2 section.main section.card div.carousel .flickity-page-dots {
+  bottom: 5px;
+}
+.store.v2 section.main section.card div.carousel .flickity-page-dots .dot {
+  margin: 0 5px;
+  border: 1px solid white;
+  background-color: white;
+  opacity: 1;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.store.v2 section.main section.card div.carousel .flickity-page-dots .dot.is-selected {
+  background-color: var(--k1);
+}
+.store.v2 section.main section.tabs {
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+}
+.store.v2 section.main section.tabs div.bg {
+  width: 1500px;
+  height: 1500px;
+  border-radius: 999px;
+  position: absolute;
+  bottom: -20px;
+  background: var(--k1);
+  pointer-events: none;
+  z-index: 5;
+}
+.store.v2 section.main section.tabs a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 6;
+}
+.store.v2 section.main section.tabs a:not(.active) {
+  opacity: 0.4;
+}
+.store.v2 section.main section.tabs a:nth-child(3) {
+  margin-top: 10px;
+}
+.store.v2 section.main section.tabs a img {
+  height: 40px;
+}
+.store.v2 section.main section.tabs a span {
+  color: white;
+}
+.store.v2 section.main section.tabs a span span {
+  font-size: var(--fXL);
+  font-weight: bold;
+}
+.store.v2 section.main section.point {
+  margin-top: 10px;
+  gap: 15px;
+}
+.store.v2 section.main section.point a.header {
+  height: 100px;
+  padding: 10px;
+  border-radius: 45px 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: white;
+}
+.store.v2 section.main section.point a.header > div {
+  width: 100%;
+  height: 50px;
+  padding-right: 10px;
+  border-radius: 45px 25px 25px 5px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--cBg);
+}
+.store.v2 section.main section.point a.header > div > div {
+  height: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+.store.v2 section.main section.point a.header > div > div img {
+  height: 90px;
+  margin: -5px;
+  border: 5px solid white;
+  border-radius: 999px;
+  background-color: white;
+}
+.store.v2 section.main section.point a.header > div span {
+  width: 100%;
+}
+.store.v2 section.main section.point a.header > div span.title {
+  font-size: var(--fL);
+}
+.store.v2 section.main section.point a.header > div span:not(.title) {
+  font-size: var(--fXXL);
+  color: var(--k1);
+  text-align: end;
+}
+.store.v2 section.main section.point a.header > span {
+  color: var(--cG3);
+}
+.store.v2 section.main section.point div.list {
+  padding: 0 5px 15px;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.store.v2 section.main section.point div.list div {
+  display: flex;
+  flex-direction: column;
+}
+.store.v2 section.main section.point div.list div span:first-child {
+  font-size: var(--fL);
+}
+.store.v2 section.main section.point div.list div span:last-child {
+  color: var(--cG3);
+}
+.store.v2 section.main section.point div.list > span {
+  font-size: var(--fXL);
+  color: var(--k1);
+}
+.store.v2 section.main section.point div.action {
+  display: flex;
+}
+.store.v2 section.main section.point div.action a {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store.v2 section.main section.point div.action a i,
+.store.v2 section.main section.point div.action a svg {
+  color: var(--k1);
+}
+.store.v2 section.main section.point div.action a span {
+  color: var(--cG3);
+}
+.store.v2 section.main section.coupon {
+  margin-top: 10px;
+  gap: 15px;
+}
+.store.v2 section.main section.coupon a.list {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store.v2 section.main section.coupon a.list i,
+.store.v2 section.main section.coupon a.list svg {
+  color: var(--k1);
+}
+.store.v2 section.main section.coupon a.list span {
+  color: var(--cG3);
+}
+.store.v2 section.main section.coupon a.coupon div.dot {
+  background: var(--k2);
 }
 .store a.back {
   width: 40px;
