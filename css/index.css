@@ -2513,6 +2513,9 @@ section.pop.visit .popBody div.buttons button span {
   animation-iteration-count: 1;
 }
 .store.v2 {
+  min-width: unset;
+  min-height: unset;
+  max-height: unset;
   background: var(--k2);
   overflow-x: hidden;
 }
