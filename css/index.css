@@ -858,7 +858,7 @@ section.pop.dateRange div.buttons button:first-child span {
 section.pop.barcode {
   align-items: center;
 }
-section.pop.barcode .popBody {
+section.pop.barcode.v2 .popBody {
   border-radius: 40px 40px 20px 20px;
   gap: 30px;
 }
