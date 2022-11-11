@@ -312,6 +312,54 @@ button {
 button span {
   color: white !important;
 }
+.switch {
+  position: relative;
+  display: inline-block;
+  min-width: 40px;
+  max-width: 40px;
+  height: 24px;
+  margin: 5px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch input:checked + .slider {
+  background-color: var(--k1);
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px var(--k1);
+}
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: var(--cG4);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 div.pages {
   width: 100%;
   height: 30px;
@@ -523,7 +571,8 @@ a.dateRange svg {
 .coin section.head,
 .tickets section.head,
 .ticket section.head,
-.news section.head {
+.news section.head,
+.profile section.head {
   width: 100%;
   max-width: 430px;
   height: 70px;
@@ -544,7 +593,8 @@ a.dateRange svg {
 .coin section.head .bg,
 .tickets section.head .bg,
 .ticket section.head .bg,
-.news section.head .bg {
+.news section.head .bg,
+.profile section.head .bg {
   width: 1000px;
   height: 1000px;
   border-radius: 999px;
@@ -562,6 +612,7 @@ a.dateRange svg {
 .tickets section.head .left,
 .ticket section.head .left,
 .news section.head .left,
+.profile section.head .left,
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
@@ -569,7 +620,8 @@ a.dateRange svg {
 .coin section.head .right,
 .tickets section.head .right,
 .ticket section.head .right,
-.news section.head .right {
+.news section.head .right,
+.profile section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
@@ -581,7 +633,8 @@ a.dateRange svg {
 .coin section.head .right,
 .tickets section.head .right,
 .ticket section.head .right,
-.news section.head .right {
+.news section.head .right,
+.profile section.head .right {
   justify-content: right;
 }
 a.coupon {
@@ -860,14 +913,14 @@ section.pop.dateRange div.buttons button:first-child {
 section.pop.dateRange div.buttons button:first-child span {
   color: var(--cG2) !important;
 }
-section.pop.barcode {
+section.barcode {
   align-items: center;
 }
-section.pop.barcode.v2 .popBody {
+section.barcode.v2 .popBody {
   border-radius: 40px 40px 20px 20px;
   gap: 30px;
 }
-section.pop.barcode .popBody div.header {
+section.barcode .popBody div.header {
   height: 60px;
   padding-right: 20px;
   border-radius: 99px;
@@ -876,26 +929,26 @@ section.pop.barcode .popBody div.header {
   align-items: center;
   background: var(--k2);
 }
-section.pop.barcode .popBody div.header > div {
+section.barcode .popBody div.header > div {
   height: 60px;
 }
-section.pop.barcode .popBody div.header > div img {
+section.barcode .popBody div.header > div img {
   height: 90px;
   margin: -5px;
   border: 5px solid white;
   border-radius: 30px;
 }
-section.pop.barcode .popBody div.header span {
+section.barcode .popBody div.header span {
   width: 100%;
 }
-section.pop.barcode .popBody div.header span.title {
+section.barcode .popBody div.header span.title {
   font-size: var(--fXL);
 }
-section.pop.barcode .popBody div.header span:not(.title) {
+section.barcode .popBody div.header span:not(.title) {
   text-align: end;
   color: var(--k1);
 }
-section.pop.barcode .popBody div.code {
+section.barcode .popBody div.code {
   width: 100%;
   height: 200px;
   display: flex;
@@ -904,58 +957,58 @@ section.pop.barcode .popBody div.code {
   justify-content: center;
   gap: 20px;
 }
-section.pop.barcode .popBody div.code div {
+section.barcode .popBody div.code div {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-section.pop.barcode .popBody div.code div img {
+section.barcode .popBody div.code div img {
   height: 40px;
   aspect-ratio: 1/1;
   border-radius: 99px;
 }
-section.pop.barcode .popBody div.code div span {
+section.barcode .popBody div.code div span {
   font-size: var(--fXL);
 }
-section.pop.barcode .popBody div.code img.barcode {
+section.barcode .popBody div.code img.barcode {
   width: 100%;
 }
-section.pop.barcode .popBody div.code img.qrcode {
+section.barcode .popBody div.code img.qrcode {
   height: 200px;
 }
-section.pop.barcode .popBody div.action {
+section.barcode .popBody div.action {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-section.pop.barcode .popBody div.action div.left {
+section.barcode .popBody div.action div.left {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-section.pop.barcode .popBody div.action div.left a.active i,
-section.pop.barcode .popBody div.action div.left a.active svg {
+section.barcode .popBody div.action div.left a.active i,
+section.barcode .popBody div.action div.left a.active svg {
   color: var(--k1);
 }
-section.pop.barcode .popBody div.action div.left a:last-child {
+section.barcode .popBody div.action div.left a:last-child {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
 }
-section.pop.barcode .popBody div.action div.left a i,
-section.pop.barcode .popBody div.action div.left a svg {
+section.barcode .popBody div.action div.left a i,
+section.barcode .popBody div.action div.left a svg {
   color: var(--cG4);
 }
-section.pop.barcode .popBody div.action div.right {
+section.barcode .popBody div.action div.right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-section.pop.barcode .popBody div.action div.right span {
+section.barcode .popBody div.action div.right span {
   font-size: var(--fS);
   color: var(--cG3);
 }
-section.pop.barcode .popBody div.action div.right i,
-section.pop.barcode .popBody div.action div.right svg {
+section.barcode .popBody div.action div.right i,
+section.barcode .popBody div.action div.right svg {
   color: var(--k1);
 }
 section.pop.intro {
@@ -3256,4 +3309,91 @@ section.pop.popStore div.store {
 }
 .news section.main div.item a > * {
   color: var(--k1);
+}
+.profile {
+  min-height: 100vh;
+  background: var(--k2);
+}
+.profile section.head {
+  background: var(--k2);
+}
+.profile section.head i,
+.profile section.head svg {
+  color: var(--k1);
+}
+.profile section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.profile section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile section.main div.line {
+  width: 100vw;
+  max-width: 430px;
+  height: 5px;
+  background-color: white;
+}
+.profile section.main section.barcode {
+  width: 100%;
+}
+.profile section.main section.barcode .popBody {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.profile section.main section.list {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.profile section.main section.list.account i:first-child,
+.profile section.main section.list.account svg:first-child {
+  color: var(--k1);
+}
+.profile section.main section.list.setting i:first-child,
+.profile section.main section.list.setting svg:first-child {
+  color: var(--cG4);
+}
+.profile section.main section.list a {
+  width: 100%;
+  padding: 0 5px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.profile section.main section.list a:not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+.profile section.main section.list a span {
+  white-space: nowrap;
+}
+.profile section.main section.list a span:nth-child(2) {
+  width: 100%;
+}
+.profile section.main section.list a span:not(:nth-child(2)) {
+  color: var(--k1);
+}
+.profile section.main section.list a i:first-child,
+.profile section.main section.list a svg:first-child {
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+}
+.profile section.main section.list a i:last-child,
+.profile section.main section.list a svg:last-child {
+  color: var(--cG4);
 }
