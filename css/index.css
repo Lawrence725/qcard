@@ -858,77 +858,99 @@ section.pop.dateRange div.buttons button:first-child span {
 section.pop.barcode {
   align-items: center;
 }
-section.pop.barcode span {
-  font-size: var(--fL);
+section.pop.barcode .popBody {
+  border-radius: 40px 40px 20px 20px;
+  gap: 30px;
 }
-section.pop.barcode span:not(.title) {
-  text-align: center;
+section.pop.barcode .popBody div.header {
+  height: 60px;
+  padding-right: 20px;
+  border-radius: 99px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  background: var(--k2);
 }
-section.pop.barcode div.pages {
-  width: calc(100% - 30px);
-  margin-right: 30px;
+section.pop.barcode .popBody div.header > div {
+  height: 60px;
 }
-section.pop.barcode div.code {
+section.pop.barcode .popBody div.header > div img {
+  height: 90px;
+  margin: -5px;
+  border: 5px solid white;
+  border-radius: 30px;
+}
+section.pop.barcode .popBody div.header span {
   width: 100%;
-  height: 300px;
+}
+section.pop.barcode .popBody div.header span.title {
+  font-size: var(--fXL);
+}
+section.pop.barcode .popBody div.header span:not(.title) {
+  text-align: end;
+  color: var(--k1);
+}
+section.pop.barcode .popBody div.code {
+  width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-section.pop.barcode div.code div {
+section.pop.barcode .popBody div.code div {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-section.pop.barcode div.code div img {
+section.pop.barcode .popBody div.code div img {
   height: 40px;
   aspect-ratio: 1/1;
   border-radius: 99px;
 }
-section.pop.barcode div.code div span {
+section.pop.barcode .popBody div.code div span {
   font-size: var(--fXL);
 }
-section.pop.barcode div.code img.barcode {
+section.pop.barcode .popBody div.code img.barcode {
   width: 100%;
 }
-section.pop.barcode div.code img.qrcode {
+section.pop.barcode .popBody div.code img.qrcode {
   height: 200px;
 }
-section.pop.barcode div.action {
+section.pop.barcode .popBody div.action {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-section.pop.barcode div.action div.left {
+section.pop.barcode .popBody div.action div.left {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-section.pop.barcode div.action div.left a.active i,
-section.pop.barcode div.action div.left a.active svg {
+section.pop.barcode .popBody div.action div.left a.active i,
+section.pop.barcode .popBody div.action div.left a.active svg {
   color: var(--k1);
 }
-section.pop.barcode div.action div.left a:last-child {
+section.pop.barcode .popBody div.action div.left a:last-child {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
 }
-section.pop.barcode div.action div.left a i,
-section.pop.barcode div.action div.left a svg {
+section.pop.barcode .popBody div.action div.left a i,
+section.pop.barcode .popBody div.action div.left a svg {
   color: var(--cG4);
 }
-section.pop.barcode div.action div.right {
+section.pop.barcode .popBody div.action div.right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-section.pop.barcode div.action div.right span {
+section.pop.barcode .popBody div.action div.right span {
   font-size: var(--fS);
   color: var(--cG3);
 }
-section.pop.barcode div.action div.right i,
-section.pop.barcode div.action div.right svg {
+section.pop.barcode .popBody div.action div.right i,
+section.pop.barcode .popBody div.action div.right svg {
   color: var(--k1);
 }
 section.pop.intro {
@@ -3119,6 +3141,44 @@ section.pop.visit .popBody div.buttons button span {
 .store section.foot button i,
 .store section.foot button svg {
   color: white;
+}
+.store section.pop.pointRule .popBody {
+  background: var(--k2);
+}
+.store section.pop.pointRule .popBody span.title {
+  font-size: var(--fL);
+}
+.store section.pop.pointRule .popBody > div {
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.store section.pop.pointRule .popBody > div i,
+.store section.pop.pointRule .popBody > div svg {
+  color: var(--k1);
+}
+.store section.pop.pointRule .popBody > div div.top {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.store section.pop.pointRule .popBody > div div.top span {
+  font-size: var(--fXL);
+}
+.store section.pop.pointRule .popBody > div div.bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.store section.pop.pointRule .popBody > div div.bottom span {
+  width: 100%;
+  font-size: var(--fL);
+  text-align: center;
+  color: var(--cG3);
 }
 section.pop.popStore {
   padding: 0;

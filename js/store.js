@@ -1,8 +1,9 @@
 window.onload = function() {
-    // popBarcode();
+    popBarcode();
     // popNotification();
     // popIntro();
     // popVisit();
+    popPointRule();
 }
 
 // Popup close
@@ -22,6 +23,11 @@ function popClose(e) {
             e.closest('.pop').children[0].style.animationName = "popup";
         }, 500); }
     document.body.style.overflow = "scroll"; }
+
+// 點數規則popup
+function popPointRule() {
+    document.getElementById("popPointRule").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
 
 // 會員條碼popup
 function popBarcode() {

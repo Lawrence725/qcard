@@ -185,24 +185,30 @@ section.pop.dateRange {
         button:first-child { background-color: var(--cBg);
             span { color: var(--cG2) !important; }}}}
 section.pop.barcode { align-items: center;
-    span { font-size: var(--fL);
-        &:not(.title) { text-align: center; }}
-    div.pages { width: calc(100% - 30px); margin-right: 30px; }
-    div.code { width: 100%; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
-        div { display: flex; align-items: center; gap: 5px;
-            img { height: 40px; aspect-ratio: 1/1; border-radius: 99px; }
-            span { font-size: var(--fXL); }}
-        img.barcode { width: 100%; }
-        img.qrcode { height: 200px; }}
-    div.action { display: flex; align-items: center; justify-content: space-between;
-        div.left { display: flex; align-items: center; gap: 15px;
-            a {
-                &.active { i, svg { color: var(--k1); }}
-                &:last-child { padding-left: 15px; border-left: 1px solid var(--cG5); }
-                i, svg { color: var(--cG4); }}}
-        div.right { display: flex; align-items: center; gap: 10px;
-            span { font-size: var(--fS); color: var(--cG3); }
-            i, svg { color: var(--k1); }}}}
+    .popBody { border-radius: 40px 40px 20px 20px; gap: 30px;
+        // span { font-size: var(--fL);
+        //     &:not(.title) { text-align: center; }}
+        div.header { height: 60px; padding-right: 20px; border-radius: 99px; gap: 15px; display: flex; align-items: center; background: var(--k2);
+            > div { height: 60px;
+                img { height: 90px; margin: -5px; border: 5px solid white; border-radius: 30px; }}
+            span { width: 100%;
+                &.title { font-size: var(--fXL); }
+                &:not(.title) { text-align: end; color: var(--k1); }}}
+        div.code { width: 100%; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+            div { display: flex; align-items: center; gap: 5px;
+                img { height: 40px; aspect-ratio: 1/1; border-radius: 99px; }
+                span { font-size: var(--fXL); }}
+            img.barcode { width: 100%; }
+            img.qrcode { height: 200px; }}
+        div.action { display: flex; align-items: center; justify-content: space-between;
+            div.left { display: flex; align-items: center; gap: 15px;
+                a {
+                    &.active { i, svg { color: var(--k1); }}
+                    &:last-child { padding-left: 15px; border-left: 1px solid var(--cG5); }
+                    i, svg { color: var(--cG4); }}}
+            div.right { display: flex; align-items: center; gap: 10px;
+                span { font-size: var(--fS); color: var(--cG3); }
+                i, svg { color: var(--k1); }}}}}
 section.pop.intro { width: 100%; height: 100%; padding: 0; align-items: center;
     .popBody { width: 100%; height: 100%; padding: 0; border-radius: 0; position: relative; gap: 10px; align-items: center; justify-content: space-around; overflow: hidden;
         img { width: 100%; height: 100%; }
@@ -669,6 +675,16 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         button { display: flex; align-items: center; gap: 10px;
             @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
             span { font-size: var(--fL); }
-            i, svg { color: white; }}}}
+            i, svg { color: white; }}}
+    section.pop.pointRule .popBody { background: var(--k2);
+        span.title { font-size: var(--fL); }
+        > div { padding: 10px; border-radius: 10px; gap: 10px; display: flex; flex-direction: column; align-items: center; background-color: white;
+            i, svg { color: var(--k1); }
+            div.top { gap: 5px; display: flex; align-items: center;
+                span { font-size: var(--fXL); }}
+            div.bottom { width: 100%; display: flex; align-items: center;
+                span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}
+        }
+    }}
 section.pop.popStore { padding: 0;
     div.store { background-color: transparent; }}
