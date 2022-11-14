@@ -997,6 +997,7 @@ section.barcode .popBody div.code img.qrcode {
   height: 200px;
 }
 section.barcode .popBody div.action {
+  min-height: 23px;
   display: flex;
   align-items: center;
   justify-content: space-between;
