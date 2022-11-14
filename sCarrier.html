@@ -52,5 +52,28 @@
             <span class="content">現在可於會員頁面上方<br>「會員條碼」切換「載具條碼」</span>
             <a class="forget">解除綁定<a>
         </section>
+        <!-- 訊息popup -->
+        <section id="popNotice" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">訊息標題</span>
+                    <span>內容說明</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確認</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <script src="./js/carrier.js"></script>
     </body>
 </html>
