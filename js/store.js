@@ -63,3 +63,34 @@ var flkty = new Flickity( '.carousel', {
     prevNextButtons: false,
     autoPlay: true
 });
+
+// Tab切換
+function switchTab(e, type) {
+    let getSiblings = function (e) {
+        let siblings = []; 
+        if(!e.parentNode) { return siblings; }
+        let sibling  = e.parentNode.firstChild;
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== e) {
+                siblings.push(sibling); }
+            sibling = sibling.nextSibling;}
+        return siblings; };
+    let siblings = getSiblings(e);
+    siblings.forEach(e => { e.classList.remove("active"); });
+    e.classList.add("active");
+    switch (type) {
+        case 'point':
+            document.querySelectorAll('section.point')[0].style.display = "flex";
+            document.querySelectorAll('section.coupon')[0].style.display = "flex";
+            document.querySelectorAll('section.coupon')[1].style.display = "flex";
+            break;
+        case 'ticket':
+            document.querySelectorAll('section.point')[0].style.display = "none";
+            document.querySelectorAll('section.coupon')[0].style.display = "flex";
+            document.querySelectorAll('section.coupon')[1].style.display = "none";
+            break;
+        case 'stamp':
+            document.querySelectorAll('section.point')[0].style.display = "none";
+            document.querySelectorAll('section.coupon')[0].style.display = "none";
+            document.querySelectorAll('section.coupon')[1].style.display = "flex";
+            break; }}

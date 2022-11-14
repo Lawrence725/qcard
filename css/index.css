@@ -573,7 +573,9 @@ a.dateRange svg {
 .tickets section.head,
 .ticket section.head,
 .news section.head,
-.profile section.head {
+.profile section.head,
+.profileEdit section.head,
+.carrier section.head {
   width: 100%;
   max-width: 430px;
   height: 70px;
@@ -595,7 +597,9 @@ a.dateRange svg {
 .tickets section.head .bg,
 .ticket section.head .bg,
 .news section.head .bg,
-.profile section.head .bg {
+.profile section.head .bg,
+.profileEdit section.head .bg,
+.carrier section.head .bg {
   width: 1000px;
   height: 1000px;
   border-radius: 999px;
@@ -614,6 +618,8 @@ a.dateRange svg {
 .ticket section.head .left,
 .news section.head .left,
 .profile section.head .left,
+.profileEdit section.head .left,
+.carrier section.head .left,
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
@@ -622,7 +628,9 @@ a.dateRange svg {
 .tickets section.head .right,
 .ticket section.head .right,
 .news section.head .right,
-.profile section.head .right {
+.profile section.head .right,
+.profileEdit section.head .right,
+.carrier section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
@@ -635,7 +643,9 @@ a.dateRange svg {
 .tickets section.head .right,
 .ticket section.head .right,
 .news section.head .right,
-.profile section.head .right {
+.profile section.head .right,
+.profileEdit section.head .right,
+.carrier section.head .right {
   justify-content: right;
 }
 a.coupon {
@@ -949,6 +959,7 @@ section.barcode .popBody div.header > div {
 }
 section.barcode .popBody div.header > div img {
   height: 90px;
+  aspect-ratio: 1/1;
   margin: -5px;
   border: 5px solid white;
   border-radius: 30px;
@@ -1031,6 +1042,27 @@ section.barcode .popBody div.action div.right span {
 section.barcode .popBody div.action div.right i,
 section.barcode .popBody div.action div.right svg {
   color: var(--k1);
+}
+section.pop.category .popBody {
+  gap: 10px;
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  section.pop.category .popBody > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+section.pop.category span.title {
+  margin-bottom: 5px;
+  font-size: var(--fL);
+  font-weight: bold;
+  color: var(--k1);
+}
+section.pop.category span.active {
+  color: var(--k1);
+}
+section.pop.category a:not(.close):not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cG5);
 }
 section.pop.intro {
   width: 100%;
@@ -2416,27 +2448,6 @@ section.pop.visit .popBody div.buttons button span {
     width: auto !important;
   }
 }
-.tickets section.pop.category .popBody {
-  gap: 10px;
-}
-@supports (-webkit-touch-callout: none) and (not (translate: none)) {
-  .tickets section.pop.category .popBody > *:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
-.tickets section.pop.category span.title {
-  margin-bottom: 5px;
-  font-size: var(--fL);
-  font-weight: bold;
-  color: var(--k1);
-}
-.tickets section.pop.category span.active {
-  color: var(--k1);
-}
-.tickets section.pop.category a:not(.close):not(:last-child) {
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--cG5);
-}
 .ticket {
   min-width: 100vw;
   min-height: 100vh;
@@ -2840,6 +2851,9 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   align-items: center;
   z-index: 6;
+}
+.store.v2 section.main section.tabs a:hover {
+  box-shadow: none;
 }
 .store.v2 section.main section.tabs a:not(.active) {
   opacity: 0.4;
@@ -3665,4 +3679,155 @@ section.pop.visit .popBody div.buttons button span {
 .profile section.main section.list a i:last-child,
 .profile section.main section.list a svg:last-child {
   color: var(--cG4);
+}
+.profileEdit section.head {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.profileEdit section.head i,
+.profileEdit section.head svg {
+  color: var(--k1);
+}
+.profileEdit section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.profileEdit section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileEdit section.main img {
+  height: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+}
+.profileEdit section.main div.inputs {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.profileEdit section.main div.inputs div.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.profileEdit section.main div.inputs div.input span {
+  color: var(--k1);
+}
+.profileEdit section.main div.inputs div.input input,
+.profileEdit section.main div.inputs div.input a {
+  width: 100%;
+  border-bottom: 1px solid var(--cG5);
+  font-size: var(--fL);
+}
+.profileEdit section.main div.inputs div.input input::-webkit-date-and-time-value,
+.profileEdit section.main div.inputs div.input a::-webkit-date-and-time-value {
+  text-align: left;
+}
+.profileEdit section.main div.buttons {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+}
+.profileEdit section.main div.buttons button:first-child {
+  background-color: var(--cBg);
+}
+.profileEdit section.main div.buttons button:first-child span {
+  color: var(--k1) !important;
+}
+.profileEdit section.main div.buttons button:last-child {
+  background-color: var(--k1);
+}
+.profileEdit section.main div.buttons button:last-child span {
+  color: white;
+}
+.carrier section.head {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.carrier section.head i,
+.carrier section.head svg {
+  color: var(--k1);
+}
+.carrier section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.carrier section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carrier section.main div.inputs {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.carrier section.main div.inputs div.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.carrier section.main div.inputs div.input span {
+  color: var(--k1);
+}
+.carrier section.main div.inputs div.input input,
+.carrier section.main div.inputs div.input a {
+  width: 100%;
+  border-bottom: 1px solid var(--cG5);
+  font-size: var(--fL);
+}
+.carrier section.main div.inputs div.input input::-webkit-date-and-time-value,
+.carrier section.main div.inputs div.input a::-webkit-date-and-time-value {
+  text-align: left;
+}
+.carrier section.main a.forget {
+  font-size: var(--fS);
+  text-decoration: underline !important;
+  color: var(--cG3);
+}
+.carrier section.main button {
+  width: 50%;
+}
+.carrier section.main button.secondary {
+  background-color: var(--cBg);
+}
+.carrier section.main button.secondary span {
+  color: var(--k1) !important;
+}
+.carrier section.main span.comment {
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG3);
+}
+.carrier section.main span.comment a {
+  font-size: var(--fS);
+  color: var(--k1);
+}
+.carrier section.main span.title {
+  font-size: var(--fXXL);
+  color: var(--cGreen);
+}
+.carrier section.main span.content {
+  font-size: var(--fXL);
+  text-align: center;
+}
+.carrier section.main i.fa-circle-check,
+.carrier section.main svg.fa-circle-check {
+  margin-top: 50px;
+  border-radius: 99px;
+  background-color: white;
+  color: var(--cGreen);
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }

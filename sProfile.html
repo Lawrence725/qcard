@@ -66,22 +66,22 @@
                 </div>
             </section>
             <section class="list account">
-                <a>
+                <a href="sProfileEdit.html">
                     <i class="fa-solid fa-pen fa-lg"></i>
                     <span>編輯帳號</span>
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
-                <a>
+                <!-- <a>
                     <i class="fa-solid fa-ticket fa-lg"></i>
                     <span>登入兌換序號</span>
                     <i class="fa-solid fa-chevron-right"></i>
-                </a>
-                <a>
+                </a> -->
+                <!-- <a>
                     <i class="fa-solid fa-clipboard-list fa-lg"></i>
                     <span>消費紀錄</span>
                     <i class="fa-solid fa-chevron-right"></i>
-                </a>
-                <a>
+                </a> -->
+                <a href="sCarrier.html">
                     <i class="fa-solid fa-receipt fa-lg"></i>
                     <span>手機載具</span>
                     <i class="fa-solid fa-chevron-right"></i>
@@ -97,10 +97,10 @@
                         <span class="slider round"></span>
                     </label>
                 </a>
-                <a>
+                <a onclick="popCategory()">
                     <i class="fa-solid fa-language fa-lg"></i>
                     <span>語言</span>
-                    <span>繁體中文</span>
+                    <span>中文</span>
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
                 <a>
@@ -120,5 +120,16 @@
                 </a>
             </section>
         </section>
+        <!-- 分類popup -->
+        <section id="popCategory" class="pop category" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">語言</span>
+                <a onclick="popClose(this)"><span class="active">中文</span></a>
+                <a onclick="popClose(this)"><span>英文</span></a>
+                <a onclick="popClose(this)"><span>日文</span></a>
+            </div>
+        </section>
+        <script src="./js/sProfile.js"></script>
     </body>
 </html>

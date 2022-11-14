@@ -125,7 +125,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .profile {
+.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .profile, .profileEdit, .carrier {
     section.head { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
@@ -198,7 +198,7 @@ section.barcode { align-items: center;
     .popBody {
         div.header { height: 60px; padding-right: 20px; border-radius: 99px; gap: 15px; display: flex; align-items: center; background: var(--k2);
             > div { height: 60px;
-                img { height: 90px; margin: -5px; border: 5px solid white; border-radius: 30px; }}
+                img { height: 90px; aspect-ratio: 1/1; margin: -5px; border: 5px solid white; border-radius: 30px; }}
             span { width: 100%;
                 &.title { font-size: var(--fXL); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 &:not(.title) { text-align: end; color: var(--k1); }}}
@@ -217,6 +217,13 @@ section.barcode { align-items: center;
             div.right { display: flex; align-items: center; gap: 10px;
                 span { font-size: var(--fS); color: var(--cG3); }
                 i, svg { color: var(--k1); }}}}}
+section.pop.category {
+    .popBody { gap: 10px;
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}}
+    span {
+        &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
+        &.active { color: var(--k1); }}
+    a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}
 section.pop.intro { width: 100%; height: 100%; padding: 0; align-items: center;
     .popBody { width: 100%; height: 100%; padding: 0; border-radius: 0; position: relative; gap: 10px; align-items: center; justify-content: space-around; overflow: hidden;
         img { width: 100%; height: 100%; }
@@ -518,14 +525,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.none { margin: 100px 0; gap: 10px; display: flex; flex-direction: column; align-items: center;
             span { text-align: center; font-size: var(--fL); color: var(--cG3); }}
         button.action { width: fit-content; padding: 0 15px; position: fixed; left: 50%; bottom: 30px; transform: translate(-50%, 0); color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); z-index: 2; white-space: nowrap;
-            @supports (-webkit-touch-callout: none) and (not (translate: none)) { width: auto !important; }}}
-    section.pop.category {
-        .popBody { gap: 10px;
-            @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-bottom: 10px; }}}
-        span {
-            &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
-            &.active { color: var(--k1); }}
-        a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}}
+            @supports (-webkit-touch-callout: none) and (not (translate: none)) { width: auto !important; }}}}
 
 // 票券
 .ticket { min-width: 100vw; min-height: 100vh; background: var(--k2);
@@ -612,6 +612,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             section.tabs { top: 20px; display: flex; justify-content: center; position: sticky; z-index: 5;
                 div.bg { width: 1500px; height: 1500px; border-radius: 999px; position: absolute; bottom: -20px; background: var(--k1); pointer-events: none; z-index: 5; }
                 a { width: 100%; border-radius: 99px; display: flex; flex-direction: column; align-items: center; z-index: 6;
+                    &:hover { box-shadow: none; }
                     &:not(.active) { opacity: 0.4; }
                     &:nth-child(3) { margin-top: 10px; }
                     img { height: 40px; }
@@ -776,3 +777,47 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &:not(:nth-child(2)) { color: var(--k1); }}
                 i:first-child, svg:first-child { min-width: 20px; display: flex; justify-content: center; }
                 i:last-child, svg:last-child { color: var(--cG4); }}}}}
+
+// 帳號編輯
+.profileEdit {
+    section.head { background-color: rgba(255, 255, 255, 0.9);
+        i, svg { color: var(--k1); }
+        > span { font-size: var(--fL); white-space: nowrap; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column; align-items: center;
+        img { height: 100px; aspect-ratio: 1/1; border-radius: 20px; }
+        div.inputs { width: 100%; gap: 10px; display: flex; flex-direction: column;
+            div.input { width: 100%; display: flex; flex-direction: column;
+                span { color: var(--k1); }
+                input, a { width: 100%; border-bottom: 1px solid var(--cG5); font-size: var(--fL);
+                    &::-webkit-date-and-time-value { text-align: left; }}}}
+        div.buttons { width: 100%; gap: 10px; display: flex;
+            button:first-child { background-color: var(--cBg);
+                span { color: var(--k1) !important; }}
+            button:last-child { background-color: var(--k1);
+                span { color: white; }}}}}
+
+// 手機載具
+.carrier {
+    section.head { background-color: rgba(255, 255, 255, 0.9);
+        i, svg { color: var(--k1); }
+        > span { font-size: var(--fL); white-space: nowrap; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column; align-items: center;
+        div.inputs { width: 100%; gap: 10px; display: flex; flex-direction: column;
+            div.input { width: 100%; display: flex; flex-direction: column;
+                span { color: var(--k1); }
+                input, a { width: 100%; border-bottom: 1px solid var(--cG5); font-size: var(--fL);
+                    &::-webkit-date-and-time-value { text-align: left; }}}}
+        a.forget { font-size: var(--fS); text-decoration: underline !important; color: var(--cG3); }
+        button { width: 50%;
+            &.secondary { background-color: var(--cBg);
+                span { color: var(--k1) !important; }}}
+        span {
+            &.comment { font-size: var(--fS); text-align: center; color: var(--cG3);
+                a { font-size: var(--fS); color: var(--k1); }}
+            &.title { font-size: var(--fXXL); color: var(--cGreen); }
+            &.content { font-size: var(--fXL); text-align: center; }}
+        i, svg {
+            &.fa-circle-check { margin-top: 50px; border-radius: 99px; background-color: white; color: var(--cGreen); box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
+        }
+    }
+}
