@@ -571,10 +571,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 &.title { font-size: var(--fXL); color: var(--k1); }}
             div.sticker { gap: 5px; display: flex; align-items: center;
                 img { height: 50px; aspect-ratio: 1/1; border-radius: 10px; }
-                span { font-size: var(--fL); font-weight: bold; color: var(--k1); }}
-        }
-        button { min-height: 40px; }
-    }}
+                span { font-size: var(--fL); font-weight: bold; color: var(--k1); }}}
+        button { min-height: 40px;
+            &.disabled span { color: white !important; }}}}
 
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;

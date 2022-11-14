@@ -2644,6 +2644,9 @@ section.pop.visit .popBody div.buttons button span {
 .ticket section.pop.gift .popBody button {
   min-height: 40px;
 }
+.ticket section.pop.gift .popBody button.disabled span {
+  color: white !important;
+}
 .store {
   min-width: 100vw;
   min-height: 100vh;
