@@ -1,7 +1,8 @@
 window.onload = function() {
-    popConfirm();
-    popBarcode();
-    popStore(); }
+    // popConfirm();
+    // popBarcode();
+    popGift();
+}
 
 // Popup close
 function popClose(e) {
@@ -31,7 +32,7 @@ function popBarcode() {
     document.getElementById("popBarcode").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
-// 會員條碼popup
-function popStore() {
-    document.getElementById("popStore").style.display = "flex";
+// 集章獎品popup
+function popGift() {
+    document.getElementById("popGift").style.display = "flex";
     document.body.style.overflow = "hidden"; }

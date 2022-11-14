@@ -37,20 +37,57 @@
             </button>
         </section>
         <section class="main">
-            <!-- 票券 -->
+            <!-- 優惠券/集章 -->
             <div class="coupon">
                 <div class="dot left"></div>
                 <div class="dot right"></div>
                 <div class="label">
                     <span>已兌換</span>
                 </div>
-                <img src="./img/food.png">
+                <img src="./img/food.png"> <!-- 優惠券限定 -->
                 <div>
                     <span class="title">滿$100折$10</span>
-                    <a onclick="popStore()">麥町吐司工房新莊中原店</a> <!-- 連去商店頁 -->
+                    <span>麥町吐司工房新莊中原店</span>
                     <span class="content">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
                     <span>2021/10/01 - 2022/01/22</span>
                 </div>
+                <div class="sticker"> <!-- 集章限定 -->
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png" class="checked">
+                    <img src="./img/stamp.png">
+                    <img src="./img/stamp.png">
+                </div>
+                <a class="coupon" onclick="popGift()"> <!-- 集章限定 -->
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <div class="content">
+                        <span class="title">豪華B餐招待券</span>
+                        <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可獲得豪華B餐招待券，數量有限，詳情請參考店內公告。</span>
+                        <div class="sticker">
+                            <img src="./img/stamp.png">
+                            <span>x5</span>
+                        </div>
+                    </div>
+                    <!-- <img src="img/foodL.png"> -->
+                </a>
+                <a class="coupon" onclick="popGift()"> <!-- 集章限定 -->
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <div class="content">
+                        <span class="title">豪華A餐招待券</span>
+                        <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可獲得豪華A餐招待券，數量有限，詳情請參考店內公告。</span>
+                        <div class="sticker">
+                            <img src="./img/stamp.png">
+                            <span>x9</span>
+                        </div>
+                    </div>
+                    <img src="img/foodL.png">
+                </a>
                 <hr>
                 <div>
                     <span class="subtitle">優惠說明</span>
@@ -58,203 +95,22 @@
                 </div>
             </div>
         </section>
-        <!-- 特店popup -->
-        <section id="popStore" class="pop popStore" onclick="popClose(this)">
-            <div class="store">
-                <a class="back" onclick="popClose(this)">
-                    <i class="fa-solid fa-chevron-down fa-lg"></i>
-                </a>
-                <!-- Banner -->
-                <section class="cover">
-                    <div class="content" onclick="popClose(this)">
-                        <!-- ********** Popup形式不顯示Banner ********** -->
-                        <!-- ********** 保留空的div.content      ********** -->
-                        <!-- <img src="./img/foodL.png"> -->
+        <!-- 集章獎品popup -->
+        <section id="popGift" class="pop gift" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <img src="./img/food.png">
+                <div>
+                    <span class="title">豪華A餐招待券</span>
+                    <span>即日期至十二月底，凡來店消費每筆滿台幣一百元，即可獲得豪華A餐招待券，數量有限，詳情請參考店內公告。</span>
+                    <div class="sticker">
+                        <img src="./img/stamp.png">
+                        <span>x5</span>
                     </div>
-                </section>
-                <!-- Main -->
-                <section class="main">
-                    <section class="info">
-                        <div class="logo">
-                            <!-- ********** 沒有照片就拿掉img ********** -->
-                            <!-- ********** 保留空的div.logo ********** -->
-                            <img src="./img/milkhouses.png">
-                        </div>
-                        <span class="title">麥町吐司工房新莊中原店</span>
-                        <span>餐飲</span>
-                        <div class="features">
-                            <div>
-                                <img src="./icon/mPoint.svg">
-                                <span>點數</span>
-                            </div>
-                            <div>
-                                <img src="./icon/mTicket.svg">
-                                <span>優惠券</span>
-                            </div>
-                            <div>
-                                <img src="./icon/mStamp.svg">
-                                <span>集章</span>
-                            </div>
-                        </div>
-                        <!-- ********** v桃園內容v ********** -->
-                        <div class="features">
-                            <div>
-                                <img src="./icon/ptTaoyuan.svg">
-                                <span>紅利桃子</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-wallet"></i>
-                                <span>行動支付</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-utensils"></i>
-                                <span>線上點餐</span>
-                            </div>
-                        </div>
-                        <!-- ********** ^桃園內容^ ********** -->
-                    </section>
-                    <!-- 按鈕 -->
-                    <section class="actions">
-                        <a href="index.html">
-                            <div class="icon"><i class="fa-solid fa-plus fa-xl"></i></div>
-                            <span>加入會員</span>
-                        </a>
-                        <a onclick="popBarcode()">
-                            <div class="icon"><i class="fa-solid fa-barcode fa-xl"></i></div>
-                            <span>會員條碼</span>
-                        </a>
-                        <a>
-                            <div class="icon line"><i class="fa-brands fa-line fa-xl"></i></div>
-                            <span>官方Line</span>
-                        </a>
-                        <a href="pPrice.html">
-                            <div class="icon"><img src="./icon/qc.svg"></div>
-                            <span>線上點餐</span>
-                        </a>
-                        <a onclick="popNotification();">
-                            <div class="icon">
-                                <i class="fa-solid fa-bell fa-xl"></i>
-                                <div class="notice">
-                                    <span>8</span>
-                                </div>
-                            </div>
-                            <span>通知</span>
-                        </a>
-                    </section>
-                    <!-- 點數 -->
-                    <section class="point">
-                        <span class="title">點數</span>
-                        <a class="point" href="point.html">
-                            <img src="./icon/mPoint.svg">
-                            <div>
-                                <span class="title">米哥點</span>
-                                <span>1點 = NT$1</span>
-                                <span>消費滿$100贈送1點</span>
-                            </div>
-                            <span>100</span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </section>
-                    <!-- 優惠券 -->
-                    <section class="coupon">
-                        <div class="top">
-                            <span class="title">優惠券</span>
-                            <a href="tickets.html">
-                                <i class="fa-solid fa-bars fa-lg"></i>
-                            </a>
-                        </div>
-                        <a class="coupon" href="ticket.html">
-                            <div class="dot left"></div>
-                            <div class="dot right"></div>
-                            <div class="content">
-                                <div>
-                                    <span class="title">滿$100折$10</span>
-                                    <span class="name">麥町吐司工房新莊中原店</span>
-                                </div>
-                                <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
-                                <span class="date">2021/10/01 - 2022/01/22</span>
-                            </div>
-                            <img src="img/food.png">
-                        </a>
-                        <a class="coupon" href="ticket.html">
-                            <div class="dot left"></div>
-                            <div class="dot right"></div>
-                            <div class="label">
-                                <span>已兌換</span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <span class="title">滿$100折$10</span>
-                                    <span class="name">麥町吐司工房新莊中原店</span>
-                                </div>
-                                <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
-                                <span class="date">2021/10/01 - 2022/01/22</span>
-                            </div>
-                            <!-- <img src="img/food.png"> -->
-                        </a>
-                        <a class="coupon" href="ticket.html">
-                            <div class="dot left"></div>
-                            <div class="dot right"></div>
-                            <div class="label">
-                                <span>已過期</span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <span class="title">滿$100折$10滿$100折$10滿$100折$10</span>
-                                    <span class="name">麥町吐司工房新莊中原店</span>
-                                </div>
-                                <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
-                                <span class="date">2021/10/01 - 2022/01/22</span>
-                            </div>
-                            <img src="img/food.png">
-                        </a>
-                        <a class="coupon">
-                            <div class="dot left"></div>
-                            <div class="dot right"></div>
-                            <span class="none">暫無優惠券<br>敬請期待</span>
-                        </a>
-                    </section>
-                    <!-- 商店資訊 -->
-                    <section class="detail">
-                        <span class="title">商店資訊</span>
-                        <!-- 地圖 -->
-                        <div class="map">
-                            <!-- ********** 地圖放這裡            ********** -->
-                            <!-- ********** width+height設成100% ********** -->
-                            <!-- ********** 下面img拿掉           ********** -->
-                            <img src="./img/map.png">
-                        </div>
-                        <!-- 分店 -->
-                        <div class="branch">
-                            <span>米哥烘焙坊 台北店</span>
-                            <a><i class="fa-solid fa-angle-right fa-lg"></i></a>
-                        </div>
-                        <div class="branch">
-                            <span>米哥烘焙坊 台中店</span>
-                            <a><i class="fa-solid fa-angle-right fa-lg"></i></a>
-                        </div>
-                        <!-- 單店 -->
-                        <div>
-                            <span>桃園市特店地址100號</span>
-                            <a><i class="fa-solid fa-copy"></i></a>
-                            <a><i class="fa-solid fa-map"></i></a>
-                        </div>
-                        <div>
-                            <span>0987 654 321</span>
-                            <a><i class="fa-solid fa-copy"></i></a>
-                            <a><i class="fa-solid fa-phone"></i></a>
-                        </div>
-                    </section>
-                </section>
-                <!-- Footer -->
-                <!-- ********** v桃園內容v ********** -->
-                <section class="foot">
-                    <button onclick="window.location.href='store.html'">
-                        <i class="fa-solid fa-utensils fa-lg"></i>
-                        <span>線上點餐</span>
-                    </button>
-                </section>
-                <!-- ********** ^桃園內容^ ********** -->
+                </div>
+                <button onclick="popConfirm()">
+                    <span>現場兌換</span>
+                </button>
             </div>
         </section>
         <!-- 確認popup -->
@@ -279,14 +135,18 @@
             </div>
         </section>
         <!-- 優惠券條碼popup -->
-        <section id="popBarcode" class="pop barcode" onclick="popClose(this)">
+        <section id="popBarcode" class="pop barcode v2" onclick="popClose(this)">
             <div class="popBody">
-                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
-                <span class="title">滿$100折$10</span>
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div class="header">
+                    <div><img src="./img/food.png"></div>
+                    <span class="title">滿$100折$10</span>
+                </div>
                 <div class="code">
-                    <!-- Barcode/QRcode二擇一 -->
-                    <img class="barcode" src="./img/barcode.png">
+                    <!-- ********** QRcode / Barcode+代碼 二擇一 ********** -->
                     <!-- <img class="qrcode" src="./img/qrcode.png"> -->
+                    <img class="barcode" src="./img/barcode.png">
+                    <span>/ASDFGHJ</span>
                 </div>
                 <div class="action">
                     <div class="left">
