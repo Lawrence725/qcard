@@ -573,6 +573,7 @@ a.dateRange svg {
 .tickets section.head,
 .ticket section.head,
 .news section.head,
+.new section.head,
 .profile section.head,
 .profileEdit section.head,
 .carrier section.head {
@@ -597,6 +598,7 @@ a.dateRange svg {
 .tickets section.head .bg,
 .ticket section.head .bg,
 .news section.head .bg,
+.new section.head .bg,
 .profile section.head .bg,
 .profileEdit section.head .bg,
 .carrier section.head .bg {
@@ -617,6 +619,7 @@ a.dateRange svg {
 .tickets section.head .left,
 .ticket section.head .left,
 .news section.head .left,
+.new section.head .left,
 .profile section.head .left,
 .profileEdit section.head .left,
 .carrier section.head .left,
@@ -628,6 +631,7 @@ a.dateRange svg {
 .tickets section.head .right,
 .ticket section.head .right,
 .news section.head .right,
+.new section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right {
@@ -643,6 +647,7 @@ a.dateRange svg {
 .tickets section.head .right,
 .ticket section.head .right,
 .news section.head .right,
+.new section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right {
@@ -3592,6 +3597,40 @@ section.pop.visit .popBody div.buttons button span {
 }
 .news section.main div.item a > * {
   color: var(--k1);
+}
+.new section.head {
+  background-color: var(--k2);
+}
+.new section.head i,
+.new section.head svg {
+  color: var(--k1);
+}
+.new section.head > span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.new section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.new section.main img {
+  width: 100%;
+  border-radius: 10px;
+}
+.new section.main span.title {
+  font-size: var(--fL);
+}
+.new section.main span:not(.title) {
+  color: var(--cG3);
+}
+.new section.main button {
+  width: 50%;
+  margin: 20px auto 0;
 }
 .profile {
   min-height: 100vh;

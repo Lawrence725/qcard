@@ -125,7 +125,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 // Common
-.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .profile, .profileEdit, .carrier {
+.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .new, .profile, .profileEdit, .carrier {
     section.head { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
@@ -755,6 +755,17 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             > span:not(.title) { color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
             a { width: 100%; display: flex; align-items: center; justify-content: center;
                 > * { color: var(--k1); }}}}}
+.new {
+    section.head { background-color: var(--k2);
+        i, svg { color: var(--k1); }
+        > span { font-size: var(--fL); white-space: nowrap; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 10px; display: flex; flex-direction: column;
+        img { width: 100%; border-radius: 10px; }
+        span.title { font-size: var(--fL); }
+        span:not(.title) { color: var(--cG3); }
+        button { width: 50%; margin: 20px auto 0; }
+    }
+}
 
 // 帳號設定
 .profile { min-height: 100vh; background: var(--k2);
@@ -821,7 +832,4 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             &.title { font-size: var(--fXXL); color: var(--cGreen); }
             &.content { font-size: var(--fXL); text-align: center; }}
         i, svg {
-            &.fa-circle-check { margin-top: 50px; border-radius: 99px; background-color: white; color: var(--cGreen); box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
-        }
-    }
-}
+            &.fa-circle-check { margin-top: 50px; border-radius: 99px; background-color: white; color: var(--cGreen); box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }}}}
