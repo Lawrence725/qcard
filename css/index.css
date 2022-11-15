@@ -3720,11 +3720,20 @@ section.pop.visit .popBody div.buttons button span {
 .profileEdit section.main div.inputs div.input span {
   color: var(--k1);
 }
+.profileEdit section.main div.inputs div.input span.error {
+  font-size: var(--fS);
+  text-align: right;
+  color: var(--cRed);
+}
 .profileEdit section.main div.inputs div.input input,
 .profileEdit section.main div.inputs div.input a {
   width: 100%;
   border-bottom: 1px solid var(--cG5);
   font-size: var(--fL);
+}
+.profileEdit section.main div.inputs div.input input.error,
+.profileEdit section.main div.inputs div.input a.error {
+  border-bottom: 1px solid var(--cRed);
 }
 .profileEdit section.main div.inputs div.input input::-webkit-date-and-time-value,
 .profileEdit section.main div.inputs div.input a::-webkit-date-and-time-value {
@@ -3782,11 +3791,20 @@ section.pop.visit .popBody div.buttons button span {
 .carrier section.main div.inputs div.input span {
   color: var(--k1);
 }
+.carrier section.main div.inputs div.input span.error {
+  font-size: var(--fS);
+  text-align: right;
+  color: var(--cRed);
+}
 .carrier section.main div.inputs div.input input,
 .carrier section.main div.inputs div.input a {
   width: 100%;
   border-bottom: 1px solid var(--cG5);
   font-size: var(--fL);
+}
+.carrier section.main div.inputs div.input input.error,
+.carrier section.main div.inputs div.input a.error {
+  border-bottom: 1px solid var(--cRed);
 }
 .carrier section.main div.inputs div.input input::-webkit-date-and-time-value,
 .carrier section.main div.inputs div.input a::-webkit-date-and-time-value {
