@@ -4,6 +4,7 @@ window.onload = function() {
     // popIntro();
     // popVisit();
     popPointRule();
+    popInvite();
 }
 
 // Popup close
@@ -37,6 +38,11 @@ function popBarcode() {
 // 通知popup
 function popNotification() {
     document.getElementById("popNotification").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 邀請禮popup
+function popInvite() {
+    document.getElementById("popInvite").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
 // 首次加入popup

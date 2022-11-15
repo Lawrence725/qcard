@@ -52,6 +52,10 @@
                             </div>
                             <span>通知</span>
                         </a>
+                        <a onclick="popInvite()">
+                            <i class="fa-solid fa-gift fa-xl"></i>
+                            <span>推薦禮</span>
+                        </a>
                         <a href="pPrice.html">
                             <i class="fa-solid fa-utensils fa-xl"></i>
                             <span>線上點餐</span>
@@ -393,6 +397,31 @@
                 <div class="buttons">
                     <button onclick="popClose(this)"><span>略過</span></button>
                     <button onclick="popClose(this)"><span>前往註冊</span></button>
+                </div>
+            </div>
+        </section>
+        <!-- 邀請禮popup -->
+        <section id="popInvite" class="pop notice invite" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <div>
+                    <div class="icon">
+                        <div class="border"><i class="fa-solid fa-gift fa-2x"></i></i></div>
+                    </div>
+                    <span class="title">邀請好友加入會員</span>
+                    <span>獲得更多優惠！</span>
+                </div>
+                <div class="action">
+                    <button>
+                        <span>我的邀請碼 ASDFGH</span>
+                        <span class="note">已複製</span> <!-- 點選後才出現 -->
+                        <i class="fa-solid fa-copy"></i>
+                    </button>
+                    <button>
+                        <i class="fa-brands fa-line fa-2x"></i>
+                        <span>Line邀請好友</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
             </div>
         </section>

@@ -197,11 +197,14 @@ section.barcode { align-items: center;
     &.v2 .popBody { border-radius: 40px 40px 20px 20px; gap: 30px; }
     .popBody {
         div.header { height: 60px; padding-right: 20px; border-radius: 99px; gap: 15px; display: flex; align-items: center; background: var(--k2);
-            > div { height: 60px;
+            > div:not(.content) { height: 60px;
                 img { height: 90px; aspect-ratio: 1/1; margin: -5px; border: 5px solid white; border-radius: 30px; }}
+            div.content { width: 100%; margin-left: 20px; display: flex; flex-direction: column; }
             span { width: 100%;
                 &.title { font-size: var(--fXL); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                &:not(.title) { text-align: end; color: var(--k1); }}}
+                &.remark { width: fit-content; font-size: var(--fS); text-align: start !important; color: var(--cG3) !important; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                &:not(.title) { text-align: end; color: var(--k1); }}
+            a { text-decoration: underline !important; white-space: nowrap; color: var(--k1); }}
         div.code { width: 100%; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
             div { display: flex; align-items: center; gap: 5px;
                 img { height: 40px; aspect-ratio: 1/1; border-radius: 99px; }
@@ -224,6 +227,18 @@ section.pop.category {
         &.title { margin-bottom: 5px; font-size: var(--fL); font-weight: bold; color: var(--k1); }
         &.active { color: var(--k1); }}
     a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}
+section.pop.invite .popBody { background: var(--k2);
+    > div:not(.action) {
+        span:not(.title) { color: var(--k1); }
+        div.icon div.border { border: 7.5px solid var(--k1);
+            i, svg { color: var(--k1); }}}
+    div.action { width: 100%; display: flex; flex-direction: column; gap: 10px;
+        button { padding: 0 15px; display: flex; align-items: center; gap: 5px; background-color: white;
+            span { width: 100%; color: var(--cG1) !important; text-align: start; white-space: nowrap;
+                &.note { width: fit-content; font-size: var(--fS); color: var(--cG3) !important; }}
+            i, svg { color: var(--k1);
+            &.fa-line { outline: 6px solid white; outline-offset: -4px; border-radius: 99px; background-color: #06C755; color: white;
+                &::before { border-radius: 99px; background-color: #06C755; }}}}}}
 section.pop.intro { width: 100%; height: 100%; padding: 0; align-items: center;
     .popBody { width: 100%; height: 100%; padding: 0; border-radius: 0; position: relative; gap: 10px; align-items: center; justify-content: space-around; overflow: hidden;
         img { width: 100%; height: 100%; }
@@ -411,15 +426,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             img { width: 100%; left: 0; top: 0; position: absolute; }
             span { font-size: var(--fL); color: white;
                 span { font-weight: bold; }}
-            i, svg { color: rgba(255, 255, 255, 0.5); }}}
-    section.pop.invite {
-        div.action { width: 100%; display: flex; flex-direction: column; gap: 10px;
-            button { padding: 0 15px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
-                span { width: 100%; color: var(--cG1) !important; text-align: start; white-space: nowrap;
-                    &.note { width: fit-content; font-size: var(--fS); color: var(--cG3) !important; }}
-                i, svg { color: var(--cG3);
-                &.fa-line { outline: 6px solid var(--cBg); outline-offset: -4px; border-radius: 99px; background-color: #06C755; color: var(--cBg);
-                    &::before { border-radius: 99px; background-color: #06C755; }}}}}}}
+            i, svg { color: rgba(255, 255, 255, 0.5); }}}}
 
 // 付款金額
 .price {
@@ -587,13 +594,23 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 div.menus {
                     div.menu { width: 100%; padding-top: 10px; gap: 20px 0; display: flex; align-items: center; flex-wrap: wrap;
                         a { min-width: 25%; position: relative; gap: 5px; display: flex; flex-direction: column; align-items: center;
-                            i, svg { color: var(--k1); }
                             &:nth-child(1) { i, svg { color: #F5B7A6; }}
                             &:nth-child(2) { i, svg { color: #BDD7EE; }}
                             &:nth-child(3) { i, svg { color: #FFD965; }}
+                            &:nth-child(4) { i, svg { color: var(--k1); }}
                             &:nth-child(5) { i, svg { color: #F7CBAC; }}
                             &:nth-child(6) { i, svg { color: #C5E0B3; }}
                             &:nth-child(7) { i, svg { color: #CCC1D9; }}
+                            &:nth-child(8) { i, svg { color: var(--cG4); }}
+                            i, svg { color: var(--k1);
+                                &.fa-barcode        { color: #F5B7A6; }
+                                &.fa-map            { color: #BDD7EE; }
+                                &.fa-newspaper      { color: #FFD965; }
+                                &.fa-bell           { color: var(--k1); }
+                                &.fa-gift           { color: #CCC1D9; }
+                                &.fa-utensils       { color: #F7CBAC; }
+                                &.fa-line           { color: #C5E0B3; }
+                                &.fa-address-card   { color: var(--cG4); }}
                             i { line-height: normal; }
                             > span { font-size: var(--fS); color: var(--cG3); }
                             div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border: 1px solid white; border-radius: 99px; top: -10px; left: 53%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
@@ -833,3 +850,11 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             &.content { font-size: var(--fXL); text-align: center; }}
         i, svg {
             &.fa-circle-check { margin-top: 50px; border-radius: 99px; background-color: white; color: var(--cGreen); box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }}}}
+
+// Line會員條碼
+.lineCode { background: var(--k2);
+    section.main { width: 100%; max-width: 430px; padding: 20px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column; align-items: center;
+        section.barcode { width: 100%;
+            .popBody { width: 100%; padding: 20px; display: flex; flex-direction: column; gap: 20px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }}
+    }
+}
