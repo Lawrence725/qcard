@@ -952,6 +952,7 @@ section.barcode.v2 .popBody {
 }
 section.barcode .popBody div.header {
   height: 60px;
+  min-height: 60px;
   padding-right: 20px;
   border-radius: 99px;
   gap: 15px;
@@ -3963,13 +3964,9 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cGreen);
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
-.lineCode {
-  background: var(--k2);
-}
 .lineCode section.main {
   width: 100%;
   max-width: 430px;
-  padding: 20px;
   margin: 0 auto;
   gap: 30px;
   display: flex;
@@ -3981,10 +3978,22 @@ section.pop.visit .popBody div.buttons button span {
 }
 .lineCode section.main section.barcode .popBody {
   width: 100%;
-  padding: 20px;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 10px;
+  border-radius: 0;
+  gap: unset;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background-color: white;
-  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+  justify-content: space-between;
+}
+.lineCode section.main section.barcode .popBody .code {
+  height: unset;
+  max-height: calc(100% - 173px);
+  padding: 0 10px;
+}
+.lineCode section.main section.barcode .popBody .code img {
+  height: unset;
+  max-width: 100%;
+  max-height: 100%;
 }
