@@ -1,10 +1,10 @@
 window.onload = function() {
-    popBarcode();
+    // popBarcode();
     // popNotification();
     // popIntro();
     // popVisit();
-    popPointRule();
-    popInvite();
+    // popPointRule();
+    // popInvite();
 }
 
 // Popup close
