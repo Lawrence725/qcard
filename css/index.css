@@ -3007,6 +3007,9 @@ section.pop.visit .popBody div.buttons button span {
 .store.v2 section.main section.tabs a:nth-child(3) {
   margin-top: 10px;
 }
+.store.v2 section.main section.tabs a:last-child {
+  margin-top: 0;
+}
 .store.v2 section.main section.tabs a img {
   height: 40px;
 }
