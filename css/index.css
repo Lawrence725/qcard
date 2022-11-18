@@ -538,16 +538,18 @@ a.dateRange svg {
   animation-iteration-count: 1;
 }
 .pop .popBody a.close {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  margin: -20px 0 -20px auto;
   border-radius: 99px;
+  top: 2px;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cG4);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 @keyframes popup {
   0% {
@@ -872,6 +874,9 @@ section.pop.banner .popBody span.time {
     margin-top: -100vh;
   }
 }
+section.pop.notification .popBody a.close {
+  margin-bottom: -28px;
+}
 section.pop.notification .popBody span.title {
   font-size: var(--fL);
   font-weight: bold;
@@ -909,6 +914,8 @@ section.pop.notification .popBody a.item div.left span {
 }
 section.pop.notification .popBody a.item div.left span:not(:first-child) {
   font-size: var(--fM);
+}
+section.pop.notification .popBody a.item div.left span:not(:first-child):not(:nth-child(2)) {
   color: var(--cG3);
 }
 section.pop.notification .popBody a.item div.right {
@@ -1065,9 +1072,11 @@ section.barcode .popBody div.code div img {
 section.barcode .popBody div.code div span {
   font-size: var(--fXL);
 }
+section.barcode .popBody div.code div.barcode,
 section.barcode .popBody div.code img.barcode {
   width: 100%;
 }
+section.barcode .popBody div.code div.qrcode,
 section.barcode .popBody div.code img.qrcode {
   height: 200px;
 }
@@ -2748,8 +2757,6 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 {
   min-width: unset;
-  min-height: unset;
-  max-height: unset;
   background: var(--k2);
   overflow-x: hidden;
 }
@@ -3879,7 +3886,9 @@ section.pop.visit .popBody div.buttons button span {
 .profileEdit section.main div.inputs div.input input,
 .profileEdit section.main div.inputs div.input a {
   width: 100%;
+  min-height: 30px;
   border-bottom: 1px solid var(--cG5);
+  border-radius: 0;
   font-size: var(--fL);
 }
 .profileEdit section.main div.inputs div.input input.error,

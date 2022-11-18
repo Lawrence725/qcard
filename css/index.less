@@ -121,7 +121,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     i, svg { color: var(--k1); }}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
-        a.close { width: 20px; height: 20px; position: absolute; top: 20px; right: 20px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--cG4); }}}
+        a.close { width: 30px; height: 30px; min-height: 30px; margin: -20px 0 -20px auto; border-radius: 99px; top: 2px; position: sticky; display: flex; align-items: center; justify-content: center; color: var(--cG4); background-color: rgba(255, 255, 255, 0.75); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
@@ -174,6 +174,7 @@ section.pop.banner { padding: 20px; align-items: flex-start; background-color: t
 @keyframes bannerDown { 0% { margin-top: -100vh; } 100% { margin-top: 0; }}
 @keyframes bannerUp { 0% { margin-top: 0; } 100% { margin-top: -100vh; }}
 section.pop.notification .popBody { 
+    a.close { margin-bottom: -28px; }
     span.title { font-size: var(--fL); font-weight: bold; }
     a.read { display: flex; justify-content: center;
         span { color: var(--k1); }}
@@ -183,7 +184,8 @@ section.pop.notification .popBody {
             &.active { background-color: var(--cRed); }}
         div.left { display: flex; flex-direction: column;
             span { font-size: var(--fL);
-                &:not(:first-child) { font-size: var(--fM); color: var(--cG3); }}}
+                &:not(:first-child) { font-size: var(--fM); }
+                &:not(:first-child):not(:nth-child(2)) { color: var(--cG3); }}}
         div.right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end;
             > div { display: flex; align-items: center; gap: 5px;
                 span { font-size: var(--fL); font-weight: bold; }
@@ -216,8 +218,8 @@ section.barcode { align-items: center;
             div { display: flex; align-items: center; gap: 5px;
                 img { height: 40px; aspect-ratio: 1/1; border-radius: 99px; }
                 span { font-size: var(--fXL); }}
-            img.barcode { width: 100%; }
-            img.qrcode { height: 200px; }}
+            div.barcode, img.barcode { width: 100%; }
+            div.qrcode, img.qrcode { height: 200px; }}
         div.action { min-height: 23px; display: flex; align-items: center; justify-content: space-between;
             div.left { display: flex; align-items: center; gap: 15px;
                 a {
@@ -591,7 +593,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
-    &.v2 { min-width: unset; min-height: unset; max-height: unset; background: var(--k2); overflow-x: hidden;
+    &.v2 { min-width: unset; background: var(--k2); overflow-x: hidden;
         section.main { margin: 0 auto; padding: 20px 25px 50px; border-radius: 0; box-shadow: none; background-color: transparent; overflow-x: clip;
             section.card { width: 100%; padding: 10px; margin-top: 65px; border-radius: 30px 30px 20px 20px; gap: 15px; position: relative; display: flex; flex-direction: column; background-color: white; z-index: 6;
                 div.top { width: 100%; padding: 0 10px; gap: 20px; display: flex; align-items: flex-end;
@@ -824,7 +826,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div.input { width: 100%; display: flex; flex-direction: column;
                 span { color: var(--k1);
                     &.error { font-size: var(--fS); text-align: right; color: var(--cRed); }}
-                input, a { width: 100%; border-bottom: 1px solid var(--cG5); font-size: var(--fL);
+                input, a { width: 100%; min-height: 30px; border-bottom: 1px solid var(--cG5); border-radius: 0; font-size: var(--fL);
                     &.error { border-bottom: 1px solid var(--cRed); }
                     &::-webkit-date-and-time-value { text-align: left; }}}}
         div.buttons { width: 100%; gap: 10px; display: flex;
