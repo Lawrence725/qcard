@@ -5,6 +5,7 @@ window.onload = function() {
     // popVisit();
     // popPointRule();
     // popInvite();
+    popBanner();
 }
 
 // Popup close
@@ -24,6 +25,23 @@ function popClose(e) {
             e.closest('.pop').children[0].style.animationName = "popup";
         }, 500); }
     document.body.style.overflow = "scroll"; }
+
+// 小通知popup
+function popBanner() {
+    document.getElementById("popBanner").style.display = "flex";
+    setTimeout(function(){
+        document.getElementById("popBanner").closest('.pop').children[0].style.animationName = "bannerUp";
+        setTimeout(function(){
+            document.getElementById("popBanner").closest('.pop').style.display = "none";
+            document.getElementById("popBanner").closest('.pop').children[0].style.animationName = "bannerDown";
+        }, 500);
+    }, 5000); }
+function popBannerClose(e) {
+    e.closest('.pop').children[0].style.animationName = "bannerUp";
+    setTimeout(function(){
+        e.closest('.pop').style.display = "none";
+        e.closest('.pop').children[0].style.animationName = "bannerDown";
+    }, 500); }
 
 // 點數規則popup
 function popPointRule() {

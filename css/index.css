@@ -836,6 +836,41 @@ section.pop.notice .popBody > div:not(.buttons) {
   flex-direction: column;
   align-items: center;
 }
+section.pop.banner {
+  padding: 20px;
+  align-items: flex-start;
+  background-color: transparent;
+}
+section.pop.banner .popBody {
+  padding: 10px 15px;
+  border: 2px solid var(--k1);
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  animation-name: bannerDown;
+}
+section.pop.banner .popBody span.title {
+  font-size: var(--fL);
+  color: var(--k1);
+}
+section.pop.banner .popBody span.time {
+  color: var(--cG3);
+}
+@keyframes bannerDown {
+  0% {
+    margin-top: -100vh;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes bannerUp {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: -100vh;
+  }
+}
 section.pop.notification .popBody span.title {
   font-size: var(--fL);
   font-weight: bold;
