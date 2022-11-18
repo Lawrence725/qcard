@@ -3989,7 +3989,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .lineCode section.main section.barcode .popBody .code {
   height: unset;
-  max-height: calc(100% - 173px);
+  height: calc(100% - 173px);
   padding: 0 10px;
 }
 .lineCode section.main section.barcode .popBody .code img {
