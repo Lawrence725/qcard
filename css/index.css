@@ -4064,3 +4064,49 @@ section.pop.visit .popBody div.buttons button span {
   max-width: 100%;
   max-height: 100%;
 }
+.fault {
+  min-width: 100%;
+  min-height: 100vh;
+  background-color: var(--k1);
+}
+.fault section.main {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fault section.main div.top {
+  margin: auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fault section.main div.top i {
+  color: white;
+}
+.fault section.main div.top span {
+  font-size: var(--fL);
+  color: rgba(255, 255, 255, 0.5);
+}
+.fault section.main div.top span.title {
+  font-size: var(--fXXL);
+  color: white;
+}
+.fault section.main a {
+  min-width: 70px;
+  min-height: 70px;
+  margin-bottom: 150px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(55, 84, 170, 0.2);
+}
+.fault section.main a i {
+  color: var(--k1);
+}
