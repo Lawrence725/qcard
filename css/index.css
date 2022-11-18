@@ -847,6 +847,7 @@ section.pop.banner .popBody {
   gap: 5px;
   background-color: rgba(255, 255, 255, 0.95);
   animation-name: bannerDown;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
 section.pop.banner .popBody span.title {
   font-size: var(--fL);
