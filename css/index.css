@@ -2760,9 +2760,31 @@ section.pop.visit .popBody div.buttons button span {
   background: var(--k2);
   overflow-x: hidden;
 }
+.store.v2 section.foot {
+  padding: 0;
+  box-shadow: none;
+}
+.store.v2 section.foot button {
+  height: 70px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0px -10px 20px rgba(255, 255, 255, 0.25);
+}
+.store.v2 section.foot button span {
+  font-size: var(--fL);
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.store.v2 section.foot button span.title {
+  font-size: var(--fXL);
+  font-weight: bold;
+  color: white !important;
+}
+.store.v2 section.foot button i,
+.store.v2 section.foot button svg {
+  color: white;
+}
 .store.v2 section.main {
   margin: 0 auto;
-  padding: 20px 25px 50px;
+  padding: 20px 25px 90px;
   border-radius: 0;
   box-shadow: none;
   background-color: transparent;
