@@ -3863,6 +3863,11 @@ section.pop.visit .popBody div.buttons button span {
 .profile section.main section.list a svg:last-child {
   color: var(--cG4);
 }
+.profile section.main span.remark {
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG3);
+}
 .profileEdit section.head {
   background-color: rgba(255, 255, 255, 0.9);
 }
