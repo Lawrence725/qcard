@@ -3754,7 +3754,7 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--k1);
 }
 .new section.head {
-  background-color: var(--k2);
+  background: var(--k2);
 }
 .new section.head i,
 .new section.head svg {
@@ -3767,7 +3767,7 @@ section.pop.visit .popBody div.buttons button span {
 .new section.main {
   width: 100%;
   max-width: 430px;
-  padding: 70px 20px 50px;
+  padding: 80px 30px 50px;
   margin: 0 auto;
   gap: 10px;
   display: flex;
