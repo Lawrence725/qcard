@@ -3737,6 +3737,7 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fL);
 }
 .news section.main div.item > span:not(.title) {
+  max-height: 100px;
   color: var(--cG3);
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -4097,7 +4098,7 @@ section.pop.visit .popBody div.buttons button span {
   width: 100%;
   height: 100vh;
   max-height: 100vh;
-  padding: 10px;
+  padding: 0 10px 10px;
   border-radius: 0;
   gap: unset;
   display: flex;
@@ -4106,7 +4107,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .lineCode section.main section.barcode .popBody .code {
   height: unset;
-  height: calc(100% - 193px);
+  height: calc(100% - 165px);
   padding: 0 10px;
 }
 .lineCode section.main section.barcode .popBody .code img {
@@ -4115,7 +4116,7 @@ section.pop.visit .popBody div.buttons button span {
   max-height: 100%;
 }
 .lineCode section.main section.barcode .popBody .action {
-  margin-bottom: 20px;
+  padding: 0 20px;
 }
 .lineLoad section.main {
   min-width: 100vw;

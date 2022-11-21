@@ -785,7 +785,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.item { padding: 10px; border-radius: 20px; gap: 10px; display: flex; flex-direction: column; background-color: white;
             img { width: 100%; aspect-ratio: 16/9; border-radius: 10px; }
             span.title { font-size: var(--fL); }
-            > span:not(.title) { color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+            > span:not(.title) { max-height: 100px; color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
             a { width: 100%; display: flex; align-items: center; justify-content: center;
                 > * { color: var(--k1); }}}}}
 .new {
@@ -878,10 +878,10 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 .lineCode {
     section.main { width: 100%; max-width: 430px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column; align-items: center;
         section.barcode { width: 100%;
-            .popBody { width: 100%; height: 100vh; max-height: 100vh; padding: 10px; border-radius: 0; gap: unset; display: flex; flex-direction: column; justify-content: space-between;
-                .code { height: unset; height: calc(100% - 193px); padding: 0 10px;
+            .popBody { width: 100%; height: 100vh; max-height: 100vh; padding: 0 10px 10px; border-radius: 0; gap: unset; display: flex; flex-direction: column; justify-content: space-between;
+                .code { height: unset; height: calc(100% - 165px); padding: 0 10px;
                     img { height: unset; max-width: 100%; max-height: 100%; }}
-                .action { margin-bottom: 20px; }}}}}
+                .action { padding: 0 20px; }}}}}
 
 // Line跳轉
 .lineLoad {
