@@ -1088,7 +1088,7 @@ section.barcode .popBody div.code img.qrcode {
   justify-content: center;
 }
 section.barcode .popBody div.action {
-  min-height: 23px;
+  min-height: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4115,7 +4115,7 @@ section.pop.visit .popBody div.buttons button span {
   max-height: 100%;
 }
 .lineCode section.main section.barcode .popBody .action {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .lineLoad section.main {
   min-width: 100vw;
