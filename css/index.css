@@ -2298,6 +2298,9 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   gap: 30px;
 }
+.login section.main form.edit-userinfo {
+  margin: auto 0;
+}
 .login section.main div.inputs {
   margin: auto 0;
   display: flex;
@@ -4100,13 +4103,16 @@ section.pop.visit .popBody div.buttons button span {
 }
 .lineCode section.main section.barcode .popBody .code {
   height: unset;
-  height: calc(100% - 173px);
+  height: calc(100% - 193px);
   padding: 0 10px;
 }
 .lineCode section.main section.barcode .popBody .code img {
   height: unset;
   max-width: 100%;
   max-height: 100%;
+}
+.lineCode section.main section.barcode .popBody .action {
+  padding-bottom: 20px;
 }
 .lineLoad section.main {
   min-width: 100vw;
