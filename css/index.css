@@ -2767,9 +2767,10 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 {
   min-width: unset;
-  max-height: unset;
+  max-height: 75px;
   background: var(--k2);
   overflow: unset;
+  overflow-x: hidden;
 }
 .store.v2 section.foot {
   padding: 0;
