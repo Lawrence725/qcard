@@ -58,6 +58,10 @@
 *:visited {
   color: inherit;
 }
+html,
+body {
+  overscroll-behavior-x: none;
+}
 span,
 p,
 h1,

@@ -8,6 +8,14 @@ window.onload = function() {
     popBanner();
 }
 
+// Safari防止左右滑上下頁
+const elements = ['html', 'body', '.main', '.foot', '.pop'];
+elements.forEach(
+    element => { ele = document.querySelector(element);
+        ele.addEventListener('touchstart', (e) => {
+            if (e.pageX > 20 && e.pageX < window.innerWidth - 20) return;
+            e.preventDefault(); })});
+
 // Popup close
 function popClose(e) {
     if (e.classList.contains('pop'))
