@@ -33,8 +33,8 @@
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #DD9A8A;
-  --k2: linear-gradient(0deg, rgba(221, 154, 138, 0.25), rgba(221, 154, 138, 0.25)), white;
+  --k1: #FF9900;
+  --k2: linear-gradient(0deg, rgba(255, 153, 0, 0.25), rgba(255, 153, 0, 0.25)), white;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -1855,6 +1855,9 @@ section.pop.visit .popBody div.buttons button span {
     opacity: 1;
   }
 }
+.result section.main section.detail div.top span {
+  text-align: center;
+}
 .result section.main section.detail div.top span.title {
   font-size: var(--fXL);
 }
@@ -1869,6 +1872,14 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.main section.detail div.top span.cost {
   font-size: var(--fXXL);
+}
+.result section.main section.detail div.top span.remark {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+.result section.main section.detail div.top span.warning {
+  font-size: var(--fS);
+  color: var(--cRed);
 }
 .result section.main section.detail div.top span.strong {
   font-size: var(--fXL);
@@ -1894,6 +1905,60 @@ section.pop.visit .popBody div.buttons button span {
 .result section.main section.detail div.top > div:not(.icon) img {
   height: 18px;
 }
+.result section.main section.detail div.bank {
+  padding: 15px;
+  border: 2px solid #29617F;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.result section.main section.detail div.bank > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.result section.main section.detail div.bank > div:last-child {
+  align-items: flex-end;
+}
+.result section.main section.detail div.bank > div img {
+  height: 25px;
+}
+.result section.main section.detail div.bank > div i,
+.result section.main section.detail div.bank > div svg {
+  color: #29617F;
+}
+.result section.main section.detail div.bank > div span {
+  white-space: nowrap;
+}
+.result section.main section.detail div.bank > div span:first-child {
+  width: 100%;
+  color: var(--cG3);
+}
+.result section.main section.detail div.bank > div span.title {
+  font-weight: bold;
+  color: var(--cG1);
+}
+.result section.main section.detail div.bank > div span.remark {
+  font-size: var(--fXS);
+  color: var(--cRed);
+  white-space: unset;
+}
+.result section.main section.detail div.bank > div button {
+  width: fit-content;
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 10px;
+  background-color: #29617F;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.result section.main section.detail div.bank > div button i,
+.result section.main section.detail div.bank > div button svg {
+  color: white;
+}
+.result section.main section.detail div.bank > div button span {
+  font-size: var(--fS);
+}
 .result section.main section.detail div.center {
   display: flex;
   flex-direction: column;
@@ -1903,6 +1968,12 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   align-items: center;
   gap: 2px;
+}
+.result section.main section.detail div.center > div.lineH {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  background-color: var(--cG5);
 }
 .result section.main section.detail div.center > div span {
   white-space: nowrap;

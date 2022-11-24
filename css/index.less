@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
 // @color: #EE6C5F; //Qcard
-// @color: #FF9900; //快一點
+@color: #FF9900; //快一點
 // @color: #EF6079; //桃園
-@color: #DD9A8A; //米哥烘焙坊
+// @color: #DD9A8A; //米哥烘焙坊
 // @color: #740008; //鬍鬚張
 
 :root {
@@ -397,20 +397,37 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div.top { display: flex; flex-direction: column; align-items: center;
                 div.icon { animation: spark 1s linear infinite; }
                 @keyframes spark { 0% { opacity: 1; } 25% { opacity: 1; } 50% { opacity: 0; }100% { opacity: 1; }}
-                span.title { font-size: var(--fXL);
-                    &.green { color: var(--cGreen); }
-                    &.orange { color: var(--cOrange); }
-                    &.red { color: var(--cRed); }}
-                span.cost { font-size: var(--fXXL); }
-                span.strong { font-size: var(--fXL); color: var(--cRed); animation: shake 1s linear infinite; }
+                span { text-align: center;
+                    &.title { font-size: var(--fXL);
+                        &.green { color: var(--cGreen); }
+                        &.orange { color: var(--cOrange); }
+                        &.red { color: var(--cRed); }}
+                    &.cost { font-size: var(--fXXL); }
+                    &.remark { font-size: var(--fS); color: var(--cG3); }
+                    &.warning { font-size: var(--fS); color: var(--cRed); }
+                    &.strong { font-size: var(--fXL); color: var(--cRed); animation: shake 1s linear infinite; }}
                 @keyframes shake { 0% { margin-left: -20px; } 50% { margin-left: 20px; } 100% { margin-left: -20px; }}
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
-                    img { height: 18px; }}
+                    img { height: 18px; }}}
+            div.bank { padding: 15px; border: 2px solid #29617F; border-radius: 20px; display: flex; flex-direction: column; gap: 10px;
+                > div { display: flex; align-items: center; gap: 5px;
+                    &:last-child { align-items: flex-end; }
+                    img { height: 25px; }
+                    i, svg { color: #29617F; }
+                    span { white-space: nowrap;
+                        &:first-child { width: 100%; color: var(--cG3); }
+                        &.title { font-weight: bold; color: var(--cG1); }
+                        &.remark { font-size: var(--fXS); color: var(--cRed); white-space: unset; }}
+                    button { width: fit-content; height: 30px; padding: 0 10px; margin-left: 10px; background-color: #29617F; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+                        i, svg { color: white; }
+                        span { font-size: var(--fS); }}
+                }
             }
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
-                    span { white-space: nowrap; }
-                    span:first-child { width: 100%; color: var(--cG3); }
+                    &.lineH { width: 100%; height: 1px; margin: 10px 0; background-color: var(--cG5); }
+                    span { white-space: nowrap;
+                        &:first-child { width: 100%; color: var(--cG3); }}
                     img { height: 18px; }}}
             div.bottom { width: 100%; padding: 10px 15px; border: 1px solid var(--cG5); border-radius: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;
                 > div { width: 100%; display: flex; align-items: center; gap: 2px;

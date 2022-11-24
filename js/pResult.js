@@ -1,6 +1,7 @@
 window.onload = function() {
-    popInvite();
-    popBarcode(); }
+    // popInvite();
+    // popBarcode();
+}
 
 // Popup close
 function popClose(e) {
