@@ -391,6 +391,15 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 
 // 付款結果頁
 .result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    &.topup {
+        section.head {
+            div.bg { background: var(--k1); }
+            > div:not(.bg) { display: flex; flex-direction: column; align-items: center;
+                span { color: white;
+                    &:last-child { font-size: var(--fL); }}
+            }
+        }
+    }
     section.head { > span { font-size: var(--fXL); }}
     section.main { width: 100%; max-width: 430px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
@@ -414,6 +423,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &:last-child { align-items: flex-end; }
                     img { height: 25px; }
                     i, svg { color: #29617F; }
+                    a { display: flex; align-items: center; gap: 5px;
+                        span { color: var(--cG1) !important; }}
                     span { white-space: nowrap;
                         &:first-child { width: 100%; color: var(--cG3); }
                         &.title { font-weight: bold; color: var(--cG1); }

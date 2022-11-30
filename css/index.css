@@ -1812,6 +1812,20 @@ section.pop.visit .popBody div.buttons button span {
   overflow: auto;
   background-color: var(--cBg);
 }
+.result.topup section.head div.bg {
+  background: var(--k1);
+}
+.result.topup section.head > div:not(.bg) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result.topup section.head > div:not(.bg) span {
+  color: white;
+}
+.result.topup section.head > div:not(.bg) span:last-child {
+  font-size: var(--fL);
+}
 .result section.head > span {
   font-size: var(--fXL);
 }
@@ -1927,6 +1941,14 @@ section.pop.visit .popBody div.buttons button span {
 .result section.main section.detail div.bank > div i,
 .result section.main section.detail div.bank > div svg {
   color: #29617F;
+}
+.result section.main section.detail div.bank > div a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.result section.main section.detail div.bank > div a span {
+  color: var(--cG1) !important;
 }
 .result section.main section.detail div.bank > div span {
   white-space: nowrap;
