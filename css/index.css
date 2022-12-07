@@ -180,6 +180,9 @@ iframe {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.9);
 }
+.loading.bg {
+  background-color: black;
+}
 .loading > div {
   min-width: 120px;
   min-height: 120px;
