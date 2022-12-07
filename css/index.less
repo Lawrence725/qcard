@@ -120,6 +120,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     span { color: var(--cG3); }
     i, svg { color: var(--k1); }}
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
+    &.bg { background-color: black; }
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         a.close { width: 30px; height: 30px; min-height: 30px; margin: -20px 0 -20px auto; border-radius: 99px; top: 2px; position: sticky; display: flex; align-items: center; justify-content: center; color: var(--cG4); background-color: rgba(255, 255, 255, 0.75); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}

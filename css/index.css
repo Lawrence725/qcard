@@ -525,6 +525,9 @@ a.dateRange svg {
   justify-content: center;
   z-index: 8;
 }
+.pop.bg {
+  background-color: black;
+}
 .pop .popBody {
   width: 100%;
   max-width: 430px;
