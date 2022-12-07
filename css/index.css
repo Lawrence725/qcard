@@ -289,6 +289,11 @@ iframe {
 .result div.icon > div.blue {
   border: 7.5px solid var(--cBlue);
 }
+.popBody div.icon > img,
+.result div.icon > img {
+  height: 80px;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
 .popBody div.icon .fa-circle-check,
 .result div.icon .fa-circle-check {
   border-radius: 99px;
@@ -1780,6 +1785,13 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.confirm .popBody div.buttons button:first-child span {
   color: var(--cG2) !important;
+}
+.payment section.pop.notice div.icon {
+  margin-top: -50px;
+}
+.payment section.pop.notice div.icon > img {
+  height: 60px;
+  border-radius: 6px;
 }
 .payment section.pop.notice.error .icon div {
   border: 7.5px solid var(--cRed);

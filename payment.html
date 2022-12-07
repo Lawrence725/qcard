@@ -141,7 +141,7 @@
                     </a>
                 </div>
                 <div class="center">
-                    <a>
+                    <a onclick="popApple()">
                         <img src="./icon/pApple.svg">
                     </a>
                     <a>
@@ -345,6 +345,21 @@
                     <li>已經完成接單的訂單，無法線上退款。</li>
                     <li>若需退單退款，請直接聯絡門市人員，門市人員確認訂單狀況，會協助進行退單退款。</li>
                 </ol>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+        <!-- Apple Pay popup -->
+        <section id="popApple" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <img src="./icon/pApple.svg">
+                    </div>
+                    <span class="title">即將支付$50</span>
+                    <span>給<br>快點吃早餐店</span>
+                </div>
                 <button onclick="popClose(this)">
                     <span>確認</span>
                 </button>

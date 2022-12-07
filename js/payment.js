@@ -1,10 +1,11 @@
 window.onload = function() {
     // popNotice();
-    popError();
-    popRefund();
-    popOrder();
+    // popError();
+    // popRefund();
+    // popOrder();
     // popConfirm();
     // popCredit();
+    popApple();
 }
 
 // Popup close
@@ -45,7 +46,12 @@ function popRefund() {
     document.getElementById("popRefund").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
-// 訊息popup
+// Apple Pay popup
+function popApple() {
+    document.getElementById("popApple").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 確認popup
 function popConfirm() {
     document.getElementById("popConfirm").style.display = "flex";
     document.body.style.overflow = "hidden"; }
