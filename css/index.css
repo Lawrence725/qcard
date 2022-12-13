@@ -27,14 +27,32 @@
   src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
 }
 :root {
+  /* Font */
   --fXXL: 1.9rem;
   --fXL: 1.4rem;
   --fL: 1.2rem;
   --fM: 1rem;
   --fS: 0.8rem;
   --fXS: 0.6rem;
-  --k1: #FF9900;
-  --k2: linear-gradient(0deg, rgba(255, 153, 0, 0.25), rgba(255, 153, 0, 0.25)), white;
+  /* Color 
+    ***** 自訂顏色說明 *****
+    k1: 主色 (建議深色)
+    k2: 底色 (建議k1接近白色)
+    k3: 特殊色 (測試中) */
+  --k3: #FFFFFF;
+  /* 快一點
+    --k1: #FF9900;
+    --k2: #FFEED8; */
+  /* 桃園
+    --k1: #EF6079;
+    --k2: #F3CBC7; */
+  /* 鬍鬚張
+    --k1: #740008;
+    --k2: #F0E1E2;
+    --k3: #FFDE33; */
+  /* 米哥烘焙坊 */
+  --k1: #DD9A8A;
+  --k2: #F8E8E5;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -51,6 +69,7 @@
   --cOrange: #FF9900;
   --cBlue: #5CB8B2;
 }
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -155,6 +174,7 @@ iframe {
   box-sizing: border-box !important;
   -webkit-box-sizing: border-box;
 }
+/* Components */
 .disabled {
   color: var(--cG4) !important;
   filter: grayscale(100%);
@@ -582,6 +602,7 @@ a.dateRange svg {
     margin-bottom: -100vh;
   }
 }
+/* Common */
 .payment section.head,
 .result section.head,
 .price section.head,
@@ -2594,6 +2615,105 @@ section.pop.visit .popBody div.buttons button span {
 .coin section.main div.item div.right img {
   height: 20px;
 }
+.scanCode {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  background-color: var(--cBg);
+}
+.scanCode section.main {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  padding-top: 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-image: url(../img/pattern.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.scanCode section.main div.top {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.scanCode section.main div.top > div.icon {
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.scanCode section.main div.top > div.icon img {
+  width: 50px;
+}
+.scanCode section.main div.top span {
+  font-size: var(--fL);
+  color: var(--cG3);
+}
+.scanCode section.main div.top span.title {
+  font-size: var(--fXXL);
+  color: var(--cG1);
+}
+.scanCode section.main div.top span.subtitle {
+  font-weight: bold;
+  color: var(--k1);
+}
+.scanCode section.main div.action {
+  width: 100vw;
+  max-width: 430px;
+  height: 400px;
+  padding: 120px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.scanCode section.main div.action > * {
+  z-index: 1;
+}
+.scanCode section.main div.action div.bg {
+  width: 1000px;
+  height: 1000px;
+  margin-right: 150px;
+  border-radius: 999px;
+  top: 0;
+  position: absolute;
+  background: var(--k1);
+  pointer-events: none;
+  z-index: 0;
+}
+.scanCode section.main div.action button {
+  width: 200px;
+  min-height: 40px;
+  background-color: white;
+  color: var(--k1);
+}
+.scanCode section.main div.action button span {
+  color: var(--k1) !important;
+}
+.scanCode section.main div.action div.service {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.scanCode section.main div.action div.service img {
+  width: 20px;
+  margin: 0 5px;
+}
+.scanCode section.main div.action div.service span {
+  color: white;
+  font-size: var(--fS);
+}
 .tickets {
   min-width: 100vw;
   min-height: 100vh;
@@ -2898,12 +3018,13 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.foot button span {
   font-size: var(--fL);
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+  opacity: 0.5;
 }
 .store.v2 section.foot button span.title {
   font-size: var(--fXL);
   font-weight: bold;
-  color: white !important;
+  opacity: 1;
 }
 .store.v2 section.foot button i,
 .store.v2 section.foot button svg {

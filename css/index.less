@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap');
-// @color: #EE6C5F; //Qcard
-@color: #FF9900; //快一點
-// @color: #EF6079; //桃園
-// @color: #DD9A8A; //米哥烘焙坊
-// @color: #740008; //鬍鬚張
 
 :root {
-    // Font
+    /* Font */
     // --fXXL: clamp(1.9rem, 10vw, 2.0rem);
     // --fXL:  clamp(1.4rem, 6vw, 1.5rem);
     // --fL:   clamp(1.2rem, 5vw, 1.3rem);
@@ -20,9 +15,26 @@
     --fS:   0.8rem;
     --fXS:  0.6rem;
 
-    // Color
-    --k1:     @color;
-    --k2:     linear-gradient(0deg, fade(@color, 25%), fade(@color, 25%)), white;
+    /* Color 
+    ***** 自訂顏色說明 *****
+    k1: 主色 (建議深色)
+    k2: 底色 (建議k1接近白色)
+    k3: 特殊色 (測試中) */
+    --k3: #FFFFFF;
+    /* 快一點
+    --k1: #FF9900;
+    --k2: #FFEED8; */
+    /* 桃園
+    --k1: #EF6079;
+    --k2: #F3CBC7; */
+    /* 鬍鬚張
+    --k1: #740008;
+    --k2: #F0E1E2;
+    --k3: #FFDE33; */
+    /* 米哥烘焙坊 */
+    --k1: #DD9A8A;
+    --k2: #F8E8E5;
+    // --k2:     linear-gradient(0deg, fade(#FF9900, 25%), fade(#FF9900, 25%)), white;
     --c1:     #EF6079;
     --c2:     #F3CBC7;
     --c3:     #5CB8B2;
@@ -39,7 +51,8 @@
     --cOrange:#FF9900;
     --cBlue:  #5CB8B2;
 }
-// Reset
+
+/* Reset */
 *                                       { margin: 0; padding: 0;
     &:visited                           { color: inherit; }}
 html, body                              { overscroll-behavior-x: none; }
@@ -62,7 +75,7 @@ i                                       { text-decoration: none !important; }
 iframe                                  { border: 0; }
 *, :after, :before                      { box-sizing: border-box !important; -webkit-box-sizing: border-box; }
 
-// Components
+/* Components */
 .disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: var(--cG4) !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
@@ -128,7 +141,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
-// Common
+/* Common */
 .payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .new, .profile, .profileEdit, .carrier, .policy {
     section.head { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
@@ -485,7 +498,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &.minor { background-color: transparent; color: var(--cG3); font-size: var(--fL); }
                     i, svg { color: var(--cG4); }}}}}}
 
-// 登入
+// 歡迎
 .welcome { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.main { width: 100%; max-width: 430px; min-height: 100vh; padding: 30px 30px 0; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; background-image: url(../img/pattern.png); background-position: center; background-attachment: fixed; background-size: cover;
         div.top { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 40px;
@@ -565,6 +578,25 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &.negative { color: var(--cRed); }}
                 img { height: 20px; }}}}}
 
+
+// 掃描出單紙
+.scanCode { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    section.main { width: 100%; max-width: 430px; min-height: 100vh; padding-top: 30px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; background-image: url(../img/pattern.png); background-position: center; background-attachment: fixed; background-size: cover;
+        div.top { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 10px;
+            > div.icon { min-width: 100px; min-height: 100px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white;
+                img { width: 50px; }}
+            span { font-size: var(--fL); color: var(--cG3);
+                &.title { font-size: var(--fXXL); color: var(--cG1); }
+                &.subtitle { font-weight: bold; color: var(--k1); }}}
+        div.action { width: 100vw; max-width: 430px; height: 400px; padding: 120px 20px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-between; overflow: hidden;
+            > * { z-index: 1; }
+            div.bg { width: 1000px; height: 1000px; margin-right: 150px; border-radius: 999px; top: 0; position: absolute; background: var(--k1); pointer-events: none; z-index: 0; }
+            button { width: 200px; min-height: 40px; background-color: white; color: var(--k1);
+                span { color: var(--k1) !important; }}
+            div.service { display: flex; align-items: center; gap: 2px;
+                img { width: 20px; margin: 0 5px; }
+                span { color: white; font-size: var(--fS); }}}}}
+
 // 票券列表
 .tickets { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     section.head {
@@ -631,8 +663,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
     &.v2 { min-width: unset; max-height: 75px; background: var(--k2); overflow: unset; overflow-x: hidden;
         section.foot { padding: 0; box-shadow: none;
             button { height: 70px; border-radius: 20px 20px 0 0; box-shadow: 0px -10px 20px rgba(255, 255, 255, 0.25);
-                span { font-size: var(--fL); color: rgba(255, 255, 255, 0.5) !important;
-                    &.title { font-size: var(--fXL); font-weight: bold; color: white !important; }}
+                span { font-size: var(--fL); color: white !important; opacity: 0.5;
+                    &.title { font-size: var(--fXL); font-weight: bold; opacity: 1; }}
                 i, svg { color: white; }}}
         section.main { margin: 0 auto; padding: 20px 25px 90px; border-radius: 0; box-shadow: none; background-color: transparent; overflow-x: clip;
             section.card { width: 100%; padding: 10px; margin-top: 65px; border-radius: 30px 30px 20px 20px; gap: 15px; position: relative; display: flex; flex-direction: column; background-color: white; z-index: 6;
