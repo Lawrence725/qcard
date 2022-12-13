@@ -709,6 +709,10 @@ a.coupon {
   overflow: hidden;
   z-index: 3;
 }
+a.coupon.gift .title {
+  font-size: var(--fL);
+  color: var(--cG1);
+}
 a.coupon.stamp {
   height: 180px;
 }
@@ -825,6 +829,11 @@ a.coupon span.info {
 }
 a.coupon span.date {
   font-size: var(--fS);
+}
+a.coupon span.point {
+  font-size: var(--fL);
+  font-weight: bold;
+  color: var(--k1);
 }
 a.coupon span.none {
   font-size: var(--fM);
@@ -1233,6 +1242,42 @@ section.pop.invite .popBody div.action button i.fa-line::before,
 section.pop.invite .popBody div.action button svg.fa-line::before {
   border-radius: 99px;
   background-color: #06C755;
+}
+section.pop.gift .popBody > img {
+  border-radius: 10px;
+}
+section.pop.gift .popBody > div {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+section.pop.gift .popBody > div span {
+  color: var(--cG3);
+}
+section.pop.gift .popBody > div span.title {
+  font-size: var(--fXL);
+  color: var(--cG1);
+}
+section.pop.gift .popBody > div div.sticker {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+section.pop.gift .popBody > div div.sticker img {
+  height: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+section.pop.gift .popBody > div div.sticker span {
+  font-size: var(--fXL);
+  font-weight: bold;
+  color: var(--k1);
+}
+section.pop.gift .popBody button {
+  min-height: 40px;
+}
+section.pop.gift .popBody button.disabled span {
+  color: white !important;
 }
 section.pop.intro {
   width: 100%;
@@ -2954,42 +2999,6 @@ section.pop.visit .popBody div.buttons button span {
 .ticket section.pop.notice span:not(.title) {
   color: var(--cRed);
 }
-.ticket section.pop.gift .popBody > img {
-  border-radius: 10px;
-}
-.ticket section.pop.gift .popBody > div {
-  gap: 5px;
-  display: flex;
-  flex-direction: column;
-}
-.ticket section.pop.gift .popBody > div span {
-  color: var(--cG3);
-}
-.ticket section.pop.gift .popBody > div span.title {
-  font-size: var(--fXL);
-  color: var(--k1);
-}
-.ticket section.pop.gift .popBody > div div.sticker {
-  gap: 5px;
-  display: flex;
-  align-items: center;
-}
-.ticket section.pop.gift .popBody > div div.sticker img {
-  height: 50px;
-  aspect-ratio: 1/1;
-  border-radius: 10px;
-}
-.ticket section.pop.gift .popBody > div div.sticker span {
-  font-size: var(--fL);
-  font-weight: bold;
-  color: var(--k1);
-}
-.ticket section.pop.gift .popBody button {
-  min-height: 40px;
-}
-.ticket section.pop.gift .popBody button.disabled span {
-  color: white !important;
-}
 .store {
   min-width: 100vw;
   min-height: 100vh;
@@ -3744,6 +3753,9 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fL);
   text-align: center;
   color: var(--cG3);
+}
+.store section.pop.notice.confirm span:not(.title) {
+  color: var(--cRed);
 }
 .location {
   overflow: auto;

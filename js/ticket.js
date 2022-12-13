@@ -22,7 +22,7 @@ function popClose(e) {
         }, 500); }
     document.body.style.overflow = "scroll"; }
 
-// 分類popup
+// 確認popup
 function popConfirm() {
     document.getElementById("popConfirm").style.display = "flex";
     document.body.style.overflow = "hidden"; }

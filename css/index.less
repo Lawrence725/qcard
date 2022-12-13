@@ -148,6 +148,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
         .left, .right { width: 100%; display: flex; align-items: center; }
         .right { justify-content: right; }}}
 a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden; z-index: 3;
+    &.gift .title { font-size: var(--fL); color: var(--cG1); }
     &.stamp { height: 180px;
         div.count { margin-bottom: 5px; gap: 10px; display: flex; align-items: center;
             img { width: 40px; height: 40px; border-radius: 10px; }
@@ -169,6 +170,7 @@ a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relati
         &.name { font-size: var(--fS); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.date { font-size: var(--fS); }
+        &.point { font-size: var(--fL); font-weight: bold; color: var(--k1); }
         &.none { font-size: var(--fM); color: var(--k1); text-align: center; }}}
 section.pop.notice { align-items: center;
     .popBody { display: flex; flex-direction: column; align-items: center; overflow-y: visible;
@@ -264,6 +266,16 @@ section.pop.invite .popBody { background: var(--k2);
             i, svg { color: var(--k1);
             &.fa-line { outline: 6px solid white; outline-offset: -4px; border-radius: 99px; background-color: #06C755; color: white;
                 &::before { border-radius: 99px; background-color: #06C755; }}}}}}
+section.pop.gift .popBody {
+    > img { border-radius: 10px; }
+    > div { gap: 5px; display: flex; flex-direction: column;
+        span { color: var(--cG3);
+            &.title { font-size: var(--fXL); color: var(--cG1); }}
+        div.sticker { gap: 5px; display: flex; align-items: center;
+            img { height: 50px; aspect-ratio: 1/1; border-radius: 10px; }
+            span { font-size: var(--fXL); font-weight: bold; color: var(--k1); }}}
+    button { min-height: 40px;
+        &.disabled span { color: white !important; }}}
 section.pop.intro { width: 100%; height: 100%; padding: 0; align-items: center;
     .popBody { width: 100%; height: 100%; padding: 0; border-radius: 0; position: relative; gap: 10px; align-items: center; justify-content: space-around; overflow: hidden;
         img { width: 100%; height: 100%; }
@@ -646,17 +658,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &.left { left: -15px; }
                     &.right { right: -15px; }}}
             hr { border: 1px dashed var(--cG5); }}}
-    section.pop.notice { span:not(.title) { color: var(--cRed); }}
-    section.pop.gift .popBody {
-        > img { border-radius: 10px; }
-        > div { gap: 5px; display: flex; flex-direction: column;
-            span { color: var(--cG3);
-                &.title { font-size: var(--fXL); color: var(--k1); }}
-            div.sticker { gap: 5px; display: flex; align-items: center;
-                img { height: 50px; aspect-ratio: 1/1; border-radius: 10px; }
-                span { font-size: var(--fL); font-weight: bold; color: var(--k1); }}}
-        button { min-height: 40px;
-            &.disabled span { color: white !important; }}}}
+    section.pop.notice { span:not(.title) { color: var(--cRed); }}}
 
 // 商店頁
 .store { min-width: 100vw; min-height: 100vh; max-height: 100vh; overflow: auto; background-color: var(--cBg); animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
@@ -808,7 +810,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div.top { gap: 5px; display: flex; align-items: center;
                 span { font-size: var(--fXL); }}
             div.bottom { width: 100%; display: flex; align-items: center;
-                span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}}}}
+                span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}}}
+    section.pop.notice.confirm { span:not(.title) { color: var(--cRed); }}}
 
 // 分店資訊
 .location { overflow: auto; background: var(--k2);

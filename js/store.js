@@ -66,6 +66,21 @@ function popNotification() {
     document.getElementById("popNotification").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
+// 集點獎品popup
+function popGift() {
+    document.getElementById("popGift").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 確認兌換popup
+function popConfirm() {
+    document.getElementById("popConfirm").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 確認兌換popup
+function popSuccess() {
+    document.getElementById("popSuccess").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
 // 邀請禮popup
 function popInvite() {
     document.getElementById("popInvite").style.display = "flex";

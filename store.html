@@ -103,7 +103,7 @@
                 </a>
                 <a onclick="switchTab(this, 'stamp')">
                     <img src="./icon/stampW.svg">
-                    <span>集章 <span>3</span></span>
+                    <span>集點 <span>30</span></span>
                 </a>
             </section>
             <!-- 點數 -->
@@ -241,6 +241,23 @@
                     <div class="dot left"></div>
                     <div class="dot right"></div>
                     <span class="none">暫無集章</span>
+                </a>
+            </section>
+            <!-- 集點 -->
+            <section class="coupon">
+                <a class="list" href="tickets.html">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <span>兌換紀錄</span>
+                </a>
+                <a class="coupon gift" onclick="popGift()">
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <div class="content">
+                        <span class="title">日月潭紅茶</span>
+                        <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
+                        <span class="point">2點</span>
+                    </div>
+                    <img src="img/food.png">
                 </a>
             </section>
         </section>
@@ -396,6 +413,62 @@
                 <span>米哥烘焙坊發放點數 - 您已獲得點數100</span>
                 <span class="time">2022-01-15  10:30</span>
             </a>
+        </section>
+        <!-- 集點獎品popup -->
+        <section id="popGift" class="pop gift" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <img src="./img/food.png">
+                <div>
+                    <span class="title">豪華A餐招待券</span>
+                    <span>即日期至十二月底，凡來店消費每筆滿台幣一百元，即可獲得豪華A餐招待券，數量有限，詳情請參考店內公告。</span>
+                    <div class="sticker">
+                        <span>5點</span>
+                    </div>
+                </div>
+                <!-- ********** 按鈕二擇一 ********** -->
+                <button onclick="popConfirm()">
+                    <span>現場兌換</span>
+                </button>
+                <button onclick="popConfirm()" class="disabled">
+                    <span>集點不足</span>
+                </button>
+            </div>
+        </section>
+        <!-- 確認兌換popup -->
+        <section id="popConfirm" class="pop notice confirm" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">確定使用滿$100折$10？</span>
+                    <span>使用後將無法取消，請確認已出示給現場人員</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popSuccess()">
+                        <span>確定兌換</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 兌換成功popup -->
+        <section id="popSuccess" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                    </div>
+                    <span class="title">總匯三明治兌換成功</span>
+                </div>
+                <button onclick="window.location.href='store.html'">
+                    <span>確認</span>
+                </button>
+            </div>
         </section>
         <!-- 首次加入popup -->
         <section id="popIntro" class="pop intro">
