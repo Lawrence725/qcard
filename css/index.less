@@ -137,7 +137,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     &.bg { background-color: black; }
     .popBody { width: 100%; max-width: 430px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
-        a.close { width: 30px; height: 30px; min-height: 30px; margin: -20px 0 -20px auto; border-radius: 99px; top: 2px; position: sticky; display: flex; align-items: center; justify-content: center; color: var(--cG4); background-color: rgba(255, 255, 255, 0.75); }}}
+        a.close { width: 30px; height: 30px; min-height: 30px; margin: -20px 0 -30px auto; border-radius: 99px; top: 0; position: sticky; display: flex; align-items: center; justify-content: center; color: var(--cG4); background-color: rgba(255, 255, 255, 0.75); }}}
 @keyframes popup { 0% { margin-bottom: -100vh; } 100% { margin-bottom: 0; }}
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
@@ -192,7 +192,6 @@ section.pop.banner { padding: 20px; align-items: flex-start; background-color: t
 @keyframes bannerDown { 0% { margin-top: -100vh; } 100% { margin-top: 0; }}
 @keyframes bannerUp { 0% { margin-top: 0; } 100% { margin-top: -100vh; }}
 section.pop.notification .popBody { 
-    a.close { margin-bottom: -28px; }
     span.title { font-size: var(--fL); font-weight: bold; }
     a.read { display: flex; justify-content: center;
         span { color: var(--k1); }}
@@ -255,6 +254,7 @@ section.pop.category {
         &.active { color: var(--k1); }}
     a:not(.close):not(:last-child) { padding-bottom: 10px; border-bottom: 1px solid var(--cG5); }}
 section.pop.invite .popBody { background: var(--k2);
+    > a.close { display: none; }
     > div:not(.action) {
         span:not(.title) { color: var(--k1); }
         div.icon div.border { border: 7.5px solid var(--k1);
@@ -267,7 +267,7 @@ section.pop.invite .popBody { background: var(--k2);
             &.fa-line { outline: 6px solid white; outline-offset: -4px; border-radius: 99px; background-color: #06C755; color: white;
                 &::before { border-radius: 99px; background-color: #06C755; }}}}}}
 section.pop.gift .popBody {
-    > img { border-radius: 10px; }
+    > img { border-radius: 15px; }
     > div { gap: 5px; display: flex; flex-direction: column;
         span { color: var(--cG3);
             &.title { font-size: var(--fXL); color: var(--cG1); }}
@@ -407,7 +407,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div.buttons { width: 100%; display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }}}}}
-    section.pop.notice {
+    section.pop.notice#popApple {
         div.icon { margin-top: -50px;
             > img { height: 60px; border-radius: 6px; }}}
     section.pop.notice.error {
@@ -576,6 +576,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 .coin { min-width: 100vw; min-height: 100vh; overflow: auto;
     section.head {
         .left a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
+        div.center { display: flex; flex-direction: column; align-items: center;
+            span { white-space: nowrap;
+                &:last-child { margin-top: -5px; font-size: var(--fXL); font-weight: bold; }}}
         > span { white-space: nowrap; font-size: var(--fL);
             &.content { font-size: var(--fXL); font-weight: bold; }}
         > img { height: 28px; }}
@@ -738,6 +741,19 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                         i, svg { color: var(--k1); }
                         span { color: var(--cG3); }}}}
             section.coupon { margin-top: 10px; gap: 15px;
+                div.top { padding: 10px; border: solid 1.5px var(--k1); border-radius: 45px 30px 20px 20px; gap: 5px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;
+                    > a.header { width: 100%; height: 50px; padding-right: 15px; border-radius: 45px 25px 25px 5px; gap: 10px; display: flex; align-items: center; background-color: white;
+                        > div { width: 90px; height: 100%; display: flex;
+                            > div { min-width: 90px; min-height: 90px; max-width: 90px; max-height: 90px; border: 5px solid var(--k2); border-radius: 99px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--k1);
+                                span { color: white !important; line-height: 120%;
+                                    &:first-child { font-size: var(--fXXL); }}}}
+                        > span { width: 100%; font-size: var(--fL); }}
+                    > span.remark { font-size: var(--fS); color: var(--cG3); }
+                    > span.content { margin: 10px 0; }
+                    > div.buttons { width: 100%; display: flex; align-items: center;
+                        a { width: 100%; gap: 5px; display: flex; align-items: center; justify-content: center;
+                            span { color: var(--cG3); }}}}
+                > span.title { width: 100%; margin-top: 10px; text-align: center; font-weight: bold; }
                 a.list { width: 100%; gap: 5px; display: flex; align-items: center; justify-content: center;
                     i, svg { color: var(--k1); }
                     span { color: var(--cG3); }}
@@ -804,6 +820,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             span { font-size: var(--fL); }
             i, svg { color: white; }}}
     section.pop.pointRule .popBody { background: var(--k2);
+        a.close { background-color: transparent; }
         span.title { font-size: var(--fL); }
         > div { padding: 10px; border-radius: 10px; gap: 10px; display: flex; flex-direction: column; align-items: center; background-color: white;
             i, svg { color: var(--k1); }
@@ -811,6 +828,18 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 span { font-size: var(--fXL); }}
             div.bottom { width: 100%; display: flex; align-items: center;
                 span { width: 100%; font-size: var(--fL); text-align: center; color: var(--cG3); }}}}
+    section.pop.stamps .popBody { background-color: var(--k1);
+        a.close { background-color: transparent;
+            i, svg { color: white; }}
+        span { font-size: var(--fL); color: white;
+            &.title { width: 100%; text-align: center; font-weight: bold; }}
+        a:not(.close) { width: 100%; display: flex;
+            &.active span { font-weight: bold; }
+            &:not(.active) span { opacity: 0.5; }}
+    }
+    section.pop.notice.stampRule .popBody {
+        a.close { margin: -5px -5px -45px auto; }
+        > div { gap: 10px; }}
     section.pop.notice.confirm { span:not(.title) { color: var(--cRed); }}}
 
 // 分店資訊

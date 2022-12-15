@@ -576,9 +576,9 @@ a.dateRange svg {
   width: 30px;
   height: 30px;
   min-height: 30px;
-  margin: -20px 0 -20px auto;
+  margin: -20px 0 -30px auto;
   border-radius: 99px;
-  top: 2px;
+  top: 0;
   position: sticky;
   display: flex;
   align-items: center;
@@ -924,9 +924,6 @@ section.pop.banner .popBody span.time {
     margin-top: -100vh;
   }
 }
-section.pop.notification .popBody a.close {
-  margin-bottom: -28px;
-}
 section.pop.notification .popBody span.title {
   font-size: var(--fL);
   font-weight: bold;
@@ -1192,6 +1189,9 @@ section.pop.category a:not(.close):not(:last-child) {
 section.pop.invite .popBody {
   background: var(--k2);
 }
+section.pop.invite .popBody > a.close {
+  display: none;
+}
 section.pop.invite .popBody > div:not(.action) span:not(.title) {
   color: var(--k1);
 }
@@ -1244,7 +1244,7 @@ section.pop.invite .popBody div.action button svg.fa-line::before {
   background-color: #06C755;
 }
 section.pop.gift .popBody > img {
-  border-radius: 10px;
+  border-radius: 15px;
 }
 section.pop.gift .popBody > div {
   gap: 5px;
@@ -1852,10 +1852,10 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.pop.confirm .popBody div.buttons button:first-child span {
   color: var(--cG2) !important;
 }
-.payment section.pop.notice div.icon {
+.payment section.pop.notice#popApple div.icon {
   margin-top: -50px;
 }
-.payment section.pop.notice div.icon > img {
+.payment section.pop.notice#popApple div.icon > img {
   height: 60px;
   border-radius: 6px;
 }
@@ -2603,6 +2603,19 @@ section.pop.visit .popBody div.buttons button span {
   align-items: center;
   justify-content: center;
   color: var(--k1);
+}
+.coin section.head div.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coin section.head div.center span {
+  white-space: nowrap;
+}
+.coin section.head div.center span:last-child {
+  margin-top: -5px;
+  font-size: var(--fXL);
+  font-weight: bold;
 }
 .coin section.head > span {
   white-space: nowrap;
@@ -3369,6 +3382,83 @@ section.pop.visit .popBody div.buttons button span {
   margin-top: 10px;
   gap: 15px;
 }
+.store.v2 section.main section.coupon div.top {
+  padding: 10px;
+  border: solid 1.5px var(--k1);
+  border-radius: 45px 30px 20px 20px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.store.v2 section.main section.coupon div.top > a.header {
+  width: 100%;
+  height: 50px;
+  padding-right: 15px;
+  border-radius: 45px 25px 25px 5px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.store.v2 section.main section.coupon div.top > a.header > div {
+  width: 90px;
+  height: 100%;
+  display: flex;
+}
+.store.v2 section.main section.coupon div.top > a.header > div > div {
+  min-width: 90px;
+  min-height: 90px;
+  max-width: 90px;
+  max-height: 90px;
+  border: 5px solid var(--k2);
+  border-radius: 99px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--k1);
+}
+.store.v2 section.main section.coupon div.top > a.header > div > div span {
+  color: white !important;
+  line-height: 120%;
+}
+.store.v2 section.main section.coupon div.top > a.header > div > div span:first-child {
+  font-size: var(--fXXL);
+}
+.store.v2 section.main section.coupon div.top > a.header > span {
+  width: 100%;
+  font-size: var(--fL);
+}
+.store.v2 section.main section.coupon div.top > span.remark {
+  font-size: var(--fS);
+  color: var(--cG3);
+}
+.store.v2 section.main section.coupon div.top > span.content {
+  margin: 10px 0;
+}
+.store.v2 section.main section.coupon div.top > div.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.store.v2 section.main section.coupon div.top > div.buttons a {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store.v2 section.main section.coupon div.top > div.buttons a span {
+  color: var(--cG3);
+}
+.store.v2 section.main section.coupon > span.title {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
 .store.v2 section.main section.coupon a.list {
   width: 100%;
   gap: 5px;
@@ -3719,6 +3809,9 @@ section.pop.visit .popBody div.buttons button span {
 .store section.pop.pointRule .popBody {
   background: var(--k2);
 }
+.store section.pop.pointRule .popBody a.close {
+  background-color: transparent;
+}
 .store section.pop.pointRule .popBody span.title {
   font-size: var(--fL);
 }
@@ -3753,6 +3846,41 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fL);
   text-align: center;
   color: var(--cG3);
+}
+.store section.pop.stamps .popBody {
+  background-color: var(--k1);
+}
+.store section.pop.stamps .popBody a.close {
+  background-color: transparent;
+}
+.store section.pop.stamps .popBody a.close i,
+.store section.pop.stamps .popBody a.close svg {
+  color: white;
+}
+.store section.pop.stamps .popBody span {
+  font-size: var(--fL);
+  color: white;
+}
+.store section.pop.stamps .popBody span.title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.store section.pop.stamps .popBody a:not(.close) {
+  width: 100%;
+  display: flex;
+}
+.store section.pop.stamps .popBody a:not(.close).active span {
+  font-weight: bold;
+}
+.store section.pop.stamps .popBody a:not(.close):not(.active) span {
+  opacity: 0.5;
+}
+.store section.pop.notice.stampRule .popBody a.close {
+  margin: -5px -5px -45px auto;
+}
+.store section.pop.notice.stampRule .popBody > div {
+  gap: 10px;
 }
 .store section.pop.notice.confirm span:not(.title) {
   color: var(--cRed);

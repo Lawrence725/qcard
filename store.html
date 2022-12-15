@@ -21,13 +21,13 @@
             <img src="./img/milkhouses.png">
         <div></div></div></div> -->
         <!-- Footer (會員驗證) -->
-        <section class="foot">
+        <!-- <section class="foot">
             <button onclick="window.location.href='index.html'">
                 <span class="title">驗證會員</span>
                 <span>享有完整服務</span>
                 <i class="fa-regular fa-hand-pointer fa-2x"></i>
             </button>
-        </section>
+        </section> -->
         <!-- Main -->
         <section class="main">
             <!-- Card -->
@@ -103,7 +103,7 @@
                 </a>
                 <a onclick="switchTab(this, 'stamp')">
                     <img src="./icon/stampW.svg">
-                    <span>集點 <span>30</span></span>
+                    <span>集點卡 <span>1</span></span>
                 </a>
             </section>
             <!-- 點數 -->
@@ -245,10 +245,32 @@
             </section>
             <!-- 集點 -->
             <section class="coupon">
-                <a class="list" href="tickets.html">
-                    <i class="fa-solid fa-list-ul"></i>
-                    <span>兌換紀錄</span>
-                </a>
+                <div class="top">
+                    <a class="header" onclick="popStamps()">
+                        <div>
+                            <div>
+                                <span>20</span>
+                                <span>點</span>
+                            </div>
+                        </div>
+                        <span>新春集快點</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </a>
+                    <span class="remark">2021/10/01 - 2022/01/22 集點</span>
+                    <span class="remark">2021/10/01 - 2022/01/22 兌換</span>
+                    <span class="content">即日期至十二月底，凡來店消費每筆滿台幣一百五十元，即可獲得最新節日活動集章一枚，集滿9個章即可獲得豪華A餐招待券。</span>
+                    <div class="buttons">
+                        <a href="point.html">
+                            <i class="fa-solid fa-list-ul"></i>
+                            <span>交易紀錄</span>
+                        </a>
+                        <a onclick="popStampRule()">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>注意事項</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="title">兌換獎勵</span>
                 <a class="coupon gift" onclick="popGift()">
                     <div class="dot left"></div>
                     <div class="dot right"></div>
@@ -258,6 +280,21 @@
                         <span class="point">2點</span>
                     </div>
                     <img src="img/food.png">
+                </a>
+                <a class="coupon gift" onclick="popGift()">
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <div class="content">
+                        <span class="title">可口可樂</span>
+                        <span class="info">即日期至十二月底，凡來店消費每筆滿台幣一百元，即可折抵台幣十元，數量有限，詳情請參考店內公告。</span>
+                        <span class="point">5點</span>
+                    </div>
+                    <img src="img/food.png">
+                </a>
+                <a class="coupon gift">
+                    <div class="dot left"></div>
+                    <div class="dot right"></div>
+                    <span class="none">暫無集點卡/獎品</span>
                 </a>
             </section>
         </section>
@@ -367,7 +404,6 @@
         <!-- 會員條碼popup -->
         <section id="popBarcode" class="pop barcode v2" onclick="popClose(this)">
             <div class="popBody">
-                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
                 <div class="header">
                     <div><img src="./img/profile.png"></div>
                     <span class="title">陳小明</span>
@@ -413,6 +449,29 @@
                 <span>米哥烘焙坊發放點數 - 您已獲得點數100</span>
                 <span class="time">2022-01-15  10:30</span>
             </a>
+        </section>
+        <!-- 集點卡列表popup -->
+        <section id="popStamps" class="pop stamps" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">集點卡</span>
+                <a onclick="popClose(this)" class="active">
+                    <span>新春集快點</span>
+                </a>
+                <a onclick="popClose(this)">
+                    <span>新春集慢點</span>
+                </a>
+            </div>
+        </section>
+        <!-- 集點注意事項popup -->
+        <section id="popStampRule" class="pop notice stampRule" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <div>
+                    <span class="title">注意事項</span>
+                    <span>內容，身作行用備升麼研水成唱。平世往式較也受新，南然是，光充知孩的學出長大可來一，眼重考情己論色火死怕筆。事是行性孩資構深的香為可以間良快上難城？</span>
+                </div>
+            </div>
         </section>
         <!-- 集點獎品popup -->
         <section id="popGift" class="pop gift" onclick="popClose(this)">
@@ -513,7 +572,6 @@
         <!-- 邀請禮popup -->
         <section id="popInvite" class="pop notice invite" onclick="popClose(this)">
             <div class="popBody">
-                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <div>
                     <div class="icon">
                         <div class="border"><i class="fa-solid fa-gift fa-2x"></i></i></div>

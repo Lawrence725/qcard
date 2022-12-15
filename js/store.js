@@ -5,16 +5,16 @@ window.onload = function() {
     // popVisit();
     // popPointRule();
     // popInvite();
-    popBanner();
+    // popBanner();
 }
 
 // Safari防止左右滑上下頁
-const elements = ['html', 'body', '.main', '.foot', '.pop'];
-elements.forEach(
-    element => { ele = document.querySelector(element);
-        ele.addEventListener('touchstart', (e) => {
-            if (e.pageX > 20 && e.pageX < window.innerWidth - 20) return;
-            e.preventDefault(); })});
+// const elements = ['html', 'body', '.main', '.foot', '.pop'];
+// elements.forEach(
+//     element => { ele = document.querySelector(element);
+//         ele.addEventListener('touchstart', (e) => {
+//             if (e.pageX > 20 && e.pageX < window.innerWidth - 20) return;
+//             e.preventDefault(); })});
 
 // Popup close
 function popClose(e) {
@@ -64,6 +64,16 @@ function popBarcode() {
 // 通知popup
 function popNotification() {
     document.getElementById("popNotification").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 集點卡列表popup
+function popStamps() {
+    document.getElementById("popStamps").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
+// 集點注意事項popup
+function popStampRule() {
+    document.getElementById("popStampRule").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
 // 集點獎品popup
@@ -130,14 +140,17 @@ function switchTab(e, type) {
             document.querySelectorAll('section.point')[0].style.display = "flex";
             document.querySelectorAll('section.coupon')[0].style.display = "flex";
             document.querySelectorAll('section.coupon')[1].style.display = "flex";
+            document.querySelectorAll('section.coupon')[2].style.display = "flex";
             break;
         case 'ticket':
             document.querySelectorAll('section.point')[0].style.display = "none";
             document.querySelectorAll('section.coupon')[0].style.display = "flex";
             document.querySelectorAll('section.coupon')[1].style.display = "none";
+            document.querySelectorAll('section.coupon')[2].style.display = "none";
             break;
         case 'stamp':
             document.querySelectorAll('section.point')[0].style.display = "none";
             document.querySelectorAll('section.coupon')[0].style.display = "none";
-            document.querySelectorAll('section.coupon')[1].style.display = "flex";
+            document.querySelectorAll('section.coupon')[1].style.display = "none";
+            document.querySelectorAll('section.coupon')[2].style.display = "flex";
             break; }}
