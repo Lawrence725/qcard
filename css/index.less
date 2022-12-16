@@ -603,12 +603,13 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             span { font-size: var(--fL); color: var(--cG3);
                 &.title { font-size: var(--fXXL); color: var(--cG1); }
                 &.subtitle { font-weight: bold; color: var(--k1); }}}
-        div.action { width: 100vw; max-width: 430px; height: 400px; padding: 120px 20px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-between; overflow: hidden;
+        div.action { width: 100vw; max-width: 430px; height: 400px; padding: 20px; gap: 20px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
             > * { z-index: 1; }
             div.bg { width: 1000px; height: 1000px; margin-right: 150px; border-radius: 999px; top: 0; position: absolute; background: var(--k1); pointer-events: none; z-index: 0; }
             button { width: 200px; min-height: 40px; background-color: white; color: var(--k1);
                 span { color: var(--k1) !important; }}
-            div.service { display: flex; align-items: center; gap: 2px;
+            span.remark { font-size: var(--fS); text-align: center; color: white; opacity: 0.75; }
+            div.service { margin-top: 50px; display: flex; align-items: center; gap: 2px;
                 img { width: 20px; margin: 0 5px; }
                 span { color: white; font-size: var(--fS); }}}}}
 
