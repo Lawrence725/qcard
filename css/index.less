@@ -751,7 +751,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                         > span { width: 100%; font-size: var(--fL); pointer-events: auto; }
                         > i, svg { pointer-events: auto; }}
                     > span.remark { font-size: var(--fS); color: var(--cG3); }
-                    > span.content { margin: 10px 0; }
+                    > span.content { width: 100%; margin: 10px 0; text-align: justify; }
                     > div.buttons { width: 100%; display: flex; align-items: center;
                         a { width: 100%; gap: 5px; display: flex; align-items: center; justify-content: center;
                             span { color: var(--cG3); }}}}
@@ -837,11 +837,11 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             &.title { width: 100%; text-align: center; font-weight: bold; }}
         a:not(.close) { width: 100%; display: flex;
             &.active span { font-weight: bold; }
-            &:not(.active) span { opacity: 0.5; }}
-    }
+            &:not(.active) span { opacity: 0.5; }}}
     section.pop.notice.stampRule .popBody {
         a.close { margin: -5px -5px -45px auto; }
-        > div { gap: 10px; }}
+        > div { gap: 10px;
+            span:last-child { text-align: justify; }}}
     section.pop.notice.confirm { span:not(.title) { color: var(--cRed); }}}
 
 // 分店資訊

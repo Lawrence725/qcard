@@ -3453,7 +3453,9 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cG3);
 }
 .store.v2 section.main section.coupon div.top > span.content {
+  width: 100%;
   margin: 10px 0;
+  text-align: justify;
 }
 .store.v2 section.main section.coupon div.top > div.buttons {
   width: 100%;
@@ -3898,6 +3900,9 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store section.pop.notice.stampRule .popBody > div {
   gap: 10px;
+}
+.store section.pop.notice.stampRule .popBody > div span:last-child {
+  text-align: justify;
 }
 .store section.pop.notice.confirm span:not(.title) {
   color: var(--cRed);
