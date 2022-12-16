@@ -3040,6 +3040,7 @@ section.pop.visit .popBody div.buttons button span {
 .store.v2 section.foot {
   padding: 0;
   box-shadow: none;
+  z-index: 7;
 }
 .store.v2 section.foot button {
   height: 70px;
@@ -3409,11 +3410,13 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   align-items: center;
   background-color: white;
+  pointer-events: none;
 }
 .store.v2 section.main section.coupon div.top > a.header > div {
   width: 90px;
   height: 100%;
   display: flex;
+  pointer-events: none;
 }
 .store.v2 section.main section.coupon div.top > a.header > div > div {
   min-width: 90px;
@@ -3427,6 +3430,7 @@ section.pop.visit .popBody div.buttons button span {
   align-items: center;
   justify-content: center;
   background-color: var(--k1);
+  pointer-events: none;
 }
 .store.v2 section.main section.coupon div.top > a.header > div > div span {
   color: white !important;
@@ -3438,6 +3442,11 @@ section.pop.visit .popBody div.buttons button span {
 .store.v2 section.main section.coupon div.top > a.header > span {
   width: 100%;
   font-size: var(--fL);
+  pointer-events: auto;
+}
+.store.v2 section.main section.coupon div.top > a.header > i,
+.store.v2 section.main section.coupon div.top > a.header svg {
+  pointer-events: auto;
 }
 .store.v2 section.main section.coupon div.top > span.remark {
   font-size: var(--fS);
