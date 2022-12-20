@@ -1248,6 +1248,7 @@ section.pop.invite .popBody div.action button svg.fa-line::before {
   background-color: #06C755;
 }
 section.pop.gift .popBody > img {
+  width: 100%;
   border-radius: 15px;
 }
 section.pop.gift .popBody > div {
@@ -3067,7 +3068,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.main {
   margin: 0 auto;
-  padding: 20px 25px 90px;
+  padding: 20px 25px 150px;
   border-radius: 0;
   box-shadow: none;
   background-color: transparent;
@@ -3170,15 +3171,16 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.main section.card div.menus div.menu a i.fa-newspaper,
 .store.v2 section.main section.card div.menus div.menu a svg.fa-newspaper {
-  color: #FFD965;
+  color: #CCC1D9;
 }
 .store.v2 section.main section.card div.menus div.menu a i.fa-bell,
 .store.v2 section.main section.card div.menus div.menu a svg.fa-bell {
   color: var(--k1);
+  opacity: 0.6;
 }
 .store.v2 section.main section.card div.menus div.menu a i.fa-gift,
 .store.v2 section.main section.card div.menus div.menu a svg.fa-gift {
-  color: #CCC1D9;
+  color: #F5B7A6;
 }
 .store.v2 section.main section.card div.menus div.menu a i.fa-utensils,
 .store.v2 section.main section.card div.menus div.menu a svg.fa-utensils {
@@ -3190,7 +3192,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.main section.card div.menus div.menu a i.fa-address-card,
 .store.v2 section.main section.card div.menus div.menu a svg.fa-address-card {
-  color: var(--cG4);
+  color: #FFD965;
 }
 .store.v2 section.main section.card div.menus div.menu a i {
   line-height: normal;
@@ -3262,6 +3264,16 @@ section.pop.visit .popBody div.buttons button span {
   justify-content: center;
   position: sticky;
   z-index: 5;
+}
+.store.v2 section.main section.tabs.sticky {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px 25px 0;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  z-index: 6;
 }
 .store.v2 section.main section.tabs div.bg {
   width: 1500px;
@@ -3419,7 +3431,8 @@ section.pop.visit .popBody div.buttons button span {
   height: 100%;
   display: flex;
 }
-.store.v2 section.main section.coupon div.top > .header > div > a {
+.store.v2 section.main section.coupon div.top > .header > div > a,
+.store.v2 section.main section.coupon div.top > .header > div > div {
   min-width: 90px;
   min-height: 90px;
   max-width: 90px;
@@ -3433,7 +3446,8 @@ section.pop.visit .popBody div.buttons button span {
   justify-content: center;
   background-color: white;
 }
-.store.v2 section.main section.coupon div.top > .header > div > a::before {
+.store.v2 section.main section.coupon div.top > .header > div > a::before,
+.store.v2 section.main section.coupon div.top > .header > div > div::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -3442,12 +3456,14 @@ section.pop.visit .popBody div.buttons button span {
   position: absolute;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
-.store.v2 section.main section.coupon div.top > .header > div > a span {
+.store.v2 section.main section.coupon div.top > .header > div > a span,
+.store.v2 section.main section.coupon div.top > .header > div > div span {
   color: var(--cG1) !important;
   font-weight: bold;
   line-height: 120%;
 }
-.store.v2 section.main section.coupon div.top > .header > div > a span:first-child {
+.store.v2 section.main section.coupon div.top > .header > div > a span:first-child,
+.store.v2 section.main section.coupon div.top > .header > div > div span:first-child {
   font-size: var(--fXXL);
 }
 .store.v2 section.main section.coupon div.top > .header > a {
@@ -3467,6 +3483,16 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.main section.coupon div.top > .header > a i,
 .store.v2 section.main section.coupon div.top > .header > a svg {
+  pointer-events: auto;
+}
+.store.v2 section.main section.coupon div.top > .header > span {
+  width: 100%;
+  font-size: var(--fL);
+  pointer-events: auto;
+}
+.store.v2 section.main section.coupon div.top > .header > i,
+.store.v2 section.main section.coupon div.top > .header > svg {
+  margin-right: 15px;
   pointer-events: auto;
 }
 .store.v2 section.main section.coupon div.top > span.remark {
