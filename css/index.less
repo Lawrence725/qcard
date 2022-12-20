@@ -21,9 +21,10 @@
     k2: 底色 (建議k1接近白色)
     k3: 特殊色 (測試中) */
     --k3: #FFFFFF;
-    /* 快一點
+    /* MM */
     --k1: #FF9900;
-    --k2: #FFEED8; */
+    --k2: #F2F1F6;
+    // --k2: #FFEED8;
     /* 桃園
     --k1: #EF6079;
     --k2: #F3CBC7; */
@@ -31,9 +32,9 @@
     --k1: #740008;
     --k2: #F0E1E2;
     --k3: #FFDE33; */
-    /* 米哥烘焙坊 */
+    /* 米哥烘焙坊
     --k1: #DD9A8A;
-    --k2: #F8E8E5;
+    --k2: #F8E8E5; */
     // --k2:     linear-gradient(0deg, fade(#FF9900, 25%), fade(#FF9900, 25%)), white;
     --c1:     #EF6079;
     --c2:     #F3CBC7;
@@ -185,8 +186,8 @@ section.pop.notice { align-items: center;
                     span { color: white !important; }}
                 span { color: var(--cG2) !important; }}}
         > div:not(.buttons) { display: flex; flex-direction: column; align-items: center; }}}
-section.pop.banner { padding: 20px; align-items: flex-start; background-color: transparent;
-    .popBody { padding: 10px 15px; border: 2px solid var(--k1); gap: 5px; background-color: rgba(255, 255, 255, 0.95); animation-name: bannerDown; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+section.pop.banner { padding: 20px; align-items: flex-start; background-color: transparent; pointer-events: none;
+    .popBody { padding: 10px 15px; border: 2px solid var(--k1); gap: 5px; background-color: rgba(255, 255, 255, 0.95); animation-name: bannerDown; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); pointer-events: initial;
         span.title { font-size: var(--fL); color: var(--k1); }
         span.time { color: var(--cG3); }}}
 @keyframes bannerDown { 0% { margin-top: -100vh; } 100% { margin-top: 0; }}
@@ -745,8 +746,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 div.top { padding: 10px; border: solid 1.5px var(--k1); border-radius: 45px 30px 20px 20px; gap: 5px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;
                     > a.header { width: 100%; height: 50px; padding-right: 15px; border-radius: 45px 25px 25px 5px; gap: 10px; display: flex; align-items: center; background-color: white; pointer-events: none;
                         > div { width: 90px; height: 100%; display: flex; pointer-events: none;
-                            > div { min-width: 90px; min-height: 90px; max-width: 90px; max-height: 90px; border: 5px solid var(--k2); border-radius: 99px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--k1); pointer-events: none;
-                                span { color: white !important; line-height: 120%;
+                            > div { min-width: 90px; min-height: 90px; max-width: 90px; max-height: 90px; border: 5px solid var(--cBg); border-radius: 99px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: white; pointer-events: none;
+                                &::before { content: ""; width: 100%; height: 100%; border: 4px solid var(--k1); border-radius: 99px; position: absolute; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
+                                span { color: var(--cG1) !important; line-height: 120%;
                                     &:first-child { font-size: var(--fXXL); }}}}
                         > span { width: 100%; font-size: var(--fL); pointer-events: auto; }
                         > i, svg { pointer-events: auto; }}
