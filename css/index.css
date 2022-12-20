@@ -107,6 +107,8 @@ h3,
 h4,
 h5,
 h6,
+input,
+textarea,
 ol,
 ul {
   color: var(--cG1);
@@ -129,7 +131,6 @@ button:hover {
 input {
   border: 0;
   padding: 0;
-  color: var(--cG1);
   background-color: transparent;
 }
 input:focus {
@@ -144,6 +145,7 @@ input:-webkit-autofill {
 }
 textarea {
   border: 0;
+  resize: none;
 }
 textarea:focus {
   box-shadow: none !important;
@@ -3911,10 +3913,28 @@ section.pop.visit .popBody div.buttons button span {
   margin: -5px -5px -45px auto;
 }
 .store section.pop.notice.stampRule .popBody > div {
+  width: 100%;
   gap: 10px;
 }
 .store section.pop.notice.stampRule .popBody > div span:last-child {
   text-align: justify;
+}
+.store section.pop.notice.stampRule .popBody > div textarea {
+  width: 100%;
+  height: 300px;
+  text-align: justify;
+  background-color: transparent;
+}
+.store section.pop.notice.stampRule .popBody > div textarea::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.store section.pop.notice.stampRule .popBody > div textarea::-webkit-scrollbar:vertical {
+  width: 15px;
+}
+.store section.pop.notice.stampRule .popBody > div textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--cG5);
+  border: 5px solid white;
 }
 .store section.pop.notice.confirm span:not(.title) {
   color: var(--cRed);
