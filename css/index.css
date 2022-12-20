@@ -3448,6 +3448,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .store.v2 section.main section.coupon div.top > a.header > div > div span {
   color: var(--cG1) !important;
+  font-weight: bold;
   line-height: 120%;
 }
 .store.v2 section.main section.coupon div.top > a.header > div > div span:first-child {
