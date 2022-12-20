@@ -3405,24 +3405,21 @@ section.pop.visit .popBody div.buttons button span {
   align-items: flex-end;
   justify-content: space-between;
 }
-.store.v2 section.main section.coupon div.top > a.header {
+.store.v2 section.main section.coupon div.top > .header {
   width: 100%;
   height: 50px;
-  padding-right: 15px;
   border-radius: 45px 25px 25px 5px;
   gap: 10px;
   display: flex;
   align-items: center;
   background-color: white;
-  pointer-events: none;
 }
-.store.v2 section.main section.coupon div.top > a.header > div {
+.store.v2 section.main section.coupon div.top > .header > div {
   width: 90px;
   height: 100%;
   display: flex;
-  pointer-events: none;
 }
-.store.v2 section.main section.coupon div.top > a.header > div > div {
+.store.v2 section.main section.coupon div.top > .header > div > a {
   min-width: 90px;
   min-height: 90px;
   max-width: 90px;
@@ -3435,9 +3432,8 @@ section.pop.visit .popBody div.buttons button span {
   align-items: center;
   justify-content: center;
   background-color: white;
-  pointer-events: none;
 }
-.store.v2 section.main section.coupon div.top > a.header > div > div::before {
+.store.v2 section.main section.coupon div.top > .header > div > a::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -3446,21 +3442,31 @@ section.pop.visit .popBody div.buttons button span {
   position: absolute;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
-.store.v2 section.main section.coupon div.top > a.header > div > div span {
+.store.v2 section.main section.coupon div.top > .header > div > a span {
   color: var(--cG1) !important;
   font-weight: bold;
   line-height: 120%;
 }
-.store.v2 section.main section.coupon div.top > a.header > div > div span:first-child {
+.store.v2 section.main section.coupon div.top > .header > div > a span:first-child {
   font-size: var(--fXXL);
 }
-.store.v2 section.main section.coupon div.top > a.header > span {
+.store.v2 section.main section.coupon div.top > .header > a {
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+  border-radius: 0 25px 25px 0;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.store.v2 section.main section.coupon div.top > .header > a span {
   width: 100%;
   font-size: var(--fL);
   pointer-events: auto;
 }
-.store.v2 section.main section.coupon div.top > a.header > i,
-.store.v2 section.main section.coupon div.top > a.header svg {
+.store.v2 section.main section.coupon div.top > .header > a i,
+.store.v2 section.main section.coupon div.top > .header > a svg {
   pointer-events: auto;
 }
 .store.v2 section.main section.coupon div.top > span.remark {
@@ -3841,17 +3847,21 @@ section.pop.visit .popBody div.buttons button span {
   color: white;
 }
 .store section.pop.pointRule .popBody {
-  background: var(--k2);
+  padding: 5px;
+  gap: 5px;
+  background: var(--k1);
 }
 .store section.pop.pointRule .popBody a.close {
+  display: none;
   background-color: transparent;
 }
 .store section.pop.pointRule .popBody span.title {
+  display: none;
   font-size: var(--fL);
 }
 .store section.pop.pointRule .popBody > div {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -3867,8 +3877,13 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   align-items: center;
 }
+.store section.pop.pointRule .popBody > div div.top i,
+.store section.pop.pointRule .popBody > div div.top svg {
+  display: none;
+}
 .store section.pop.pointRule .popBody > div div.top span {
-  font-size: var(--fXL);
+  font-size: var(--fL);
+  font-weight: bold;
 }
 .store section.pop.pointRule .popBody > div div.bottom {
   width: 100%;

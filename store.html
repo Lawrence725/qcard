@@ -246,20 +246,26 @@
             <!-- 集點 -->
             <section class="coupon">
                 <div class="top">
-                    <a class="header" onclick="popStamps()">
+                    <div class="header">
                         <div>
-                            <div>
+                            <a onclick="popPointRule()">
                                 <span>20</span>
                                 <span>點</span>
-                            </div>
+                            </a>
                         </div>
-                        <span>新春集快點</span>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </a>
+                        <a onclick="popStamps()">
+                            <span>新春集快點</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </a>
+                    </div>
                     <span class="remark">2021/10/01 - 2022/01/22 集點</span>
                     <span class="remark">2021/10/01 - 2022/01/22 兌換</span>
                     <span class="content">即日期至十二月底，凡來店消費每筆滿台幣一百五十元，即可獲得最新節日活動集章一枚，集滿9個章即可獲得豪華A餐招待券。</span>
                     <div class="buttons">
+                        <a onclick="popPointRule()">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>集點規則</span>
+                        </a>
                         <a href="point.html">
                             <i class="fa-solid fa-list-ul"></i>
                             <span>交易紀錄</span>
@@ -375,28 +381,29 @@
         <!-- 點數規則popup -->
         <section id="popPointRule" class="pop pointRule" onclick="popClose(this)">
             <div class="popBody">
-                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
-                <span class="title">點數規則</span>
                 <div>
                     <div class="top">
-                        <i class="fa-solid fa-circle-plus fa-lg"></i>
-                        <span>賺取點數</span>
+                        <!-- 點數：賺取點數 / 集點：集點方式 -->
+                        <span>集點方式</span>
                     </div>
                     <div class="bottom">
-                        <span>門市/線上<br>每消費NT$100</span>
+                        <span>門市/線上<br>每消費滿$100</span>
                         <i class="fa-solid fa-chevron-right fa-lg"></i>
-                        <span>送1米哥點</span>
+                        <!-- 點數：贈送1米哥點 / 集點：贈送1點 -->
+                        <span>贈送<br>1點</span>
                     </div>
                 </div>
                 <div>
                     <div class="top">
-                        <i class="fa-solid fa-circle-dollar-to-slot fa-lg"></i>
-                        <span>使用點數</span>
+                        <!-- 點數：使用點數 / 集點：獎勵兌換 -->
+                        <span>獎勵兌換</span>
                     </div>
                     <div class="bottom">
-                        <span>1米哥點</span>
+                        <!-- 點數：1米哥點 / 集點：集點滿額 -->
+                        <span>集點滿額</span>
                         <i class="fa-solid fa-chevron-right fa-lg"></i>
-                        <span>可折抵NT$1<br>門市/線上消費</span>
+                        <!-- 點數：可折抵NT$1<br>門市/線上消費 / 集點：可於門市<br>兌換獎勵 -->
+                        <span>可於門市<br>兌換獎勵</span>
                     </div>
                 </div>
             </div>
