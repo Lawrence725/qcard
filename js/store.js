@@ -121,6 +121,17 @@ var flkty = new Flickity( '.carousel', {
     autoPlay: true
 });
 
+// Tab sticky
+// document.addEventListener("scroll", (event) => {
+//     var height = document.querySelector('section.card').offsetHeight + 93;
+//     if (document.querySelector('html').scrollTop >= height) {
+//         document.querySelector('section.tabs').classList.add('sticky');
+//         document.querySelector('section.point').style.marginTop = 
+//             document.querySelector('section.tabs').offsetHeight + 10 + 'px';
+//     } else {
+//         document.querySelector('section.tabs').classList.remove('sticky');
+//         document.querySelector('section.point').style.marginTop = 0 + 'px'; }});
+
 // Tab切換
 function switchTab(e, type) {
     let getSiblings = function (e) {
