@@ -2657,10 +2657,12 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
 }
 .coin section.main div.item div.left span {
-  font-size: var(--fL);
+  font-size: var(--fXL);
 }
 .coin section.main div.item div.left span.content {
   font-size: var(--fM);
+}
+.coin section.main div.item div.left span.content:last-child {
   color: var(--cG3);
 }
 .coin section.main div.item div.right {
@@ -3108,6 +3110,27 @@ section.pop.visit .popBody div.buttons button span {
   height: 120px;
   border-radius: 20px;
   filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
+}
+.store.v2 section.main section.card a.verify {
+  min-height: 40px;
+  padding: 5px 10px 5px 15px;
+  border-radius: 20px;
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  background: var(--k2);
+}
+.store.v2 section.main section.card a.verify span:first-child {
+  width: 100%;
+  color: var(--cG3);
+}
+.store.v2 section.main section.card a.verify span:nth-last-child(2) {
+  color: var(--k1);
+  white-space: nowrap;
+}
+.store.v2 section.main section.card a.verify i,
+.store.v2 section.main section.card a.verify svg {
+  color: var(--k1);
 }
 .store.v2 section.main section.card div.menus div.menu {
   width: 100%;

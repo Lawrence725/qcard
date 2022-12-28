@@ -588,8 +588,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.item { width: 100%; display: flex; align-items: center; justify-content: space-between;
             &:not(:last-child) { padding-bottom: 20px; border-bottom: 1px solid var(--cG5); }
             div.left { display: flex; flex-direction: column;
-                span { font-size: var(--fL);
-                    &.content { font-size: var(--fM); color: var(--cG3); }}}
+                span { font-size: var(--fXL);
+                    &.content { font-size: var(--fM);
+                        &:last-child { color: var(--cG3); }}}}
             div.right { display: flex; align-items: center; gap: 5px;
                 span { font-size: var(--fL); font-weight: bold;
                     &.negative { color: var(--cRed); }}
@@ -680,6 +681,12 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     span { width: 100%; font-size: var(--fXL); font-weight: bold; }
                     div { height: 40px; display: flex; align-items: flex-end;
                         img { width: 120px; height: 120px; border-radius: 20px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}}
+                a.verify { min-height: 40px; padding: 5px 10px 5px 15px; border-radius: 20px; gap: 2px; display: flex; align-items: center; background: var(--k2);
+                    span {
+                        &:first-child { width: 100%; color: var(--cG3); }
+                        &:nth-last-child(2) { color: var(--k1); white-space: nowrap; }}
+                    i, svg { color: var(--k1); }
+                }
                 div.menus {
                     div.menu { width: 100%; padding-top: 10px; gap: 20px 0; display: flex; align-items: center; flex-wrap: wrap;
                         a { min-width: 25%; position: relative; gap: 5px; display: flex; flex-direction: column; align-items: center;
