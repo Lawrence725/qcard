@@ -21,8 +21,9 @@
     k2: 底色 (建議k1接近白色)
     k3: 特殊色 (測試中) */
     --k3: #FFFFFF;
-    /* MM */
+    /* QC */
     --k1: #FF9900;
+    --k1a:#22798C;
     --k2: #F2F1F6;
     // --k2: #FFEED8;
     /* 桃園
@@ -306,11 +307,13 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 // 付款頁
 .payment { overflow: auto;
     section.head { padding: 10px 20px 0;
+        .bg { background: var(--k1a); }
+        span { color: white; }
         .left {
             a { min-width: 30px; min-height: 30px; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: var(--k1); }
-            span { color: var(--k1); font-size: var(--fL); }}
+            span { font-size: var(--fL); }}
         .center { display: flex; flex-direction: column; align-items: center;
-            span.price { margin-top: -5px; font-size: var(--fXXL); color: var(--k1); }}
+            span.price { margin-top: -5px; font-size: var(--fXXL); }}
         .right { justify-content: right;
             span:last-child { font-size: var(--fXL); }}}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); z-index: 5;
@@ -378,6 +381,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         }}
     section.pop.credit { 
         span.title { font-size: var(--fL); font-weight: bold; }
+        span.message { margin-top: -20px; font-size: var(--fS); color: var(--cRed) !important; }
         div.list { display: flex; flex-direction: column; gap: 10px;
             a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
                 &.active { border: 1px solid var(--k1); }
@@ -387,7 +391,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 img { width: 30px; }}}
         div.new { display: flex; flex-direction: column; gap: 10px;
             span.title { font-weight: bold; }
-            span:not(.title) { color: var(--cG3); font-size: var(--fS); }
+            span.message { margin-top: -10px; }
+            span:not(.title) { font-size: var(--fS); color: var(--cG3); }
             div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
             div:not(.row) { width: 100%; display: flex; flex-direction: column; }
             div.row { display: flex; gap: 15px; }
@@ -433,7 +438,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             }
         }
     }
-    section.head { > span { font-size: var(--fXL); }}
+    section.head {
+        .bg { background: var(--k1a); }
+        > span { font-size: var(--fXL); color: white; }}
     section.main { width: 100%; max-width: 430px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
             div.top { display: flex; flex-direction: column; align-items: center;
@@ -500,7 +507,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 
 // 付款金額
 .price {
-    section.head { > span { font-size: var(--fXL); }}
+    section.head {
+        .bg { background: var(--k1a); }
+        > span { font-size: var(--fXL); color: white; }}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); z-index: 5;
         button span { font-size: var(--fL); }}
     section.main { width: 100%; max-width: 430px; padding: 130px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 50px;

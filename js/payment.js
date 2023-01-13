@@ -4,8 +4,8 @@ window.onload = function() {
     // popRefund();
     // popOrder();
     // popConfirm();
-    // popCredit();
-    popApple();
+    popCredit();
+    // popApple();
 }
 
 // Popup close
