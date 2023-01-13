@@ -4,7 +4,7 @@ window.onload = function() {
     // popRefund();
     // popOrder();
     // popConfirm();
-    popCredit();
+    // popCredit();
     // popApple();
 }
 
