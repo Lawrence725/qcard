@@ -1816,11 +1816,22 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fL) !important;
 }
 .payment section.pop.credit div.new iframe {
-  height: 30px !important;
+  height: fit-content !important;
 }
-.payment section.pop.credit div.new iframe input {
-  border-bottom: 1px solid var(--cG4);
+.payment section.pop.credit div.new iframe html {
+  overflow: hidden;
+}
+.payment section.pop.credit div.new iframe html body {
+  margin: 0;
+}
+.payment section.pop.credit div.new iframe html body input {
+  width: 100%;
+  margin: 0 0 20px 0 !important;
+  border: solid var(--cG4) !important;
+  border-width: 0 0 1px 0 !important;
+  border-radius: 0 !important;
   font-size: var(--fL);
+  box-sizing: border-box;
 }
 .payment section.pop.credit div.buttons {
   display: flex;
