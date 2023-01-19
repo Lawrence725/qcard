@@ -380,6 +380,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 a { font-size: var(--fS); color: var(--k1); }}
         }}
     section.pop.credit { 
+        .popBody { overflow-y: hidden; }
         span.title { font-size: var(--fL); font-weight: bold; }
         span.message { margin-top: -20px; font-size: var(--fS); color: var(--cRed) !important; }
         div.list { display: flex; flex-direction: column; gap: 10px;
@@ -396,8 +397,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             div input { width: 100%; height: 30px; border-bottom: 1px solid var(--cG4); border-radius: 0; font-size: var(--fL); }
             div:not(.row) { width: 100%; display: flex; flex-direction: column; }
             div.row { display: flex; gap: 15px; }
-            .tpfield { width: 100% !important; height: 30px !important; border-bottom: 1px solid var(--cG4) !important; font-size: var(--fL) !important; }
-            iframe { height: fit-content !important;
+            .tpfield { width: 100% !important; height: 30px !important; border-bottom: 1px solid var(--cG4) !important; font-size: var(--fL) !important;
+                iframe { height: 30px !important; }}
+            .cardpay iframe { height: fit-content !important;
                 html { overflow: hidden;
                     body { margin: 0;
                 input { width: 100%; margin: 0 0 20px 0 !important; border: solid var(--cG4) !important; border-width: 0 0 1px 0 !important; border-radius: 0 !important; font-size: var(--fL); box-sizing: border-box; }}}}}

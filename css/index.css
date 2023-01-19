@@ -1738,6 +1738,9 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fS);
   color: var(--k1);
 }
+.payment section.pop.credit .popBody {
+  overflow-y: hidden;
+}
 .payment section.pop.credit span.title {
   font-size: var(--fL);
   font-weight: bold;
@@ -1815,16 +1818,19 @@ section.pop.visit .popBody div.buttons button span {
   border-bottom: 1px solid var(--cG4) !important;
   font-size: var(--fL) !important;
 }
-.payment section.pop.credit div.new iframe {
+.payment section.pop.credit div.new .tpfield iframe {
+  height: 30px !important;
+}
+.payment section.pop.credit div.new .cardpay iframe {
   height: fit-content !important;
 }
-.payment section.pop.credit div.new iframe html {
+.payment section.pop.credit div.new .cardpay iframe html {
   overflow: hidden;
 }
-.payment section.pop.credit div.new iframe html body {
+.payment section.pop.credit div.new .cardpay iframe html body {
   margin: 0;
 }
-.payment section.pop.credit div.new iframe html body input {
+.payment section.pop.credit div.new .cardpay iframe html body input {
   width: 100%;
   margin: 0 0 20px 0 !important;
   border: solid var(--cG4) !important;
