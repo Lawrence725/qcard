@@ -203,6 +203,10 @@ iframe {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.9);
 }
+.loading.transparent {
+  background-color: transparent;
+  pointer-events: none;
+}
 .loading.bg {
   background-color: black;
 }
