@@ -4731,6 +4731,7 @@ section.pop.visit .popBody div.buttons button span {
   max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4748,7 +4749,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .fault section.main div.top span {
   font-size: var(--fL);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 .fault section.main div.top span.title {
   font-size: var(--fXXL);
