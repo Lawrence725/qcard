@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Qcard</title>
-        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <title>點點付</title>
+        <link rel="icon" type="image/svg" href="./icon/ddpay.svg"/>
         <meta charset="UTF-8">
-        <meta name="keywords" content="DotDot">
-        <meta name="description" content="DotDot">
+        <meta name="keywords" content="點點付">
+        <meta name="description" content="點點付">
         <meta name="author" content="DotDot">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
         <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
@@ -50,78 +50,97 @@
         </section>
         <section class="main">
             <!-- 登入 -->
-            <section class="join" onclick="window.location.href='welcome.html'">
-                <img src="./img/patternS.png">
-                <span>加入<span>Qcard</span>會員獲得更多優惠</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </section>
+                <!-- <section class="join" onclick="window.location.href='welcome.html'">
+                    <img src="./img/patternS.png">
+                    <span>加入<span>Qcard</span>會員獲得更多優惠</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </section> -->
             <!-- 登出 -->
-            <section class="account">
-                <div>
-                    <span>陳大文 0987654321 正在付款</span>
-                    <span>請於12:30前完成付款</span>
-                </div>
-                <a href="index.html">登出</a>
-            </section>
+                <!-- <section class="account">
+                    <div>
+                        <span>陳大文 0987654321 正在付款</span>
+                        <span>請於12:30前完成付款</span>
+                    </div>
+                    <a href="index.html">登出</a>
+                </section> -->
             <!-- 消費金額 -->
-            <section class="spending">
-                <span class="title">消費金額</span>
-                <div class="input">
-                    <span>NT$</span>
-                    <input type="number" placeholder="0" value="5" pattern="\d*" disabled>
-                </div>
-            </section>
+                <!-- <section class="spending">
+                    <span class="title">消費金額</span>
+                    <div class="input">
+                        <span>NT$</span>
+                        <input type="number" placeholder="0" value="5" pattern="\d*" disabled>
+                    </div>
+                </section> -->
             <!-- 點數 -->
-            <section class="point">
-                <div class="top">
-                    <span class="title">點數</span>
-                    <img src="./icon/ptTaoyuan.svg">
-                    <span>100</span>
-                </div>
-                <div class="center">
-                    <a class="active">
-                        <img src="./icon/point.svg">
-                        <div>
-                            <span>點數</span>
-                            <span>100</span>
-                        </div>
-                    </a>
-                    <a>
+                <!-- <section class="point">
+                    <div class="top">
+                        <span class="title">點數</span>
                         <img src="./icon/ptTaoyuan.svg">
-                        <div>
-                            <span>紅利桃子</span>
-                            <span>100</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="center">
-                    <a>
-                        <img src="./icon/point.svg">
-                        <div>
-                            <span>點數名稱</span>
-                            <span>前往開通</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="input">
-                    <span>NT$</span>
-                    <input type="number" placeholder="0" value="10" pattern="\d*" disabled>
-                </div>
-                <div class="bottom">
-                    <div>
-                        <span>=</span>
-                        <img src="./icon/point.svg">
-                        <span>10</span>
+                        <span>100</span>
                     </div>
-                    <div>
-                        <label class="check">
-                            <input type="checkbox" name="checkbox1" checked> <!-- checked -->
-                            <span class="checkmark checkbox"></span>
-                            <span>使用全部</span>
-                        </label>
+                    <div class="center">
+                        <a class="active">
+                            <img src="./icon/point.svg">
+                            <div>
+                                <span>點數</span>
+                                <span>100</span>
+                            </div>
+                        </a>
+                        <a>
+                            <img src="./icon/ptTaoyuan.svg">
+                            <div>
+                                <span>紅利桃子</span>
+                                <span>100</span>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </section>
+                    <div class="center">
+                        <a>
+                            <img src="./icon/point.svg">
+                            <div>
+                                <span>點數名稱</span>
+                                <span>前往開通</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="input">
+                        <span>NT$</span>
+                        <input type="number" placeholder="0" value="10" pattern="\d*" disabled>
+                    </div>
+                    <div class="bottom">
+                        <div>
+                            <span>=</span>
+                            <img src="./icon/point.svg">
+                            <span>10</span>
+                        </div>
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="checkbox1" checked>
+                                <span class="checkmark checkbox"></span>
+                                <span>使用全部</span>
+                            </label>
+                        </div>
+                    </div>
+                </section> -->
+            <!-- 優惠折抵 -->
+                <section class="discount">
+                    <div class="top">
+                        <span class="title">優惠折抵</span>
+                    </div>
+                    <a class="discount__point">
+                        <img src="./icon/pPoint.svg">
+                        <!-- <img src="./icon/ptTaoyuan.svg"> -->
+                        <span class="discount__title">點數</span>
+                        <span>紅利桃子 10</span>
+                        <i class="fa-solid fa-chevron-right fa-lg"></i>
+                    </a>
+                    <a class="discount__coupon">
+                        <img src="./icon/pCoupon.svg">
+                        <span class="discount__title">票券</span>
+                        <span class="discount__name--none">選擇優惠券</span>
+                        <i class="fa-solid fa-chevron-right fa-lg"></i>
+                    </a>
+                </section>
             <!-- 付款方式 -->
             <section class="type">
                 <div class="top">
@@ -129,7 +148,7 @@
                     <!-- <span>目前台灣Pay服務異常，請使用其他付款方式</span> -->
                     <a onclick="popError()"><i class="fa-solid fa-triangle-exclamation fa-lg"></i></a>
                 </div>
-                <div class="center">
+                <!-- <div class="center">
                     <a>
                         <i class="fa-solid fa-money-bill-wave fa-lg"></i>
                         <span>現金</span>
@@ -139,6 +158,46 @@
                         <span>信用卡</span>
                         <i class="fa-solid fa-chevron-right fa-sm"></i>
                     </a>
+                </div> -->
+                <div class="credit" onclick="">
+                    <div class="credit__top">
+                        <a>
+                            <img src="./icon/pCredit.svg">
+                            <span class="credit__title">信用卡</span>
+                        </a>
+                        <a>
+                            <span>**** 6789</span>
+                            <div class="credit__dropdown"><i class="fa-solid fa-square-caret-down fa-lg"></i></div>
+                        </a>
+                    </div>
+                    <div class="credit__cards">
+                        <a class="credit__card">
+                            <img src="./icon/pVisa.svg">
+                            <span>**** 1234</span>
+                        </a>
+                        <a class="credit__card">
+                            <img src="./icon/pMaster.svg">
+                            <span>**** 5678</span>
+                        </a>
+                        <a class="credit__card">
+                            <img src="./icon/pJcb.svg">
+                            <span>**** 9012</span>
+                        </a>
+                        <a class="credit__card">
+                            <i class="fa-solid fa-plus fa-lg"></i>
+                            <span>輸入信用卡</span>
+                        </a>
+                    </div>
+                    <div class="credit__form">
+                        <input type="text" placeholder="卡號" value="">
+                        <input type="text" placeholder="到期日" value="">
+                        <input type="text" placeholder="CVV" value="">
+                        <label class="check">
+                            <input type="checkbox" name="checkbox3" checked> <!-- checked -->
+                            <span class="checkmark checkbox"></span>
+                            <span>儲存信用卡</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="center">
                     <a onclick="popApple()">
@@ -149,7 +208,7 @@
                     </a>
                 </div>
                 <div class="center">
-                    <a>
+                    <a class="active">
                         <img src="./icon/pLine.svg">
                     </a>
                     <a>
@@ -166,40 +225,41 @@
                 </div>
             </section>
             <!-- 鍵盤 -->
-            <section class="keyboard">
-                <div>
-                    <a>1</a>
-                    <a>2</a>
-                    <a>3</a>
-                </div>
-                <div>
-                    <a>4</a>
-                    <a>5</a>
-                    <a>6</a>
-                </div>
-                <div>
-                    <a>7</a>
-                    <a>8</a>
-                    <a>9</a>
-                </div>
-                <div>
-                    <a class="minor">清除</a>
-                    <a>0</a>
-                    <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
-                </div>
-            </section>
+                <!-- <section class="keyboard">
+                    <div>
+                        <a>1</a>
+                        <a>2</a>
+                        <a>3</a>
+                    </div>
+                    <div>
+                        <a>4</a>
+                        <a>5</a>
+                        <a>6</a>
+                    </div>
+                    <div>
+                        <a>7</a>
+                        <a>8</a>
+                        <a>9</a>
+                    </div>
+                    <div>
+                        <a class="minor">清除</a>
+                        <a>0</a>
+                        <a class="minor" onclick="popNotice();"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                    </div>
+                </section> -->
             <!-- 會員電話 -->
-            <section class="phone">
-                <span class="title">會員集點</span>
-                <div class="input">
-                    <span>+</span>
-                    <input class="fit" type="number" placeholder="0" value="886" pattern="\d*">
-                    <span class="gap">|</span>
-                    <input type="number" placeholder="輸入手機號碼" value="" pattern="\d*">
-                </div>
-            </section>
+                <!-- <section class="phone">
+                    <span class="title">會員集點</span>
+                    <div class="input">
+                        <span>+</span>
+                        <input class="fit" type="number" placeholder="0" value="886" pattern="\d*">
+                        <span class="gap">|</span>
+                        <input type="number" placeholder="輸入手機號碼" value="" pattern="\d*">
+                    </div>
+                </section> -->
             <!-- 條款 -->
             <section class="policy">
+                <span class="policy--gray">請於12:30前完成交易</span>
                 <span>本金流服務由 點點付 DDPay 提供，通過 PCI-DSS 國際信用卡組織最高等級認證，提供安全的交易服務，支援國內外信用卡刷卡</span>
                 <!-- <span>按下支付按鈕，即表示您確認已詳閱並且同意<br>
                     <a onclick="popOrder()">《線上點餐需知》</a>和<a onclick="popRefund()">《退款流程及方式》</a></span> -->
