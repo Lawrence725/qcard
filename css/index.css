@@ -210,6 +210,12 @@ iframe {
 .loading.bg {
   background-color: black;
 }
+.loading.loading--body {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  z-index: 4;
+}
 .loading > div {
   min-width: 120px;
   min-height: 120px;
@@ -841,6 +847,17 @@ a.coupon span.info {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: unset !important;
+}
+a.coupon span.info * {
+  font-size: var(--fS);
+  color: var(--cG3);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: unset !important;
 }
 a.coupon span.date {
   font-size: var(--fS);
@@ -1496,6 +1513,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending,
 .payment section.main section.point,
+.payment section.main section.discount,
 .payment section.main section.type,
 .payment section.main section.phone {
   width: 100%;
@@ -1505,6 +1523,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending span.title,
 .payment section.main section.point span.title,
+.payment section.main section.discount span.title,
 .payment section.main section.type span.title,
 .payment section.main section.phone span.title {
   font-weight: bold;
@@ -1512,6 +1531,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending .input,
 .payment section.main section.point .input,
+.payment section.main section.discount .input,
 .payment section.main section.type .input,
 .payment section.main section.phone .input {
   width: 100%;
@@ -1527,6 +1547,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.spending .input input,
 .payment section.main section.point .input input,
+.payment section.main section.discount .input input,
 .payment section.main section.type .input input,
 .payment section.main section.phone .input input {
   width: 100%;
@@ -1648,6 +1669,43 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.point div.bottom img {
   height: 14px;
 }
+.payment section.main section.discount a.discount__point,
+.payment section.main section.discount a.discount__coupon {
+  height: 50px;
+  padding: 0 15px;
+  gap: 5px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--cBg);
+}
+.payment section.main section.discount a.discount__point img,
+.payment section.main section.discount a.discount__coupon img {
+  width: 40px;
+}
+.payment section.main section.discount a.discount__point span,
+.payment section.main section.discount a.discount__coupon span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
+.payment section.main section.discount a.discount__point span.discount__title,
+.payment section.main section.discount a.discount__coupon span.discount__title {
+  width: 100%;
+  color: var(--cG3);
+}
+.payment section.main section.discount a.discount__point span.discount__name--none,
+.payment section.main section.discount a.discount__coupon span.discount__name--none {
+  color: var(--cG4);
+}
+.payment section.main section.discount a.discount__point i,
+.payment section.main section.discount a.discount__coupon i,
+.payment section.main section.discount a.discount__point svg,
+.payment section.main section.discount a.discount__coupon svg {
+  color: var(--cG4);
+}
+.payment section.main section.type .active {
+  border: 1.5px solid var(--k1);
+}
 .payment section.main section.type div.top {
   width: 100%;
   display: flex;
@@ -1665,6 +1723,92 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.type div.top svg {
   color: var(--cRed);
 }
+.payment section.main section.type div.credit {
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cBg);
+}
+.payment section.main section.type div.credit .credit__top {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.payment section.main section.type div.credit .credit__top a {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.payment section.main section.type div.credit .credit__top span {
+  font-size: var(--fL);
+}
+.payment section.main section.type div.credit .credit__top .credit__title {
+  color: var(--cG3);
+}
+.payment section.main section.type div.credit .credit__top .credit__dropdown {
+  width: 24px;
+  height: 24px;
+  border: 6px solid var(--cG4);
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment section.main section.type div.credit .credit__top .credit__dropdown i,
+.payment section.main section.type div.credit .credit__top .credit__dropdown svg {
+  color: var(--cG4);
+  border-radius: 99px;
+  background-color: var(--cBg);
+}
+.payment section.main section.type div.credit .credit__cards {
+  width: 100%;
+  padding: 0 15px 15px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.payment section.main section.type div.credit .credit__cards .credit__card {
+  width: calc(50% - 5px);
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.payment section.main section.type div.credit .credit__cards .credit__card img {
+  width: 40px;
+}
+.payment section.main section.type div.credit .credit__cards .credit__card span {
+  width: 100%;
+  text-align: right;
+}
+.payment section.main section.type div.credit .credit__cards .credit__card i,
+.payment section.main section.type div.credit .credit__cards .credit__card svg {
+  color: var(--cG4);
+}
+.payment section.main section.type div.credit .credit__form {
+  width: 100%;
+  padding: 0 15px 15px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.payment section.main section.type div.credit .credit__form input {
+  width: 100%;
+  height: 30px;
+  padding: 0 5px 5px;
+  border-bottom: 1px solid var(--cG5);
+  border-radius: 0;
+  font-size: var(--fL);
+}
+.payment section.main section.type div.credit .credit__form input::placeholder {
+  color: var(--cG4);
+}
 .payment section.main section.type div.center {
   width: 100%;
   display: flex;
@@ -1674,7 +1818,7 @@ section.pop.visit .popBody div.buttons button span {
   width: calc(50% - 5px);
   height: 50px;
   padding: 0 10px;
-  border-radius: 99px;
+  border-radius: 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1682,12 +1826,9 @@ section.pop.visit .popBody div.buttons button span {
   gap: 5px;
   background-color: var(--cBg);
 }
-.payment section.main section.type div.center a.active {
-  border: 1.5px solid var(--k1);
-}
 .payment section.main section.type div.center a img {
-  max-width: 84px;
-  max-height: 34px;
+  max-width: 100px;
+  max-height: 36px;
   object-fit: contain;
 }
 .payment section.main section.type div.center a span {
@@ -1741,6 +1882,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.policy {
   width: 100%;
+  gap: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1749,6 +1891,9 @@ section.pop.visit .popBody div.buttons button span {
   font-size: var(--fS);
   text-align: center;
   color: var(--cG4);
+}
+.payment section.main section.policy span.policy--gray {
+  color: var(--cG3);
 }
 .payment section.main section.policy span a {
   font-size: var(--fS);
@@ -3395,6 +3540,27 @@ section.pop.visit .popBody div.buttons button span {
 .store.v2 section.main section.tabs a span span {
   font-size: var(--fXL);
   font-weight: bold;
+}
+.store.v2 section.main section.tabs a > div {
+  min-height: 32.5px;
+  gap: 5px;
+  display: flex;
+  align-items: last baseline;
+}
+.store.v2 section.main section.tabs a .tab__count {
+  font-size: var(--fXL);
+  font-weight: bold;
+}
+.store.v2 section.main section.tabs a .tab__loading {
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 .store.v2 section.main section.point {
   margin-top: 10px;

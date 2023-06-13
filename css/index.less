@@ -85,6 +85,7 @@ iframe                                  { border: 0; }
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     &.transparent { background-color: transparent; pointer-events: none; }
     &.bg { background-color: black; }
+    &.loading--body { width: 100%; height: 150px; position: relative; z-index: 4; }
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
         > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; border-radius: 99px; position: absolute; }}}
@@ -173,7 +174,8 @@ a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relati
     span {
         &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.name { font-size: var(--fS); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-        &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: unset !important;
+            * { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: unset !important; }}
         &.date { font-size: var(--fS); }
         &.point { font-size: var(--fL); font-weight: bold; color: var(--k1); }
         &.none { font-size: var(--fM); color: var(--k1); text-align: center; }}}
@@ -323,7 +325,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             span { font-size: var(--fXL); }
             img { height: 20px; }}}
     section.main { width: 100%; max-width: 430px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
-        section.spending, section.point, section.type, section.phone { width: 100%; gap: 10px; display: flex; flex-direction: column;
+        section.spending, section.point, section.discount, section.type, section.phone { width: 100%; gap: 10px; display: flex; flex-direction: column;
             span.title { font-weight: bold; white-space: nowrap; }
             .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
                 input { width: 100%; font-size: var(--fXL); color: var(--cG1) !important; opacity: 1 !important; }}}
@@ -355,15 +357,41 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 div { display: flex; align-items: center; gap: 2px; }
                 span { font-size: var(--fS); color: var(--cG3); white-space: nowrap; }
                 img { height: 14px; }}}
+        // 優惠折抵
+        section.discount {
+            a.discount__point, a.discount__coupon { height: 50px; padding: 0 15px; gap: 5px; border-radius: 15px; display: flex; align-items: center; background-color: var(--cBg);
+                img { width: 40px; }
+                span { font-size: var(--fL); white-space: nowrap; }
+                span.discount__title { width: 100%; color: var(--cG3); }
+                span.discount__name--none { color: var(--cG4); }
+                i, svg { color: var(--cG4); }
+            }
+        }
         // 付款
         section.type {
+            .active { border: 1.5px solid var(--k1); }
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }
                 i, svg { color: var(--cRed); }}
+            div.credit { width: 100%; border-radius: 15px; display: flex; flex-direction: column; background-color: var(--cBg);
+                .credit__top { width: 100%; height: 50px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between;
+                    a { gap: 5px; display: flex; align-items: center; }
+                    span { font-size: var(--fL); }
+                    .credit__title { color: var(--cG3); }
+                    .credit__dropdown { width: 24px; height: 24px; border: 6px solid var(--cG4); border-radius: 99px; display: flex; align-items: center; justify-content: center;
+                        i, svg { color: var(--cG4); border-radius: 99px; background-color: var(--cBg); }}}
+                .credit__cards { width: 100%; padding: 0 15px 15px; gap: 10px; display: flex; flex-wrap: wrap;
+                    .credit__card { width: calc(50% - 5px); height: 50px; padding: 10px; border-radius: 10px; display: flex; align-items: center; background-color: white;
+                        img { width: 40px; }
+                        span { width: 100%; text-align: right; }
+                        i, svg { color: var(--cG4); }}}
+                .credit__form { width: 100%; padding: 0 15px 15px; gap: 15px; display: flex; flex-direction: column;
+                    input { width: 100%; height: 30px; padding: 0 5px 5px; border-bottom: 1px solid var(--cG5); border-radius: 0; font-size: var(--fL);
+                        &::placeholder { color: var(--cG4); }}}
+            }
             div.center { width: 100%; display: flex; gap: 10px;
-                a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg); 
-                    &.active { border: 1.5px solid var(--k1); }
-                    img { max-width: 84px; max-height: 34px; object-fit: contain; }
+                a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 15px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--cBg);
+                    img { max-width: 100px; max-height: 36px; object-fit: contain; }
                     span { font-size: var(--fL); }
                     i.fa-chevron-right, svg.fa-chevron-right { position: absolute; right: 10px; color: var(--cG4); }}}}
         // 鍵盤
@@ -378,8 +406,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             input { font-size: var(--fL) !important;
                 &.fit { width: 40px; }}}
         // 條款
-        section.policy { width: 100%; display: flex; flex-direction: column; align-items: center;
+        section.policy { width: 100%; gap: 5px; display: flex; flex-direction: column; align-items: center;
             span { font-size: var(--fS); text-align: center; color: var(--cG4);
+                &.policy--gray { color: var(--cG3); }
                 a { font-size: var(--fS); color: var(--k1); }}
         }}
     section.pop.credit { 
@@ -748,7 +777,10 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     &:last-child { margin-top: 0; }
                     img { height: 40px; }
                     span { color: white;
-                        span { font-size: var(--fXL); font-weight: bold; }}}}
+                        span { font-size: var(--fXL); font-weight: bold; }}
+                    > div { min-height: 32.5px; gap: 5px; display: flex; align-items: last baseline; }
+                    .tab__count { font-size: var(--fXL); font-weight: bold; }
+                    .tab__loading { min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}}
             section.point { margin-top: 10px; gap: 15px;
                 a.header { height: 100px; padding: 10px; border-radius: 45px 30px 20px 20px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; background-color: white;
                     > div { width: 100%; height: 50px; padding-right: 10px; border-radius: 45px 25px 25px 5px; gap: 15px; display: flex; align-items: center; background-color: var(--cBg);

@@ -101,17 +101,33 @@
                 <div class="bg"></div>
                 <a onclick="switchTab(this, 'point')" class="active">
                     <img src="./icon/pointW.svg">
-                    <span>點數 <span>100</span></span>
+                    <div>
+                        <span class="tab__name">點數</span>
+                        <span class="tab__count">100</span>
+                        <!-- <div class="tab__loading"></div> -->
+                    </div>
                 </a>
                 <a onclick="switchTab(this, 'ticket')">
                     <img src="./icon/ticketW.svg">
-                    <span>優惠券 <span>8</span></span>
+                    <div>
+                        <span class="tab__name">優惠券</span>
+                        <!-- <span class="tab__count">8</span> -->
+                        <div class="tab__loading"></div>
+                    </div>
                 </a>
                 <a onclick="switchTab(this, 'stamp')">
                     <img src="./icon/stampW.svg">
-                    <span>集點卡 <span>1</span></span>
+                    <div>
+                        <span class="tab__name">集點卡</span>
+                        <span class="tab__count">1</span>
+                        <!-- <div class="tab__loading"></div> -->
+                    </div>
                 </a>
             </section>
+            <!-- 點金券 Loading -->
+            <div class="loading transparent loading--body"><div>
+                <img src="./img/milkhouses.png">
+            <div></div></div></div>
             <!-- 點數 -->
             <section class="point">
                 <a class="header" href="point.html">
