@@ -1730,7 +1730,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.discount a.discount__point img,
 .payment section.main section.discount a.discount__coupon img {
-  width: 40px;
+  min-width: 24px;
 }
 .payment section.main section.discount a.discount__point span,
 .payment section.main section.discount a.discount__coupon span {
@@ -1753,7 +1753,7 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cG4);
 }
 .payment section.main section.type .active {
-  border: 1.5px solid var(--k1);
+  border: 1.5px solid var(--k1) !important;
 }
 .payment section.main section.type div.top {
   width: 100%;
@@ -1774,6 +1774,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.type div.credit {
   width: 100%;
+  border: 1.5px solid var(--cBg);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -1791,6 +1792,9 @@ section.pop.visit .popBody div.buttons button span {
   gap: 5px;
   display: flex;
   align-items: center;
+}
+.payment section.main section.type div.credit .credit__top img {
+  min-width: 24px;
 }
 .payment section.main section.type div.credit .credit__top span {
   font-size: var(--fL);
@@ -1810,8 +1814,6 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.type div.credit .credit__top .credit__dropdown i,
 .payment section.main section.type div.credit .credit__top .credit__dropdown svg {
   color: var(--cG4);
-  border-radius: 99px;
-  background-color: var(--cBg);
 }
 .payment section.main section.type div.credit .credit__cards {
   width: 100%;
@@ -1824,6 +1826,7 @@ section.pop.visit .popBody div.buttons button span {
   width: calc(50% - 5px);
   height: 50px;
   padding: 10px;
+  border: 1.5px solid white;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1947,6 +1950,247 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.policy span a {
   font-size: var(--fS);
   color: var(--k1);
+}
+.payment section.pop.points {
+  padding: 0;
+}
+.payment section.pop.points .popBody {
+  padding-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+.payment section.pop.points a.close {
+  width: fit-content;
+  top: 39px;
+  right: 20px;
+  position: absolute;
+}
+.payment section.pop.points a.close u {
+  white-space: nowrap;
+}
+.payment section.pop.points span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.payment section.pop.points div.point__card {
+  height: 90px;
+  margin-bottom: -40px;
+  z-index: 5;
+  animation-name: newCard;
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+.payment section.pop.points div.point__card:last-child {
+  margin-bottom: -20px;
+}
+.payment section.pop.points div.point__card > div {
+  height: 100%;
+  padding: 10px 15px 30px;
+  border-radius: 20px 20px 0 0;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--k1);
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+}
+.payment section.pop.points div.point__card > div * {
+  color: white;
+}
+.payment section.pop.points div.point__card > div .card__top {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.payment section.pop.points div.point__card > div .card__top img {
+  min-width: 34px;
+}
+.payment section.pop.points div.point__card > div .card__top .card__count {
+  font-size: var(--fXL);
+}
+.payment section.pop.points div.point__card > div .card__top .card__info {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.payment section.pop.points div.point__card > div .card__top .card__detail {
+  margin-bottom: -3px;
+  font-size: var(--fS);
+  color: rgba(255, 255, 255, 0.75);
+}
+.payment section.pop.points div.point__card > div .card__top .card__name {
+  font-size: var(--fL);
+}
+.payment section.pop.points div.point__card > div .card__input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.payment section.pop.points div.point__card > div .card__input img {
+  height: 18px;
+  left: 5px;
+  position: absolute;
+}
+.payment section.pop.points div.point__card > div .card__input input {
+  width: 80px;
+  padding: 0 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  font-size: var(--fL);
+  text-align: right;
+}
+.payment section.pop.points div.point__card > div .card__action {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 15px;
+  gap: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.payment section.pop.points div.point__card > div hr {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+.payment section.pop.points div.point__card > div .card__rate {
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
+.payment section.pop.points div.point__card > div .card__rate img {
+  height: 18px;
+}
+.payment section.pop.points div.point__card > div .card__rate span {
+  font-size: var(--fL);
+}
+.payment section.pop.points div.point__card > div .card__description {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  overflow-y: scroll;
+}
+.payment section.pop.coupons {
+  padding: 0;
+}
+.payment section.pop.coupons .popBody {
+  padding-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+.payment section.pop.coupons a.close {
+  width: fit-content;
+  top: 39px;
+  right: 20px;
+  position: absolute;
+}
+.payment section.pop.coupons a.close u {
+  white-space: nowrap;
+}
+.payment section.pop.coupons span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.payment section.pop.coupons div.coupon__card {
+  height: 90px;
+  margin-bottom: -40px;
+  z-index: 5;
+  animation-name: newCard;
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+.payment section.pop.coupons div.coupon__card:last-child {
+  margin-bottom: -20px;
+}
+.payment section.pop.coupons div.coupon__card > div {
+  height: 100%;
+  padding: 15px 15px 30px;
+  border-radius: 20px 20px 0 0;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--k1);
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+}
+.payment section.pop.coupons div.coupon__card > div * {
+  color: white;
+}
+.payment section.pop.coupons div.coupon__card > div .card__top {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.payment section.pop.coupons div.coupon__card > div .card__top .card__info {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.payment section.pop.coupons div.coupon__card > div .card__top .card__detail {
+  font-size: var(--fS);
+  color: rgba(255, 255, 255, 0.75);
+}
+.payment section.pop.coupons div.coupon__card > div .card__top .card__name {
+  font-size: var(--fL);
+}
+.payment section.pop.coupons div.coupon__card > div .card__top img {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
+}
+.payment section.pop.coupons div.coupon__card > div .card__action {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 15px;
+  gap: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.payment section.pop.coupons div.coupon__card > div hr {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+.payment section.pop.coupons div.coupon__card > div .card__description {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  overflow-y: auto;
+}
+@keyframes newCard {
+  0% {
+    height: 90px;
+  }
+  50% {
+    height: 120px;
+  }
+  100% {
+    height: 90px;
+  }
+}
+@keyframes openCard {
+  0% {
+    height: 90px;
+  }
+  100% {
+    height: 400px;
+  }
+}
+@keyframes closeCard {
+  0% {
+    height: 400px;
+  }
+  100% {
+    height: 90px;
+  }
 }
 .payment section.pop.credit .popBody {
   overflow-y: hidden;

@@ -367,7 +367,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         // 優惠折抵
         section.discount {
             a.discount__point, a.discount__coupon { height: 50px; padding: 0 15px; gap: 5px; border-radius: 15px; display: flex; align-items: center; background-color: var(--cBg);
-                img { width: 40px; }
+                img { min-width: 24px; }
                 span { font-size: var(--fL); white-space: nowrap; }
                 span.discount__title { width: 100%; color: var(--cG3); }
                 span.discount__name--none { color: var(--cG4); }
@@ -376,19 +376,20 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         }
         // 付款
         section.type {
-            .active { border: 1.5px solid var(--k1); }
+            .active { border: 1.5px solid var(--k1) !important; }
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }
                 i, svg { color: var(--cRed); }}
-            div.credit { width: 100%; border-radius: 15px; display: flex; flex-direction: column; background-color: var(--cBg);
+            div.credit { width: 100%; border: 1.5px solid var(--cBg); border-radius: 15px; display: flex; flex-direction: column; background-color: var(--cBg);
                 .credit__top { width: 100%; height: 50px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between;
                     a { gap: 5px; display: flex; align-items: center; }
+                    img { min-width: 24px; }
                     span { font-size: var(--fL); }
                     .credit__title { color: var(--cG3); }
                     .credit__dropdown { width: 24px; height: 24px; border: 6px solid var(--cG4); border-radius: 99px; display: flex; align-items: center; justify-content: center;
-                        i, svg { color: var(--cG4); border-radius: 99px; background-color: var(--cBg); }}}
+                        i, svg { color: var(--cG4); }}}
                 .credit__cards { width: 100%; padding: 0 15px 15px; gap: 10px; display: flex; flex-wrap: wrap;
-                    .credit__card { width: calc(50% - 5px); height: 50px; padding: 10px; border-radius: 10px; display: flex; align-items: center; background-color: white;
+                    .credit__card { width: calc(50% - 5px); height: 50px; padding: 10px; border: 1.5px solid white; border-radius: 10px; display: flex; align-items: center; background-color: white;
                         img { width: 40px; }
                         span { width: 100%; text-align: right; }
                         i, svg { color: var(--cG4); }}}
@@ -418,6 +419,50 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 &.policy--gray { color: var(--cG3); }
                 a { font-size: var(--fS); color: var(--k1); }}
         }}
+    section.pop.points { padding: 0;
+        .popBody { padding-bottom: 0; border-radius: 20px 20px 0 0; overflow: hidden; }
+        a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
+            u { white-space: nowrap; }}
+        span.title { font-size: var(--fL); font-weight: bold; }
+        div.point__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
+            &:last-child { margin-bottom: -20px; }
+            > div { height: 100%; padding: 10px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1); box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+                * { color: white; }
+                .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
+                    img { min-width: 34px; }
+                    .card__count { font-size: var(--fXL); }
+                    .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
+                    .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
+                    .card__name { font-size: var(--fL); }}
+                .card__input { position: relative; display: flex; align-items: center;
+                    img { height: 18px; left: 5px; position: absolute; }
+                    input { width: 80px; padding: 0 5px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right; }} 
+                .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
+                hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
+                .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
+                    img { height: 18px; }
+                    span { font-size: var(--fL); }}
+                .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
+    section.pop.coupons { padding: 0;
+        .popBody { padding-bottom: 0; border-radius: 20px 20px 0 0; overflow: hidden; }
+        a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
+            u { white-space: nowrap; }}
+        span.title { font-size: var(--fL); font-weight: bold; }
+        div.coupon__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
+            &:last-child { margin-bottom: -20px; }
+            > div { height: 100%; padding: 15px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1); box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+                * { color: white; }
+                .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
+                    .card__info { margin-right: auto; display: flex; flex-direction: column; }
+                    .card__detail { font-size: var(--fS); color: rgba(white, 0.75); }
+                    .card__name { font-size: var(--fL); }
+                    img { width: 90px; height: 90px; border-radius: 15px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+                .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
+                hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
+                .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: auto; }}}}
+    @keyframes newCard { 0% { height: 90px; } 50% { height: 120px; } 100% { height: 90px; }}
+    @keyframes openCard { 0% { height: 90px; } 100% { height: 400px; }}
+    @keyframes closeCard { 0% { height: 400px; } 100% { height: 90px; }}
     section.pop.credit { 
         .popBody { overflow-y: hidden; }
         span.title { font-size: var(--fL); font-weight: bold; }

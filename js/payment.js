@@ -60,3 +60,43 @@ function popConfirm() {
 function popCredit() {
     document.getElementById("popCredit").style.display = "flex";
     document.body.style.overflow = "hidden"; }
+
+// 點數popup
+function popPoints() {
+    document.getElementById("popPoints").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+function pointCard(e) {
+    var cards = document.getElementsByClassName("point__card");
+    var isOpened = e.closest('.point__card').style.animationName == "openCard"
+    for (var i = 0; i < cards.length; i++) {
+        var card = cards.item(i);
+        card.style.animationDelay = "0s"
+        if (card.style.animationName == "openCard")
+            card.style.animationName = "closeCard";
+        card.style.height = "90px"; }
+    if (isOpened) {
+        e.closest('.point__card').style.animationName = "closeCard";
+        e.closest('.point__card').style.height = "90px"; }
+    else {
+        e.closest('.point__card').style.animationName = "openCard";
+        e.closest('.point__card').style.height = "400px"; }}
+
+// 票券popup
+function popCoupons() {
+    document.getElementById("popCoupons").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+function couponCard(e) {
+    var cards = document.getElementsByClassName("coupon__card");
+    var isOpened = e.closest('.coupon__card').style.animationName == "openCard"
+    for (var i = 0; i < cards.length; i++) {
+        var card = cards.item(i);
+        card.style.animationDelay = "0s"
+        if (card.style.animationName == "openCard")
+            card.style.animationName = "closeCard";
+        card.style.height = "90px"; }
+    if (isOpened) {
+        e.closest('.coupon__card').style.animationName = "closeCard";
+        e.closest('.coupon__card').style.height = "90px"; }
+    else {
+        e.closest('.coupon__card').style.animationName = "openCard";
+        e.closest('.coupon__card').style.height = "400px"; }}
