@@ -160,7 +160,7 @@ a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relati
             img { width: 40px; height: 40px; border-radius: 10px; }
             div.bar { width: 100%; border-radius: 99px; background-color: var(--cG5); overflow: hidden;
                 div { width: 50%; height: 8px; border-radius: 99px; background-color: var(--k1); }}
-            span { font-weight: bold; color: var(--k1); }}}
+            span { font-weight: bold; color: var(--k1); white-space: nowrap; }}}
     div.dot { width: 40px; height: 40px; border-radius: 99px; z-index: 2; position: absolute; background-color: var(--cBg);
         &.left { left: -20px; }
         &.right { right: -20px; }}
@@ -172,9 +172,9 @@ a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relati
             span { font-weight: bold; color: var(--k1); }}}
     > img { width: 100px; height: 100px; border-radius: 10px; }
     span {
-        &.title { font-size: var(--fM); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+        &.title { font-size: var(--fL); color: var(--k1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         &.name { font-size: var(--fS); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-        &.info { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: unset !important;
+        &.info { max-height: 50%; font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: unset !important;
             * { font-size: var(--fS); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: unset !important; }}
         &.date { font-size: var(--fS); }
         &.point { font-size: var(--fL); font-weight: bold; color: var(--k1); }
@@ -369,7 +369,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             a.discount__point, a.discount__coupon { height: 50px; padding: 0 15px; gap: 5px; border-radius: 15px; display: flex; align-items: center; background-color: var(--cBg);
                 img { min-width: 24px; }
                 span { font-size: var(--fL); white-space: nowrap; }
-                span.discount__title { width: 100%; color: var(--cG3); }
+                span.discount__title { margin-right: auto; color: var(--cG3); }
+                span.discount__name { margin-left: 15px; white-space: unset; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 span.discount__name--none { color: var(--cG4); }
                 i, svg { color: var(--cG4); }
             }
@@ -438,7 +439,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     .card__name { font-size: var(--fL); }}
                 .card__input { position: relative; display: flex; align-items: center;
                     img { height: 18px; left: 5px; position: absolute; }
-                    input { width: 80px; padding: 0 5px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right; }} 
+                    input { width: 160px; padding: 0 5px 0 30px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right;
+                        &::placeholder { color: rgba(white, 0.4); }}} 
                 .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
                 hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
                 .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;

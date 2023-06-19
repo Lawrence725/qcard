@@ -762,6 +762,7 @@ a.coupon.stamp div.count div.bar div {
 a.coupon.stamp div.count span {
   font-weight: bold;
   color: var(--k1);
+  white-space: nowrap;
 }
 a.coupon div.dot {
   width: 40px;
@@ -822,7 +823,7 @@ a.coupon > img {
   border-radius: 10px;
 }
 a.coupon span.title {
-  font-size: var(--fM);
+  font-size: var(--fL);
   color: var(--k1);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -839,6 +840,7 @@ a.coupon span.name {
   text-overflow: ellipsis;
 }
 a.coupon span.info {
+  max-height: 50%;
   font-size: var(--fS);
   color: var(--cG3);
   display: -webkit-box;
@@ -1739,8 +1741,18 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.discount a.discount__point span.discount__title,
 .payment section.main section.discount a.discount__coupon span.discount__title {
-  width: 100%;
+  margin-right: auto;
   color: var(--cG3);
+}
+.payment section.main section.discount a.discount__point span.discount__name,
+.payment section.main section.discount a.discount__coupon span.discount__name {
+  margin-left: 15px;
+  white-space: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .payment section.main section.discount a.discount__point span.discount__name--none,
 .payment section.main section.discount a.discount__coupon span.discount__name--none {
@@ -2042,12 +2054,15 @@ section.pop.visit .popBody div.buttons button span {
   position: absolute;
 }
 .payment section.pop.points div.point__card > div .card__input input {
-  width: 80px;
-  padding: 0 5px;
+  width: 160px;
+  padding: 0 5px 0 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 0;
   font-size: var(--fL);
   text-align: right;
+}
+.payment section.pop.points div.point__card > div .card__input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 .payment section.pop.points div.point__card > div .card__action {
   width: 100%;
