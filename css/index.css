@@ -1861,6 +1861,13 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.type div.credit .credit__form input::placeholder {
   color: var(--cG4);
 }
+.payment section.main section.type div.credit .credit__form div {
+  gap: 10px;
+  display: flex;
+}
+.payment section.main section.type div.credit .credit__form label {
+  padding: 0 0 0 20px;
+}
 .payment section.main section.type div.center {
   width: 100%;
   display: flex;
