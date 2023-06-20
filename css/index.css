@@ -43,6 +43,7 @@
   /* QC */
   --k1: #FF9900;
   --k1a: #22798C;
+  --k1b: #96BE0B;
   --k2: #FFEED8;
   /* 桃園
     --k1: #EF6079;
@@ -2032,6 +2033,7 @@ section.pop.visit .popBody div.buttons button span {
   height: 90px;
   min-height: 90px;
   margin-bottom: -40px;
+  scroll-margin: 100px;
   border-radius: 20px 20px 0 0;
   z-index: 5;
   animation-name: newCard;
@@ -2043,6 +2045,12 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.points div.point__card:last-child {
   margin-bottom: 0;
+}
+.payment section.pop.points div.point__card:nth-child(3n) > div {
+  background-color: var(--k1b);
+}
+.payment section.pop.points div.point__card:nth-child(3n+1) > div {
+  background-color: var(--k1a);
 }
 .payment section.pop.points div.point__card > div {
   height: 100%;
@@ -2187,6 +2195,7 @@ section.pop.visit .popBody div.buttons button span {
   height: 90px;
   min-height: 90px;
   margin-bottom: -40px;
+  scroll-margin: 100px;
   border-radius: 20px 20px 0 0;
   z-index: 5;
   animation-name: newCard;
@@ -2197,7 +2206,13 @@ section.pop.visit .popBody div.buttons button span {
   box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
 }
 .payment section.pop.coupons div.coupon__card:last-child {
-  margin-bottom: -20px;
+  margin-bottom: 0;
+}
+.payment section.pop.coupons div.coupon__card:nth-child(3n) > div {
+  background-color: var(--k1b);
+}
+.payment section.pop.coupons div.coupon__card:nth-child(3n+1) > div {
+  background-color: var(--k1a);
 }
 .payment section.pop.coupons div.coupon__card > div {
   height: 100%;
@@ -2267,28 +2282,35 @@ section.pop.visit .popBody div.buttons button span {
 @keyframes newCard {
   0% {
     height: 90px;
+    min-height: 90px;
   }
   50% {
     height: 120px;
+    min-height: 120px;
   }
   100% {
     height: 90px;
+    min-height: 90px;
   }
 }
 @keyframes openCard {
   0% {
     height: 90px;
+    min-height: 90px;
   }
   100% {
     height: 400px;
+    min-height: 400px;
   }
 }
 @keyframes closeCard {
   0% {
     height: 400px;
+    min-height: 400px;
   }
   100% {
     height: 90px;
+    min-height: 90px;
   }
 }
 .payment section.pop.credit .popBody {
