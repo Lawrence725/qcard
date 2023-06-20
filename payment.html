@@ -152,7 +152,7 @@
                     <a class="discount__coupon" onclick="popCoupons()">
                         <img src="./icon/pCoupon.svg">
                         <span class="discount__title">票券</span>
-                        <span class="discount__name discount__name--none">選擇優惠3 4 42 3 6 73 89 33 44</span>
+                        <span class="discount__name discount__name--none">選擇票券</span>
                         <i class="fa-solid fa-chevron-right fa-lg"></i>
                     </a>
                 </section>
@@ -287,6 +287,15 @@
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><u>不使用點數</u></a>
                 <span class="title">點數</span>
+                <!-- 點數Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pPoint.svg">
+                <div></div></div></div>
+                <!-- 無點數 -->
+                <div class="points--none">
+                    <img src="./icon/pPoint.svg">
+                    <span>暫無可用點數</span>
+                </div>
                 <!-- 點數 -->
                 <div class="point__card">
                     <div>
@@ -375,6 +384,15 @@
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><u>不使用票券</u></a>
                 <span class="title">票券</span>
+                <!-- 票券Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pCoupon.svg">
+                <div></div></div></div>
+                <!-- 無票券 -->
+                <div class="coupons--none">
+                    <img src="./icon/pCoupon.svg">
+                    <span>暫無可用票券</span>
+                </div>
                 <!-- 票券 -->
                 <div class="coupon__card">
                     <div>

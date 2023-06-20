@@ -24,8 +24,8 @@
     /* QC */
     --k1: #FF9900;
     --k1a:#22798C;
-    --k2: #F2F1F6;
-    // --k2: #FFEED8;
+    // --k2: #F2F1F6;
+    --k2: #FFEED8;
     /* 桃園
     --k1: #EF6079;
     --k2: #F3CBC7; */
@@ -427,7 +427,10 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
             u { white-space: nowrap; }}
         span.title { font-size: var(--fL); font-weight: bold; }
-        div.points--none { gap: 10px; display: flex; flex-direction: column; align-items: center;
+        div.loading {
+            div { min-width: 65px; min-height: 65px; }
+            img { width: 50px; filter: grayscale(100%); }}
+        div.points--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             img { height: 50px; filter: grayscale(100%); }
             span { font-size: var(--fL); color: var(--cG4); }}
         div.point__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
@@ -455,6 +458,12 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
             u { white-space: nowrap; }}
         span.title { font-size: var(--fL); font-weight: bold; }
+        div.loading {
+            div { min-width: 70px; min-height: 70px; }
+            img { width: 50px; border-radius: 0; filter: grayscale(100%); }}
+        div.coupons--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            img { height: 50px; filter: grayscale(100%); }
+            span { font-size: var(--fL); color: var(--cG4); }}
         div.coupon__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
             &:last-child { margin-bottom: -20px; }
             > div { height: 100%; padding: 15px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1); box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
@@ -603,7 +612,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 // 付款金額
 .price {
     section.head {
-        .bg { background: var(--k1a); }
+        .bg { bottom: -20px; background: var(--k1a); }
         > span { font-size: var(--fXL); color: white; }}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); z-index: 5;
         button span { font-size: var(--fL); }}
