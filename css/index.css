@@ -1460,6 +1460,9 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.head svg {
   color: white;
 }
+.payment section.head .left {
+  width: 50%;
+}
 .payment section.head .left a {
   min-height: 30px;
   display: flex;
@@ -1487,6 +1490,7 @@ section.pop.visit .popBody div.buttons button span {
   white-space: nowrap;
 }
 .payment section.head .right {
+  width: 50%;
   justify-content: right;
 }
 .payment section.head .right a {
