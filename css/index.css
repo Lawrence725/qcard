@@ -1524,6 +1524,9 @@ section.pop.visit .popBody div.buttons button span {
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
+.payment section.foot button .action__img {
+  height: 24px;
+}
 .payment section.foot button .action__content {
   width: 100%;
   display: flex;
