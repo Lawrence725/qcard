@@ -211,7 +211,8 @@ iframe {
 }
 .loading.loading--body {
   width: 100%;
-  height: 150px;
+  min-height: 150px;
+  max-height: 150px;
   position: relative;
   z-index: 4;
 }
@@ -1524,6 +1525,7 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   flex-direction: column;
   align-items: self-start;
+  overflow-x: hidden;
 }
 .payment section.foot button .action__content .action__subtotal {
   margin-bottom: -5px;
@@ -1537,6 +1539,9 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.foot button .action__content .action__subtotal img {
   height: 18px;
+}
+.payment section.foot button .action__content .action__subtotal span {
+  white-space: nowrap;
 }
 .payment section.foot button .action__content .action__total {
   font-size: var(--fXL);
@@ -1975,8 +1980,9 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.points .popBody {
   padding-bottom: 0;
+  margin-bottom: -20px;
   border-radius: 20px 20px 0 0;
-  overflow: hidden;
+  animation-name: popupDiscount;
 }
 .payment section.pop.points a.close {
   width: fit-content;
@@ -2017,15 +2023,19 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.points div.point__card {
   height: 90px;
+  min-height: 90px;
   margin-bottom: -40px;
+  border-radius: 20px 20px 0 0;
   z-index: 5;
   animation-name: newCard;
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  overflow-y: hidden;
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
 }
 .payment section.pop.points div.point__card:last-child {
-  margin-bottom: -20px;
+  margin-bottom: 0;
 }
 .payment section.pop.points div.point__card > div {
   height: 100%;
@@ -2036,7 +2046,6 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   align-items: center;
   background-color: var(--k1);
-  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
 }
 .payment section.pop.points div.point__card > div * {
   color: white;
@@ -2125,8 +2134,9 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.coupons .popBody {
   padding-bottom: 0;
+  margin-bottom: -20px;
   border-radius: 20px 20px 0 0;
-  overflow: hidden;
+  animation-name: popupDiscount;
 }
 .payment section.pop.coupons a.close {
   width: fit-content;
@@ -2168,12 +2178,16 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.pop.coupons div.coupon__card {
   height: 90px;
+  min-height: 90px;
   margin-bottom: -40px;
+  border-radius: 20px 20px 0 0;
   z-index: 5;
   animation-name: newCard;
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  overflow-y: hidden;
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
 }
 .payment section.pop.coupons div.coupon__card:last-child {
   margin-bottom: -20px;
@@ -2187,7 +2201,6 @@ section.pop.visit .popBody div.buttons button span {
   flex-direction: column;
   align-items: center;
   background-color: var(--k1);
-  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
 }
 .payment section.pop.coupons div.coupon__card > div * {
   color: white;
@@ -2235,6 +2248,14 @@ section.pop.visit .popBody div.buttons button span {
   height: 100%;
   opacity: 0.6;
   overflow-y: auto;
+}
+@keyframes popupDiscount {
+  0% {
+    margin-bottom: -100vh;
+  }
+  100% {
+    margin-bottom: -20px;
+  }
 }
 @keyframes newCard {
   0% {

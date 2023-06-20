@@ -85,7 +85,7 @@ iframe                                  { border: 0; }
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     &.transparent { background-color: transparent; pointer-events: none; }
     &.bg { background-color: black; }
-    &.loading--body { width: 100%; height: 150px; position: relative; z-index: 4; }
+    &.loading--body { width: 100%; min-height: 150px; max-height: 150px; position: relative; z-index: 4; }
     > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
         > div { min-width: 100px; min-height: 100px; border: 3px solid var(--k1); border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
         img { width: 80px; border-radius: 99px; position: absolute; }}}
@@ -324,10 +324,11 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 span { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }}}}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; /* background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); */ z-index: 5;
         button { height: 60px; padding: 7.5px 7.5px 7.5px 15px; border-radius: 20px; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
-            .action__content { width: 100%; display: flex; flex-direction: column; align-items: self-start;
+            .action__content { width: 100%; display: flex; flex-direction: column; align-items: self-start; overflow-x: hidden;
                 .action__subtotal { margin-bottom: -5px; gap: 3px; display: flex; align-items: center;
                     * { color: white; opacity: 0.6; }
-                    img { height: 18px; }}
+                    img { height: 18px; }
+                    span { white-space: nowrap; }}
                 .action__total { font-size: var(--fXL); }}
             .action__name { height: 100%; padding: 0 10px; border-radius: 16.25px; display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.15);
                 span { font-size: var(--fL); white-space: nowrap; }}}}
@@ -423,7 +424,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 a { font-size: var(--fS); color: var(--k1); }}
         }}
     section.pop.points { padding: 0;
-        .popBody { padding-bottom: 0; border-radius: 20px 20px 0 0; overflow: hidden; }
+        .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
         a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
             u { white-space: nowrap; }}
         span.title { font-size: var(--fL); font-weight: bold; }
@@ -433,9 +434,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.points--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             img { height: 50px; filter: grayscale(100%); }
             span { font-size: var(--fL); color: var(--cG4); }}
-        div.point__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
-            &:last-child { margin-bottom: -20px; }
-            > div { height: 100%; padding: 10px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1); box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+        div.point__card { height: 90px; min-height: 90px; margin-bottom: -40px; border-radius: 20px 20px 0 0; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+            &:last-child { margin-bottom: 0; }
+            > div { height: 100%; padding: 10px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1);
                 * { color: white; }
                 .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
                     img { min-width: 34px; }
@@ -454,7 +455,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     span { font-size: var(--fL); }}
                 .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
     section.pop.coupons { padding: 0;
-        .popBody { padding-bottom: 0; border-radius: 20px 20px 0 0; overflow: hidden; }
+        .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
         a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
             u { white-space: nowrap; }}
         span.title { font-size: var(--fL); font-weight: bold; }
@@ -464,9 +465,9 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         div.coupons--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             img { height: 50px; filter: grayscale(100%); }
             span { font-size: var(--fL); color: var(--cG4); }}
-        div.coupon__card { height: 90px; margin-bottom: -40px; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
+        div.coupon__card { height: 90px; min-height: 90px; margin-bottom: -40px; border-radius: 20px 20px 0 0; z-index: 5; animation-name: newCard; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
             &:last-child { margin-bottom: -20px; }
-            > div { height: 100%; padding: 15px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1); box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+            > div { height: 100%; padding: 15px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1);
                 * { color: white; }
                 .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
                     .card__info { margin-right: auto; display: flex; flex-direction: column; }
@@ -476,6 +477,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
                 hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
                 .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: auto; }}}}
+    @keyframes popupDiscount { 0% { margin-bottom: -100vh; } 100% { margin-bottom: -20px; }}
     @keyframes newCard { 0% { height: 90px; } 50% { height: 120px; } 100% { height: 90px; }}
     @keyframes openCard { 0% { height: 90px; } 100% { height: 400px; }}
     @keyframes closeCard { 0% { height: 400px; } 100% { height: 90px; }}
