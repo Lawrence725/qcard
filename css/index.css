@@ -2036,7 +2036,7 @@ section.pop.visit .popBody div.buttons button span {
   scroll-margin: 100px;
   border-radius: 20px 20px 0 0;
   z-index: 5;
-  animation-name: newCard;
+  /* animation-name: newCard; */
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -2198,7 +2198,7 @@ section.pop.visit .popBody div.buttons button span {
   scroll-margin: 100px;
   border-radius: 20px 20px 0 0;
   z-index: 5;
-  animation-name: newCard;
+  /* animation-name: newCard; */
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
