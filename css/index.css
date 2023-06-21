@@ -1746,6 +1746,7 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.discount a.discount__point img,
 .payment section.main section.discount a.discount__coupon img {
   min-width: 24px;
+  max-width: 24px;
 }
 .payment section.main section.discount a.discount__point span,
 .payment section.main section.discount a.discount__coupon span {
