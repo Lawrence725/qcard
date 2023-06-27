@@ -20,7 +20,25 @@
         <!-- Header -->
         <section class="head">
             <div class="bg"></div>
+            <div class="top">
+                <a class="left" onclick="popBarcode()">
+                    <i class="fa-solid fa-barcode fa-xl"></i>
+                </a>
+                <a class="right">
+                    <span>陳大文</span>
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
+                </a>
+            </div>
             <span>特約店家名稱</span>
+        </section>
+        <!-- Footer -->
+        <section class="foot">
+            <button onclick="window.location.href='store.html'">
+                <span class="action__total">查看回饋</span>
+                <div class="action__name">
+                    <span>會員中心</span>
+                </div>
+            </button>
         </section>
         <section class="main">
             <section class="detail">
@@ -47,7 +65,7 @@
                     <span class="warning">未於指定時間內進行匯款</span>
                     <span class="strong">請現場支付剩餘NT$90</span>
                 </div>
-                <!--  -->
+                <!-- 匯款 -->
                 <div class="bank">
                     <div>
                         <span class="title">匯款資訊</span>
@@ -91,15 +109,15 @@
                 <!-- 資訊 -->
                 <div class="center">
                     <div>
-                        <span>消費金額</span>
+                        <span>交易金額</span>
                         <span>NT$100</span>
                     </div>
-                    <div>
+                    <div class="sub">
                         <span>點數支付</span>
                         <img src="./icon/point.svg">
                         <span>10</span>
                     </div>
-                    <div>
+                    <div class="sub">
                         <span>其他支付</span>
                         <i class="fa-solid fa-money-bill-wave fa-md"></i>
                         <i class="fa-solid fa-credit-card fa-md"></i>
@@ -127,28 +145,45 @@
                         <span>統一編號</span>
                         <span>87654321</span>
                     </div>
+                    <div class="lineH"></div>
                 </div>
                 <!-- 回饋 -->
                 <div class="bottom">
                     <span class="title">本次消費回饋</span>
-                    <div>
-                        <img src="./icon/mPoint.svg">
-                        <span>筷點</span>
+                    <div class="gift">
+                        <a class="gift__point" onclick="popPoints()">
+                            <div class="gift__icon"><img src="./icon/pPoint.svg"></div>
+                            <span class="gift__title">點數</span>
+                            <span class="gift__name">米哥點 +10</span>
+                            <div class="gift__arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        </a>
+                        <a class="gift__coupon" onclick="popCoupons()">
+                            <div class="gift__icon"><img src="./icon/pCouponG.svg"></div>
+                            <span class="gift__title">票券</span>
+                            <span class="gift__name">滿$100折$10</span>
+                            <div class="gift__arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        </a>
+                    </div>
+                    <!-- <div>
+                        <img src="./icon/ptTaoyuan.svg">
+                        <span>紅利桃子</span>
                         <span>+10</span>
                     </div>
                     <div>
-                        <img src="./icon/mTicket.svg">
+                        <img src="./icon/pCoupon.svg">
                         <span>優惠券</span>
                         <span>滿$100折$10</span>
-                    </div>
-                    <div>
+                    </div> -->
+                    <!-- <div>
                         <img src="./icon/mStamp.svg">
                         <span>集章</span>
                         <span>新春集章活動 x1</span>
-                    </div>
+                    </div> -->
+                    <span class="remark">回饋內容可於下次DDPay支付時進行折抵使用
+                        <br>回饋將於交易完成後30分鐘內存入所屬會員中心</span>
                 </div>
                 <!-- 按鈕 -->
-                <div class="buttons">
+                <!-- <div class="buttons">
                     <button onclick="popBarcode()">
                         <i class="fa-solid fa-barcode"></i>
                         <span>載具條碼</span>
@@ -156,20 +191,183 @@
                     <button onclick="window.location.href='store.html'">
                         <span>會員中心</span>
                     </button>
+                </div> -->
+                <div class="receipt__deco">
+                    <div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div>
                 </div>
             </section>
+            <!-- 加入店家Line -->
+            <a class="line" href="welcome.html">
+                <img src="./icon/line.svg">
+                <div>
+                    <span>加店家LINE好友</span>
+                    <span>優惠資訊不漏接</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-xl"></i>
+            </a>
             <!-- 邀請好友 -->
-            <a class="invite" onclick="popInvite()">
+            <!-- <a class="invite" onclick="popInvite()">
                 <img src="./img/patternSG.png">
                 <span>邀請好友加入<span>Qcard</span>獲得更多優惠</span>
                 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+            </a> -->
             <!-- 加入會員 -->
-            <a class="join" href="welcome.html">
+            <!-- <a class="join" href="welcome.html">
                 <img src="./img/patternST.png">
                 <span>加入<span>Qcard</span>會員獲得更多優惠</span>
                 <i class="fa-solid fa-chevron-right"></i>
-            </a>
+            </a> -->
+        </section>
+        <!-- 點數popup -->
+        <section id="popPoints" class="pop points" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">我的點數</span>
+                <!-- 點數Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pPoint.svg">
+                <div></div></div></div>
+                <!-- 無點數 -->
+                <div class="points--none">
+                    <img src="./icon/pPoint.svg">
+                    <span>暫無可用點數</span>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <!-- <span class="card__detail">使用中</span> -->
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>解除綁定</span>
+                            <i class="fa-solid fa-link-slash"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div style="background-color: #C53A71;">
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <!-- <span class="card__detail">使用中</span> -->
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>解除綁定</span>
+                            <i class="fa-solid fa-link-slash"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div style="background-color: #EF6079;">
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <span class="card__detail">未綁定</span>
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>前往綁定</span>
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 票券popup -->
+        <section id="popCoupons" class="pop coupons" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">我的票券</span>
+                <!-- 票券Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pCoupon.svg">
+                <div></div></div></div>
+                <!-- 無票券 -->
+                <div class="coupons--none">
+                    <img src="./icon/pCoupon.svg">
+                    <span>暫無可用票券</span>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon__card">
+                    <div>
+                        <a class="card__top" onclick="couponCard(this)">
+                            <div class="card__info">
+                                <span class="card__name">新春九五折優惠</span>
+                                <span class="card__detail">臺東美味麵食店</span>
+                                <span class="card__detail">全品項九五折優惠</span>
+                                <span class="card__detail">有效期限：2023-12-31</span>
+                            </div>
+                            <img src="./img/food.png">
+                        </a>
+                        <hr>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon__card">
+                    <div>
+                        <a class="card__top" onclick="couponCard(this)">
+                            <div class="card__info">
+                                <span class="card__name">新春九五折優惠</span>
+                                <span class="card__detail">臺東美味麵食店</span>
+                                <span class="card__detail">全品項九五折優惠</span>
+                                <span class="card__detail">有效期限：2023-12-31</span>
+                            </div>
+                            <img src="./img/food.png">
+                        </a>
+                        <hr>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon__card">
+                    <div>
+                        <a class="card__top" onclick="couponCard(this)">
+                            <div class="card__info">
+                                <span class="card__name">新春九五折優惠</span>
+                                <span class="card__detail">臺東美味麵食店</span>
+                                <span class="card__detail">全品項九五折優惠</span>
+                                <span class="card__detail">有效期限：2023-12-31</span>
+                            </div>
+                            <img src="./img/food.png">
+                        </a>
+                        <hr>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- 載具條碼popup -->
         <section id="popBarcode" class="pop barcode" onclick="popClose(this)">

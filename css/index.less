@@ -22,11 +22,11 @@
     k3: 特殊色 (測試中) */
     --k3: #FFFFFF;
     /* QC */
-    --k1: #FF9900;
-    --k1a:#22798C;
-    --k1b:#96BE0B;
-    // --k2: #F2F1F6;
-    --k2: #FFEED8;
+    --q1: #FF9900;
+    --q1a:#FFEED8;
+    --q2: #22798C;
+    --q3: #96BE0B;
+    --q3a:#EAF2CE;
     /* 桃園
     --k1: #EF6079;
     --k2: #F3CBC7; */
@@ -34,9 +34,9 @@
     --k1: #740008;
     --k2: #F0E1E2;
     --k3: #FFDE33; */
-    /* 米哥烘焙坊
+    /* 米哥烘焙坊 */
     --k1: #DD9A8A;
-    --k2: #F8E8E5; */
+    --k2: #F8E8E5;
     // --k2:     linear-gradient(0deg, fade(#FF9900, 25%), fade(#FF9900, 25%)), white;
     --c1:     #EF6079;
     --c2:     #F3CBC7;
@@ -309,12 +309,72 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     span { color: white !important; }}
                 span { color: var(--cG2) !important; }}}}}
 
+section.pop.points { padding: 0;
+    .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
+    span.title { font-size: var(--fL); font-weight: bold; }
+    div.loading {
+        div { min-width: 65px; min-height: 65px;
+            div { border: 3px solid var(--q1); border-top: 3px solid transparent; }}
+        img { width: 50px; filter: grayscale(100%); }}
+    div.points--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        img { height: 50px; filter: grayscale(100%); }
+        span { font-size: var(--fL); color: var(--cG4); }}
+    div.point__card { height: 90px; min-height: 90px; margin-bottom: -40px; scroll-margin: 100px; border-radius: 20px 20px 0 0; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+        &:last-child { margin-bottom: 0; }
+        &:nth-child(3n) > div { background-color: var(--q3); }
+        &:nth-child(3n+1) > div { background-color: var(--q2); }
+        > div { height: 100%; padding: 10px 15px 40px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1);
+            * { color: white; }
+            .card__top { width: 100%; min-height: 50px; gap: 5px; display: flex; align-items: center;
+                img { min-width: 34px; }
+                .card__count { font-size: var(--fXL); }
+                .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
+                .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
+                .card__name { font-size: var(--fL); }}
+            .card__input { position: relative; display: flex; align-items: center;
+                img { height: 18px; left: 5px; position: absolute; }
+                input { width: 160px; padding: 0 5px 0 30px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right;
+                    &::placeholder { color: rgba(white, 0.4); }}} 
+            .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
+            hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
+            .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
+                img { height: 18px; }
+                span { font-size: var(--fL); }}
+            .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
+section.pop.coupons { padding: 0;
+    .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
+    span.title { font-size: var(--fL); font-weight: bold; }
+    div.loading {
+        div { min-width: 70px; min-height: 70px;
+            div { border: 3px solid var(--q1); border-top: 3px solid transparent; }}
+        img { width: 50px; border-radius: 0; filter: grayscale(100%); }}
+    div.coupons--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        img { height: 50px; filter: grayscale(100%); }
+        span { font-size: var(--fL); color: var(--cG4); }}
+    div.coupon__card { height: 90px; min-height: 90px; margin-bottom: -40px; scroll-margin: 100px; border-radius: 20px 20px 0 0; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+        &:last-child { margin-bottom: 0; }
+        &:nth-child(3n) > div { background-color: var(--q3); }
+        &:nth-child(3n+1) > div { background-color: var(--q2); }
+        > div { height: 100%; padding: 15px 15px 40px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1);
+            * { color: white; }
+            .card__top { width: 100%; min-height: 90px; gap: 5px; display: flex; align-items: flex-start;
+                .card__info { margin-right: auto; display: flex; flex-direction: column; }
+                .card__detail { font-size: var(--fS); color: rgba(white, 0.75); }
+                .card__name { font-size: var(--fL); }
+                img { width: 90px; height: 90px; border-radius: 15px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+            .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
+            hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
+            .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: auto; }}}}
+@keyframes popupDiscount { 0% { margin-bottom: -100vh; } 100% { margin-bottom: -20px; }}
+@keyframes newCard { 0% { height: 90px; min-height: 90px; } 50% { height: 120px; min-height: 120px; } 100% { height: 90px; min-height: 90px; }}
+@keyframes openCard { 0% { height: 90px; min-height: 90px; } 100% { height: 400px; min-height: 400px; }}
+@keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 90px; min-height: 90px; }}
+
 // 付款頁
 .payment { overflow: auto;
     section.head { padding: 10px 20px 0; align-items: flex-start;
-        .bg { bottom: -20px; background: var(--k1a); }
-        span { color: white; }
-        i, svg { color: white; }
+        .bg { bottom: -20px; background: var(--q2); }
+        span, i, svg  { color: white; }
         .left { width: 50%;
             a { min-height: 30px; display: flex; align-items: center; }}
         .center { width: 100%; display: flex; flex-direction: column; align-items: center;
@@ -324,7 +384,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
             a { min-height: 30px; gap: 5px; display: flex; align-items: center;
                 span { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }}}}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; /* background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); */ z-index: 5;
-        button { height: 60px; padding: 7.5px 7.5px 7.5px 15px; border-radius: 20px; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+        button { height: 60px; padding: 7.5px 7.5px 7.5px 15px; border-radius: 20px; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); background-color: var(--q1);
             .action__img { height: 24px; }
             .action__content { width: 100%; display: flex; flex-direction: column; align-items: self-start; overflow-x: hidden;
                 .action__subtotal { margin-bottom: -5px; gap: 3px; display: flex; align-items: center;
@@ -334,17 +394,17 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 .action__total { font-size: var(--fXL); }}
             .action__name { height: 100%; padding: 0 10px; border-radius: 16.25px; display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.15);
                 span { font-size: var(--fL); white-space: nowrap; }}}}
-    section.main { width: 100%; max-width: 430px; padding: 100px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
+    section.main { width: 100%; max-width: 430px; padding: 120px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
         section.spending, section.point, section.discount, section.type, section.phone { width: 100%; gap: 10px; display: flex; flex-direction: column;
             span.title { font-weight: bold; white-space: nowrap; }
             .input { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; justify-content: right; gap: 2px; font-size: var(--fXL); border: 1px solid var(--cG5);
                 input { width: 100%; font-size: var(--fXL); color: var(--cG1) !important; opacity: 1 !important; }}}
         // 登入
-        section.join { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--k1); border-radius: 99px; display: flex; align-items: center; justify-content: space-between; position: relative; background-color: var(--cBg); overflow: hidden;
+        section.join { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--q1); border-radius: 99px; display: flex; align-items: center; justify-content: space-between; position: relative; background-color: var(--cBg); overflow: hidden;
             > * { z-index: 2; }
             img { width: 100%; left: 0; top: 0; position: absolute; }
             span { font-size: var(--fL);
-                span { font-weight: bold; color: var(--k1); }}
+                span { font-weight: bold; color: var(--q1); }}
             i, svg { color: var(--cG4); }}
         // 登出
         section.account { width: 100%; display: flex; align-items: center; justify-content: space-between;
@@ -358,7 +418,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 img { height: 20px; }}
             div.center { width: 100%; display: flex; gap: 10px;
                 a { width: calc(50% - 5px); height: 50px; padding: 0 10px; border-radius: 99px; display: flex; align-items: center; gap: 5px; background-color: var(--cBg);
-                    &.active { border: 1px solid var(--k1); }
+                    &.active { border: 1px solid var(--q1); }
                     img { width: 20px; }
                     div { display: flex; flex-direction: column; gap: 5px;
                         span { line-height: 100%;
@@ -380,7 +440,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         }
         // 付款
         section.type {
-            .active { border: 1.5px solid var(--k1) !important; }
+            .active { border: 1.5px solid var(--q1) !important; }
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }
                 i, svg { color: var(--cRed); }}
@@ -399,7 +459,8 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                         i, svg { color: var(--cG4); }}}
                 .credit__form { width: 100%; padding: 0 15px 15px; gap: 15px; display: flex; flex-direction: column;
                     input { width: 100%; height: 30px; padding: 0 5px 5px; border-bottom: 1px solid var(--cG5); border-radius: 0; font-size: var(--fL);
-                        &::placeholder { color: var(--cG4); }}
+                        &::placeholder { color: var(--cG4); }
+                        &:checked ~ .checkmark { background-color: var(--q1); border: 2px solid var(--q1); }}
                     div { gap: 10px; display: flex; }
                     label { padding: 0 0 0 20px; }}
             }
@@ -423,77 +484,18 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
         section.policy { width: 100%; gap: 5px; display: flex; flex-direction: column; align-items: center;
             span { font-size: var(--fS); text-align: center; color: var(--cG4);
                 &.policy--gray { color: var(--cG3); }
-                a { font-size: var(--fS); color: var(--k1); }}
+                a { font-size: var(--fS); color: var(--q1); }}
         }}
-    section.pop.points { padding: 0;
-        .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
+    section.pop.points, section.pop.coupons {
         a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
-            u { white-space: nowrap; }}
-        span.title { font-size: var(--fL); font-weight: bold; }
-        div.loading {
-            div { min-width: 65px; min-height: 65px; }
-            img { width: 50px; filter: grayscale(100%); }}
-        div.points--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            img { height: 50px; filter: grayscale(100%); }
-            span { font-size: var(--fL); color: var(--cG4); }}
-        div.point__card { height: 90px; min-height: 90px; margin-bottom: -40px; scroll-margin: 100px; border-radius: 20px 20px 0 0; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-            &:last-child { margin-bottom: 0; }
-            &:nth-child(3n) > div { background-color: var(--k1b); }
-            &:nth-child(3n+1) > div { background-color: var(--k1a); }
-            > div { height: 100%; padding: 10px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1);
-                * { color: white; }
-                .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
-                    img { min-width: 34px; }
-                    .card__count { font-size: var(--fXL); }
-                    .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
-                    .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
-                    .card__name { font-size: var(--fL); }}
-                .card__input { position: relative; display: flex; align-items: center;
-                    img { height: 18px; left: 5px; position: absolute; }
-                    input { width: 160px; padding: 0 5px 0 30px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right;
-                        &::placeholder { color: rgba(white, 0.4); }}} 
-                .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
-                hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
-                .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
-                    img { height: 18px; }
-                    span { font-size: var(--fL); }}
-                .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
-    section.pop.coupons { padding: 0;
-        .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
-        a.close { width: fit-content; top: 39px; right: 20px; position: absolute;
-            u { white-space: nowrap; }}
-        span.title { font-size: var(--fL); font-weight: bold; }
-        div.loading {
-            div { min-width: 70px; min-height: 70px; }
-            img { width: 50px; border-radius: 0; filter: grayscale(100%); }}
-        div.coupons--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            img { height: 50px; filter: grayscale(100%); }
-            span { font-size: var(--fL); color: var(--cG4); }}
-        div.coupon__card { height: 90px; min-height: 90px; margin-bottom: -40px; scroll-margin: 100px; border-radius: 20px 20px 0 0; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-            &:last-child { margin-bottom: 0; }
-            &:nth-child(3n) > div { background-color: var(--k1b); }
-            &:nth-child(3n+1) > div { background-color: var(--k1a); }
-            > div { height: 100%; padding: 15px 15px 30px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--k1);
-                * { color: white; }
-                .card__top { width: 100%; gap: 5px; display: flex; align-items: center;
-                    .card__info { margin-right: auto; display: flex; flex-direction: column; }
-                    .card__detail { font-size: var(--fS); color: rgba(white, 0.75); }
-                    .card__name { font-size: var(--fL); }
-                    img { width: 90px; height: 90px; border-radius: 15px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
-                .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
-                hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
-                .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: auto; }}}}
-    @keyframes popupDiscount { 0% { margin-bottom: -100vh; } 100% { margin-bottom: -20px; }}
-    @keyframes newCard { 0% { height: 90px; min-height: 90px; } 50% { height: 120px; min-height: 120px; } 100% { height: 90px; min-height: 90px; }}
-    @keyframes openCard { 0% { height: 90px; min-height: 90px; } 100% { height: 400px; min-height: 400px; }}
-    @keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 90px; min-height: 90px; }}
+            u { white-space: nowrap; }}}
     section.pop.credit { 
         .popBody { overflow-y: hidden; }
         span.title { font-size: var(--fL); font-weight: bold; }
         span.message { margin-top: -20px; font-size: var(--fS); color: var(--cRed) !important; }
         div.list { display: flex; flex-direction: column; gap: 10px;
             a { width: 100%; height: 40px; padding: 0 10px; border-radius: 99px; display: flex; gap: 10px; align-items: center; background-color: var(--cBg);
-                &.active { border: 1px solid var(--k1); }
+                &.active { border: 1px solid var(--q1); }
                 span { white-space: nowrap;
                     &:first-child { width: 100%; }
                     &:nth-child(2) { font-size: var(--fS); color: var(--cG3); }}
@@ -524,14 +526,17 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                 &.cost { font-size: var(--fXXL); }
                 &.subTitle { font-size: var(fS); color: var(--cG3); }}
             div.buttons { width: 100%; display: flex; gap: 10px;
+                button { background-color: var(--q1); }
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }}}}}
     section.pop.notice#popApple {
         div.icon { margin-top: -50px;
-            > img { height: 60px; border-radius: 6px; }}}
+            > img { height: 60px; border-radius: 6px; }}
+        button { background-color: var(--q1); }}
     section.pop.notice.error {
         .icon div { border: 7.5px solid var(--cRed);
-            i, svg { color: var(--cRed); }}}
+            i, svg { color: var(--cRed); }}
+        button { background-color: var(--q1); }}
     section.pop.notice.order .popBody { overflow-y: scroll;
         div.content { align-items: flex-start; gap: 10px;
             span { margin-left: 24px; color: var(--cG3); text-align: left;
@@ -543,18 +548,25 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 .result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
     &.topup {
         section.head {
-            div.bg { background: var(--k1); }
+            div.bg { background: var(--q1); }
             > div:not(.bg) { display: flex; flex-direction: column; align-items: center;
                 span { color: white;
-                    &:last-child { font-size: var(--fL); }}
-            }
-        }
-    }
-    section.head {
-        .bg { background: var(--k1a); }
+                    &:last-child { font-size: var(--fL); }}}}}
+    section.head { padding: 10px 20px 0; gap: 0; flex-direction: column;
+        .bg { bottom: -20px; background: var(--q2); }
+        span, i, svg { color: white; }
+        .top { width: 100%; display: flex; align-items: center;
+            > a { min-height: 30px; gap: 5px; display: flex; align-items: center; }
+            .left { margin-right: auto; }
+            .right { margin-left: auto; }}
         > span { font-size: var(--fXL); color: white; }}
-    section.main { width: 100%; max-width: 430px; padding: 140px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;
-        section.detail { width: 100%; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; gap: 30px; background-color: white;
+    section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; /* background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); */ z-index: 5;
+        button { height: 60px; padding: 7.5px 7.5px 7.5px 15px; border-radius: 20px; background-color: var(--q1); box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+            .action__total { font-size: var(--fXL); }
+            .action__name { height: 100%; padding: 0 10px; margin-left: auto; border-radius: 16.25px; display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.15);
+                span { font-size: var(--fL); white-space: nowrap; }}}}
+    section.main { width: 100%; max-width: 430px; padding: 160px 20px 200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;
+        section.detail { width: 100%; padding: 20px; position: relative; display: flex; flex-direction: column; gap: 15px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
             div.top { display: flex; flex-direction: column; align-items: center;
                 div.icon { animation: spark 1s linear infinite; }
                 @keyframes spark { 0% { opacity: 1; } 25% { opacity: 1; } 50% { opacity: 0; }100% { opacity: 1; }}
@@ -583,34 +595,52 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                         &.remark { font-size: var(--fXS); color: var(--cRed); white-space: unset; }}
                     button { width: fit-content; height: 30px; padding: 0 10px; margin-left: 10px; background-color: #29617F; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
                         i, svg { color: white; }
-                        span { font-size: var(--fS); }}
-                }
-            }
+                        span { font-size: var(--fS); }}}}
             div.center { display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 2px;
-                    &.lineH { width: 100%; height: 1px; margin: 10px 0; background-color: var(--cG5); }
+                    &.sub { padding-left: 16px; }
+                    &.lineH { width: 100%; height: 2px; margin: 5px 0; background: repeating-linear-gradient(90deg,var(--cG5) 0 10px,#0000 0 20px); }
                     span { white-space: nowrap;
                         &:first-child { width: 100%; color: var(--cG3); }}
                     img { height: 18px; }}}
-            div.bottom { width: 100%; padding: 10px 15px; border: 1px solid var(--cG5); border-radius: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;
-                > div { width: 100%; display: flex; align-items: center; gap: 2px;
+            div.bottom { width: 100%; display: flex; flex-direction: column; gap: 15px; align-items: center; z-index: 1;
+                div.gift { width: 100%; height: 100px; gap: 10px; display: flex;
+                    a { width: 100%; padding: 10px; border-radius: 15px 15px 5px 15px; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; background: var(--q1a);
+                        &.gift__coupon { background-color: var(--q3a);
+                            .gift__arrow { i, svg { color: var(--q3); }}}
+                        .gift__icon { width: 24px; height: 24px; top: 10px; left: 10px; position: absolute; display: flex; align-items: center; justify-content: center;
+                            img { width: 24px; }}
+                        .gift__title { font-size: var(--fL); }
+                        .gift__name { max-width: calc(100% - 26px); color: var(--cG3); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                        .gift__arrow { width: 24px; height: 24px;border-radius: 99px; bottom: 10px; right: 10px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: white;
+                            i, svg { color: var(--q1); }}}}
+                > div:not(.gift) { width: 100%; display: flex; align-items: center; gap: 2px;
                     span { white-space: nowrap; }
                     span:nth-child(2) { width: 100%; color: var(--cG3); }
                     img { min-width: 24px; height: 18px; object-fit: contain; }}
-                span.title { color: var(--k1); }}
+                span.title { font-weight: bold; }
+                span.remark { width: 100%; font-size: var(--fS); text-align: center; color: var(--cG4); }}
             div.buttons { display: flex; gap: 10px;
                 button:first-child { background-color: var(--cBg);
                     span { color: var(--cG2) !important; }
-                    i, svg { color: var(--k1); }}
-                button:last-child { background-color: var(--k1);
-                    span { color: white !important; }}}}
-        a.invite { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--k1); border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: white; overflow: hidden;
+                    i, svg { color: var(--q1); }}
+                button:last-child { background-color: var(--q1);
+                    span { color: white !important; }}}
+            div.receipt__deco { width: 100%; min-height: 50px; left: 0; bottom: -20px; position: absolute; display: flex; align-items: center; justify-content: center; overflow-x: hidden; z-index: 0;
+                div { min-width: 30px; max-width: 30px; min-height: 30px; max-height: 30px; border-radius: 3px; background-color: white; transform: rotate(45deg); }}}
+        a.line { width: 100%; height: 60px; padding: 7.5px 15px; border-radius: 20px; gap: 10px; display: flex; align-items: center; background-color: #5CBD36; box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20);
+            img, span, i, svg { color: white; }
+            img { height: 30px; }
+            > div { margin-right: auto; display: flex; flex-direction: column; }
+            span:first-child { font-size: var(--fL); }
+            span:not(:first-child) { margin-top: -2px; font-size: var(--fS); }}
+        a.invite { width: 100%; height: 50px; padding: 0 15px; border: 1px solid var(--q1); border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: white; overflow: hidden;
             > * { z-index: 2; }
             img { width: 100%; left: 0; top: 0; position: absolute; }
             span { font-size: var(--fL);
-                span { font-weight: bold; color: var(--k1); }}
+                span { font-weight: bold; color: var(--q1); }}
             i, svg { color: var(--cG4); }}
-        a.join { width: 100%; height: 50px; padding: 0 15px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: var(--k1); overflow: hidden;
+        a.join { width: 100%; height: 50px; padding: 0 15px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: space-between; background-color: var(--q1); overflow: hidden;
             > * { z-index: 2; }
             img { width: 100%; left: 0; top: 0; position: absolute; }
             span { font-size: var(--fL); color: white;
@@ -620,13 +650,14 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
 // 付款金額
 .price {
     section.head {
-        .bg { bottom: -20px; background: var(--k1a); }
+        .bg { bottom: -20px; background: var(--q2); }
         > span { font-size: var(--fXL); color: white; }}
     section.foot { width: 100%; max-width: 430px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); border-radius: 20px 20px 0 0; position: fixed; bottom: 0; background-color: fade(white, 95%); z-index: 5;
-        button span { font-size: var(--fL); }}
-    section.main { width: 100%; max-width: 430px; padding: 130px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 50px;
+        button { background-color: var(--q1);
+            span { font-size: var(--fL); }}}
+    section.main { width: 100%; max-width: 430px; padding: 120px 20px 50px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px;
         span.title { font-size: var(--fL); font-weight: bold; }
-        span.cost { font-size: var(--fXXL); color: var(--k1); }
+        span.cost { font-size: var(--fXXL); color: var(--q1); }
         div.keyboard { width: 100%; display: flex; flex-direction: column; gap: 10px;
             div { width: 100%; display: flex; gap: 10px;
                 a { width: 100%; height: 60px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: var(--cBg); font-size: var(--fXL);

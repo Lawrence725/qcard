@@ -41,10 +41,11 @@
     k3: 特殊色 (測試中) */
   --k3: #FFFFFF;
   /* QC */
-  --k1: #FF9900;
-  --k1a: #22798C;
-  --k1b: #96BE0B;
-  --k2: #FFEED8;
+  --q1: #FF9900;
+  --q1a: #FFEED8;
+  --q2: #22798C;
+  --q3: #96BE0B;
+  --q3a: #EAF2CE;
   /* 桃園
     --k1: #EF6079;
     --k2: #F3CBC7; */
@@ -52,9 +53,9 @@
     --k1: #740008;
     --k2: #F0E1E2;
     --k3: #FFDE33; */
-  /* 米哥烘焙坊
-    --k1: #DD9A8A;
-    --k2: #F8E8E5; */
+  /* 米哥烘焙坊 */
+  --k1: #DD9A8A;
+  --k2: #F8E8E5;
   --c1: #EF6079;
   --c2: #F3CBC7;
   --c3: #5CB8B2;
@@ -1443,6 +1444,328 @@ section.pop.visit .popBody div.buttons button:last-child span {
 section.pop.visit .popBody div.buttons button span {
   color: var(--cG2) !important;
 }
+section.pop.points {
+  padding: 0;
+}
+section.pop.points .popBody {
+  padding-bottom: 0;
+  margin-bottom: -20px;
+  border-radius: 20px 20px 0 0;
+  animation-name: popupDiscount;
+}
+section.pop.points span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+section.pop.points div.loading div {
+  min-width: 65px;
+  min-height: 65px;
+}
+section.pop.points div.loading div div {
+  border: 3px solid var(--q1);
+  border-top: 3px solid transparent;
+}
+section.pop.points div.loading img {
+  width: 50px;
+  filter: grayscale(100%);
+}
+section.pop.points div.points--none {
+  min-height: 150px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.pop.points div.points--none img {
+  height: 50px;
+  filter: grayscale(100%);
+}
+section.pop.points div.points--none span {
+  font-size: var(--fL);
+  color: var(--cG4);
+}
+section.pop.points div.point__card {
+  height: 90px;
+  min-height: 90px;
+  margin-bottom: -40px;
+  scroll-margin: 100px;
+  border-radius: 20px 20px 0 0;
+  z-index: 5;
+  /* animation-name: newCard; */
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  overflow-y: hidden;
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+}
+section.pop.points div.point__card:last-child {
+  margin-bottom: 0;
+}
+section.pop.points div.point__card:nth-child(3n) > div {
+  background-color: var(--q3);
+}
+section.pop.points div.point__card:nth-child(3n+1) > div {
+  background-color: var(--q2);
+}
+section.pop.points div.point__card > div {
+  height: 100%;
+  padding: 10px 15px 40px;
+  border-radius: 20px 20px 0 0;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--q1);
+}
+section.pop.points div.point__card > div * {
+  color: white;
+}
+section.pop.points div.point__card > div .card__top {
+  width: 100%;
+  min-height: 50px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+section.pop.points div.point__card > div .card__top img {
+  min-width: 34px;
+}
+section.pop.points div.point__card > div .card__top .card__count {
+  font-size: var(--fXL);
+}
+section.pop.points div.point__card > div .card__top .card__info {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+section.pop.points div.point__card > div .card__top .card__detail {
+  margin-bottom: -3px;
+  font-size: var(--fS);
+  color: rgba(255, 255, 255, 0.75);
+}
+section.pop.points div.point__card > div .card__top .card__name {
+  font-size: var(--fL);
+}
+section.pop.points div.point__card > div .card__input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+section.pop.points div.point__card > div .card__input img {
+  height: 18px;
+  left: 5px;
+  position: absolute;
+}
+section.pop.points div.point__card > div .card__input input {
+  width: 160px;
+  padding: 0 5px 0 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  font-size: var(--fL);
+  text-align: right;
+}
+section.pop.points div.point__card > div .card__input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+section.pop.points div.point__card > div .card__action {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 15px;
+  gap: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+section.pop.points div.point__card > div hr {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+section.pop.points div.point__card > div .card__rate {
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
+section.pop.points div.point__card > div .card__rate img {
+  height: 18px;
+}
+section.pop.points div.point__card > div .card__rate span {
+  font-size: var(--fL);
+}
+section.pop.points div.point__card > div .card__description {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  overflow-y: scroll;
+}
+section.pop.coupons {
+  padding: 0;
+}
+section.pop.coupons .popBody {
+  padding-bottom: 0;
+  margin-bottom: -20px;
+  border-radius: 20px 20px 0 0;
+  animation-name: popupDiscount;
+}
+section.pop.coupons span.title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+section.pop.coupons div.loading div {
+  min-width: 70px;
+  min-height: 70px;
+}
+section.pop.coupons div.loading div div {
+  border: 3px solid var(--q1);
+  border-top: 3px solid transparent;
+}
+section.pop.coupons div.loading img {
+  width: 50px;
+  border-radius: 0;
+  filter: grayscale(100%);
+}
+section.pop.coupons div.coupons--none {
+  min-height: 150px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.pop.coupons div.coupons--none img {
+  height: 50px;
+  filter: grayscale(100%);
+}
+section.pop.coupons div.coupons--none span {
+  font-size: var(--fL);
+  color: var(--cG4);
+}
+section.pop.coupons div.coupon__card {
+  height: 90px;
+  min-height: 90px;
+  margin-bottom: -40px;
+  scroll-margin: 100px;
+  border-radius: 20px 20px 0 0;
+  z-index: 5;
+  /* animation-name: newCard; */
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  overflow-y: hidden;
+  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
+}
+section.pop.coupons div.coupon__card:last-child {
+  margin-bottom: 0;
+}
+section.pop.coupons div.coupon__card:nth-child(3n) > div {
+  background-color: var(--q3);
+}
+section.pop.coupons div.coupon__card:nth-child(3n+1) > div {
+  background-color: var(--q2);
+}
+section.pop.coupons div.coupon__card > div {
+  height: 100%;
+  padding: 15px 15px 40px;
+  border-radius: 20px 20px 0 0;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--q1);
+}
+section.pop.coupons div.coupon__card > div * {
+  color: white;
+}
+section.pop.coupons div.coupon__card > div .card__top {
+  width: 100%;
+  min-height: 90px;
+  gap: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+section.pop.coupons div.coupon__card > div .card__top .card__info {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+section.pop.coupons div.coupon__card > div .card__top .card__detail {
+  font-size: var(--fS);
+  color: rgba(255, 255, 255, 0.75);
+}
+section.pop.coupons div.coupon__card > div .card__top .card__name {
+  font-size: var(--fL);
+}
+section.pop.coupons div.coupon__card > div .card__top img {
+  width: 90px;
+  height: 90px;
+  border-radius: 15px;
+  filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
+}
+section.pop.coupons div.coupon__card > div .card__action {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 15px;
+  gap: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+section.pop.coupons div.coupon__card > div hr {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+section.pop.coupons div.coupon__card > div .card__description {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  overflow-y: auto;
+}
+@keyframes popupDiscount {
+  0% {
+    margin-bottom: -100vh;
+  }
+  100% {
+    margin-bottom: -20px;
+  }
+}
+@keyframes newCard {
+  0% {
+    height: 90px;
+    min-height: 90px;
+  }
+  50% {
+    height: 120px;
+    min-height: 120px;
+  }
+  100% {
+    height: 90px;
+    min-height: 90px;
+  }
+}
+@keyframes openCard {
+  0% {
+    height: 90px;
+    min-height: 90px;
+  }
+  100% {
+    height: 400px;
+    min-height: 400px;
+  }
+}
+@keyframes closeCard {
+  0% {
+    height: 400px;
+    min-height: 400px;
+  }
+  100% {
+    height: 90px;
+    min-height: 90px;
+  }
+}
 .payment {
   overflow: auto;
 }
@@ -1452,11 +1775,9 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.head .bg {
   bottom: -20px;
-  background: var(--k1a);
+  background: var(--q2);
 }
-.payment section.head span {
-  color: white;
-}
+.payment section.head span,
 .payment section.head i,
 .payment section.head svg {
   color: white;
@@ -1524,6 +1845,7 @@ section.pop.visit .popBody div.buttons button span {
   padding: 7.5px 7.5px 7.5px 15px;
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+  background-color: var(--q1);
 }
 .payment section.foot button .action__img {
   height: 24px;
@@ -1569,7 +1891,7 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main {
   width: 100%;
   max-width: 430px;
-  padding: 100px 20px 160px;
+  padding: 120px 20px 160px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1623,7 +1945,7 @@ section.pop.visit .popBody div.buttons button span {
   width: 100%;
   height: 50px;
   padding: 0 15px;
-  border: 1px solid var(--k1);
+  border: 1px solid var(--q1);
   border-radius: 99px;
   display: flex;
   align-items: center;
@@ -1646,7 +1968,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.join span span {
   font-weight: bold;
-  color: var(--k1);
+  color: var(--q1);
 }
 .payment section.main section.join i,
 .payment section.main section.join svg {
@@ -1697,7 +2019,7 @@ section.pop.visit .popBody div.buttons button span {
   background-color: var(--cBg);
 }
 .payment section.main section.point div.center a.active {
-  border: 1px solid var(--k1);
+  border: 1px solid var(--q1);
 }
 .payment section.main section.point div.center a img {
   width: 20px;
@@ -1779,7 +2101,7 @@ section.pop.visit .popBody div.buttons button span {
   color: var(--cG4);
 }
 .payment section.main section.type .active {
-  border: 1.5px solid var(--k1) !important;
+  border: 1.5px solid var(--q1) !important;
 }
 .payment section.main section.type div.top {
   width: 100%;
@@ -1887,6 +2209,10 @@ section.pop.visit .popBody div.buttons button span {
 .payment section.main section.type div.credit .credit__form input::placeholder {
   color: var(--cG4);
 }
+.payment section.main section.type div.credit .credit__form input:checked ~ .checkmark {
+  background-color: var(--q1);
+  border: 2px solid var(--q1);
+}
 .payment section.main section.type div.credit .credit__form div {
   gap: 10px;
   display: flex;
@@ -1982,337 +2308,18 @@ section.pop.visit .popBody div.buttons button span {
 }
 .payment section.main section.policy span a {
   font-size: var(--fS);
-  color: var(--k1);
+  color: var(--q1);
 }
-.payment section.pop.points {
-  padding: 0;
-}
-.payment section.pop.points .popBody {
-  padding-bottom: 0;
-  margin-bottom: -20px;
-  border-radius: 20px 20px 0 0;
-  animation-name: popupDiscount;
-}
-.payment section.pop.points a.close {
-  width: fit-content;
-  top: 39px;
-  right: 20px;
-  position: absolute;
-}
-.payment section.pop.points a.close u {
-  white-space: nowrap;
-}
-.payment section.pop.points span.title {
-  font-size: var(--fL);
-  font-weight: bold;
-}
-.payment section.pop.points div.loading div {
-  min-width: 65px;
-  min-height: 65px;
-}
-.payment section.pop.points div.loading img {
-  width: 50px;
-  filter: grayscale(100%);
-}
-.payment section.pop.points div.points--none {
-  min-height: 150px;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.payment section.pop.points div.points--none img {
-  height: 50px;
-  filter: grayscale(100%);
-}
-.payment section.pop.points div.points--none span {
-  font-size: var(--fL);
-  color: var(--cG4);
-}
-.payment section.pop.points div.point__card {
-  height: 90px;
-  min-height: 90px;
-  margin-bottom: -40px;
-  scroll-margin: 100px;
-  border-radius: 20px 20px 0 0;
-  z-index: 5;
-  /* animation-name: newCard; */
-  animation-delay: 0.5s;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  overflow-y: hidden;
-  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-}
-.payment section.pop.points div.point__card:last-child {
-  margin-bottom: 0;
-}
-.payment section.pop.points div.point__card:nth-child(3n) > div {
-  background-color: var(--k1b);
-}
-.payment section.pop.points div.point__card:nth-child(3n+1) > div {
-  background-color: var(--k1a);
-}
-.payment section.pop.points div.point__card > div {
-  height: 100%;
-  padding: 10px 15px 30px;
-  border-radius: 20px 20px 0 0;
-  gap: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--k1);
-}
-.payment section.pop.points div.point__card > div * {
-  color: white;
-}
-.payment section.pop.points div.point__card > div .card__top {
-  width: 100%;
-  gap: 5px;
-  display: flex;
-  align-items: center;
-}
-.payment section.pop.points div.point__card > div .card__top img {
-  min-width: 34px;
-}
-.payment section.pop.points div.point__card > div .card__top .card__count {
-  font-size: var(--fXL);
-}
-.payment section.pop.points div.point__card > div .card__top .card__info {
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.payment section.pop.points div.point__card > div .card__top .card__detail {
-  margin-bottom: -3px;
-  font-size: var(--fS);
-  color: rgba(255, 255, 255, 0.75);
-}
-.payment section.pop.points div.point__card > div .card__top .card__name {
-  font-size: var(--fL);
-}
-.payment section.pop.points div.point__card > div .card__input {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.payment section.pop.points div.point__card > div .card__input img {
-  height: 18px;
-  left: 5px;
-  position: absolute;
-}
-.payment section.pop.points div.point__card > div .card__input input {
-  width: 160px;
-  padding: 0 5px 0 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 0;
-  font-size: var(--fL);
-  text-align: right;
-}
-.payment section.pop.points div.point__card > div .card__input input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-.payment section.pop.points div.point__card > div .card__action {
-  width: 100%;
-  min-height: 40px;
-  border-radius: 15px;
-  gap: 2.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.25);
-}
-.payment section.pop.points div.point__card > div hr {
-  width: 100%;
-  border: 1px dashed rgba(255, 255, 255, 0.5);
-}
-.payment section.pop.points div.point__card > div .card__rate {
-  gap: 2px;
-  display: flex;
-  align-items: center;
-  opacity: 0.6;
-}
-.payment section.pop.points div.point__card > div .card__rate img {
-  height: 18px;
-}
-.payment section.pop.points div.point__card > div .card__rate span {
-  font-size: var(--fL);
-}
-.payment section.pop.points div.point__card > div .card__description {
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  overflow-y: scroll;
-}
-.payment section.pop.coupons {
-  padding: 0;
-}
-.payment section.pop.coupons .popBody {
-  padding-bottom: 0;
-  margin-bottom: -20px;
-  border-radius: 20px 20px 0 0;
-  animation-name: popupDiscount;
-}
+.payment section.pop.points a.close,
 .payment section.pop.coupons a.close {
   width: fit-content;
   top: 39px;
   right: 20px;
   position: absolute;
 }
+.payment section.pop.points a.close u,
 .payment section.pop.coupons a.close u {
   white-space: nowrap;
-}
-.payment section.pop.coupons span.title {
-  font-size: var(--fL);
-  font-weight: bold;
-}
-.payment section.pop.coupons div.loading div {
-  min-width: 70px;
-  min-height: 70px;
-}
-.payment section.pop.coupons div.loading img {
-  width: 50px;
-  border-radius: 0;
-  filter: grayscale(100%);
-}
-.payment section.pop.coupons div.coupons--none {
-  min-height: 150px;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.payment section.pop.coupons div.coupons--none img {
-  height: 50px;
-  filter: grayscale(100%);
-}
-.payment section.pop.coupons div.coupons--none span {
-  font-size: var(--fL);
-  color: var(--cG4);
-}
-.payment section.pop.coupons div.coupon__card {
-  height: 90px;
-  min-height: 90px;
-  margin-bottom: -40px;
-  scroll-margin: 100px;
-  border-radius: 20px 20px 0 0;
-  z-index: 5;
-  /* animation-name: newCard; */
-  animation-delay: 0.5s;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  overflow-y: hidden;
-  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-}
-.payment section.pop.coupons div.coupon__card:last-child {
-  margin-bottom: 0;
-}
-.payment section.pop.coupons div.coupon__card:nth-child(3n) > div {
-  background-color: var(--k1b);
-}
-.payment section.pop.coupons div.coupon__card:nth-child(3n+1) > div {
-  background-color: var(--k1a);
-}
-.payment section.pop.coupons div.coupon__card > div {
-  height: 100%;
-  padding: 15px 15px 30px;
-  border-radius: 20px 20px 0 0;
-  gap: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--k1);
-}
-.payment section.pop.coupons div.coupon__card > div * {
-  color: white;
-}
-.payment section.pop.coupons div.coupon__card > div .card__top {
-  width: 100%;
-  gap: 5px;
-  display: flex;
-  align-items: center;
-}
-.payment section.pop.coupons div.coupon__card > div .card__top .card__info {
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-.payment section.pop.coupons div.coupon__card > div .card__top .card__detail {
-  font-size: var(--fS);
-  color: rgba(255, 255, 255, 0.75);
-}
-.payment section.pop.coupons div.coupon__card > div .card__top .card__name {
-  font-size: var(--fL);
-}
-.payment section.pop.coupons div.coupon__card > div .card__top img {
-  width: 90px;
-  height: 90px;
-  border-radius: 15px;
-  filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2));
-}
-.payment section.pop.coupons div.coupon__card > div .card__action {
-  width: 100%;
-  min-height: 40px;
-  border-radius: 15px;
-  gap: 2.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.25);
-}
-.payment section.pop.coupons div.coupon__card > div hr {
-  width: 100%;
-  border: 1px dashed rgba(255, 255, 255, 0.5);
-}
-.payment section.pop.coupons div.coupon__card > div .card__description {
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  overflow-y: auto;
-}
-@keyframes popupDiscount {
-  0% {
-    margin-bottom: -100vh;
-  }
-  100% {
-    margin-bottom: -20px;
-  }
-}
-@keyframes newCard {
-  0% {
-    height: 90px;
-    min-height: 90px;
-  }
-  50% {
-    height: 120px;
-    min-height: 120px;
-  }
-  100% {
-    height: 90px;
-    min-height: 90px;
-  }
-}
-@keyframes openCard {
-  0% {
-    height: 90px;
-    min-height: 90px;
-  }
-  100% {
-    height: 400px;
-    min-height: 400px;
-  }
-}
-@keyframes closeCard {
-  0% {
-    height: 400px;
-    min-height: 400px;
-  }
-  100% {
-    height: 90px;
-    min-height: 90px;
-  }
 }
 .payment section.pop.credit .popBody {
   overflow-y: hidden;
@@ -2342,7 +2349,7 @@ section.pop.visit .popBody div.buttons button span {
   background-color: var(--cBg);
 }
 .payment section.pop.credit div.list a.active {
-  border: 1px solid var(--k1);
+  border: 1px solid var(--q1);
 }
 .payment section.pop.credit div.list a span {
   white-space: nowrap;
@@ -2461,6 +2468,9 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   gap: 10px;
 }
+.payment section.pop.confirm .popBody div.buttons button {
+  background-color: var(--q1);
+}
 .payment section.pop.confirm .popBody div.buttons button:first-child {
   background-color: var(--cBg);
 }
@@ -2474,12 +2484,18 @@ section.pop.visit .popBody div.buttons button span {
   height: 60px;
   border-radius: 6px;
 }
+.payment section.pop.notice#popApple button {
+  background-color: var(--q1);
+}
 .payment section.pop.notice.error .icon div {
   border: 7.5px solid var(--cRed);
 }
 .payment section.pop.notice.error .icon div i,
 .payment section.pop.notice.error .icon div svg {
   color: var(--cRed);
+}
+.payment section.pop.notice.error button {
+  background-color: var(--q1);
 }
 .payment section.pop.notice.order .popBody {
   overflow-y: scroll;
@@ -2512,7 +2528,7 @@ section.pop.visit .popBody div.buttons button span {
   background-color: var(--cBg);
 }
 .result.topup section.head div.bg {
-  background: var(--k1);
+  background: var(--q1);
 }
 .result.topup section.head > div:not(.bg) {
   display: flex;
@@ -2525,30 +2541,94 @@ section.pop.visit .popBody div.buttons button span {
 .result.topup section.head > div:not(.bg) span:last-child {
   font-size: var(--fL);
 }
+.result section.head {
+  padding: 10px 20px 0;
+  gap: 0;
+  flex-direction: column;
+}
 .result section.head .bg {
-  background: var(--k1a);
+  bottom: -20px;
+  background: var(--q2);
+}
+.result section.head span,
+.result section.head i,
+.result section.head svg {
+  color: white;
+}
+.result section.head .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.result section.head .top > a {
+  min-height: 30px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.result section.head .top .left {
+  margin-right: auto;
+}
+.result section.head .top .right {
+  margin-left: auto;
 }
 .result section.head > span {
   font-size: var(--fXL);
   color: white;
 }
+.result section.foot {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px 20px 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+  /* background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); */
+  z-index: 5;
+}
+.result section.foot button {
+  height: 60px;
+  padding: 7.5px 7.5px 7.5px 15px;
+  border-radius: 20px;
+  background-color: var(--q1);
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.result section.foot button .action__total {
+  font-size: var(--fXL);
+}
+.result section.foot button .action__name {
+  height: 100%;
+  padding: 0 10px;
+  margin-left: auto;
+  border-radius: 16.25px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.result section.foot button .action__name span {
+  font-size: var(--fL);
+  white-space: nowrap;
+}
 .result section.main {
   width: 100%;
   max-width: 430px;
-  padding: 140px 20px 50px;
+  padding: 160px 20px 200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }
 .result section.main section.detail {
   width: 100%;
   padding: 20px;
-  border-radius: 20px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   background-color: white;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
 .result section.main section.detail div.top {
   display: flex;
@@ -2694,11 +2774,14 @@ section.pop.visit .popBody div.buttons button span {
   align-items: center;
   gap: 2px;
 }
+.result section.main section.detail div.center > div.sub {
+  padding-left: 16px;
+}
 .result section.main section.detail div.center > div.lineH {
   width: 100%;
-  height: 1px;
-  margin: 10px 0;
-  background-color: var(--cG5);
+  height: 2px;
+  margin: 5px 0;
+  background: repeating-linear-gradient(90deg, var(--cG5) 0 10px, #0000 0 20px);
 }
 .result section.main section.detail div.center > div span {
   white-space: nowrap;
@@ -2712,34 +2795,103 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.main section.detail div.bottom {
   width: 100%;
-  padding: 10px 15px;
-  border: 1px solid var(--cG5);
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
+  z-index: 1;
 }
-.result section.main section.detail div.bottom > div {
+.result section.main section.detail div.bottom div.gift {
+  width: 100%;
+  height: 100px;
+  gap: 10px;
+  display: flex;
+}
+.result section.main section.detail div.bottom div.gift a {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px 15px 5px 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: var(--q1a);
+}
+.result section.main section.detail div.bottom div.gift a.gift__coupon {
+  background-color: var(--q3a);
+}
+.result section.main section.detail div.bottom div.gift a.gift__coupon .gift__arrow i,
+.result section.main section.detail div.bottom div.gift a.gift__coupon .gift__arrow svg {
+  color: var(--q3);
+}
+.result section.main section.detail div.bottom div.gift a .gift__icon {
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result section.main section.detail div.bottom div.gift a .gift__icon img {
+  width: 24px;
+}
+.result section.main section.detail div.bottom div.gift a .gift__title {
+  font-size: var(--fL);
+}
+.result section.main section.detail div.bottom div.gift a .gift__name {
+  max-width: calc(100% - 26px);
+  color: var(--cG3);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.result section.main section.detail div.bottom div.gift a .gift__arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 99px;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.result section.main section.detail div.bottom div.gift a .gift__arrow i,
+.result section.main section.detail div.bottom div.gift a .gift__arrow svg {
+  color: var(--q1);
+}
+.result section.main section.detail div.bottom > div:not(.gift) {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 2px;
 }
-.result section.main section.detail div.bottom > div span {
+.result section.main section.detail div.bottom > div:not(.gift) span {
   white-space: nowrap;
 }
-.result section.main section.detail div.bottom > div span:nth-child(2) {
+.result section.main section.detail div.bottom > div:not(.gift) span:nth-child(2) {
   width: 100%;
   color: var(--cG3);
 }
-.result section.main section.detail div.bottom > div img {
+.result section.main section.detail div.bottom > div:not(.gift) img {
   min-width: 24px;
   height: 18px;
   object-fit: contain;
 }
 .result section.main section.detail div.bottom span.title {
-  color: var(--k1);
+  font-weight: bold;
+}
+.result section.main section.detail div.bottom span.remark {
+  width: 100%;
+  font-size: var(--fS);
+  text-align: center;
+  color: var(--cG4);
 }
 .result section.main section.detail div.buttons {
   display: flex;
@@ -2753,19 +2905,72 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.main section.detail div.buttons button:first-child i,
 .result section.main section.detail div.buttons button:first-child svg {
-  color: var(--k1);
+  color: var(--q1);
 }
 .result section.main section.detail div.buttons button:last-child {
-  background-color: var(--k1);
+  background-color: var(--q1);
 }
 .result section.main section.detail div.buttons button:last-child span {
   color: white !important;
+}
+.result section.main section.detail div.receipt__deco {
+  width: 100%;
+  min-height: 50px;
+  left: 0;
+  bottom: -20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  z-index: 0;
+}
+.result section.main section.detail div.receipt__deco div {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  border-radius: 3px;
+  background-color: white;
+  transform: rotate(45deg);
+}
+.result section.main a.line {
+  width: 100%;
+  height: 60px;
+  padding: 7.5px 15px;
+  border-radius: 20px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #5CBD36;
+  box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.2);
+}
+.result section.main a.line img,
+.result section.main a.line span,
+.result section.main a.line i,
+.result section.main a.line svg {
+  color: white;
+}
+.result section.main a.line img {
+  height: 30px;
+}
+.result section.main a.line > div {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.result section.main a.line span:first-child {
+  font-size: var(--fL);
+}
+.result section.main a.line span:not(:first-child) {
+  margin-top: -2px;
+  font-size: var(--fS);
 }
 .result section.main a.invite {
   width: 100%;
   height: 50px;
   padding: 0 15px;
-  border: 1px solid var(--k1);
+  border: 1px solid var(--q1);
   border-radius: 99px;
   position: relative;
   display: flex;
@@ -2788,7 +2993,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .result section.main a.invite span span {
   font-weight: bold;
-  color: var(--k1);
+  color: var(--q1);
 }
 .result section.main a.invite i,
 .result section.main a.invite svg {
@@ -2803,7 +3008,7 @@ section.pop.visit .popBody div.buttons button span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--k1);
+  background-color: var(--q1);
   overflow: hidden;
 }
 .result section.main a.join > * {
@@ -2828,7 +3033,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .price section.head .bg {
   bottom: -20px;
-  background: var(--k1a);
+  background: var(--q2);
 }
 .price section.head > span {
   font-size: var(--fXL);
@@ -2846,18 +3051,21 @@ section.pop.visit .popBody div.buttons button span {
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 5;
 }
+.price section.foot button {
+  background-color: var(--q1);
+}
 .price section.foot button span {
   font-size: var(--fL);
 }
 .price section.main {
   width: 100%;
   max-width: 430px;
-  padding: 130px 20px 50px;
+  padding: 120px 20px 50px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 .price section.main span.title {
   font-size: var(--fL);
@@ -2865,7 +3073,7 @@ section.pop.visit .popBody div.buttons button span {
 }
 .price section.main span.cost {
   font-size: var(--fXXL);
-  color: var(--k1);
+  color: var(--q1);
 }
 .price section.main div.keyboard {
   width: 100%;
