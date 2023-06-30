@@ -1,3 +1,4 @@
+// On load
 window.onload = function() {
     // popNotice();
     // popError();
@@ -7,6 +8,17 @@ window.onload = function() {
     // popCredit();
     // popApple();
 }
+
+// iFrame close
+window.onmessage = function (event) {
+    if (event.data === "closed") {
+        document.getElementById("popIframe").style.display = "none"; }};
+
+// iFrame open
+function popIframe() {
+    document.getElementById("popIframe").style.display = "flex";
+    document.body.style.overflow = "hidden";
+    document.getElementById("popIframe").contentWindow.postMessage("opened", "*"); }
 
 // Popup close
 function popClose(e) {

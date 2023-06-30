@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html translate="no">
+    <head>
+        <title>點點付</title>
+        <link rel="icon" type="image/svg" href="./icon/ddpay.svg"/> 
+        <meta charset="UTF-8">
+        <meta name="keywords" content="點點付">
+        <meta name="description" content="點點付">
+        <meta name="author" content="DotDot">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="google" content="notranslate">
+        <!-- CSS -->
+        <link href="./css/index.css" rel="stylesheet"/>
+    </head>
+    <body class="iframe">
+        <!-- 會員登入popup -->
+        <section id="pop__login" class="pop pop--full pop__login" onclick="popClose(this)">
+            <div class="pop__body">
+                <a class="close" onclick="popClose(this)"><img src="./icon/cross.svg"></a>
+                <div class="top">
+                    <img class="top__logo" src="./icon/ddpayW.svg">
+                    <div class="top__content">
+                        <span class="top__title">加入點點付會員</span>
+                        <span class="top__description">即享最新優惠及點數折抵</span>
+                    </div>
+                </div>
+                <div class="middle">
+                    <a class="login__button" onclick="popClose(this)">
+                        <img class="login__icon" src="./icon/apple.svg">
+                        <span class="login__text">Apple ID登入</span>
+                    </a>
+                    <a class="login__button" onclick="popVerify()">
+                        <img class="login__icon" src="./icon/google.svg">
+                        <span class="login__text">Google ID登入</span>
+                    </a>
+                    <a class="login__button" onclick="popClose(this)">
+                        <img class="login__icon" src="./icon/faceid.svg">
+                        <span class="login__text">生物辨識登入</span>
+                    </a>
+                    <a class="login__button login__button--light" onclick="popClose(this)">
+                        <span class="login__text">略過登入</span>
+                    </a>
+                    <a class="login__button login__button--secondary" onclick="popClose(this)">
+                        <img class="login__icon" src="./icon/logout.svg">
+                        <span class="login__text">會員登出</span>
+                    </a>
+                </div>
+                <span class="message">生物辨識失敗，請嘗試其他方式登入</span>
+                <div class="bottom">
+                    <span class="bottom__text">服務由</span>
+                    <img class="bottom__logo" src="./icon/ddpayW.svg">
+                    <span class="bottom__text">提供</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 會員認證popup -->
+        <section id="pop__verify" class="pop pop--full pop__verify">
+            <div class="pop__body">
+                <div class="top">
+                    <img class="top__logo" src="./icon/ddpay.svg">
+                    <div class="top__content">
+                        <span class="top__title">驗證點點付會員</span>
+                        <span class="top__description">即享最新優惠及點數折抵</span>
+                    </div>
+                </div>
+                <div class="middle">
+                    <input class="verify__input" type="phone" placeholder="電話號碼" value="">
+                    <input class="verify__input" type="text" placeholder="驗證碼" value="">
+                    <a class="verify__code">傳送驗證碼</a>
+                </div>
+                <a class="verify__button" onclick="popClose(this)">
+                    <!-- 1. 未驗證 (純文字) -->
+                    會員驗證
+                    <!-- 2. 未驗中 (純icon) -->
+                    <div class="verify__loading"></div>
+                    <!-- 3. 驗證成功 (文字+icon 兩秒後自動跳轉) -->
+                    驗證成功
+                    <img class="verify__icon" src="./icon/check.svg">
+                </a>
+            </div>
+        </section>
+
+        <!-- Script -->
+        <script src="./js/iframe.js"></script>
+        <script src="./js/less.js" ></script> <!-- Less -->
+    </body>
+</html>

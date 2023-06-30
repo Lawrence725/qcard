@@ -84,6 +84,13 @@ html,
 body {
   overscroll-behavior-x: none;
 }
+*,
+:after,
+:before {
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box;
+}
+*,
 span,
 p,
 h1,
@@ -92,6 +99,7 @@ h3,
 h4,
 h5,
 h6,
+div,
 a,
 select,
 input,
@@ -110,6 +118,7 @@ h3,
 h4,
 h5,
 h6,
+div,
 input,
 textarea,
 ol,
@@ -166,17 +175,12 @@ select:hover {
 img {
   object-fit: cover;
 }
-i {
+i,
+svg {
   text-decoration: none !important;
 }
 iframe {
   border: 0;
-}
-*,
-:after,
-:before {
-  box-sizing: border-box !important;
-  -webkit-box-sizing: border-box;
 }
 /* Components */
 .disabled {
@@ -555,12 +559,13 @@ a.dateRange i,
 a.dateRange svg {
   color: var(--k1);
 }
-.iframe {
+.popIframe {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   position: absolute;
+  display: none;
   z-index: 99;
 }
 .pop {
@@ -578,6 +583,29 @@ a.dateRange svg {
 }
 .pop.bg {
   background-color: black;
+}
+.pop.pop--full {
+  padding: 70px 0 0;
+}
+.pop.pop--full .pop__body {
+  border-radius: 20px 20px 0 0;
+}
+.pop .pop__body {
+  width: 100%;
+  max-width: 500px;
+  max-height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  overflow-y: auto;
+  animation-name: popup;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 .pop .popBody {
   width: 100%;
@@ -1765,6 +1793,177 @@ section.pop.coupons div.coupon__card > div .card__description {
     height: 90px;
     min-height: 90px;
   }
+}
+.iframe {
+  height: 100vh;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pop__login .pop__body {
+  gap: 30px;
+  background-color: var(--q2);
+}
+.pop__login .pop__body .close {
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pop__login .pop__body .close img {
+  width: 14px;
+}
+.pop__login .pop__body .top {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.pop__login .pop__body .top .top__logo {
+  height: 30px;
+}
+.pop__login .pop__body .top .top__content {
+  display: flex;
+  flex-direction: column;
+}
+.pop__login .pop__body .top .top__title {
+  font-size: var(--fL);
+  font-weight: bold;
+  color: white;
+}
+.pop__login .pop__body .top .top__description {
+  font-size: var(--fM);
+  color: rgba(255, 255, 255, 0.6);
+}
+.pop__login .pop__body .middle {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop__login .pop__body .middle .login__button {
+  width: 280px;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 15px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.pop__login .pop__body .middle .login__button--secondary {
+  background: rgba(255, 255, 255, 0.25);
+}
+.pop__login .pop__body .middle .login__button--secondary .login__text {
+  color: white;
+}
+.pop__login .pop__body .middle .login__button--light {
+  background: rgba(255, 255, 255, 0.25);
+}
+.pop__login .pop__body .middle .login__button--light .login__text {
+  border: 0;
+  color: white;
+}
+.pop__login .pop__body .middle .login__icon {
+  width: 20px;
+}
+.pop__login .pop__body .middle .login__text {
+  width: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+.pop__login .pop__body .message {
+  font-size: var(--fM);
+  color: var(--q1);
+}
+.pop__login .pop__body .bottom {
+  gap: 2px;
+  display: flex;
+  align-items: center;
+}
+.pop__login .pop__body .bottom .bottom__text {
+  font-size: var(--fXS);
+  color: white;
+}
+.pop__login .pop__body .bottom .bottom__logo {
+  height: 20px;
+}
+.pop__verify .pop__body {
+  gap: 50px;
+}
+.pop__verify .pop__body .top {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.pop__verify .pop__body .top .top__logo {
+  height: 30px;
+}
+.pop__verify .pop__body .top .top__content {
+  display: flex;
+  flex-direction: column;
+}
+.pop__verify .pop__body .top .top__title {
+  font-size: var(--fL);
+  font-weight: bold;
+  color: var(--cG1);
+}
+.pop__verify .pop__body .top .top__description {
+  font-size: var(--fM);
+  color: var(--cG3);
+}
+.pop__verify .pop__body .middle {
+  gap: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop__verify .pop__body .middle .verify__input {
+  width: 350px;
+  padding: 5px;
+  border-bottom: 1px solid var(--cG5);
+  border-radius: 0;
+}
+.pop__verify .pop__body .middle .verify__code {
+  padding: 5px 10px;
+  border-radius: 99px;
+  right: 0;
+  bottom: 5px;
+  position: absolute;
+  display: flex;
+  background-color: var(--q2);
+  font-size: var(--fS);
+  color: white;
+}
+.pop__verify .pop__body .verify__button {
+  min-width: 150px;
+  height: 40px;
+  padding: 0 20px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99px;
+  color: white;
+  background-color: var(--q2);
+}
+.pop__verify .pop__body .verify__button .verify__loading {
+  min-width: 18px;
+  min-height: 18px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+.pop__verify .pop__body .verify__button .verify__icon {
+  height: 18px;
 }
 .payment {
   overflow: auto;
