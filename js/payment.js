@@ -12,7 +12,8 @@ window.onload = function() {
 // iFrame close
 window.onmessage = function (event) {
     if (event.data === "closed") {
-        document.getElementById("popIframe").style.display = "none"; }};
+        document.getElementById("popIframe").style.display = "none";
+        document.body.style.overflow = "scroll"; }};
 
 // iFrame open
 function popIframe() {

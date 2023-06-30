@@ -564,9 +564,9 @@ a.dateRange svg {
   height: 100%;
   top: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   display: none;
-  z-index: 99;
+  z-index: 8;
 }
 .pop {
   width: 100%;
@@ -759,7 +759,6 @@ a.dateRange svg {
   flex-direction: column;
   align-items: center;
   background-color: var(--q1);
-  z-index: 5;
   overflow: hidden;
   animation-delay: 0.5s;
   animation-duration: 0.5s;
@@ -1937,6 +1936,7 @@ section.pop.coupons div.coupon__card > div .card__description {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 8;
 }
 .pop__login .pop__body {
   gap: 30px;
