@@ -157,7 +157,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
         .right { justify-content: right; }}}
-.coupon--ddp { height: 172px; min-height: 172px; padding: 15px 15px 10px; scroll-margin: 40px; border-radius: 20px; gap: 10px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1); z-index: 5; overflow-y: hidden; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
+.coupon--ddp { height: 172px; min-height: 172px; padding: 15px 15px 10px; scroll-margin: 40px; border-radius: 20px; gap: 10px; position: relative; display: flex; flex-direction: column; align-items: center; background-color: var(--q1); z-index: 5; overflow: hidden; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
     &:nth-child(3n+1) { background-color: var(--q3); }
     &:nth-child(3n+2) { background-color: var(--q2); }
     * { color: white; }
@@ -169,7 +169,9 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     .dash { width: 100%; min-height: 2px; margin: 5px 0 -5px; background: repeating-linear-gradient(90deg,#FFFFFF99 0 10px,#0000 0 20px); }
     .card__description { width: 100%; height: 100%; min-height: 0; opacity: 0.6; overflow-y: auto; }
     .card__action { width: 100%; height: 20px; margin-top: -5px; gap: 2.5px; display: flex; align-items: center; justify-content: center; opacity: 0.6; background-color: transparent;}
-    .card__arrow { animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; }}
+    .card__arrow { animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; }
+    .card__tag { width: 150px; height: 30px; top: 10px; right: -40px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: rgba(255, 255, 255, 0.9); transform: rotate(30deg); box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20);
+        span { font-weight: bold; color: var(--cG1); }}}
 @keyframes cardMore { 0% { height: 172px; min-height: 172px; } 100% { height: 300px; min-height: 300px; }}
 @keyframes cardLess { 0% { height: 300px; min-height: 300px; } 100% { height: 172px; min-height: 172px; }}
 @keyframes arrowUp { 0% { transform: rotate(0deg); } 100% { transform: rotate(180deg); }}
