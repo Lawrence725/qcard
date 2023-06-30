@@ -140,7 +140,7 @@ div.filter { width: 100%; height: 20px; margin-top: -10px; display: flex; align-
 a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(--cG5); border-radius: 10px; display: flex; align-items: center; justify-content: space-between;
     span { color: var(--cG3); }
     i, svg { color: var(--k1); }}
-.popIframe { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: none; z-index: 8; }
+.iframe { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: none; z-index: 8; }
 .pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
     &.bg { background-color: black; }
     &.pop--full { padding: 70px 0 0;
@@ -391,7 +391,7 @@ section.pop.coupons { padding: 0;
 @keyframes newCard { 0% { height: 90px; min-height: 90px; } 50% { height: 120px; min-height: 120px; } 100% { height: 90px; min-height: 90px; }}
 @keyframes openCard { 0% { height: 90px; min-height: 90px; } 100% { height: 400px; min-height: 400px; }}
 @keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 90px; min-height: 90px; }}
-.iframe { height: 100vh; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 8; }
+.payment__iframe { height: 100vh; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 8; }
 .pop__login .pop__body { gap: 30px; background-color: var(--q2);
     .close { width: 30px; height: 30px; top: 15px; right: 15px; position: absolute; display: flex; align-items: center; justify-content: center;
         img { width: 14px; }}
