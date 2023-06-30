@@ -196,6 +196,13 @@ iframe {
   filter: grayscale(100%);
   opacity: 0.5;
 }
+.single {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .loading {
   top: 0;
   left: 0;
@@ -784,6 +791,13 @@ a.dateRange svg {
   margin-right: auto;
   display: flex;
   flex-direction: column;
+}
+.coupon--ddp .card__top .card__info span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .coupon--ddp .card__top .card__detail {
   font-size: var(--fM);

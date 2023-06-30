@@ -83,6 +83,7 @@ iframe                                  { border: 0; }
 .disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: var(--cG4) !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
+.single     { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
 .loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
     &.transparent { background-color: transparent; pointer-events: none; }
     &.bg { background-color: black; }
@@ -162,7 +163,8 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     &:nth-child(3n+2) { background-color: var(--q2); }
     * { color: white; }
     .card__top { width: 100%; min-height: 100px; gap: 5px; display: flex; align-items: flex-start;
-        .card__info { margin-right: auto; display: flex; flex-direction: column; }
+        .card__info { margin-right: auto; display: flex; flex-direction: column;
+            span { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }}
         .card__detail { font-size: var(--fM); color: rgba(white, 0.75); }
         .card__detail--strong { font-weight: bold; color: white; }
         .card__name { font-size: var(--fL); }
