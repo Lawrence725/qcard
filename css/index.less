@@ -164,6 +164,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
     .card__top { width: 100%; min-height: 100px; gap: 5px; display: flex; align-items: flex-start;
         .card__info { margin-right: auto; display: flex; flex-direction: column; }
         .card__detail { font-size: var(--fM); color: rgba(white, 0.75); }
+        .card__detail--strong { font-weight: bold; color: white; }
         .card__name { font-size: var(--fL); }
         img { width: 100px; height: 100px; border-radius: 15px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
     .dash { width: 100%; min-height: 2px; margin: 5px 0 -5px; background: repeating-linear-gradient(90deg,#FFFFFF99 0 10px,#0000 0 20px); }
@@ -619,8 +620,9 @@ section.pop.coupons { padding: 0;
             .action__total { font-size: var(--fXL); }
             .action__name { height: 100%; padding: 0 10px; margin-left: auto; border-radius: 16.25px; display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.15);
                 span { font-size: var(--fL); white-space: nowrap; }}}}
-    section.main { width: 100%; max-width: 430px; padding: 160px 20px 200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;
-        section.detail { width: 100%; padding: 20px; position: relative; display: flex; flex-direction: column; gap: 15px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+    section.main { width: 100%; max-width: 430px; padding: 160px 20px 200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
+        > * { box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20); }
+        section.detail { width: 100%; padding: 20px; margin-bottom: 20px; position: relative; display: flex; flex-direction: column; gap: 15px; background-color: white;
             div.top { display: flex; flex-direction: column; align-items: center;
                 div.icon { animation: spark 1s linear infinite; }
                 @keyframes spark { 0% { opacity: 1; } 25% { opacity: 1; } 50% { opacity: 0; }100% { opacity: 1; }}
@@ -682,7 +684,8 @@ section.pop.coupons { padding: 0;
                     span { color: white !important; }}}
             div.receipt__deco { width: 100%; min-height: 50px; left: 0; bottom: -20px; position: absolute; display: flex; align-items: center; justify-content: center; overflow-x: hidden; z-index: 0;
                 div { min-width: 30px; max-width: 30px; min-height: 30px; max-height: 30px; border-radius: 3px; background-color: white; transform: rotate(45deg); }}}
-        a.line { width: 100%; height: 60px; padding: 7.5px 15px; border-radius: 20px; gap: 10px; display: flex; align-items: center; background-color: #5CBD36; box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20);
+        .coupon--ddp { background-color: #CB5A4B; }
+        a.line { width: 100%; height: 60px; padding: 7.5px 15px; border-radius: 20px; gap: 10px; display: flex; align-items: center; background-color: #5CBD36;
             img, span, i, svg { color: white; }
             img { height: 30px; }
             > div { margin-right: auto; display: flex; flex-direction: column; }
