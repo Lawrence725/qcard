@@ -104,6 +104,35 @@ function pointCard(e) {
 function popCoupons() {
     document.getElementById("popCoupons").style.display = "flex";
     document.body.style.overflow = "hidden"; }
+function couponMore(e) {
+    var cards = document.getElementsByClassName("coupon--ddp");
+    var isOpened = e.closest('.coupon--ddp').style.animationName == "cardMore"
+    for (var i = 0; i < cards.length; i++) {
+        var card = cards.item(i);
+        card.style.animationDelay = "0s"
+        if (card.style.animationName == "cardMore")
+            card.style.animationName = "cardLess";
+        card.style.height = "172px";
+        card.style.minHeight = "172px"; }
+    if (isOpened) {
+        e.querySelector('.card__arrow').style.animationName = 'arrowDown';
+        e.closest('.coupon--ddp').style.animationName = "cardLess";
+        e.closest('.coupon--ddp').style.height = "172px";
+        e.closest('.coupon--ddp').style.minHeight = "172px";
+        setTimeout(function(){
+            e.querySelector('.card__arrow').style.transform = 'rotate(0deg)';
+        }, 500);
+    } else {
+        e.querySelector('.card__arrow').style.animationName = 'arrowUp';
+        e.closest('.coupon--ddp').style.animationName = "cardMore";
+        e.closest('.coupon--ddp').style.height = "300px";
+        e.closest('.coupon--ddp').style.minHeight = "300px";
+        setTimeout(function(){
+            e.querySelector('.card__arrow').style.transform = 'rotate(180deg)';
+        }, 500);
+        setTimeout(function(){
+            e.closest('.coupon--ddp').scrollIntoView({ behavior: 'smooth' });
+        }, 300); }}
 function couponCard(e) {
     var cards = document.getElementsByClassName("coupon__card");
     var isOpened = e.closest('.coupon__card').style.animationName == "openCard"

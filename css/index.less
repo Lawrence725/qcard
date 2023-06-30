@@ -157,6 +157,23 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
         .right { justify-content: right; }}}
+.coupon--ddp { height: 172px; min-height: 172px; padding: 15px 15px 10px; scroll-margin: 40px; border-radius: 20px; gap: 10px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1); z-index: 5; overflow-y: hidden; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
+    &:nth-child(3n+1) { background-color: var(--q3); }
+    &:nth-child(3n+2) { background-color: var(--q2); }
+    * { color: white; }
+    .card__top { width: 100%; min-height: 100px; gap: 5px; display: flex; align-items: flex-start;
+        .card__info { margin-right: auto; display: flex; flex-direction: column; }
+        .card__detail { font-size: var(--fM); color: rgba(white, 0.75); }
+        .card__name { font-size: var(--fL); }
+        img { width: 100px; height: 100px; border-radius: 15px; filter: drop-shadow(0px 5px 10px rgba(55, 84, 170, 0.2)); }}
+    .dash { width: 100%; min-height: 2px; margin: 5px 0 -5px; background: repeating-linear-gradient(90deg,#FFFFFF99 0 10px,#0000 0 20px); }
+    .card__description { width: 100%; height: 100%; min-height: 0; opacity: 0.6; overflow-y: auto; }
+    .card__action { width: 100%; height: 20px; margin-top: -5px; gap: 2.5px; display: flex; align-items: center; justify-content: center; opacity: 0.6; background-color: transparent;}
+    .card__arrow { animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; }}
+@keyframes cardMore { 0% { height: 172px; min-height: 172px; } 100% { height: 300px; min-height: 300px; }}
+@keyframes cardLess { 0% { height: 300px; min-height: 300px; } 100% { height: 172px; min-height: 172px; }}
+@keyframes arrowUp { 0% { transform: rotate(0deg); } 100% { transform: rotate(180deg); }}
+@keyframes arrowDown { 0% { transform: rotate(180deg); } 100% { transform: rotate(0deg); }}
 a.coupon { height: 140px; padding: 0 30px; border-radius: 20px; position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: white; overflow: hidden; z-index: 3;
     &.gift .title { font-size: var(--fL); color: var(--cG1); }
     &.stamp { height: 180px;
@@ -344,7 +361,7 @@ section.pop.points { padding: 0;
                 span { font-size: var(--fL); }}
             .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
 section.pop.coupons { padding: 0;
-    .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
+    .popBody { border-radius: 20px 20px 0 0; gap: 15px; }
     span.title { font-size: var(--fL); font-weight: bold; }
     div.loading {
         div { min-width: 70px; min-height: 70px;
