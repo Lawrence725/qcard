@@ -2062,6 +2062,12 @@ section.pop.coupons div.coupon__card > div .card__description {
 .pop__login .pop__body .top .top__logo {
   height: 30px;
 }
+.pop__login .pop__body .top .top__profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
 .pop__login .pop__body .top .top__content {
   display: flex;
   flex-direction: column;
@@ -2120,6 +2126,7 @@ section.pop.coupons div.coupon__card > div .card__description {
   gap: 2px;
   display: flex;
   align-items: center;
+  opacity: 0.6;
 }
 .pop__login .pop__body .bottom .bottom__text {
   font-size: var(--fXS);

@@ -33,7 +33,7 @@
                     <i class="fa-solid fa-barcode fa-xl"></i>
                 </a>
             </div>
-            <div class="center">
+            <div class="center" onclick="popLogout()">
                 <span>特約店家名稱</span>
                 <span class="price">NT$100</span>
             </div>
@@ -653,6 +653,31 @@
                 <button onclick="popClose(this)">
                     <span>確認</span>
                 </button>
+            </div>
+        </section>
+        <!-- 登出popup -->
+        <section id="pop__logout" class="pop pop--full pop__login" onclick="popClose(this)">
+            <div class="pop__body">
+                <a class="close" onclick="popClose(this)"><img src="./icon/cross.svg"></a>
+                <div class="top">
+                    <img class="top__profile" src="./img/profile.png">
+                    <div class="top__content">
+                        <span class="top__title">陳大文</span>
+                        <span class="top__description">點點付會員</span>
+                    </div>
+                </div>
+                <div class="middle">
+                    <a class="login__button login__button--secondary" onclick="popClose(this)">
+                        <img class="login__icon" src="./icon/logout.svg">
+                        <span class="login__text">會員登出</span>
+                    </a>
+                </div>
+                <!-- <span class="message">訊息</span> -->
+                <div class="bottom">
+                    <span class="bottom__text">服務由</span>
+                    <img class="bottom__logo" src="./icon/ddpayW.svg">
+                    <span class="bottom__text">提供</span>
+                </div>
             </div>
         </section>
         <!-- Script -->

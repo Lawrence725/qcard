@@ -75,6 +75,11 @@ function popCredit() {
     document.getElementById("popCredit").style.display = "flex";
     document.body.style.overflow = "hidden"; }
 
+// 登出popup
+function popLogout() {
+    document.getElementById("pop__logout").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+
 // 點數popup
 function popPoints() {
     document.getElementById("popPoints").style.display = "flex";
