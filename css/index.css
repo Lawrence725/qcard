@@ -5972,7 +5972,7 @@ section.pop.coupons div.coupon__card > div .card__description {
 .fault {
   min-width: 100%;
   min-height: 100vh;
-  background-color: var(--k1);
+  background-color: var(--q2);
 }
 .fault section.main {
   width: 100%;
@@ -6016,5 +6016,5 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .fault section.main a i,
 .fault section.main a svg {
-  color: var(--k1);
+  color: var(--q2);
 }
