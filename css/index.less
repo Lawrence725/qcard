@@ -394,6 +394,26 @@ section.pop.coupons { padding: 0;
 @keyframes openCard { 0% { height: 90px; min-height: 90px; } 100% { height: 400px; min-height: 400px; }}
 @keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 90px; min-height: 90px; }}
 .payment__iframe { height: 100vh; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 8; }
+.pop__intro .pop__body { gap: 30px; background-color: var(--cBg); overflow-x: hidden;
+    .pop__title { margin-bottom: -30px; font-weight: bold; color: var(--q2); }
+    .carousel { width: calc(100% + 40px);
+        div { width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .carousel__name { font-size: var(--fL); font-weight: bold; }
+        .carousel__img { width: 100%; aspect-ratio: 335/195; border-radius: 10px; }
+        .flickity-button { background: transparent; }
+        .flickity-prev-next-button { width: 30px; height: 30px; }
+        .flickity-prev-next-button.previous { margin-top: 28px; }
+        .flickity-prev-next-button.next { margin-top: 28px; }
+        .flickity-button-icon { fill: var(--q1); }
+        .flickity-button:focus { box-shadow: none; }
+        .flickity-button:disabled { display: none; }}
+    .login__button { width: 300px; height: 40px; padding: 0 15px; border-radius: 15px; gap: 15px; display: flex; align-items: center; background-color: white; box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20);
+        .login__icon { width: 20px; }
+        .login__text { width: 100%; border-left: 1px solid rgba(black, 0.08); text-align: center; }}
+    .bottom { width: 100%; display: flex;
+        .bottom__action { width: 100%; display: flex; justify-content: center;
+            &:nth-child(2) { border-left: 1px solid var(--cG4); }
+            span { color: var(--cG3); text-decoration: underline; }}}}
 .pop__login .pop__body { gap: 30px; background-color: var(--q2);
     .close { width: 30px; height: 30px; top: 15px; right: 15px; position: absolute; display: flex; align-items: center; justify-content: center;
         img { width: 14px; }}

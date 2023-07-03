@@ -1952,6 +1952,91 @@ section.pop.coupons div.coupon__card > div .card__description {
   justify-content: center;
   z-index: 8;
 }
+.pop__intro .pop__body {
+  gap: 30px;
+  background-color: var(--cBg);
+  overflow-x: hidden;
+}
+.pop__intro .pop__body .pop__title {
+  margin-bottom: -30px;
+  font-weight: bold;
+  color: var(--q2);
+}
+.pop__intro .pop__body .carousel {
+  width: calc(100% + 40px);
+}
+.pop__intro .pop__body .carousel div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop__intro .pop__body .carousel .carousel__name {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.pop__intro .pop__body .carousel .carousel__img {
+  width: 100%;
+  aspect-ratio: 335/195;
+  border-radius: 10px;
+}
+.pop__intro .pop__body .carousel .flickity-button {
+  background: transparent;
+}
+.pop__intro .pop__body .carousel .flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+}
+.pop__intro .pop__body .carousel .flickity-prev-next-button.previous {
+  margin-top: 28px;
+}
+.pop__intro .pop__body .carousel .flickity-prev-next-button.next {
+  margin-top: 28px;
+}
+.pop__intro .pop__body .carousel .flickity-button-icon {
+  fill: var(--q1);
+}
+.pop__intro .pop__body .carousel .flickity-button:focus {
+  box-shadow: none;
+}
+.pop__intro .pop__body .carousel .flickity-button:disabled {
+  display: none;
+}
+.pop__intro .pop__body .login__button {
+  width: 300px;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 15px;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.2);
+}
+.pop__intro .pop__body .login__button .login__icon {
+  width: 20px;
+}
+.pop__intro .pop__body .login__button .login__text {
+  width: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+.pop__intro .pop__body .bottom {
+  width: 100%;
+  display: flex;
+}
+.pop__intro .pop__body .bottom .bottom__action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pop__intro .pop__body .bottom .bottom__action:nth-child(2) {
+  border-left: 1px solid var(--cG4);
+}
+.pop__intro .pop__body .bottom .bottom__action span {
+  color: var(--cG3);
+  text-decoration: underline;
+}
 .pop__login .pop__body {
   gap: 30px;
   background-color: var(--q2);

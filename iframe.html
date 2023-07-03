@@ -12,8 +12,42 @@
         <meta name="google" content="notranslate">
         <!-- CSS -->
         <link href="./css/index.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./css/flickity.min.css" media="screen">
     </head>
     <body class="payment__iframe">
+        <!-- 會員介紹popup -->
+        <section id="pop__intro" class="pop pop--full pop__intro">
+            <div class="pop__body">
+                <span class="pop__title">加入點點付會員</span>
+                <div class="carousel">
+                    <div>
+                        <span class="carousel__name">結合各家點數 付款即時折抵</span>
+                        <img class="carousel__img" src="./img/ddpayIntro.png">
+                    </div>
+                    <div>
+                        <span class="carousel__name">付款優惠折抵 消費再贈票券</span>
+                        <img class="carousel__img" src="./img/ddpayIntro2.png">
+                    </div>
+                    <div>
+                        <span class="carousel__name">卡片自動綁定 快速完成交易</span>
+                        <img class="carousel__img" src="./img/ddpayIntro3.png">
+                    </div>
+                </div>
+                <a class="login__button" onclick="popClose(this)">
+                    <img class="login__icon" src="./icon/apple.svg">
+                    <span class="login__text">Apple ID登入</span>
+                </a>
+                <div class="bottom">
+                    <a class="bottom__action" onclick="popLogin()">
+                        <span>其他方式登入</span>
+                    </a>
+                    <a class="bottom__action" onclick="popClose(this)">
+                        <span>略過登入</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- 會員登入popup -->
         <section id="pop__login" class="pop pop--full pop__login" onclick="popClose(this)">
             <div class="pop__body">
@@ -83,7 +117,7 @@
         </section>
 
         <!-- Script -->
+        <script src="./js/flickity.pkgd.min.js"></script>
         <script src="./js/iframe.js"></script>
-        <script src="./js/less.js" ></script> <!-- Less -->
     </body>
 </html>

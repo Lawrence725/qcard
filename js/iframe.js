@@ -1,7 +1,8 @@
 // On open
 window.addEventListener('message', function(event) {
     if (event.data === "opened") {
-        popLogin();
+        popIntro();
+        // popLogin();
         // popVerify();
     }});
 
@@ -25,6 +26,19 @@ function popClose(e) {
             document.body.style.overflow = "scroll";
             parent.postMessage('closed', '*');
         }, 500); } }
+
+// 會員介紹popup
+function popIntro() {
+    document.getElementById("pop__intro").style.display = "flex";
+    document.body.style.overflow = "hidden"; }
+// Carousel https://flickity.metafizzy.co
+var flkty = new Flickity( '.carousel', {
+    cellAlign: 'left',
+    contain: true,
+    // wrapAround: true,
+    // prevNextButtons: false,
+    autoPlay: true,
+    pageDots: false });
 
 // 會員登入popup
 function popLogin() {
