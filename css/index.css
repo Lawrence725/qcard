@@ -670,6 +670,7 @@ a.dateRange svg {
 .ticket section.head,
 .news section.head,
 .new section.head,
+.ddpay section.head,
 .profile section.head,
 .profileEdit section.head,
 .carrier section.head,
@@ -696,6 +697,7 @@ a.dateRange svg {
 .ticket section.head .bg,
 .news section.head .bg,
 .new section.head .bg,
+.ddpay section.head .bg,
 .profile section.head .bg,
 .profileEdit section.head .bg,
 .carrier section.head .bg,
@@ -718,6 +720,7 @@ a.dateRange svg {
 .ticket section.head .left,
 .news section.head .left,
 .new section.head .left,
+.ddpay section.head .left,
 .profile section.head .left,
 .profileEdit section.head .left,
 .carrier section.head .left,
@@ -731,6 +734,7 @@ a.dateRange svg {
 .ticket section.head .right,
 .news section.head .right,
 .new section.head .right,
+.ddpay section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -748,6 +752,7 @@ a.dateRange svg {
 .ticket section.head .right,
 .news section.head .right,
 .new section.head .right,
+.ddpay section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -2519,17 +2524,22 @@ section.pop.coupons div.coupon__card > div .card__description {
 .payment section.main section.discount a.discount__point span.discount__title,
 .payment section.main section.discount a.discount__coupon span.discount__title {
   margin-right: auto;
-  color: var(--cG3);
+  color: var(--cG1);
 }
 .payment section.main section.discount a.discount__point span.discount__name,
 .payment section.main section.discount a.discount__coupon span.discount__name {
   margin-left: 15px;
+  color: var(--q1);
   white-space: unset;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.payment section.main section.discount a.discount__point span.discount__name--active,
+.payment section.main section.discount a.discount__coupon span.discount__name--active {
+  color: var(--cG1);
 }
 .payment section.main section.discount a.discount__point span.discount__name--none,
 .payment section.main section.discount a.discount__coupon span.discount__name--none {
@@ -2589,7 +2599,7 @@ section.pop.coupons div.coupon__card > div .card__description {
   font-size: var(--fL);
 }
 .payment section.main section.type div.credit .credit__top .credit__title {
-  color: var(--cG3);
+  color: var(--cG1);
 }
 .payment section.main section.type div.credit .credit__top .credit__dropdown {
   width: 24px;
@@ -5578,6 +5588,25 @@ section.pop.coupons div.coupon__card > div .card__description {
 .new section.main button {
   width: 50%;
   margin: 20px auto 0;
+}
+.ddpay section.head {
+  background: rgba(255, 255, 255, 0.95);
+}
+.ddpay section.head i,
+.ddpay section.head svg {
+  color: var(--cG3);
+}
+.ddpay section.head img {
+  height: 30px;
+}
+.ddpay section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 30px 50px;
+  margin: 0 auto;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .profile {
   min-height: 100vh;

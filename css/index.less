@@ -153,7 +153,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 /* Common */
-.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .new, .profile, .profileEdit, .carrier, .policy {
+.payment, .result, .price, .login, .coin, .tickets, .ticket, .news, .new, .ddpay, .profile, .profileEdit, .carrier, .policy {
     section.head { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
@@ -510,8 +510,9 @@ section.pop.coupons { padding: 0;
             a.discount__point, a.discount__coupon { height: 50px; padding: 0 15px; gap: 5px; border-radius: 15px; display: flex; align-items: center; background-color: var(--cBg);
                 img { min-width: 24px; max-width: 24px; }
                 span { font-size: var(--fL); white-space: nowrap; }
-                span.discount__title { margin-right: auto; color: var(--cG3); }
-                span.discount__name { margin-left: 15px; white-space: unset; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                span.discount__title { margin-right: auto; color: var(--cG1); }
+                span.discount__name { margin-left: 15px; color: var(--q1); white-space: unset; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                span.discount__name--active { color: var(--cG1); }
                 span.discount__name--none { color: var(--cG4); }
                 i, svg { color: var(--cG4); }
             }
@@ -527,7 +528,7 @@ section.pop.coupons { padding: 0;
                     a { gap: 5px; display: flex; align-items: center; }
                     img { min-width: 24px; }
                     span { font-size: var(--fL); }
-                    .credit__title { color: var(--cG3); }
+                    .credit__title { color: var(--cG1); }
                     .credit__dropdown { width: 24px; height: 24px; border: 6px solid var(--cG4); border-radius: 99px; display: flex; align-items: center; justify-content: center;
                         i, svg { color: var(--cG4); }}}
                 .credit__cards { width: 100%; padding: 0 15px 15px; gap: 10px; display: flex; flex-wrap: wrap;
@@ -1151,6 +1152,15 @@ section.pop.coupons { padding: 0;
         span.title { font-size: var(--fL); }
         span:not(.title) { color: var(--cG3); }
         button { width: 50%; margin: 20px auto 0; }}}
+
+// DDPay設定
+.ddpay {
+    section.head { background: rgba(255, 255, 255, 0.95);
+        i, svg { color: var(--cG3); }
+        img { height: 30px; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 30px 50px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column;
+
+    }}
 
 // 帳號設定
 .profile { min-height: 100vh; background: var(--k2);
