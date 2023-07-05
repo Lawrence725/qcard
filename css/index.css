@@ -2978,6 +2978,34 @@ section.pop.coupons div.coupon__card > div .card__description {
   overflow: auto;
   background-color: var(--cBg);
 }
+@media (max-height: 668px) {
+  .result section.head {
+    padding-top: 0 !important;
+  }
+  .result section.head > span {
+    font-size: var(--fL) !important;
+  }
+  .result section.head .bg {
+    bottom: -5px !important;
+  }
+  .result section.main {
+    padding-top: 125px !important;
+    gap: 10px !important;
+  }
+  .result section.main section.detail {
+    margin-bottom: 15px !important;
+    gap: 5px !important;
+  }
+  .result section.main section.detail div.top div.icon {
+    margin-bottom: 0 !important;
+  }
+  .result section.main section.detail div.top span.cost {
+    margin-top: -5px !important;
+  }
+  .result section.main section.detail div.center {
+    gap: 0 !important;
+  }
+}
 .result.topup section.head div.bg {
   background: var(--q1);
 }

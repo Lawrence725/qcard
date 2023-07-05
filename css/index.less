@@ -55,6 +55,9 @@
     --cBlue:  #5CB8B2;
 }
 
+// Screen
+@sMini: (max-height: 668px);
+
 /* Reset */
 *                                       { margin: 0; padding: 0;
     &:visited                           { color: inherit; }}
@@ -625,6 +628,16 @@ section.pop.coupons { padding: 0;
 
 // 付款結果頁
 .result { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
+    @media @sMini {
+        section.head { padding-top: 0 !important;
+            > span { font-size: var(--fL) !important; }
+            .bg { bottom: -5px !important; }}
+        section.main { padding-top: 125px !important; gap: 10px !important;
+            section.detail { margin-bottom: 15px !important; gap: 5px !important;
+                div.top {
+                    div.icon { margin-bottom: 0 !important; }
+                    span.cost { margin-top: -5px !important; }}
+                div.center { gap: 0 !important; }}}}
     &.topup {
         section.head {
             div.bg { background: var(--q1); }
