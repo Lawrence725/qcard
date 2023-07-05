@@ -25,6 +25,7 @@
     --q1: #FF9900;
     --q1a:#FFEED8;
     --q2: #22798C;
+    --q2a: #D3E4E8;
     --q3: #96BE0B;
     --q3a:#EAF2CE;
     /* 桃園
@@ -514,7 +515,7 @@ section.pop.coupons { padding: 0;
                 img { min-width: 24px; max-width: 24px; }
                 span { font-size: var(--fL); white-space: nowrap; }
                 span.discount__title { margin-right: auto; color: var(--cG1); }
-                span.discount__name { margin-left: 15px; color: var(--q1); white-space: unset; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                span.discount__name { margin-left: 15px; color: var(--q2); white-space: unset; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 span.discount__name--active { color: var(--cG1); }
                 span.discount__name--none { color: var(--cG4); }
                 i, svg { color: var(--cG4); }
@@ -954,6 +955,7 @@ section.pop.coupons { padding: 0;
                                 &.fa-line           { color: #C5E0B3; }
                                 &.fa-address-card   { color: #FFD965; }}
                             i { line-height: normal; }
+                            img { height: 24px; }
                             > span { font-size: var(--fS); color: var(--cG3); }
                             div.notice { width: fit-content; min-width: 20px; height: 20px; padding: 0 5px 2px; border: 1px solid white; border-radius: 99px; top: -10px; left: 53%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--cRed);
                                 span { color: white; font-size: var(--fS); font-weight: bold; }}}}
@@ -1170,9 +1172,33 @@ section.pop.coupons { padding: 0;
 .ddpay {
     section.head { background: rgba(255, 255, 255, 0.95);
         i, svg { color: var(--cG3); }
-        img { height: 30px; }}
-    section.main { width: 100%; max-width: 430px; padding: 70px 30px 50px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column;
-
+        img { height: 34px; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 20px; display: flex; flex-direction: column;
+        .top { gap: 15px; display: flex; flex-wrap: wrap;
+            .top__item { width: calc(50% - 7.5px); height: 120px; padding: 15px 15px 10px; border-radius: 20px 20px 5px 20px; position: relative; display: flex; flex-direction: column; background-color: var(--q1a);
+                &:nth-child(2) { background-color: var(--q3a);
+                    .top__arrow { i ,svg { color: var(--q3); }}}
+                &:nth-child(3) { background-color: var(--q2a); 
+                    .top__arrow { i ,svg { color: var(--q2); }}}
+                &.top__item--full { width: 100%; }
+                .top__icon { width: 30px; margin-bottom: auto; }
+                .top__name { font-size: var(--fL); }
+                .top__content { color: var(--cG3); }
+                .top__arrow { width: 30px; height: 30px; border-radius: 99px; bottom: 10px; right: 10px; position: absolute; display: flex; align-items: center; justify-content: center; background-color: white;
+                    i, svg { color: var(--q1);}}}}
+        .center { width: 100%; display: flex; flex-direction: column;
+            .center__item { width: 100%; padding: 15px 0; gap: 5px; display: flex; align-items: center;
+                &:not(:first-child) { border-top: 1px solid var(--cG5); }
+                .center__icon { width: 28px; display: flex; align-items: center; justify-content: center;
+                    i, svg { color: var(--q2); }
+                    img { width: 24px; }}
+                .center__name { font-size: var(--fL); margin-right: auto; }
+                .center__content { color: var(--cG3); }
+                .center__content--alert { color: var(--cRed); }
+                .center__arrow { color: var(--cG4); }}}
+        .bottom { width: 100%; gap: 15px; display: flex; align-items: center; justify-content: center;
+            .bottom__item { font-size: var(--fS); color: var(--cG4);
+                &:not(:first-child) { padding-left: 15px; border-left: 1px solid var(--cG5); }}}
     }}
 
 // 帳號設定
