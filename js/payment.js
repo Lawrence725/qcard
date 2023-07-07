@@ -26,7 +26,10 @@ function popClose(e) {
     if (e.classList.contains('pop'))
         window.onclick  = function(event) {
             if (event.target == e) {
-                e.children[0].style.animationName = "popdown";
+                if (e.classList.contains('points'))
+                    e.children[0].style.animationName = "popdownDiscount";
+                else
+                    e.children[0].style.animationName = "popdown";
                 setTimeout(function(){
                     e.style.display = "none";
                     if (e.classList.contains('points'))
@@ -36,7 +39,10 @@ function popClose(e) {
                     document.body.style.overflow = "scroll";
                 }, 500); }}
     else if (!(e.classList.contains('popBody'))) {
-        e.closest('.pop').children[0].style.animationName = "popdown";
+        if (e.closest('.pop').classList.contains('points'))
+            e.closest('.pop').children[0].style.animationName = "popdownDiscount";
+        else
+            e.closest('.pop').children[0].style.animationName = "popdown";
         setTimeout(function(){
             e.closest('.pop').style.display = "none";
             if (e.closest('.pop').classList.contains('points'))
