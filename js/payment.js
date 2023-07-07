@@ -29,14 +29,20 @@ function popClose(e) {
                 e.children[0].style.animationName = "popdown";
                 setTimeout(function(){
                     e.style.display = "none";
-                    e.children[0].style.animationName = "popup";
+                    if (e.classList.contains('points'))
+                        e.children[0].style.animationName = "popupDiscount";
+                    else
+                        e.children[0].style.animationName = "popup";
                     document.body.style.overflow = "scroll";
                 }, 500); }}
     else if (!(e.classList.contains('popBody'))) {
         e.closest('.pop').children[0].style.animationName = "popdown";
         setTimeout(function(){
             e.closest('.pop').style.display = "none";
-            e.closest('.pop').children[0].style.animationName = "popup";
+            if (e.closest('.pop').classList.contains('points'))
+                e.closest('.pop').children[0].style.animationName = "popupDiscount";
+            else
+                e.closest('.pop').children[0].style.animationName = "popup";
             document.body.style.overflow = "scroll";
         }, 500); }}
 
