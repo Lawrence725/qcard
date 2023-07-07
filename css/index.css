@@ -644,6 +644,7 @@ a.dateRange svg {
   justify-content: center;
   color: var(--cG4);
   background-color: rgba(255, 255, 255, 0.75);
+  z-index: 6;
 }
 @keyframes popup {
   0% {
@@ -671,7 +672,7 @@ a.dateRange svg {
 .ticket section.head,
 .news section.head,
 .new section.head,
-.ddpay section.head,
+.wallet section.head,
 .profile section.head,
 .profileEdit section.head,
 .carrier section.head,
@@ -698,7 +699,7 @@ a.dateRange svg {
 .ticket section.head .bg,
 .news section.head .bg,
 .new section.head .bg,
-.ddpay section.head .bg,
+.wallet section.head .bg,
 .profile section.head .bg,
 .profileEdit section.head .bg,
 .carrier section.head .bg,
@@ -721,7 +722,7 @@ a.dateRange svg {
 .ticket section.head .left,
 .news section.head .left,
 .new section.head .left,
-.ddpay section.head .left,
+.wallet section.head .left,
 .profile section.head .left,
 .profileEdit section.head .left,
 .carrier section.head .left,
@@ -735,7 +736,7 @@ a.dateRange svg {
 .ticket section.head .right,
 .news section.head .right,
 .new section.head .right,
-.ddpay section.head .right,
+.wallet section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -753,7 +754,7 @@ a.dateRange svg {
 .ticket section.head .right,
 .news section.head .right,
 .new section.head .right,
-.ddpay section.head .right,
+.wallet section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -1913,6 +1914,14 @@ section.pop.coupons div.coupon__card > div .card__description {
   }
   100% {
     margin-bottom: -20px;
+  }
+}
+@keyframes popdownDiscount {
+  0% {
+    margin-bottom: -20px;
+  }
+  100% {
+    margin-bottom: -100vh;
   }
 }
 @keyframes newCard {
@@ -5621,17 +5630,17 @@ section.pop.coupons div.coupon__card > div .card__description {
   width: 50%;
   margin: 20px auto 0;
 }
-.ddpay section.head {
+.wallet section.head {
   background: rgba(255, 255, 255, 0.95);
 }
-.ddpay section.head i,
-.ddpay section.head svg {
+.wallet section.head i,
+.wallet section.head svg {
   color: var(--cG3);
 }
-.ddpay section.head img {
+.wallet section.head img {
   height: 34px;
 }
-.ddpay section.main {
+.wallet section.main {
   width: 100%;
   max-width: 430px;
   padding: 70px 20px 50px;
@@ -5640,12 +5649,12 @@ section.pop.coupons div.coupon__card > div .card__description {
   display: flex;
   flex-direction: column;
 }
-.ddpay section.main .top {
+.wallet section.main .top {
   gap: 15px;
   display: flex;
   flex-wrap: wrap;
 }
-.ddpay section.main .top .top__item {
+.wallet section.main .top .top__item {
   width: calc(50% - 7.5px);
   height: 120px;
   padding: 15px 15px 10px;
@@ -5655,34 +5664,34 @@ section.pop.coupons div.coupon__card > div .card__description {
   flex-direction: column;
   background-color: var(--q1a);
 }
-.ddpay section.main .top .top__item:nth-child(2) {
+.wallet section.main .top .top__item:nth-child(2) {
   background-color: var(--q3a);
 }
-.ddpay section.main .top .top__item:nth-child(2) .top__arrow i,
-.ddpay section.main .top .top__item:nth-child(2) .top__arrow svg {
+.wallet section.main .top .top__item:nth-child(2) .top__arrow i,
+.wallet section.main .top .top__item:nth-child(2) .top__arrow svg {
   color: var(--q3);
 }
-.ddpay section.main .top .top__item:nth-child(3) {
+.wallet section.main .top .top__item:nth-child(3) {
   background-color: var(--q2a);
 }
-.ddpay section.main .top .top__item:nth-child(3) .top__arrow i,
-.ddpay section.main .top .top__item:nth-child(3) .top__arrow svg {
+.wallet section.main .top .top__item:nth-child(3) .top__arrow i,
+.wallet section.main .top .top__item:nth-child(3) .top__arrow svg {
   color: var(--q2);
 }
-.ddpay section.main .top .top__item.top__item--full {
+.wallet section.main .top .top__item.top__item--full {
   width: 100%;
 }
-.ddpay section.main .top .top__item .top__icon {
+.wallet section.main .top .top__item .top__icon {
   width: 30px;
   margin-bottom: auto;
 }
-.ddpay section.main .top .top__item .top__name {
+.wallet section.main .top .top__item .top__name {
   font-size: var(--fL);
 }
-.ddpay section.main .top .top__item .top__content {
+.wallet section.main .top .top__item .top__content {
   color: var(--cG3);
 }
-.ddpay section.main .top .top__item .top__arrow {
+.wallet section.main .top .top__item .top__arrow {
   width: 30px;
   height: 30px;
   border-radius: 99px;
@@ -5694,63 +5703,63 @@ section.pop.coupons div.coupon__card > div .card__description {
   justify-content: center;
   background-color: white;
 }
-.ddpay section.main .top .top__item .top__arrow i,
-.ddpay section.main .top .top__item .top__arrow svg {
+.wallet section.main .top .top__item .top__arrow i,
+.wallet section.main .top .top__item .top__arrow svg {
   color: var(--q1);
 }
-.ddpay section.main .center {
+.wallet section.main .center {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.ddpay section.main .center .center__item {
+.wallet section.main .center .center__item {
   width: 100%;
   padding: 15px 0;
   gap: 5px;
   display: flex;
   align-items: center;
 }
-.ddpay section.main .center .center__item:not(:first-child) {
+.wallet section.main .center .center__item:not(:first-child) {
   border-top: 1px solid var(--cG5);
 }
-.ddpay section.main .center .center__item .center__icon {
+.wallet section.main .center .center__item .center__icon {
   width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ddpay section.main .center .center__item .center__icon i,
-.ddpay section.main .center .center__item .center__icon svg {
+.wallet section.main .center .center__item .center__icon i,
+.wallet section.main .center .center__item .center__icon svg {
   color: var(--q2);
 }
-.ddpay section.main .center .center__item .center__icon img {
+.wallet section.main .center .center__item .center__icon img {
   width: 24px;
 }
-.ddpay section.main .center .center__item .center__name {
+.wallet section.main .center .center__item .center__name {
   font-size: var(--fL);
   margin-right: auto;
 }
-.ddpay section.main .center .center__item .center__content {
+.wallet section.main .center .center__item .center__content {
   color: var(--cG3);
 }
-.ddpay section.main .center .center__item .center__content--alert {
+.wallet section.main .center .center__item .center__content--alert {
   color: var(--cRed);
 }
-.ddpay section.main .center .center__item .center__arrow {
+.wallet section.main .center .center__item .center__arrow {
   color: var(--cG4);
 }
-.ddpay section.main .bottom {
+.wallet section.main .bottom {
   width: 100%;
   gap: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ddpay section.main .bottom .bottom__item {
+.wallet section.main .bottom .bottom__item {
   font-size: var(--fS);
   color: var(--cG4);
 }
-.ddpay section.main .bottom .bottom__item:not(:first-child) {
+.wallet section.main .bottom .bottom__item:not(:first-child) {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
 }

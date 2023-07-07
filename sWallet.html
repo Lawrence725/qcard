@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="wallet">
+        <!-- Header -->
+        <section class="head">
+            <div class="left">
+                <a href="javascript:history.back()">
+                    <i class="fa-solid fa-chevron-left fa-lg"></i>
+                </a>
+            </div>
+            <img src="./icon/ddpayH.svg">
+            <div class="right"></div>
+        </section>
+        <section class="main">
+            <div class="top">
+                <a class="top__item" onclick="popPoints()">
+                    <img class="top__icon" src="./icon/pPoint.svg">
+                    <span class="top__name">我的點數</span>
+                    <span class="top__content">已綁定3/4</span>
+                    <div class="top__arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+                <a class="top__item" onclick="popCoupons()">
+                    <img class="top__icon" src="./icon/pCouponG.svg">
+                    <span class="top__name">我的票券</span>
+                    <span class="top__content">5張可用</span>
+                    <div class="top__arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+                <a class="top__item top__item--full">
+                    <img class="top__icon" src="./icon/pCreditB.svg">
+                    <span class="top__name">我的信用卡</span>
+                    <span class="top__content">已綁定3張</span>
+                    <div class="top__arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+            </div>
+            <div class="center">
+                <a class="center__item">
+                    <div class="center__icon"><i class="fa-solid fa-clipboard-list fa-xl"></i></div>
+                    <span class="center__name">消費紀錄</span>
+                    <i class="center__arrow fa-solid fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="center__item">
+                    <div class="center__icon"><img src="./icon/faceidBg.svg"></div>
+                    <span class="center__name">綁定生物辨認登入</span>
+                    <span class="center__content center__content--alert">未開啟</span>
+                    <i class="center__arrow fa-solid fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="center__item">
+                    <div class="center__icon"><i class="center__icon fa-solid fa-receipt fa-xl"></i></div>
+                    <span class="center__name">手機載具</span>
+                    <span class="center__content">已綁定</span>
+                    <i class="center__arrow fa-solid fa-chevron-right fa-lg"></i>
+                </a>
+            </div>
+            <div class="bottom">
+                <a class="bottom__item">常見問題</a>
+                <a class="bottom__item">隱私權政策</a>
+                <a class="bottom__item">服務條款</a>
+            </div>
+        </section>
+        <!-- 點數popup -->
+        <section id="popPoints" class="pop points" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">我的點數</span>
+                <!-- 點數Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pPoint.svg">
+                <div></div></div></div>
+                <!-- 無點數 -->
+                <div class="points--none">
+                    <img src="./icon/pPoint.svg">
+                    <span>暫無可用點數</span>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <span class="card__detail">未綁定</span>
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <hr>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>前往綁定</span>
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div style="background-color: #C53A71;">
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <!-- <span class="card__detail">使用中</span> -->
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>解除綁定</span>
+                            <i class="fa-solid fa-link-slash"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div style="background-color: #EF6079;">
+                        <a class="card__top" onclick="pointCard(this)">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span class="card__count">10</span>
+                            <div class="card__info">
+                                <!-- <span class="card__detail">使用中</span> -->
+                                <span class="card__name">紅利桃子</span>
+                            </div>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <img src="./icon/ptTaoyuanW.svg">
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>解除綁定</span>
+                            <i class="fa-solid fa-link-slash"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 票券popup -->
+        <section id="popCoupons" class="pop coupons" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">我的票券</span>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                    <div class="card__tag">
+                        <span>已選取</span>
+                    </div>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+                <!-- 票券Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pCoupon.svg">
+                <div></div></div></div>
+                <!-- 無票券 -->
+                <div class="coupons--none">
+                    <img src="./icon/pCoupon.svg">
+                    <span>暫無可用票券</span>
+                </div>
+                <!-- 票券 -->
+                <!-- <div class="coupon__card">
+                    <div>
+                        <a class="card__top" onclick="couponCard(this)">
+                            <div class="card__info">
+                                <span class="card__name">新春九五折優惠</span>
+                                <span class="card__detail">臺東美味麵食店</span>
+                                <span class="card__detail">全品項九五折優惠</span>
+                                <span class="card__detail">有效期限：2023-12-31</span>
+                            </div>
+                            <img src="./img/food.png">
+                        </a>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用票券</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <hr>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/sWallet.js"></script>
+    </body>
+</html>
