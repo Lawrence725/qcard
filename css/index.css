@@ -4832,7 +4832,7 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .store.v2 section.main section.coupon div.top > .header > div > a span:first-child,
 .store.v2 section.main section.coupon div.top > .header > div > div span:first-child {
-  font-size: var(--fXXL);
+  font-size: var(--fXL);
 }
 .store.v2 section.main section.coupon div.top > .header > a {
   width: 100%;
