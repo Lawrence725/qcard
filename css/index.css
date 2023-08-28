@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nF7OG829Oofr2wohFbTp9iFOQ.otf) format('opentype');
+  src: url(https://fonts.gstatic.com/s/notosanstc/v35/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nFkOG829Oofr2wohFbTp9i9gwQvDQ.otf) format('opentype');
+  src: url(https://fonts.gstatic.com/s/notosanstc/v35/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_Co.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
@@ -5638,7 +5638,7 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .wallet section.head i,
 .wallet section.head svg {
-  color: var(--cG3);
+  color: var(--q2);
 }
 .wallet section.head img {
   height: 34px;
@@ -6035,17 +6035,46 @@ section.pop.coupons div.coupon__card > div .card__description {
   box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
 }
 .policy section.head {
-  height: 60px;
-  padding-bottom: 20px;
-  background: var(--k2);
+  height: 70px;
+  background: linear-gradient(180deg, #FFF 80%, rgba(255, 255, 255, 0) 100%);
 }
 .policy section.head i,
 .policy section.head svg {
-  color: var(--k1);
+  color: var(--q2);
 }
 .policy section.head > span {
   font-size: var(--fL);
   white-space: nowrap;
+}
+.policy section.foot {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 20px 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 20%);
+}
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .policy section.foot > *:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.policy section.foot button {
+  background-color: var(--q2);
+}
+.policy section.foot button.secondary {
+  background-color: var(--cBg);
+}
+.policy section.foot button.secondary span {
+  color: var(--cG3) !important;
+}
+.policy section.foot button span {
+  font-size: var(--fL);
 }
 .policy section.main {
   width: 100%;

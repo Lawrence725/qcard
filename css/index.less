@@ -1173,7 +1173,7 @@ section.pop.coupons { padding: 0;
 // 錢包
 .wallet {
     section.head { background: rgba(255, 255, 255, 0.95);
-        i, svg { color: var(--cG3); }
+        i, svg { color: var(--q2); }
         img { height: 34px; }}
     section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 20px; display: flex; flex-direction: column;
         .top { gap: 15px; display: flex; flex-wrap: wrap;
@@ -1272,9 +1272,15 @@ section.pop.coupons { padding: 0;
 
 // 服務條款
 .policy {
-    section.head { height: 60px; padding-bottom: 20px; background: var(--k2);
-        i, svg { color: var(--k1); }
+    section.head { height: 70px; background: linear-gradient(180deg, #FFF 80%, rgba(255, 255, 255, 0.00) 100%);
+        i, svg { color: var(--q2); }
         > span { font-size: var(--fL); white-space: nowrap; }}
+    section.foot { width: 100%; max-width: 430px; padding: 30px 20px 20px; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; gap: 10px; z-index: 5; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 20%);
+        @supports (-webkit-touch-callout: none) and (not (translate: none)) { > *:not(:last-child) { margin-right: 10px; }}
+        button { background-color: var(--q2);
+            &.secondary { background-color: var(--cBg);
+                span { color: var(--cG3) !important; }}
+            span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 430px; padding: 80px 20px 50px; margin: 0 auto; gap: 30px; display: flex; flex-direction: column; align-items: center;
         li { margin-left: 20px; }}}
 
