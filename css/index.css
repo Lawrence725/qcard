@@ -363,11 +363,20 @@ button {
   width: 100%;
   height: 40px;
   border-radius: 99px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   background-color: var(--k1);
+}
+button.disabled {
+  background-color: var(--cG4) !important;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+button.disabled * {
+  color: var(--cG5) !important;
 }
 button span {
   color: white !important;
@@ -3683,9 +3692,31 @@ section.pop.coupons div.coupon__card > div .card__description {
 .service section.main span.title {
   font-weight: bold;
 }
+.service section.main span.content {
+  color: var(--cG3);
+}
+.service section.main span.content * {
+  color: var(--cG3);
+}
 .service section.main span.content ol,
 .service section.main span.content ul {
-  padding-left: 20px;
+  padding-left: 28px;
+}
+.service section.main .check {
+  padding-left: 25px;
+}
+.service section.main .check input:checked ~ .checkmark {
+  background-color: var(--q1);
+  border: 2px solid var(--q1);
+}
+.service section.main .check .checkmark.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 99px;
+}
+.service section.main .check .checkmark.checkbox:after {
+  left: 5px;
+  top: 1px;
 }
 .welcome {
   min-width: 100vw;

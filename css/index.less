@@ -109,7 +109,9 @@ iframe                                  { border: 0; }
     .fa-circle-check { border-radius: 99px; background-color: white; color: var(--cGreen); }
     .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--cRed); }
     .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }}
-button { width: 100%; height: 40px; border-radius: 99px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--k1);
+button { width: 100%; height: 40px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--k1);
+    &.disabled { background-color: var(--cG4) !important; filter: grayscale(0%); opacity: 1;
+        * { color: var(--cG5) !important; }}
     span { color: white !important; }}
 .switch { position: relative; display: inline-block; min-width: 40px; max-width: 40px; height: 24px; margin: 5px;
     input { opacity: 0; width: 0; height: 0;
@@ -776,10 +778,13 @@ section.pop.coupons { padding: 0;
             span { font-size: var(--fL); }}}
     section.main { width: 100%; max-width: 430px; padding: 120px 20px 160px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;
         span.title { font-weight: bold; }
-        span.content {
-            ol, ul { padding-left: 20px; }}
-    }
-}
+        span.content { color: var(--cG3);
+            * { color: var(--cG3); }
+            ol, ul { padding-left: 28px; }}
+        .check { padding-left: 25px;
+            input:checked ~ .checkmark { background-color: var(--q1); border: 2px solid var(--q1); }
+            .checkmark.checkbox { width: 20px; height: 20px; border-radius: 99px;
+                &:after { left: 5px; top: 1px; }}}}}
 
 // 歡迎
 .welcome { min-width: 100vw; min-height: 100vh; overflow: auto; background-color: var(--cBg);
