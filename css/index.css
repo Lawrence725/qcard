@@ -666,6 +666,7 @@ a.dateRange svg {
 .payment section.head,
 .result section.head,
 .price section.head,
+.service section.head,
 .login section.head,
 .coin section.head,
 .tickets section.head,
@@ -693,6 +694,7 @@ a.dateRange svg {
 .payment section.head .bg,
 .result section.head .bg,
 .price section.head .bg,
+.service section.head .bg,
 .login section.head .bg,
 .coin section.head .bg,
 .tickets section.head .bg,
@@ -716,6 +718,7 @@ a.dateRange svg {
 .payment section.head .left,
 .result section.head .left,
 .price section.head .left,
+.service section.head .left,
 .login section.head .left,
 .coin section.head .left,
 .tickets section.head .left,
@@ -730,6 +733,7 @@ a.dateRange svg {
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
+.service section.head .right,
 .login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
@@ -748,6 +752,7 @@ a.dateRange svg {
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
+.service section.head .right,
 .login section.head .right,
 .coin section.head .right,
 .tickets section.head .right,
@@ -3598,6 +3603,89 @@ section.pop.coupons div.coupon__card > div .card__description {
 .price section.main div.keyboard div a i,
 .price section.main div.keyboard div a svg {
   color: var(--cG4);
+}
+.service {
+  overflow: auto;
+}
+.service section.head {
+  padding: 10px 20px 0;
+  align-items: flex-start;
+}
+.service section.head .bg {
+  bottom: -20px;
+  background: var(--q2);
+}
+.service section.head span,
+.service section.head i,
+.service section.head svg {
+  color: white;
+}
+.service section.head .left {
+  width: 50%;
+}
+.service section.head .left a {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+.service section.head .right {
+  width: 50%;
+  justify-content: right;
+}
+.service section.head .right a {
+  min-height: 30px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.service section.head .right a span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.service section.head img.logo {
+  width: 100px;
+  margin-top: auto;
+}
+.service section.foot {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px 20px 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+  /* background-color: fade(white, 95%); box-shadow: 0px -10px 20px rgba(55, 84, 170, 0.1); */
+  z-index: 5;
+}
+.service section.foot button {
+  height: 50px;
+  padding: 7.5px 7.5px 7.5px 15px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+  background-color: var(--q1);
+}
+.service section.foot button span {
+  font-size: var(--fL);
+}
+.service section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 120px 20px 160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service section.main span.title {
+  font-weight: bold;
+}
+.service section.main span.content ol,
+.service section.main span.content ul {
+  padding-left: 20px;
 }
 .welcome {
   min-width: 100vw;
