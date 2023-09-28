@@ -18,12 +18,17 @@
         <!-- Header -->
         <section class="head">
             <div class="left">
-                <a href="javascript:history.back()">
+                <img src="./icon/ddpay2.svg">
+                <!-- <a href="javascript:history.back()">
                     <i class="fa-solid fa-chevron-left fa-lg"></i>
+                </a> -->
+            </div>
+            <div class="right">
+                <a onclick="">
+                    <span>陳大文</span>
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
                 </a>
             </div>
-            <img src="./icon/ddpayH.svg">
-            <div class="right"></div>
         </section>
         <section class="main">
             <div class="top">
@@ -47,9 +52,10 @@
                 </a>
             </div>
             <div class="center">
-                <a class="center__item">
+                <a class="center__item disabled">
                     <div class="center__icon"><i class="fa-solid fa-clipboard-list fa-xl"></i></div>
                     <span class="center__name">消費紀錄</span>
+                    <span class="center__content">即將推出</span>
                     <i class="center__arrow fa-solid fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="center__item">
@@ -163,7 +169,7 @@
                 <span class="title">我的票券</span>
                 <!-- 票券 -->
                 <div class="coupon--ddp">
-                    <a class="card__top" onclick="popClose(this)">
+                    <div class="card__top">
                         <div class="card__info">
                             <span class="card__name">新春九五折優惠</span>
                             <span class="card__detail">臺東美味麵食店</span>
@@ -171,28 +177,7 @@
                             <span class="card__detail">有效期限：2023-12-31</span>
                         </div>
                         <img src="./img/food.png">
-                    </a>
-                    <div class="dash"></div>
-                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
-                    <a class="card__action" onclick="couponMore(this)">
-                        <span>查看更多</span>
-                        <i class="card__arrow fa-solid fa-chevron-down"></i>
-                    </a>
-                    <div class="card__tag">
-                        <span>已選取</span>
                     </div>
-                </div>
-                <!-- 票券 -->
-                <div class="coupon--ddp">
-                    <a class="card__top" onclick="popClose(this)">
-                        <div class="card__info">
-                            <span class="card__name">新春九五折優惠</span>
-                            <span class="card__detail">臺東美味麵食店</span>
-                            <span class="card__detail">全品項九五折優惠</span>
-                            <span class="card__detail">有效期限：2023-12-31</span>
-                        </div>
-                        <img src="./img/food.png">
-                    </a>
                     <div class="dash"></div>
                     <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
                     <a class="card__action" onclick="couponMore(this)">
@@ -202,7 +187,7 @@
                 </div>
                 <!-- 票券 -->
                 <div class="coupon--ddp">
-                    <a class="card__top" onclick="popClose(this)">
+                    <div class="card__top">
                         <div class="card__info">
                             <span class="card__name">新春九五折優惠</span>
                             <span class="card__detail">臺東美味麵食店</span>
@@ -210,7 +195,25 @@
                             <span class="card__detail">有效期限：2023-12-31</span>
                         </div>
                         <img src="./img/food.png">
+                    </div>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
                     </a>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <div class="card__top">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </div>
                     <div class="dash"></div>
                     <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
                     <a class="card__action" onclick="couponMore(this)">
