@@ -5776,6 +5776,17 @@ section.pop.coupons div.coupon__card > div .card__description {
   display: flex;
   flex-wrap: wrap;
 }
+.wallet section.main .top .top__img {
+  width: calc(50% - 7.5px);
+  margin-bottom: -20px;
+}
+.wallet section.main .top .top__img.top__img--full {
+  width: 100%;
+}
+.wallet section.main .top .top__img img {
+  width: 100%;
+  border-radius: 20px;
+}
 .wallet section.main .top .top__item {
   width: calc(50% - 7.5px);
   height: 120px;
@@ -5786,18 +5797,25 @@ section.pop.coupons div.coupon__card > div .card__description {
   flex-direction: column;
   background-color: var(--q1a);
 }
-.wallet section.main .top .top__item:nth-child(2) {
+.wallet section.main .top .top__item.top__item--point {
+  background-color: var(--q1a);
+}
+.wallet section.main .top .top__item.top__item--point .top__arrow i,
+.wallet section.main .top .top__item.top__item--point .top__arrow svg {
+  color: var(--q1);
+}
+.wallet section.main .top .top__item.top__item--coupon {
   background-color: var(--q3a);
 }
-.wallet section.main .top .top__item:nth-child(2) .top__arrow i,
-.wallet section.main .top .top__item:nth-child(2) .top__arrow svg {
+.wallet section.main .top .top__item.top__item--coupon .top__arrow i,
+.wallet section.main .top .top__item.top__item--coupon .top__arrow svg {
   color: var(--q3);
 }
-.wallet section.main .top .top__item:nth-child(3) {
+.wallet section.main .top .top__item.top__item--card {
   background-color: var(--q2a);
 }
-.wallet section.main .top .top__item:nth-child(3) .top__arrow i,
-.wallet section.main .top .top__item:nth-child(3) .top__arrow svg {
+.wallet section.main .top .top__item.top__item--card .top__arrow i,
+.wallet section.main .top .top__item.top__item--card .top__arrow svg {
   color: var(--q2);
 }
 .wallet section.main .top .top__item.top__item--full {
