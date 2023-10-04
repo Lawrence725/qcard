@@ -5778,7 +5778,6 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .wallet section.main .top .top__img {
   width: calc(50% - 7.5px);
-  margin-bottom: -20px;
 }
 .wallet section.main .top .top__img.top__img--full {
   width: 100%;
