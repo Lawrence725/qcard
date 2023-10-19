@@ -3947,6 +3947,7 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .login section.main div.inputs div.input > div:not(.error) {
   gap: 10px;
+  position: relative;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--cG5);
@@ -3981,6 +3982,17 @@ section.pop.coupons div.coupon__card > div .card__description {
   align-items: center;
   justify-content: center;
   color: var(--cG4);
+}
+.login section.main div.inputs div.input > div:not(.error) select {
+  width: 100%;
+  height: 40px;
+  font-size: var(--fL);
+  border-radius: 0;
+}
+.login section.main div.inputs div.input > div:not(.error) .fa-caret-down {
+  right: 0;
+  position: absolute;
+  pointer-events: none;
 }
 .login section.main div.inputs div.input > div.error {
   width: 100%;
