@@ -93,3 +93,13 @@ function couponMore(e) {
         setTimeout(function(){
             e.closest('.coupon--ddp').scrollIntoView({ behavior: 'smooth' });
         }, 300); }}
+
+// Carousel
+// https://flickity.metafizzy.co
+var flkty = new Flickity( '.carousel', {
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    prevNextButtons: false,
+    autoPlay: true
+});

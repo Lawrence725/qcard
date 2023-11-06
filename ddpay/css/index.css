@@ -5783,6 +5783,27 @@ section.pop.coupons div.coupon__card > div .card__description {
   display: flex;
   flex-direction: column;
 }
+.wallet section.main .carousel {
+  width: 100%;
+}
+.wallet section.main .carousel img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+}
+.wallet section.main .carousel .flickity-page-dots {
+  bottom: 5px;
+}
+.wallet section.main .carousel .flickity-page-dots .dot {
+  margin: 0 5px;
+  border: 1px solid white;
+  background-color: white;
+  opacity: 1;
+  box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+}
+.wallet section.main .carousel .flickity-page-dots .dot.is-selected {
+  background-color: var(--q1);
+}
 .wallet section.main .top {
   gap: 15px;
   display: flex;

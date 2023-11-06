@@ -1204,6 +1204,11 @@ section.pop.coupons { padding: 0;
         i, svg { color: var(--q2); }
         img { height: 34px; }}
     section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 20px; display: flex; flex-direction: column;
+        .carousel { width: 100%;
+            img { width: 100%; aspect-ratio: 16/9; border-radius: 20px; }
+            .flickity-page-dots { bottom: 5px;
+                .dot { margin: 0 5px; border: 1px solid white; background-color: white; opacity: 1; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+                    &.is-selected { background-color: var(--q1); }}}}
         .top { gap: 15px; display: flex; flex-wrap: wrap;
             .top__img { width: calc(50% - 7.5px);
                 &.top__img--full { width: 100%; }
