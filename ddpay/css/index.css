@@ -683,6 +683,7 @@ a.dateRange svg {
 .news section.head,
 .new section.head,
 .wallet section.head,
+.couponSave section.head,
 .profile section.head,
 .profileEdit section.head,
 .carrier section.head,
@@ -711,6 +712,7 @@ a.dateRange svg {
 .news section.head .bg,
 .new section.head .bg,
 .wallet section.head .bg,
+.couponSave section.head .bg,
 .profile section.head .bg,
 .profileEdit section.head .bg,
 .carrier section.head .bg,
@@ -735,6 +737,7 @@ a.dateRange svg {
 .news section.head .left,
 .new section.head .left,
 .wallet section.head .left,
+.couponSave section.head .left,
 .profile section.head .left,
 .profileEdit section.head .left,
 .carrier section.head .left,
@@ -750,6 +753,7 @@ a.dateRange svg {
 .news section.head .right,
 .new section.head .right,
 .wallet section.head .right,
+.couponSave section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -769,6 +773,7 @@ a.dateRange svg {
 .news section.head .right,
 .new section.head .right,
 .wallet section.head .right,
+.couponSave section.head .right,
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
@@ -797,6 +802,22 @@ a.dateRange svg {
 }
 .coupon--ddp:nth-child(3n+2) {
   background-color: var(--q2);
+}
+.coupon--ddp.coupon--simply {
+  height: fit-content;
+  min-height: unset;
+}
+.coupon--ddp.coupon--white {
+  background-color: var(--cBg);
+}
+.coupon--ddp.coupon--white * {
+  color: var(--cG1);
+}
+.coupon--ddp.coupon--white .card__detail {
+  color: var(--cG3) !important;
+}
+.coupon--ddp.coupon--white img {
+  filter: none !important;
 }
 .coupon--ddp * {
   color: white;
@@ -5934,6 +5955,77 @@ section.pop.coupons div.coupon__card > div .card__description {
 .wallet section.main .bottom .bottom__item:not(:first-child) {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
+}
+.couponSave section.head {
+  background: linear-gradient(180deg, #FFF 85%, rgba(255, 255, 255, 0) 100%);
+}
+.couponSave section.head i,
+.couponSave section.head svg {
+  color: var(--q2);
+}
+.couponSave section.head img {
+  height: 34px;
+}
+.couponSave section.head .left {
+  gap: 5px;
+}
+.couponSave section.head .head__title {
+  font-size: var(--fXL);
+  font-weight: bold;
+  color: #315B6D;
+  white-space: nowrap;
+}
+.couponSave section.foot {
+  width: 100%;
+  max-width: 430px;
+  padding: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 15%);
+}
+.couponSave section.foot .foot__confirm {
+  width: 100%;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--q1);
+}
+.couponSave section.foot .foot__confirm span {
+  font-size: var(--fL);
+  color: white;
+}
+.couponSave section.foot .foot__cancel {
+  font-size: var(--fL);
+  color: var(--cG3);
+  text-decoration: underline !important;
+}
+.couponSave section.main {
+  width: 100%;
+  max-width: 430px;
+  padding: 70px 20px 50px;
+  margin: 0 auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.couponSave section.main .main__title {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.couponSave section.pop.notice button:last-child {
+  background-color: var(--q1) !important;
+}
+.couponSave section.pop.notice.confirm .warning {
+  color: var(--cRed);
 }
 .profile {
   min-height: 100vh;

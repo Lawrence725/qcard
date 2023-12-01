@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="couponSave">
+        <!-- Header -->
+        <section class="head">
+            <div class="left">
+                <img src="./icon/ddpay2.svg">
+                <span class="head__title">票券歸戶</span>
+            </div>
+            <div class="right">
+                <a onclick="">
+                    <span>陳大文</span>
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Footer -->
+        <section class="foot">
+            <button class="foot__confirm" onclick="popConfirm()">
+                <span>確認歸戶至陳大文</span>
+            </button>
+            <a class="foot__cancel">登出帳號</a>
+        </section>
+        <!-- Main -->
+        <section class="main">
+            <span class="main__title">訂單 87654321</span>
+            <!-- 票券 -->
+            <div class="coupon--ddp coupon--simply coupon--white">
+                <div class="card__top">
+                    <div class="card__info">
+                        <span class="card__name">新春九五折優惠</span>
+                        <span class="card__detail">臺東美味麵食店</span>
+                        <span class="card__detail">全品項九五折優惠</span>
+                        <span class="card__detail">有效期限：2023-12-31</span>
+                    </div>
+                    <img src="./img/food.png">
+                </div>
+            </div>
+            <!-- 票券 -->
+            <div class="coupon--ddp coupon--simply coupon--white">
+                <div class="card__top">
+                    <div class="card__info">
+                        <span class="card__name">新春九五折優惠</span>
+                        <span class="card__detail">臺東美味麵食店</span>
+                        <span class="card__detail">全品項九五折優惠</span>
+                        <span class="card__detail">有效期限：2023-12-31</span>
+                    </div>
+                    <img src="./img/food.png">
+                </div>
+            </div>
+            <!-- 票券 -->
+            <div class="coupon--ddp coupon--simply coupon--white">
+                <div class="card__top">
+                    <div class="card__info">
+                        <span class="card__name">新春九五折優惠</span>
+                        <span class="card__detail">臺東美味麵食店</span>
+                        <span class="card__detail">全品項九五折優惠</span>
+                        <span class="card__detail">有效期限：2023-12-31</span>
+                    </div>
+                    <img src="./img/food.png">
+                </div>
+            </div>
+        </section>
+        <!-- 確認歸戶popup -->
+        <section id="popConfirm" class="pop notice confirm" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <!-- <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i> -->
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">確認歸戶至陳大文？</span>
+                    <span class="warning">歸戶後將無法取消</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popSuccess()">
+                        <span>確認歸戶</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 歸戶成功popup -->
+        <section id="popSuccess" class="pop notice success" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <!-- <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div> -->
+                    </div>
+                    <span class="title">票券歸戶成功</span>
+                    <span class="warning">已歸戶至陳大文</span>
+                </div>
+                <button onclick="window.location.href='wallet.html'">
+                    <span>前往票夾</span>
+                </button>
+            </div>
+        </section>
+        <!-- Script -->
+        <script src="./js/wCouponSave.js"></script>
+    </body>
+</html>

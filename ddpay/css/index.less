@@ -159,7 +159,7 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 @keyframes popdown { 0% { margin-bottom: 0; } 100% { margin-bottom: -100vh; }}
 
 /* Common */
-.payment, .result, .price, .service, .login, .coin, .tickets, .ticket, .news, .new, .wallet, .profile, .profileEdit, .carrier, .policy {
+.payment, .result, .price, .service, .login, .coin, .tickets, .ticket, .news, .new, .wallet, .couponSave, .profile, .profileEdit, .carrier, .policy {
     section.head { width: 100%; max-width: 430px; height: 70px; padding: 20px 20px 30px; left: 50%; transform: translate(-50%, 0); position: fixed; display: flex; align-items: center; justify-content: center; gap: 5px; z-index: 5;
         .bg { width: 1000px; height: 1000px; border-radius: 999px; position: absolute; bottom: -15px; background: var(--k2); pointer-events: none; z-index: -1; }
         .left, .right { width: 100%; display: flex; align-items: center; }
@@ -167,6 +167,12 @@ a.dateRange { width: 100%; height: 40px; padding: 0 15px; border: 1px solid var(
 .coupon--ddp { height: 172px; min-height: 172px; padding: 15px 15px 10px; scroll-margin: 40px; border-radius: 20px; gap: 10px; position: relative; display: flex; flex-direction: column; align-items: center; background-color: var(--q1); overflow: hidden; animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1;
     &:nth-child(3n+1) { background-color: var(--q3); }
     &:nth-child(3n+2) { background-color: var(--q2); }
+    &.coupon--simply { height: fit-content; min-height: unset; }
+    &.coupon--white { background-color: var(--cBg);
+        * { color: var(--cG1); }
+        .card__detail { color: var(--cG3) !important; }
+        img { filter: none !important; }
+    }
     * { color: white; }
     .card__top { width: 100%; min-height: 100px; gap: 5px; display: flex; align-items: flex-start;
         .card__info { margin-right: auto; display: flex; flex-direction: column;
@@ -1239,6 +1245,23 @@ section.pop.coupons { padding: 0;
         .bottom { width: 100%; gap: 15px; display: flex; align-items: center; justify-content: center;
             .bottom__item { font-size: var(--fS); color: var(--cG4);
                 &:not(:first-child) { padding-left: 15px; border-left: 1px solid var(--cG5); }}}}}
+
+// 票券歸戶
+.couponSave {
+    section.head { background: linear-gradient(180deg, #FFF 85%, rgba(255, 255, 255, 0.00) 100%);
+        i, svg { color: var(--q2); }
+        img { height: 34px; }
+        .left { gap: 5px; }
+        .head__title { font-size: var(--fXL); font-weight: bold; color: #315B6D; white-space: nowrap; }}
+    section.foot { width: 100%; max-width: 430px; padding: 20px; left: 50%; transform: translate(-50%, 0); bottom: 0; position: fixed; display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 5; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 15%);
+        .foot__confirm { width: 100%; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; background-color: var(--q1);
+            span { font-size: var(--fL); color: white; }}
+        .foot__cancel { font-size: var(--fL); color: var(--cG3); text-decoration: underline !important; }}
+    section.main { width: 100%; max-width: 430px; padding: 70px 20px 50px; margin: 0 auto; gap: 20px; display: flex; flex-direction: column;
+        .main__title { font-size: var(--fL); font-weight: bold; }}
+    section.pop.notice {
+        button:last-child { background-color: var(--q1) !important; }
+        &.confirm .warning { color: var(--cRed); }}}
 
 // 帳號設定
 .profile { min-height: 100vh; background: var(--k2);
