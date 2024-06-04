@@ -3581,6 +3581,8 @@ section.pop.coupons div.coupon__card > div .card__description {
   z-index: 5;
 }
 .price section.foot button {
+  height: 60px;
+  border-radius: 20px;
   background-color: var(--q1);
 }
 .price section.foot button span {
