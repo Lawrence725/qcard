@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="price">
+        <!-- Header -->
+        <section class="head">
+            <div class="bg"></div>
+            <span>臺東美味麵食店</span>
+        </section>
+        <!-- Footer -->
+        <section class="foot">
+            <button onclick="window.location.href='payment.html'">
+                <span>確認訂單</span>
+            </button>
+        </section>
+        <!-- Main -->
+        <section class="main">
+            <span class="title">選擇訂單結帳</span>
+            
+            <div class="order__ckeck-list">
+				<div class="order__ckeck-list__option">
+                    <input type="checkbox" id="ckeck1" checked>
+                    <label for="ckeck1">
+                        <div class="order__ckeck-list__left">
+                            <span class="order__number">24號</span>
+                            <span class="order__serial-number">交易序號 654322</span>
+                        </div>
+                        <div class="order__ckeck-list__right">
+                            <time>2022/04/30 12:25</time>
+                            <span class="order__total">$50</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="order__ckeck-list__option">
+                    <input type="checkbox" id="ckeck2">
+                    <label for="ckeck2">
+                        <div class="order__ckeck-list__left">
+                            <span class="order__number">23號</span>
+                            <span class="order__serial-number">交易序號 654321</span>
+                        </div>
+                        <div class="order__ckeck-list__right">
+                            <time>2022/04/30 12:15</time>
+                            <span class="order__total">$80</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="order__ckeck-list__option">
+                    <input type="checkbox" id="ckeck3">
+                    <label for="ckeck3">
+                        <div class="order__ckeck-list__left">
+                            <span class="order__number">22號</span>
+                            <span class="order__serial-number">交易序號 654320</span>
+                        </div>
+                        <div class="order__ckeck-list__right">
+                            <time>2022/04/30 12:05</time>
+                            <span class="order__total">$100</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="order__ckeck-list__option">
+                    <input type="checkbox" id="ckeck4" disabled>
+                    <label for="ckeck4">
+                        <div class="order__ckeck-list__left">
+                            <span class="order__number">21號</span>
+                            <span class="order__serial-number">交易序號 654319</span>
+                        </div>
+                        <div class="order__ckeck-list__right">
+                            <time>2022/04/30 12:00</time>
+                            <span class="order__total">$120</span>
+                        </div>
+                    </label>
+                </div>
+            </div><!-- END .order__ckeck-list -->
+        </section>
+    </body>
+</html>

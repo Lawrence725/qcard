@@ -1370,3 +1370,20 @@ section.pop.coupons { padding: 0;
                 &.title { font-size: var(--fXXL); color: white; }}}
         a { min-width: 70px; min-height: 70px; margin-bottom: 150px; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 10px 20px rgba(55, 84, 170, 0.2);
             i, svg { color: var(--q2); }}}}
+
+//訂單
+.order__ckeck-list { width: 100%; margin: 0 auto; padding-bottom: 60px;
+    .order__ckeck-list__option { margin-bottom: 10px;
+        input { display: none; }
+        label { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: stretch; align-content: space-between; padding: 10px 15px;
+            background: var(--cBg); border: 2px solid var(--cBg); border-radius: 20px;
+            span { display: block; }
+            .order__number { font-size: var(--fXL); }
+            .order__serial-number { color: var(--cG3); font-size: var(--fM); }
+            time { color: var(--cG3); font-size: var(--fM); text-align: right; }
+            .order__total { font-size: var(--fXL); font-weight: bold; text-align: right; }
+        }
+        input:checked + label { border-color: var(--q1); }
+        input:disabled + label * { color: var(--cG5); }
+    }
+}
