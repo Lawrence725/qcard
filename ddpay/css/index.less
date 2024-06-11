@@ -83,6 +83,73 @@ img                                     { object-fit: cover; }
 i, svg                                  { text-decoration: none !important; }
 iframe                                  { border: 0; }
 
+/* loading */
+.loader-animate { position: relative; }
+.loader {
+    width: 150px; height: 150px; margin: 10dvh auto;
+    border: 10px solid var(--cOrange);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader-animate .gif { position: absolute; 
+    top: 0; bottom: 0; left: 0; right: 0;
+    
+}
+.loader-animate .gif div { position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
+    display: flex; flex-flow: nowrap; justify-content: center; align-items: center;
+    opacity: 0; filter: alpha(opacity=0); 
+    -webkit-animation: round 9s linear infinite; animation: round 9s linear infinite; }
+.loader-animate .gif div:nth-child(1) { -webkit-animation-delay: 0s; animation-delay: 0s; }
+.loader-animate .gif div:nth-child(2) { -webkit-animation-delay: 3s; animation-delay: 3s; }
+.loader-animate .gif div:nth-child(3) { -webkit-animation-delay: 6s; animation-delay: 6s; }
+
+@-webkit-keyframes round {
+    5% {
+        opacity: 1;
+        filter: alpha(opacity=50);
+        /* 0 - 1秒 淡入*/
+    }
+    30% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1 - 3秒靜止*/
+    }
+    35% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 3 - 4秒淡出*/
+    }
+    }
+    @keyframes round {
+    5% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    30% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1 - 3秒靜止*/
+    }
+    35% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 3 - 4秒淡出*/
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
 /* Components */
 .disabled   { color: var(--cG4) !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: var(--cG4) !important; }
