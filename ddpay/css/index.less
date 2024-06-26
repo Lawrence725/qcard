@@ -587,7 +587,12 @@ section.pop.coupons { padding: 0;
                 img { height: 14px; }}}
         // 優惠折抵
         section.discount {
-            a.discount__point, a.discount__coupon { height: 50px; padding: 0 15px; gap: 5px; border-radius: 15px; display: flex; align-items: center; background-color: var(--cBg);
+            a.discount__point, a.discount__coupon { height: 50px; padding: 15px; gap: 5px; border-radius: 15px; position: relative; display: flex; align-items: center; background-color: var(--cBg);
+                &.discount--only { height: 180px; flex-direction: column; align-items: flex-start;
+                    img { min-width: 36px; max-width: 36px; }
+                    span.discount__title { margin-top: auto; }
+                    span.discount__name { margin-left: 0; font-size: var(--fXL); }
+                    i { height: 16px; bottom: 15px; right: 15px; position: absolute; }}
                 img { min-width: 24px; max-width: 24px; }
                 span { font-size: var(--fL); white-space: nowrap; }
                 span.discount__title { margin-right: auto; color: var(--cG1); }
