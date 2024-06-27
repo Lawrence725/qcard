@@ -2669,7 +2669,9 @@ section.pop.coupons div.coupon__card > div .card__description {
   font-size: var(--fXL);
 }
 .payment section.main section.discount a.discount__point.discount--only i,
-.payment section.main section.discount a.discount__coupon.discount--only i {
+.payment section.main section.discount a.discount__coupon.discount--only i,
+.payment section.main section.discount a.discount__point.discount--only svg,
+.payment section.main section.discount a.discount__coupon.discount--only svg {
   height: 16px;
   bottom: 15px;
   right: 15px;
