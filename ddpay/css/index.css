@@ -3712,7 +3712,7 @@ section.pop.coupons div.coupon__card > div .card__description {
 .price section.main {
   width: 100%;
   max-width: 430px;
-  padding: 120px 20px 50px;
+  padding: 120px 20px 160px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
