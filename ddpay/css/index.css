@@ -3,28 +3,28 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v35/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/notosanstc/v36/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v35/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_Co.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/notosanstc/v36/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_Co.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
 }
 :root {
   /* Font */
@@ -426,6 +426,10 @@ iframe {
 .popBody div.icon > div.blue,
 .result div.icon > div.blue {
   border: 7.5px solid var(--cBlue);
+}
+.popBody div.icon > div.red,
+.result div.icon > div.red {
+  border: 7.5px solid var(--cRed);
 }
 .popBody div.icon > img,
 .result div.icon > img {
@@ -6636,4 +6640,253 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .order__ckeck-list .order__ckeck-list__option input:disabled + label * {
   color: var(--cG5);
+}
+.wallet.member {
+  min-height: 100vh;
+}
+.wallet.member i.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+.wallet.member i.icon.cathay-bonus {
+  width: 40px;
+  background: url('../icon/cathay-bonus.svg') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.momo-point {
+  background: url('../icon/momo-point.png') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.tycg-point {
+  background: url('../icon/tycg-point.svg') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.qc-point {
+  background: url('../icon/qc-point.svg') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.ttpush {
+  background: url('../icon/ttpush.png') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.hualien-q {
+  background: url('../icon/hualien-q.png') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.icon.unbind {
+  width: 24px;
+  height: 24px;
+  background: url('../icon/unbind.svg') no-repeat center right;
+  background-size: contain;
+}
+.wallet.member i.fa-chevron-right {
+  color: var(--cG3) !important;
+}
+.wallet.member section.head {
+  background: #FFFFFF;
+}
+.wallet.member section.head > span {
+  width: 100%;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fL);
+  text-align: center;
+}
+.wallet.member .main {
+  padding-bottom: 100px;
+}
+.wallet.member .main .main-p {
+  text-align: center;
+}
+.wallet.member .main .main-p.gray {
+  color: var(--cG3);
+}
+.wallet.member .main .center {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+.wallet.member .main .center .center__item {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--cBg);
+  border-radius: 20px;
+  border: none !important;
+}
+.wallet.member .main .center .center__item .center__icon {
+  width: 40px;
+  margin-right: 3px;
+}
+.wallet.member .main .center .center__item .center__icon i.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0;
+}
+.wallet.member .main .center .center__item .center__name {
+  font-size: var(--fXL);
+}
+.wallet.member .main .center .center__item .center__content {
+  color: var(--cG3);
+  font-size: var(--fL);
+}
+.wallet.member .main .center .center__item.cathay-bonus {
+  background: #00783F;
+}
+.wallet.member .main .center .center__item.momo-point {
+  background: #C53A71;
+}
+.wallet.member .main .center .center__item.tycg-point {
+  background: #EF6079;
+}
+.wallet.member .main .center .center__item.qc-point {
+  background: var(--q1);
+}
+.wallet.member .main .center .center__item.ttpush {
+  background: #EF6079;
+}
+.wallet.member .main .center .center__item.hualien-q {
+  background: #FEB435;
+}
+.wallet.member .main .btn-unbind {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0 auto;
+  color: var(--cRed);
+  text-align: center;
+  background: var(--cBg);
+  border-radius: 10px;
+}
+.wallet.member .main .form-row {
+  display: flex;
+  flex-flow: column;
+  gap: 2px;
+}
+.wallet.member .main .form-row .form-row__title {
+  font-weight: bold;
+}
+.wallet.member .main .form-row .form-row__msg {
+  color: var(--cG3);
+  font-size: var(--fM);
+}
+.wallet.member .main .form-row .form-row__text-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--cG5);
+}
+.wallet.member .main .form-row ::placeholder {
+  color: var(--cG4);
+}
+.wallet.member .main .form-row .form-row__btn {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+  color: var(--cG4);
+  background: var(--cBg);
+  border-radius: 10px;
+}
+.wallet.member .main .form-row .form-row__btn .fa-chevron-right {
+  color: var(--cG4) !important;
+}
+.wallet.member .main .form-row .form-row__btn.checked {
+  color: var(--cG1);
+}
+.wallet.member .main .form-row .form-row__btn.checked .fa-circle-check {
+  color: var(--cGreen) !important;
+}
+.wallet.member .foot {
+  width: 100%;
+  max-width: 430px;
+  padding: 10px 20px 30px 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+}
+.wallet.member .foot button {
+  height: 50px;
+  padding: 10px 15px;
+  color: #FFFFFF;
+  font-size: var(--fL);
+  border-radius: 20px;
+  background-color: var(--q2);
+}
+.wallet.member .pop .popBody .title {
+  font-weight: bold;
+}
+.wallet.member .pop .popBody .icon .red .fa-exclamation {
+  color: var(--cRed);
+}
+.wallet.member .pop .popBody button {
+  background: var(--q2);
+}
+.wallet.member .pop .popBody .buttons {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.wallet.member .pop .popBody .buttons button {
+  background: var(--cBg);
+}
+.wallet.member .pop .popBody .buttons button > span {
+  color: var(--cG1) !important;
+}
+.wallet.member .pop .popBody .buttons .red-btn {
+  background: var(--cRed);
+}
+.wallet.member .pop .popBody .buttons .green-btn {
+  background: var(--q2);
+}
+.wallet.member .pop .popBody .buttons .red-btn > span,
+.wallet.member .pop .popBody .buttons .green-btn > span {
+  color: #FFFFFF !important;
+}
+.wallet.member .pop .popBody .term-content p {
+  margin: 0 0 15px 0;
+  color: var(--cG3);
+  font-size: var(--fM);
+  line-height: 160%;
+}
+.wallet.member .pop .popBody .pgdn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  bottom: 70px;
+  margin-left: -20px;
+  color: #FFFFFF;
+  border-radius: 99em;
+  background: var(--q2);
+}
+.wallet.member .pop.term .popBody {
+  padding-bottom: 0;
+}
+.wallet.member .pop.term .popBody .buttons {
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 0 20px 0;
+  background: #FFFFFF;
 }

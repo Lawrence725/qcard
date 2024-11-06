@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qcard</title>
+        <link rel="icon" type="image/svg" href="./icon/favicon.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DotDot">
+        <meta name="description" content="DotDot">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/flickity.min.css" media="screen">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="wallet member">
+        <!-- Header -->
+        <section class="head">
+            <div class="left">
+                <a href="javascript:history.back()">
+                    <i class="fa-solid fa-chevron-left fa-lg"></i>
+                </a>
+            </div>
+
+            <span><i class="icon cathay-bonus"></i>小樹點</span>
+            <!-- 其他紅利點數 -->
+            <!--
+            <span><i class="icon momo-point"></i>Momo幣</span>
+            <span><i class="icon tycg-point"></i>紅利桃子</span>
+            <span><i class="icon qc-point"></i>筷點</span>
+            <span><i class="icon ttpush"></i>TTPush</span>
+            <span><i class="icon hualien-q"></i>花蓮好Q</span>
+            -->
+
+            <div class="right"></div>
+        </section>
+
+        <section class="main">
+            <div class="form-row">
+                <div class="form-row__title">標題</div>
+                <div class="form-row__msg">提示</div>
+                <input class="form-row__text-input" placeholder="輸入">
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__title">標題</div>
+                <div class="form-row__msg">提示</div>
+                <input class="form-row__text-input" placeholder="輸入">
+            </div>
+
+            <p class="main-p gray">點數介紹，可於下次DDPay支付時進行折抵。更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</p>
+
+            <div class="form-row">
+                <div class="form-row__title">授權條款1</div>
+                <button class="form-row__btn" onclick="popTerm()">
+                    查看授權條款1
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__title">授權條款2</div>
+                <button class="form-row__btn checked" onclick="popTerm()">
+                    查看授權條款2
+                    <i class="fa-solid fa-circle-check fa-lg"></i>
+                </button>
+            </div>
+
+            <button class="btn-unbind" onclick="popConfirm()">解除綁定 <i class="icon unbind"></i></button>
+        </section>
+
+        <section class="foot">
+            <button onclick="popSuccess()">前往綁定</button>
+            <button onclick="popSuccess()">立即綁定</button>
+        </section>
+
+        <!-- 授權條款popup -->
+        <section id="popTerm" class="pop term" onclick="popClose(this)" style="display: flex;">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <div>
+                    <span class="title">授權條款1</span>
+                </div>
+
+                <div class="term-content">
+                    <p>本人為辦理帳戶驗證，同意提供本人身分證字號或統一編號及銀行帳戶號碼等資訊予點點全球股份有限公司，並由點點全球股份有限公司將本人所提供之資料傳送至台北富邦商業銀行、台灣票據交換所及帳戶行，俾利完成ID帳戶驗證流程。</p>
+                    <p>—店家系統使用條款—<br>
+                    在您(甲方)使用點點全球股份有限公司(乙方)的「快一點產品和服務」前，請詳讀以下的服務條款。不論是透過網站、電話、LINE官方帳號/小程式或是手機應用程式即APP，只要您使用點點全球股份有限公司網站或App取得任何餐點/產品和服務，即表示您同意本服務條款之規定，包括但不限於個人資料授權原則及使用同意書、所有公佈於本公司網站之條款、政策、內容、以書面或其他形式通知之服務使用規範及往後修訂的版本。</p>
+                    <p>乙方為餐點網路平台服務業者並依法開立平台服務費之發票予甲方。甲方應依法自行開立餐點之發票或稅法規定之合法憑證予消費者。</p>
+                    <p>甲方所任用之主要職員，如需操作技術訓練時，乙方將負責訓練，且甲方必須配合乙方進行相關訓練程序</p>
+                    <p>於甲方依合約規定給付全額系統服務費給乙方後，乙方同意於合約期間內將甲方選購之方案服務授權給甲方使用，此授權是非獨家的、不可轉讓的。</p>
+                    <p>甲乙雙方不得為任何損害他方商譽、信譽或其他利益之行為，亦不得使用平台或服務進行任何不正當或有損利益、商譽或信譽之行為。其包括但不限於以下項目：<br>
+                    試圖自己或協助他人未經授權存取本平台或系統。</p>
+                    <p>以機器人或其他技術方法，變更、刪除、破壞乙方服務系統之資料內容或設備、或是對本系統經營造成不良影響之虞。</p>
+                    <p>藉由乙方系統設計存在之漏洞、或以越過、破壞乙方系統安全維護機制等其他技術方法、變更、刪除或蒐集他人之個人資料。違反任何相關法規。</p>
+                    <p>因不可抗力或不可歸責於雙方當事人之事由，致本契約之全部或一部無法履行時，任何一方得解除契約，解約條件依雙方協商。</p>
+                    <p>甲方瞭解並同意，因網路傳輸技術的有限性，乙方無法完全免除因為電訊服務不穩定、中斷、滯延或是網際網路傳輸品質問題而導致數據中斷或是滯延的情況發生，乙方須提出報告書，致甲方受有損害，乙方應賠償甲方損失之價額。</p>
+                    <p>甲方應依照乙方要求的格式提供乙方必要的協助及資料，以利乙方得提供本服務，包括但不限於產品描述、照片及取餐或送貨設定等，並須確保其網路及系統符合乙方所要求的規格。</p>
+                    <p>合約期間內，甲方得隨時於系統後台中下載資料，包含訂單資料、會員資料以及商品資料．乙方提供甲方將上述資料匯出成excel檔案，甲方須自行負擔資料保管的責任．</p>
+                    <p>本合約終止、解除或屆滿後，甲方可在七天內自行下載資料．乙方會在七天後封存甲方帳號之資料．若甲方之後想再取得資料，可在一年之內向乙方申請匯出 。 若需要刪除另外申請即可．</p>
+                    <p>客戶服務：<br>
+                    服務時間：於乙方正常營業時間內施行</p>
+                    <p>乙方接獲甲方通報維護服務時，會先行線上教導排除，甲方須配合乙方操作線上排除。</p>
+                    <p>為提供本服務乙方將協助或代理甲方處理消費者資料或其他甲方提供的資料，甲方茲同意並委任乙方為處理商家資料，並授權乙方得為提供本服務之需將商家資料進行修改及移轉給第三服務商進行處理。</p>
+                    <p>甲方應自行負責商家資料的合法性、完整性及正確性、並保證其有權為前述授權。乙方應盡善良管理人之注意義務，挑選適當的第三服務商、並要求該第三服務商亦遵守個人資料保護法及相關法令規定執行乙方所委託的事務。若因乙方之疏失致甲方損失，乙方負損害賠償責任。</p>
+                    <p>甲方應確保提供給乙方之資料皆為合法取得、且就其資料之收集、處理及利用的方式應依照個人資料保護法或其他相關法律之規定公告或通知消費者或其他被收集資料之人、並取得其同意乙方及其委托的第三服務商得於本協議之目的範圍內收集、處理及利用消費者或其他被收集資料之人之個人資料。</p>
+                    <p>任何消費者的資料或其他商家資料因法令規定不得提供給乙方時，甲方應先移除前述不得提供的資料後再將其部分提供給乙方、或將其匿名化、若已提供給乙方時，應及時通知乙方移除該等資料。</p>
+                    <p>乙方將運用商業上專業的技術安全措施，保護甲方在乙方系統上資料免於未經授權的使用或披露。因乙方疏失致甲方損失，乙方負損害賠償責任。</p>
+                    <p>甲方需遵守所授權服務區域與可能適用地區之個人資料相關法令。</p>
+                    <p>若您有任何問題，請使用線上客服系統與我們客服團隊聯繫，謝謝。</p>
+                    <p>最後更新日期：2023年06月30日</p>
+                    <p>—消費者點餐平台服務條款—<br>
+                    在您使用點點全球股份有限公司的產品和服務前，請詳讀以下的服務條款。不論是透過網站、電話、LINE官方帳號/小程式或是手機應用程式即APP，只要您使用點點全球股份有限公司網站或App取得任何餐點/產品和服務，即表示您同意本服務條款之規定，包括但不限於個人資料授權原則及使用同意書、所有公佈於本公司網站之條款、政策、內容、以書面或其他形式通知之服務使用規範及往後修訂的版本。</p>
+                    <a id="pgdn" name="pgdn"></a>
+                </div>
+
+                <div class="buttons">
+                    <a class="pgdn" href="#pgdn"><i class="fa-solid fa-angle-down fa-lg"></i></a>
+                    <button onclick="popClose(this)">
+                        <span>不同意</span>
+                    </button>
+                    <button class="green-btn" onclick="popClose(this)">
+                        <span>同意條款</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 綁定成功popup -->
+        <section id="popSuccess" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                    </div>
+                    <span class="title">小樹點綁定成功</span>
+                    <span class="warning">使用DDPay消費即可折抵優惠及累積回饋</span>
+                </div>
+                <button onclick="window.location.href='wMembers.html'">
+                    <span>確定</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 確認解除綁定popup -->
+        <section id="popConfirm" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <div class="red"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">確定解綁小樹點？</span>
+                    <span class="warning">解綁後點數將保留在小樹點帳號</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button class="red-btn" onclick="popUnbindSuccess()">
+                        <span>確認解綁</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 解除綁定成功popup -->
+        <section id="popUnbindSuccess" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                    </div>
+                    <span class="title">小樹點解綁成功</span>
+                </div>
+                <button onclick="window.location.href='wMembers.html'">
+                    <span>確定</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Script -->
+        <script src="./js/flickity.pkgd.min.js"></script>
+        <script src="./js/wMember.js"></script>
+    </body>
+</html>

@@ -171,11 +171,13 @@ iframe                                  { border: 0; }
     > i, > svg { border-radius: 999px; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);}
     > div { width: 80px; height: 80px; padding: 20px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
         &.orange { border: 7.5px solid var(--cOrange); }
-        &.blue { border: 7.5px solid var(--cBlue); }}
+        &.blue { border: 7.5px solid var(--cBlue); }
+        &.red { border: 7.5px solid var(--cRed); }}
     > img { height: 80px; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
     .fa-circle-check { border-radius: 99px; background-color: white; color: var(--cGreen); }
     .fa-circle-xmark { border-radius: 99px; background-color: white; color: var(--cRed); }
-    .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }}
+    .fa-hourglass-half, .fa-exclamation { color: var(--cOrange); }
+}
 button { width: 100%; height: 40px; border-radius: 99px; position: relative; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--k1);
     &.disabled { background-color: var(--cG4) !important; filter: grayscale(0%); opacity: 1;
         * { color: var(--cG5) !important; }}
@@ -1457,5 +1459,90 @@ section.pop.coupons { padding: 0;
         }
         input:checked + label { border-color: var(--q1); }
         input:disabled + label * { color: var(--cG5); }
+    }
+}
+
+//會員綁定
+.wallet.member { min-height: 100vh;
+    i.icon { display: block; width: 30px; height: 30px; margin-right: 3px; }
+    i.icon.cathay-bonus { width: 40px; background: url('../icon/cathay-bonus.svg') no-repeat center right; background-size: contain; }
+    i.icon.momo-point { background: url('../icon/momo-point.png') no-repeat center right; background-size: contain; }
+    i.icon.tycg-point { background: url('../icon/tycg-point.svg') no-repeat center right; background-size: contain; }
+    i.icon.qc-point { background: url('../icon/qc-point.svg') no-repeat center right; background-size: contain; }
+    i.icon.ttpush { background: url('../icon/ttpush.png') no-repeat center right; background-size: contain; }
+    i.icon.hualien-q { background: url('../icon/hualien-q.png') no-repeat center right; background-size: contain; }
+    i.icon.unbind { width: 24px; height: 24px; background: url('../icon/unbind.svg') no-repeat center right; background-size: contain; }
+    i.fa-chevron-right { color: var(--cG3) !important; }
+
+    section.head { background: #FFFFFF; 
+        > span { width: 100%; display: flex; flex-flow: nowrap; justify-content: center; align-items: center; font-size: var(--fL); text-align: center; }
+    }
+    .main { padding-bottom: 100px;
+        .main-p { text-align: center; }
+        .main-p.gray { color: var(--cG3); }
+
+        .center { display: flex; flex-flow: column; gap: 12px;
+            .center__item { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
+                padding: 10px 20px; background: var(--cBg); border-radius: 20px; border: none !important;
+                .center__icon { width: 40px; margin-right: 3px; 
+                    i.icon { width: 40px; height: 40px; margin-right: 0; }
+                }
+                .center__name { font-size: var(--fXL); }
+                .center__content { color: var(--cG3); font-size: var(--fL); }
+            }
+            .center__item.cathay-bonus { background: #00783F; }
+            .center__item.momo-point { background: #C53A71; }
+            .center__item.tycg-point { background: #EF6079; }
+            .center__item.qc-point { background: var(--q1); }
+            .center__item.ttpush { background: #EF6079; }
+            .center__item.hualien-q { background: #FEB435; }
+        }
+        .btn-unbind { display: flex; flex-flow: nowrap; justify-content: center; align-items: center; 
+            width: fit-content; padding: 10px 20px; margin: 0 auto;
+            color: var(--cRed); text-align: center; background: var(--cBg); border-radius: 10px; 
+        }
+        .form-row { display: flex; flex-flow: column; gap: 2px;
+            .form-row__title { font-weight: bold; }
+            .form-row__msg { color: var(--cG3); font-size: var(--fM); }
+            .form-row__text-input { width: 100%; padding: 10px; margin-top: 5px; border-radius: 10px; border: 1px solid var(--cG5); }
+            ::placeholder { color: var(--cG4); }
+            .form-row__btn { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
+                padding: 10px; margin-top: 5px; color: var(--cG4); background: var(--cBg); border-radius: 10px; 
+                .fa-chevron-right { color: var(--cG4) !important; }
+            }
+            .form-row__btn.checked {
+                color: var(--cG1);
+                .fa-circle-check { color: var(--cGreen) !important; }
+            }
+        }
+    }
+    .foot { width: 100%; max-width: 430px; padding: 10px 20px 30px 20px; left: 50%; transform: translate(-50%, 0); 
+        position: fixed; bottom: 0; z-index: 5;
+        button { height: 50px; padding: 10px 15px; color: #FFFFFF; font-size: var(--fL); border-radius: 20px; background-color: var(--q2); }
+    }
+    .pop .popBody {
+        .title { font-weight: bold; }
+        .icon .red .fa-exclamation { color: var(--cRed); }
+        button { background: var(--q2); }
+        .buttons { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; gap: 5px;
+            button { background: var(--cBg); 
+                > span { color: var(--cG1) !important; }
+            }
+            .red-btn { background: var(--cRed); }
+            .green-btn { background: var(--q2); }
+            .red-btn > span, .green-btn > span { color: #FFFFFF !important; }
+        }
+        .term-content { 
+            p { margin: 0 0 15px 0; color: var(--cG3); font-size:  var(--fM); line-height: 160%; }
+        }
+        .pgdn { position: absolute; display: flex; justify-content: center; align-items: center;
+            width: 40px; height: 40px; left: 50%; bottom: 70px; margin-left: -20px;
+            color: #FFFFFF; border-radius: 99em; background: var(--q2);    
+        }
+    }
+    .pop.term {
+        .popBody { padding-bottom: 0;
+            .buttons { position: sticky; left: 0; right: 0; bottom: 0; padding: 10px 0 20px 0; background: #FFFFFF; }
+        } 
     }
 }
