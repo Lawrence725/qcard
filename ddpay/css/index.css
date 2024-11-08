@@ -6696,6 +6696,18 @@ section.pop.coupons div.coupon__card > div .card__description {
   font-size: var(--fL);
   text-align: center;
 }
+.wallet.member section.head > span .center__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 30px;
+  margin-right: 3px;
+}
+.wallet.member section.head > span .center__icon > img {
+  width: auto;
+  height: 30px;
+}
 .wallet.member .main {
   padding-bottom: 100px;
 }
@@ -6721,13 +6733,16 @@ section.pop.coupons div.coupon__card > div .card__description {
   border: none !important;
 }
 .wallet.member .main .center .center__item .center__icon {
-  width: 40px;
-  margin-right: 3px;
-}
-.wallet.member .main .center .center__item .center__icon i.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
-  margin-right: 0;
+  margin-right: 3px;
+}
+.wallet.member .main .center .center__item .center__icon > img {
+  width: 40px;
+  height: auto;
 }
 .wallet.member .main .center .center__item .center__name {
   font-size: var(--fXL);
