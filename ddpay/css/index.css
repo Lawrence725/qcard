@@ -185,18 +185,33 @@ iframe {
 }
 /* loading */
 .loader-animate {
+  width: 150px;
+  height: 150px;
+  margin: 10dvh auto;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loader {
   width: 150px;
   height: 150px;
-  margin: 10dvh auto;
   border: 10px solid var(--cOrange);
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+.loader-animate .loader-cross {
+  width: 12px;
+  height: 110px;
+  border: 3px solid white;
+  border-radius: 99px;
+  position: absolute;
+  rotate: -45deg;
+  background-color: var(--cOrange);
+  z-index: 5;
 }
 .loader-animate .gif {
   position: absolute;
