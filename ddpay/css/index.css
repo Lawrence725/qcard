@@ -6733,6 +6733,22 @@ section.pop.coupons div.coupon__card > div .card__description {
 .wallet.member .main .main-p.gray {
   color: var(--cG3);
 }
+.wallet.member .main .no-userdata {
+  width: 100%;
+  height: 30dvh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.wallet.member .main .no-userdata * {
+  color: var(--cG3);
+  font-size: var(--fL);
+}
+.wallet.member .main .no-userdata img {
+  max-width: 100px;
+  height: auto;
+}
 .wallet.member .main .center {
   display: flex;
   flex-flow: column;
