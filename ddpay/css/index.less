@@ -418,7 +418,7 @@ section.pop.visit { height: 100%; padding: 50px 25px; align-items: center;
                     span { color: white !important; }}
                 span { color: var(--cG2) !important; }}}}}
 section.pop.points { padding: 0;
-    .popBody { padding-bottom: 0; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
+    .popBody { padding-bottom: 50px; margin-bottom: -20px; border-radius: 20px 20px 0 0; animation-name: popupDiscount; }
     span.title { font-size: var(--fL); font-weight: bold; }
     div.loading {
         div { min-width: 65px; min-height: 65px;
@@ -448,7 +448,18 @@ section.pop.points { padding: 0;
             .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
                 img { height: 18px; }
                 span { font-size: var(--fL); }}
-            .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}}
+            .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}
+    .center { display: flex; flex-flow: column; gap: 12px;
+        .center__item { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
+            padding: 10px 20px; background: var(--cBg); border-radius: 20px; border: none !important;
+            .center__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
+                > img { width: 40px; height: auto; }
+            }
+            .center__name { width: calc(60% - 43px); font-size: var(--fXL); text-align: left; }
+            .center__content { width: 40%; color: var(--cG3); font-size: var(--fL); text-align: right; white-space: nowrap; }
+        }
+    }
+}
 section.pop.coupons { padding: 0;
     .popBody { border-radius: 20px 20px 0 0; gap: 15px; }
     span.title { font-size: var(--fL); font-weight: bold; }
@@ -1501,12 +1512,6 @@ section.pop.coupons { padding: 0;
                 .center__name { font-size: var(--fXL); }
                 .center__content { color: var(--cG3); font-size: var(--fL); }
             }
-            .center__item.cathay-bonus { background: #00783F; }
-            .center__item.momo-point { background: #C53A71; }
-            .center__item.tycg-point { background: #EF6079; }
-            .center__item.qc-point { background: var(--q1); }
-            .center__item.ttpush { background: #EF6079; }
-            .center__item.hualien-q { background: #FEB435; }
         }
         .btn-unbind { display: flex; flex-flow: nowrap; justify-content: center; align-items: center; 
             width: fit-content; padding: 10px 20px; margin: 0 auto;

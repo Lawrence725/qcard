@@ -91,7 +91,7 @@
             </div>
         </section>
         <!-- 點數popup -->
-        <section id="popPoints" class="pop points" onclick="popClose(this)">
+        <section id="popPoints" class="pop points" onclick="popClose(this)" style="display: flex;">
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
                 <span class="title">我的點數</span>
@@ -104,74 +104,32 @@
                     <img src="./icon/pPoint.svg">
                     <span>暫無可用點數</span>
                 </div>
-                <!-- 點數 -->
-                <div class="point__card">
-                    <div>
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <span class="card__detail">未綁定</span>
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <hr>
-                        <a class="card__action" onclick="popClose(this)">
-                            <span>前往綁定</span>
-                            <i class="fa-solid fa-up-right-from-square"></i>
-                        </a>
-                        <div class="card__rate">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span>1 = NT$1</span>
-                        </div>
-                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
-                    </div>
-                </div>
-                <!-- 點數 -->
-                <div class="point__card">
-                    <div style="background-color: #C53A71;">
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <!-- <span class="card__detail">使用中</span> -->
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <hr>
-                        <div class="card__rate">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span>1 = NT$1</span>
-                        </div>
-                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
-                        <a class="card__action" onclick="popClose(this)">
-                            <span>解除綁定</span>
-                            <i class="fa-solid fa-link-slash"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- 點數 -->
-                <div class="point__card">
-                    <div style="background-color: #EF6079;">
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <!-- <span class="card__detail">使用中</span> -->
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <hr>
-                        <div class="card__rate">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span>1 = NT$1</span>
-                        </div>
-                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
-                        <a class="card__action" onclick="popClose(this)">
-                            <span>解除綁定</span>
-                            <i class="fa-solid fa-link-slash"></i>
-                        </a>
-                    </div>
+                
+                <!-- 點數列表 -->
+                <div class="center">
+                    <a class="center__item" href="wMember.html">
+                        <div class="center__icon"><img src="icon/cathay-bonus.svg"></div>
+                        <span class="center__name">小樹點150</span>
+                        <span class="center__content">NT$150</span>
+                    </a>
+    
+                    <a class="center__item" href="wMember.html">
+                        <div class="center__icon"><img src="icon/momo-point.png"></div>
+                        <span class="center__name">Momo幣100</span>
+                        <span class="center__content">NT$100</span>
+                    </a>
+    
+                    <a class="center__item" href="wMember.html">
+                        <div class="center__icon"><img src="icon/tycg-point.svg"></div>
+                        <span class="center__name">紅利桃子50</span>
+                        <span class="center__content">NT$50</span>
+                    </a>
+    
+                    <a class="center__item" href="wMember.html">
+                        <div class="center__icon"><img src="icon/qc-point.svg"></div>
+                        <span class="center__name">筷點10</span>
+                        <span class="center__content">NT$10</span>
+                    </a>
                 </div>
             </div>
         </section>
