@@ -434,26 +434,26 @@ section.pop.points { padding: 0;
         > div { height: 100%; padding: 10px 15px 40px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1);
             * { color: white; }
             .card__top { width: 100%; min-height: 50px; gap: 5px; display: flex; align-items: center;
-                img { min-width: 34px; }
+                img { height: 18px; margin-top: 2px; }
                 .card__count { font-size: var(--fXL); }
                 .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
                 .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
                 .card__name { font-size: var(--fL); }}
             .card__input { position: relative; display: flex; align-items: center;
-                img { height: 18px; left: 5px; position: absolute; }
+                img { height: 16px; margin-top: 2px; left: 5px; position: absolute; }
                 input { width: 160px; padding: 0 5px 0 30px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right;
                     &::placeholder { color: rgba(white, 0.4); }}} 
             .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
             hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
             .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
-                img { height: 18px; }
+                img { height: 16px; margin-top: 2px; }
                 span { font-size: var(--fL); }}
             .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}
     .center { display: flex; flex-flow: column; gap: 12px;
         .center__item { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
             padding: 10px 20px; background: var(--cBg); border-radius: 20px; border: none !important;
             .center__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
-                > img { width: 40px; height: auto; }
+                > img { height: 22px; margin-top: 2px; }
             }
             .center__name { width: calc(60% - 43px); font-size: var(--fXL); text-align: left; }
             .center__content { width: 40%; color: var(--cG3); font-size: var(--fL); text-align: right; white-space: nowrap; }
@@ -772,7 +772,7 @@ section.pop.coupons { padding: 0;
                     &.strong { font-size: var(--fXL); color: var(--cRed); animation: shake 1s linear infinite; }}
                 @keyframes shake { 0% { margin-left: -20px; } 50% { margin-left: 20px; } 100% { margin-left: -20px; }}
                 > div:not(.icon) { display: flex; align-items: center; gap: 2px;
-                    img { height: 18px; }}}
+                    img { height: 12px; margin-top: 2px; }}}
             div.bank { padding: 15px; border: 2px solid #29617F; border-radius: 20px; display: flex; flex-direction: column; gap: 10px;
                 > div { display: flex; align-items: center; gap: 5px;
                     &:last-child { align-items: flex-end; }
@@ -793,7 +793,7 @@ section.pop.coupons { padding: 0;
                     &.lineH { width: 100%; height: 2px; margin: 5px 0; background: repeating-linear-gradient(90deg,var(--cG5) 0 10px,#0000 0 20px); }
                     span { white-space: nowrap;
                         &:first-child { width: 100%; color: var(--cG3); }}
-                    img { height: 18px; }}}
+                    img { height: 12px; margin-top: 2px; }}}
             div.bottom { width: 100%; display: flex; flex-direction: column; gap: 15px; align-items: center; z-index: 1;
                 div.gift { width: 100%; height: 100px; gap: 10px; display: flex;
                     a { width: 100%; padding: 10px; border-radius: 15px 15px 5px 15px; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; background: var(--q1a);
@@ -1491,7 +1491,7 @@ section.pop.coupons { padding: 0;
     section.head { background: #FFFFFF; 
         > span { width: 100%; display: flex; flex-flow: nowrap; justify-content: center; align-items: center; font-size: var(--fL); text-align: center; white-space: nowrap;
             .center__icon { display: flex; justify-content: center; align-items: center; width: fit-content; height: 30px; margin-right: 3px; 
-                > img { width: auto; height: 30px; }
+                > img { width: auto; height: 20px; margin-top: 2px; }
             }
         }
     }
@@ -1507,7 +1507,7 @@ section.pop.coupons { padding: 0;
             .center__item { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
                 padding: 10px 20px; background: var(--cBg); border-radius: 20px; border: none !important;
                 .center__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
-                    > img { width: 40px; height: auto; }
+                    > img { width: auto; height: 22px; margin-top: 2px; }
                 }
                 .center__name { font-size: var(--fXL); }
                 .center__content { color: var(--cG3); font-size: var(--fL); }

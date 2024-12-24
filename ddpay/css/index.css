@@ -1860,7 +1860,8 @@ section.pop.points div.point__card > div .card__top {
   align-items: center;
 }
 section.pop.points div.point__card > div .card__top img {
-  min-width: 34px;
+  height: 18px;
+  margin-top: 2px;
 }
 section.pop.points div.point__card > div .card__top .card__count {
   font-size: var(--fXL);
@@ -1885,7 +1886,8 @@ section.pop.points div.point__card > div .card__input {
   align-items: center;
 }
 section.pop.points div.point__card > div .card__input img {
-  height: 18px;
+  height: 16px;
+  margin-top: 2px;
   left: 5px;
   position: absolute;
 }
@@ -1921,7 +1923,8 @@ section.pop.points div.point__card > div .card__rate {
   opacity: 0.6;
 }
 section.pop.points div.point__card > div .card__rate img {
-  height: 18px;
+  height: 16px;
+  margin-top: 2px;
 }
 section.pop.points div.point__card > div .card__rate span {
   font-size: var(--fL);
@@ -1956,8 +1959,8 @@ section.pop.points .center .center__item .center__icon {
   margin-right: 3px;
 }
 section.pop.points .center .center__item .center__icon > img {
-  width: 40px;
-  height: auto;
+  height: 22px;
+  margin-top: 2px;
 }
 section.pop.points .center .center__item .center__name {
   width: calc(60% - 43px);
@@ -3406,7 +3409,8 @@ section.pop.coupons div.coupon__card > div .card__description {
   gap: 2px;
 }
 .result section.main section.detail div.top > div:not(.icon) img {
-  height: 18px;
+  height: 12px;
+  margin-top: 2px;
 }
 .result section.main section.detail div.bank {
   padding: 15px;
@@ -3497,7 +3501,8 @@ section.pop.coupons div.coupon__card > div .card__description {
   color: var(--cG3);
 }
 .result section.main section.detail div.center > div img {
-  height: 18px;
+  height: 12px;
+  margin-top: 2px;
 }
 .result section.main section.detail div.bottom {
   width: 100%;
@@ -6761,7 +6766,8 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .wallet.member section.head > span .center__icon > img {
   width: auto;
-  height: 30px;
+  height: 20px;
+  margin-top: 2px;
 }
 .wallet.member .main {
   padding-bottom: 100px;
@@ -6812,8 +6818,9 @@ section.pop.coupons div.coupon__card > div .card__description {
   margin-right: 3px;
 }
 .wallet.member .main .center .center__item .center__icon > img {
-  width: 40px;
-  height: auto;
+  width: auto;
+  height: 22px;
+  margin-top: 2px;
 }
 .wallet.member .main .center .center__item .center__name {
   font-size: var(--fXL);
