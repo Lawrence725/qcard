@@ -1,31 +1,3 @@
-@font-face {
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v36/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notosanstc/v36/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_Co.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
-}
 :root {
   /* Font */
   --fXXL: 1.9rem;
@@ -2915,10 +2887,19 @@ section.pop.coupons div.coupon__card > div .card__description {
   gap: 5px;
   background-color: var(--cBg);
 }
-.payment section.main section.type div.center a img {
+.payment section.main section.type div.center a.error {
+  border: 1.5px solid var(--cBg) !important;
+  background-color: transparent !important;
+}
+.payment section.main section.type div.center a img:not(.error__icon) {
   max-width: 100px;
   max-height: 36px;
   object-fit: contain;
+}
+.payment section.main section.type div.center a img.error__icon {
+  width: 14px;
+  right: 10px;
+  position: absolute;
 }
 .payment section.main section.type div.center a span {
   font-size: var(--fL);
