@@ -769,7 +769,8 @@ a.dateRange svg {
 .profile section.head,
 .profileEdit section.head,
 .carrier section.head,
-.policy section.head {
+.policy section.head,
+.order section.head {
   width: 100%;
   max-width: 430px;
   height: 70px;
@@ -798,7 +799,8 @@ a.dateRange svg {
 .profile section.head .bg,
 .profileEdit section.head .bg,
 .carrier section.head .bg,
-.policy section.head .bg {
+.policy section.head .bg,
+.order section.head .bg {
   width: 1000px;
   height: 1000px;
   border-radius: 999px;
@@ -807,6 +809,26 @@ a.dateRange svg {
   background: var(--k2);
   pointer-events: none;
   z-index: -1;
+}
+.payment section.head span,
+.result section.head span,
+.price section.head span,
+.service section.head span,
+.login section.head span,
+.coin section.head span,
+.tickets section.head span,
+.ticket section.head span,
+.news section.head span,
+.new section.head span,
+.wallet section.head span,
+.couponSave section.head span,
+.profile section.head span,
+.profileEdit section.head span,
+.carrier section.head span,
+.policy section.head span,
+.order section.head span {
+  width: 100%;
+  text-align: center;
 }
 .payment section.head .left,
 .result section.head .left,
@@ -824,6 +846,7 @@ a.dateRange svg {
 .profileEdit section.head .left,
 .carrier section.head .left,
 .policy section.head .left,
+.order section.head .left,
 .payment section.head .right,
 .result section.head .right,
 .price section.head .right,
@@ -839,10 +862,30 @@ a.dateRange svg {
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
-.policy section.head .right {
+.policy section.head .right,
+.order section.head .right {
   width: 100%;
   display: flex;
   align-items: center;
+}
+.payment section.head .left,
+.result section.head .left,
+.price section.head .left,
+.service section.head .left,
+.login section.head .left,
+.coin section.head .left,
+.tickets section.head .left,
+.ticket section.head .left,
+.news section.head .left,
+.new section.head .left,
+.wallet section.head .left,
+.couponSave section.head .left,
+.profile section.head .left,
+.profileEdit section.head .left,
+.carrier section.head .left,
+.policy section.head .left,
+.order section.head .left {
+  color: var(--q2);
 }
 .payment section.head .right,
 .result section.head .right,
@@ -859,7 +902,8 @@ a.dateRange svg {
 .profile section.head .right,
 .profileEdit section.head .right,
 .carrier section.head .right,
-.policy section.head .right {
+.policy section.head .right,
+.order section.head .right {
   justify-content: right;
 }
 .coupon--ddp {
@@ -6945,4 +6989,56 @@ section.pop.coupons div.coupon__card > div .card__description {
   bottom: 0;
   padding: 10px 0 20px 0;
   background: #FFFFFF;
+}
+.order section.main {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 50px 20px 20px 20px;
+}
+.order section.main .order-record .order-record__list {
+  padding: 15px 0 20px 0;
+  border-bottom: 1px solid var(--cG5);
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+}
+.order section.main .order-record .order-record__list .name {
+  font-size: var(--fL);
+  line-height: 120%;
+}
+.order section.main .order-record .order-record__list .price {
+  font-size: var(--fL);
+  font-weight: bold;
+}
+.order section.main .order-record .order-record__list .time,
+.order section.main .order-record .order-record__list .desc,
+.order section.main .order-record .order-record__list .payment,
+.order section.main .order-record .order-record__list .point {
+  padding: 2px 0;
+  font-size: var(--fS);
+  color: var(--cG3);
+  line-height: 120%;
+}
+.order section.main .order-record .order-record__list .payment,
+.order section.main .order-record .order-record__list .point {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.order section.main .order-record .order-record__list .icon {
+  display: inline-block;
+  margin-left: 3px;
+}
+.order section.main .order-record .order-record__list .icon > img {
+  display: block;
+  width: auto;
+  height: 18px;
+}
+.order section.main .order-record .order-record__list:last-child {
+  border-bottom: none;
+}
+.order section.main .order-record .order-record__list__right {
+  text-align: right;
 }
