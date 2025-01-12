@@ -1994,6 +1994,7 @@ section.pop.points div.point__card > div .card__rate .card__icon {
 }
 section.pop.points div.point__card > div .card__rate .card__icon > img {
   height: 18px;
+  margin-top: 2px;
 }
 section.pop.points div.point__card > div .card__rate span {
   font-size: var(--fL);
