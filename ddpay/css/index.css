@@ -1818,7 +1818,7 @@ section.pop.points div.loading img {
 }
 section.pop.points div.points--none {
   min-height: 150px;
-  gap: 10px;
+  gap: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1832,48 +1832,34 @@ section.pop.points div.points--none span {
   font-size: var(--fL);
   color: var(--cG4);
 }
+section.pop.points div.points--none a {
+  color: var(--q2);
+}
 section.pop.points div.point__card {
-  height: 90px;
-  min-height: 90px;
-  margin-bottom: -40px;
+  height: 60px;
+  min-height: 60px;
   scroll-margin: 100px;
-  border-radius: 20px 20px 0 0;
   z-index: 5;
   /* animation-name: newCard; */
   animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   overflow-y: hidden;
-  box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-}
-section.pop.points div.point__card:last-child {
-  margin-bottom: 0;
-}
-section.pop.points div.point__card:nth-child(3n) > div {
-  background-color: var(--q3);
-}
-section.pop.points div.point__card:nth-child(3n+1) > div {
-  background-color: var(--q2);
 }
 section.pop.points div.point__card > div {
-  height: 100%;
-  padding: 10px 15px 40px;
-  border-radius: 20px 20px 0 0;
-  gap: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--q1);
-}
-section.pop.points div.point__card > div * {
-  color: white;
 }
 section.pop.points div.point__card > div .card__top {
   width: 100%;
-  min-height: 50px;
+  padding: 10px 15px;
   gap: 5px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px calc(60% - 40px) 40%;
   align-items: center;
+  background-color: var(--cBg);
+  border-radius: 20px;
 }
 section.pop.points div.point__card > div .card__top img {
   height: 18px;
@@ -1893,8 +1879,59 @@ section.pop.points div.point__card > div .card__top .card__detail {
   font-size: var(--fS);
   color: rgba(255, 255, 255, 0.75);
 }
+section.pop.points div.point__card > div .card__top .card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 3px;
+}
+section.pop.points div.point__card > div .card__top .card__icon > img {
+  height: 22px;
+  margin-top: 2px;
+}
 section.pop.points div.point__card > div .card__top .card__name {
-  font-size: var(--fL);
+  font-size: var(--fXL);
+  text-align: left;
+}
+section.pop.points div.point__card > div .card__top .card__content {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+section.pop.points div.point__card > div .card__top .card__content .card__content__input {
+  width: calc(100% - 40px);
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--cOrange);
+}
+section.pop.points div.point__card > div .card__top .card__content .card__content__input > * {
+  width: 100%;
+  color: var(--cG3);
+  text-align: left;
+}
+section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="text"],
+section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="number"] {
+  font-size: var(--fXL);
+  color: var(--cG1);
+  text-align: right;
+}
+section.pop.points div.point__card > div .card__top .card__content .card__content__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 36px;
+  color: var(--cG3);
+}
+section.pop.points div.point__card > div .card__top .card__content.opened {
+  display: none;
 }
 section.pop.points div.point__card > div .card__input {
   position: relative;
@@ -1919,37 +1956,64 @@ section.pop.points div.point__card > div .card__input input::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 section.pop.points div.point__card > div .card__action {
-  width: 100%;
+  width: 90%;
+  height: 100%;
   min-height: 40px;
+  margin: 10px auto;
   border-radius: 15px;
   gap: 2.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--cOrange);
+}
+section.pop.points div.point__card > div .card__action span {
+  color: #FFFFFF;
 }
 section.pop.points div.point__card > div hr {
   width: 100%;
   border: 1px dashed rgba(255, 255, 255, 0.5);
 }
 section.pop.points div.point__card > div .card__rate {
+  width: 90%;
+  margin: 10px auto 0 auto;
+  padding: 10px 5px 5px 5px;
   gap: 2px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  opacity: 0.6;
+  background: url(../img/hr-line.svg) repeat-x top center;
 }
-section.pop.points div.point__card > div .card__rate img {
-  height: 16px;
+section.pop.points div.point__card > div .card__rate .card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 3px;
+}
+section.pop.points div.point__card > div .card__rate .card__icon > img {
+  height: 18px;
   margin-top: 2px;
 }
 section.pop.points div.point__card > div .card__rate span {
   font-size: var(--fL);
 }
 section.pop.points div.point__card > div .card__description {
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
+  width: 90%;
+  margin: 0 auto;
+  color: var(--cG3);
   overflow-y: scroll;
+}
+section.pop.points div.point__card.opentest {
+  background: var(--cBg);
+  border-radius: 20px;
+}
+section.pop.points div.point__card.opentest .card__content {
+  display: none !important;
+}
+section.pop.points div.point__card.opentest .card__content.opened {
+  display: flex !important;
 }
 section.pop.points .center {
   display: flex;
@@ -2129,22 +2193,22 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 @keyframes newCard {
   0% {
-    height: 90px;
-    min-height: 90px;
+    height: 60px;
+    min-height: 60px;
   }
   50% {
     height: 120px;
     min-height: 120px;
   }
   100% {
-    height: 90px;
-    min-height: 90px;
+    height: 60px;
+    min-height: 60px;
   }
 }
 @keyframes openCard {
   0% {
-    height: 90px;
-    min-height: 90px;
+    height: 60px;
+    min-height: 60px;
   }
   100% {
     height: 400px;
@@ -2157,8 +2221,8 @@ section.pop.coupons div.coupon__card > div .card__description {
     min-height: 400px;
   }
   100% {
-    height: 90px;
-    min-height: 90px;
+    height: 60px;
+    min-height: 60px;
   }
 }
 .payment__iframe {

@@ -316,7 +316,7 @@
         <section id="popPoints" class="pop points" onclick="popClose(this)">
             <div class="popBody">
                 <a class="close" onclick="popClose(this)"><u>不使用點數</u></a>
-                <span class="title">點數</span>
+                <span class="title">選擇點數</span>
                 <!-- 點數Loading -->
                 <div class="loading transparent loading--body"><div>
                     <img src="./icon/pPoint.svg">
@@ -324,84 +324,120 @@
                 <!-- 無點數 -->
                 <div class="points--none">
                     <img src="./icon/pPoint.svg">
-                    <span>暫無可用點數</span>
+                    <span>未綁定任何點數</span>
+                    <a href="./wallet.html">前往錢包綁定 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
+                
                 <!-- 點數 -->
                 <div class="point__card">
                     <div>
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/tree-w.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <span class="card__detail">使用中</span>
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <div class="card__input">
-                            <img src="./icon/tree-w.svg">
-                            <input type="text" value="10" placeholder="輸入使用點數">
+                        <div class="card__top">
+                            <div class="card__icon"><img src="icon/tree.svg"></div>
+                            <span class="card__name">小樹點</span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
                         </div>
                         <a class="card__action" onclick="popClose(this)">
-                            <span>使用點數</span>
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>使用小數點</span>
                         </a>
                         <hr>
                         <div class="card__rate">
-                            <img src="./icon/tree-w.svg">
+                            <div class="card__icon"><img src="icon/tree.svg"></div>
                             <span>1 = NT$1</span>
                         </div>
                         <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
                     </div>
                 </div>
+
                 <!-- 點數 -->
                 <div class="point__card">
-                    <div style="background-color: #C53A71;">
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <span class="card__detail">使用中</span>
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <div class="card__input">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <input type="text" value="10" placeholder="輸入使用點數">
+                    <div>
+                        <div class="card__top">
+                            <div class="card__icon"><img src="icon/momo-point.png"></div>
+                            <span class="card__name">Momo幣</span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
                         </div>
                         <a class="card__action" onclick="popClose(this)">
-                            <span>使用點數</span>
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>使用Momo幣</span>
                         </a>
                         <hr>
                         <div class="card__rate">
-                            <img src="./icon/ptTaoyuanW.svg">
+                            <div class="card__icon"><img src="icon/momo-point.png"></div>
                             <span>1 = NT$1</span>
                         </div>
                         <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
                     </div>
                 </div>
+
                 <!-- 點數 -->
                 <div class="point__card">
-                    <div style="background-color: #EF6079;">
-                        <a class="card__top" onclick="pointCard(this)">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <span class="card__count">10</span>
-                            <div class="card__info">
-                                <span class="card__detail">使用中</span>
-                                <span class="card__name">紅利桃子</span>
-                            </div>
-                        </a>
-                        <div class="card__input">
-                            <img src="./icon/ptTaoyuanW.svg">
-                            <input type="text" value="10" placeholder="輸入使用點數">
+                    <div>
+                        <div class="card__top">
+                            <div class="card__icon"><img src="icon/tycg-point.svg"></div>
+                            <span class="card__name">紅利桃子</span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
                         </div>
                         <a class="card__action" onclick="popClose(this)">
-                            <span>使用點數</span>
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>使用紅利桃子</span>
                         </a>
                         <hr>
                         <div class="card__rate">
-                            <img src="./icon/ptTaoyuanW.svg">
+                            <div class="card__icon"><img src="icon/tycg-point.svg"></div>
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <div class="card__top">
+                            <div class="card__icon"><img src="icon/qc-point.svg"></div>
+                            <span class="card__name">筷點</span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
+                        </div>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用筷點</span>
+                        </a>
+                        <hr>
+                        <div class="card__rate">
+                            <div class="card__icon"><img src="icon/qc-point.svg"></div>
                             <span>1 = NT$1</span>
                         </div>
                         <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>

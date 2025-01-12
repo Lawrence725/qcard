@@ -104,19 +104,26 @@ function pointCard(e) {
         card.style.animationDelay = "0s"
         if (card.style.animationName == "openCard")
             card.style.animationName = "closeCard";
-        card.style.height = "90px";
-        card.style.minHeight = "90px"; }
+        card.style.height = "60px";
+        card.style.minHeight = "60px"; 
+        card.closest('.point__card').classList.remove("opentest");
+    }
     if (isOpened) {
         e.closest('.point__card').style.animationName = "closeCard";
-        e.closest('.point__card').style.height = "90px";
-        e.closest('.point__card').style.minHeight = "90px"; }
+        e.closest('.point__card').style.height = "60px";
+        e.closest('.point__card').style.minHeight = "60px"; 
+        e.closest('.point__card').classList.remove("opentest");
+    }
     else {
         e.closest('.point__card').style.animationName = "openCard";
         e.closest('.point__card').style.height = "400px";
         e.closest('.point__card').style.minHeight = "400px";
         setTimeout(function(){
             e.closest('.point__card').scrollIntoView({ behavior: 'smooth' });
-        }, 300); }}
+        }, 300); 
+        e.closest('.point__card').classList.add("opentest");
+    }
+}
 
 // 票券popup
 function popCoupons() {

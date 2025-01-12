@@ -426,31 +426,57 @@ section.pop.points { padding: 0;
         div { min-width: 65px; min-height: 65px;
             div { border: 3px solid var(--q1); border-top: 3px solid transparent; }}
         img { width: 50px; filter: grayscale(100%); }}
-    div.points--none { min-height: 150px; gap: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    div.points--none { min-height: 150px; gap: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;
         img { height: 50px; filter: grayscale(100%); }
-        span { font-size: var(--fL); color: var(--cG4); }}
-    div.point__card { height: 90px; min-height: 90px; margin-bottom: -40px; scroll-margin: 100px; border-radius: 20px 20px 0 0; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden; box-shadow: 0px -5px 10px rgba(51, 51, 51, 0.2);
-        &:last-child { margin-bottom: 0; }
-        &:nth-child(3n) > div { background-color: var(--q3); }
-        &:nth-child(3n+1) > div { background-color: var(--q2); }
-        > div { height: 100%; padding: 10px 15px 40px; border-radius: 20px 20px 0 0; gap: 15px; display: flex; flex-direction: column; align-items: center; background-color: var(--q1);
-            * { color: white; }
-            .card__top { width: 100%; min-height: 50px; gap: 5px; display: flex; align-items: center;
+        span { font-size: var(--fL); color: var(--cG4); }
+        a { color: var(--q2); }
+    }
+    div.point__card { height: 60px; min-height: 60px; scroll-margin: 100px; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden;
+        > div { display: flex; flex-direction: column; align-items: center;
+            .card__top { width: 100%; padding: 10px 15px; gap: 5px; display: grid; grid-template-columns: 40px calc(60% - 40px) 40%; align-items: center; background-color: var(--cBg); border-radius: 20px;
                 img { height: 18px; margin-top: 2px; }
                 .card__count { font-size: var(--fXL); }
                 .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
                 .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
-                .card__name { font-size: var(--fL); }}
+                .card__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
+                    > img { height: 22px; margin-top: 2px; }
+                }
+                .card__name { font-size: var(--fXL); text-align: left; }
+                .card__content { display: flex; flex-flow: nowrap; justify-content: flex-end; align-items: center; 
+                    .card__content__input { width: calc(100% - 40px);
+                        display: flex; flex-flow: nowrap; justify-content: center; align-items: flex-end; gap: 3px;
+                        padding-bottom: 3px; border-bottom: 2px solid var(--cOrange);
+                        > * { width: 100%; color: var(--cG3); text-align: left; }
+                        input[type="text"], input[type="number"] { font-size: var(--fXL); color: var(--cG1); text-align: right; }
+                    }
+                    .card__content__btn { display: flex; justify-content: center; align-items: center; 
+                        width: 40px; height: 36px; color: var(--cG3); }
+                }
+                .card__content.opened { display: none; }
+            }
             .card__input { position: relative; display: flex; align-items: center;
                 img { height: 16px; margin-top: 2px; left: 5px; position: absolute; }
                 input { width: 160px; padding: 0 5px 0 30px; border-bottom: 1px solid rgba(white, 0.6); border-radius: 0; font-size: var(--fL); text-align: right;
                     &::placeholder { color: rgba(white, 0.4); }}} 
-            .card__action { width: 100%; min-height: 40px; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: rgba(white, 0.25); }
+            .card__action { width: 90%; height: 100%; min-height: 40px; margin: 10px auto; border-radius: 15px; gap: 2.5px; display: flex; align-items: center; justify-content: center; background-color: var(--cOrange); 
+                span { color: #FFFFFF; }
+            }
             hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
-            .card__rate { gap: 2px; display: flex; align-items: center; opacity: 0.6;
-                img { height: 16px; margin-top: 2px; }
-                span { font-size: var(--fL); }}
-            .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: scroll; }}}
+            .card__rate { width: 90%; margin: 10px auto 0 auto; padding: 10px 5px 5px 5px; gap: 2px; display: flex; justify-content: center; align-items: center;
+                background: url(../img/hr-line.svg) repeat-x top center;
+                .card__icon { display: flex; justify-content: center; align-items: center; width: 36px; height: 36px; margin-right: 3px; 
+                    > img { height: 18px; margin-top: 2px; }
+                }
+                span { font-size: var(--fL); }
+            }
+            .card__description { width: 90%; margin: 0 auto; color: var(--cG3); overflow-y: scroll; }
+        }
+    }
+    div.point__card.opentest { background: var(--cBg); border-radius: 20px; 
+        .card__content { display: none !important; }
+        .card__content.opened { display: flex !important; }
+    }
+
     .center { display: flex; flex-flow: column; gap: 12px;
         .center__item { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
             padding: 10px 20px; background: var(--cBg); border-radius: 20px; border: none !important;
@@ -488,9 +514,9 @@ section.pop.coupons { padding: 0;
             .card__description { width: 100%; height: 100%; opacity: 0.6; overflow-y: auto; }}}}
 @keyframes popupDiscount { 0% { margin-bottom: -100vh; } 100% { margin-bottom: -20px; }}
 @keyframes popdownDiscount { 0% { margin-bottom: -20px; } 100% { margin-bottom: -100vh; }}
-@keyframes newCard { 0% { height: 90px; min-height: 90px; } 50% { height: 120px; min-height: 120px; } 100% { height: 90px; min-height: 90px; }}
-@keyframes openCard { 0% { height: 90px; min-height: 90px; } 100% { height: 400px; min-height: 400px; }}
-@keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 90px; min-height: 90px; }}
+@keyframes newCard { 0% { height: 60px; min-height: 60px; } 50% { height: 120px; min-height: 120px; } 100% { height: 60px; min-height: 60px; }}
+@keyframes openCard { 0% { height: 60px; min-height: 60px; } 100% { height: 400px; min-height: 400px; }}
+@keyframes closeCard { 0% { height: 400px; min-height: 400px; } 100% { height: 60px; min-height: 60px; }}
 .payment__iframe { height: 100vh; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 8; }
 .pop__intro .pop__body { gap: 30px; background-color: var(--cBg); overflow-x: hidden;
     .pop__title { margin-bottom: -30px; font-weight: bold; color: var(--q2); }
