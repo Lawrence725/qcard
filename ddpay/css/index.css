@@ -1988,11 +1988,10 @@ section.pop.points div.point__card > div .card__rate .card__icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
   margin-right: 3px;
 }
 section.pop.points div.point__card > div .card__rate .card__icon > img {
+  width: auto;
   height: 18px;
 }
 section.pop.points div.point__card > div .card__rate span {
