@@ -433,24 +433,26 @@ section.pop.points { padding: 0;
     }
     div.point__card { height: 60px; min-height: 60px; scroll-margin: 100px; z-index: 5; /* animation-name: newCard; */ animation-delay: 0.5s; animation-duration: 0.5s; animation-iteration-count: 1; overflow-y: hidden;
         > div { display: flex; flex-direction: column; align-items: center;
-            .card__top { width: 100%; padding: 10px 15px; gap: 5px; display: grid; grid-template-columns: 40px calc(60% - 40px) 40%; align-items: center; background-color: var(--cBg); border-radius: 20px;
+            .card__top { width: 100%; padding: 10px 15px; gap: 10px; display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; background-color: var(--cBg); border-radius: 20px;
                 img { height: 18px; margin-top: 2px; }
                 .card__count { font-size: var(--fXL); }
                 .card__info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; }
                 .card__detail { margin-bottom: -3px; font-size: var(--fS); color: rgba(white, 0.75); }
-                .card__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
-                    > img { height: 22px; margin-top: 2px; }
+                .card__name { display: flex; flex-flow: nowrap; align-items: center; 
+                    width: fit-content; font-size: var(--fXL); text-align: left; white-space: nowrap; 
+                    .card__icon { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: 3px; 
+                        > img { height: 22px; margin-top: 4px; }
+                    }
                 }
-                .card__name { font-size: var(--fXL); text-align: left; }
-                .card__content { display: flex; flex-flow: nowrap; justify-content: flex-end; align-items: center; 
-                    .card__content__input { width: calc(100% - 40px);
-                        display: flex; flex-flow: nowrap; justify-content: center; align-items: flex-end; gap: 3px;
+                .card__content { display: flex; flex-flow: nowrap; justify-content: flex-end; align-items: center; width: fit-content; 
+                    .card__content__input { width: fit-content;
+                        display: flex; flex-flow: nowrap; justify-content: flex-end; align-items: flex-end; gap: 3px;
                         padding-bottom: 3px; border-bottom: 2px solid var(--cOrange);
-                        > * { width: 100%; color: var(--cG3); text-align: left; }
-                        input[type="text"], input[type="number"] { font-size: var(--fXL); color: var(--cG1); text-align: right; }
+                        > * { width: fit-content; color: var(--cG3); text-align: left; white-space: nowrap; }
+                        input[type="text"], input[type="number"] { width: 100%; font-size: var(--fXL); color: var(--cG1); text-align: right; }
                     }
                     .card__content__btn { display: flex; justify-content: center; align-items: center; 
-                        width: 40px; height: 36px; color: var(--cG3); }
+                        width: 40px; height: 36px; margin-left: 5px; color: var(--cG3); }
                 }
                 .card__content.opened { display: none; }
             }
@@ -462,7 +464,7 @@ section.pop.points { padding: 0;
                 span { color: #FFFFFF; }
             }
             hr { width: 100%; border: 1px dashed rgba(white, 0.5); }
-            .card__rate { width: 90%; margin: 10px auto 0 auto; padding: 10px 5px 5px 5px; gap: 2px; display: flex; justify-content: center; align-items: center;
+            .card__rate { width: 90%; margin: 10px auto 0 auto; padding: 15px 5px 10px 5px; gap: 2px; display: flex; justify-content: center; align-items: center;
                 background: url(../img/hr-line.svg) repeat-x top center;
                 .card__icon { display: flex; justify-content: center; align-items: center; margin-right: 3px; 
                     > img { height: 18px; }

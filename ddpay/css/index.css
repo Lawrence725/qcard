@@ -1854,9 +1854,10 @@ section.pop.points div.point__card > div {
 section.pop.points div.point__card > div .card__top {
   width: 100%;
   padding: 10px 15px;
-  gap: 5px;
-  display: grid;
-  grid-template-columns: 40px calc(60% - 40px) 40%;
+  gap: 10px;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--cBg);
   border-radius: 20px;
@@ -1879,7 +1880,16 @@ section.pop.points div.point__card > div .card__top .card__detail {
   font-size: var(--fS);
   color: rgba(255, 255, 255, 0.75);
 }
-section.pop.points div.point__card > div .card__top .card__icon {
+section.pop.points div.point__card > div .card__top .card__name {
+  display: flex;
+  flex-flow: nowrap;
+  align-items: center;
+  width: fit-content;
+  font-size: var(--fXL);
+  text-align: left;
+  white-space: nowrap;
+}
+section.pop.points div.point__card > div .card__top .card__name .card__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1887,37 +1897,36 @@ section.pop.points div.point__card > div .card__top .card__icon {
   height: 40px;
   margin-right: 3px;
 }
-section.pop.points div.point__card > div .card__top .card__icon > img {
+section.pop.points div.point__card > div .card__top .card__name .card__icon > img {
   height: 22px;
-  margin-top: 2px;
-}
-section.pop.points div.point__card > div .card__top .card__name {
-  font-size: var(--fXL);
-  text-align: left;
+  margin-top: 4px;
 }
 section.pop.points div.point__card > div .card__top .card__content {
   display: flex;
   flex-flow: nowrap;
   justify-content: flex-end;
   align-items: center;
+  width: fit-content;
 }
 section.pop.points div.point__card > div .card__top .card__content .card__content__input {
-  width: calc(100% - 40px);
+  width: fit-content;
   display: flex;
   flex-flow: nowrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   gap: 3px;
   padding-bottom: 3px;
   border-bottom: 2px solid var(--cOrange);
 }
 section.pop.points div.point__card > div .card__top .card__content .card__content__input > * {
-  width: 100%;
+  width: fit-content;
   color: var(--cG3);
   text-align: left;
+  white-space: nowrap;
 }
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="text"],
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="number"] {
+  width: 100%;
   font-size: var(--fXL);
   color: var(--cG1);
   text-align: right;
@@ -1928,6 +1937,7 @@ section.pop.points div.point__card > div .card__top .card__content .card__conten
   align-items: center;
   width: 40px;
   height: 36px;
+  margin-left: 5px;
   color: var(--cG3);
 }
 section.pop.points div.point__card > div .card__top .card__content.opened {
@@ -1977,7 +1987,7 @@ section.pop.points div.point__card > div hr {
 section.pop.points div.point__card > div .card__rate {
   width: 90%;
   margin: 10px auto 0 auto;
-  padding: 10px 5px 5px 5px;
+  padding: 15px 5px 10px 5px;
   gap: 2px;
   display: flex;
   justify-content: center;
