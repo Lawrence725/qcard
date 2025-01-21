@@ -1908,6 +1908,18 @@ section.pop.points div.point__card > div .card__top .card__content {
   align-items: center;
   width: fit-content;
 }
+section.pop.points div.point__card > div .card__top .card__content div.loading {
+  min-height: 30px;
+  max-height: 30px;
+}
+section.pop.points div.point__card > div .card__top .card__content div.loading div {
+  min-width: 30px;
+  min-height: 30px;
+}
+section.pop.points div.point__card > div .card__top .card__content div.loading div div {
+  border: 3px solid var(--q1);
+  border-top: 3px solid transparent;
+}
 section.pop.points div.point__card > div .card__top .card__content .card__content__input {
   width: fit-content;
   display: flex;
