@@ -1925,7 +1925,8 @@ section.pop.points div.point__card > div .card__top .card__content .card__conten
   white-space: nowrap;
 }
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="text"],
-section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="number"] {
+section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="number"],
+section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="tel"] {
   width: 100%;
   font-size: var(--fXL);
   color: var(--cG1);
