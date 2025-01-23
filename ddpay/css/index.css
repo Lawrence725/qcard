@@ -1929,17 +1929,21 @@ section.pop.points div.point__card > div .card__top .card__content .card__conten
   gap: 3px;
   padding-bottom: 3px;
   border-bottom: 2px solid var(--cOrange);
+  overflow: hidden;
 }
-section.pop.points div.point__card > div .card__top .card__content .card__content__input > * {
+section.pop.points div.point__card > div .card__top .card__content .card__content__input > span {
+  max-width: calc(100% - 40px);
   width: fit-content;
   color: var(--cG3);
-  text-align: left;
+  text-align: right;
   white-space: nowrap;
+  /*overflow: hidden; text-overflow: ellipsis; */
 }
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="text"],
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="number"],
 section.pop.points div.point__card > div .card__top .card__content .card__content__input input[type="tel"] {
   width: 100%;
+  min-width: 40px;
   font-size: var(--fXL);
   color: var(--cG1);
   text-align: right;
@@ -6250,6 +6254,14 @@ section.pop.coupons div.coupon__card > div .card__description {
 .wallet section.main .bottom .bottom__item:not(:first-child) {
   padding-left: 15px;
   border-left: 1px solid var(--cG5);
+}
+.wallet .point__card .card__top .card__content .card__content__input {
+  border-bottom: none !important;
+}
+.wallet .point__card .card__top .card__content .card__content__input > span {
+  max-width: 100% !important;
+  color: var(--cG2) !important;
+  font-size: var(--fXL);
 }
 .couponSave section.head {
   background: linear-gradient(180deg, #FFF 85%, rgba(255, 255, 255, 0) 100%);
