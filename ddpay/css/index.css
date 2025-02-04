@@ -2883,7 +2883,7 @@ section.pop.coupons div.coupon__card > div .card__description {
   color: var(--cG4);
 }
 .payment section.main section.type .active {
-  border: 1.5px solid var(--q1) !important;
+  border: 2px solid var(--q1) !important;
 }
 .payment section.main section.type div.top {
   width: 100%;
@@ -7137,4 +7137,22 @@ section.pop.coupons div.coupon__card > div .card__description {
 }
 .order section.main .order-record .order-record__list__right {
   text-align: right;
+}
+.payment.code .head {
+  height: 60px;
+  padding: 15px 20px;
+  background: #FFFFFF;
+}
+.payment.code .head img {
+  height: 34px;
+}
+.payment.code .main {
+  padding: 70px 20px;
+  gap: 10px;
+}
+.payment.code .main .qrcode > img {
+  display: block;
+  width: 60%;
+  max-width: 320px;
+  margin: 30px auto 40px auto;
 }

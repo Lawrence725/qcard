@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>點點付</title>
+        <link rel="icon" type="image/svg" href="./icon/ddpay.svg"/>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="點點付">
+        <meta name="description" content="點點付">
+        <meta name="author" content="DotDot">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="format-detection" content="telephone=no"> <!-- Phone no. detection -->
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="./css/taoyuan/index.css">
+        <link rel="stylesheet" href="./css/taoyuan/unique.css"> -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- Awesome Icon -->
+        <link href="./css/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    </head>
+    <body class="payment code">
+        <!-- Header -->
+        <section class="head">
+            <div class="left">
+                <img src="./icon/ddpay2.svg">
+            </div>
+            <div class="right"></div>
+        </section>
+
+        <section class="main">
+            <!-- QRCode -->
+            <div class="qrcode">
+                <img src="./img/qrcode.png">
+            </div>
+            
+            <!-- 優惠折抵 -->
+            <section class="discount">
+                <a class="discount__coupon" onclick="popCoupons()"> <!-- 純點券+class:discount--only -->
+                    <img src="./icon/pCoupon.svg">
+                    <span class="discount__title">票券</span>
+                    <!-- 未選 --> <span class="discount__name">您有3張可用票券</span>
+                    <!-- 已選 --> <!-- <span class="discount__name discount__name--active">滿千折百</span> -->
+                    <!-- 無券/未登入 --> <!-- <span class="discount__name discount__name--none">暫無可用票券/登入使用票券</span> -->
+                    <i class="fa-solid fa-chevron-right fa-lg"></i>
+                </a>
+                    
+                <a class="discount__point" onclick="popPoints()"> <!-- 純點券+class:discount--only -->
+                    <!-- <img src="./icon/pPoint.svg"> -->
+                    <img src="./icon/ptTaoyuan.svg">
+                    <span class="discount__title">點數</span>
+                    <span class="discount__name discount__name--active">紅利桃子 10</span>
+                    <i class="fa-solid fa-chevron-right fa-lg"></i>
+                </a>
+            </section>
+
+            <!-- 付款方式 -->
+            <section class="type">
+                <div class="credit" onclick="">
+                    <div class="credit__top">
+                        <a>
+                            <img src="./icon/pCredit.svg">
+                            <span class="credit__title">信用卡</span>
+                        </a>
+                    </div>
+                    <div class="credit__cards">
+                        <a class="credit__card">
+                            <img src="./icon/pVisa.svg">
+                            <span>**** 1234</span>
+                        </a>
+                        <a class="credit__card">
+                            <img src="./icon/pMaster.svg">
+                            <span>**** 5678</span>
+                        </a>
+                        <a class="credit__card">
+                            <img src="./icon/pJcb.svg">
+                            <span>**** 9012</span>
+                        </a>
+                        <a class="credit__card">
+                            <i class="fa-solid fa-plus fa-lg"></i>
+                            <span>輸入信用卡</span>
+                        </a>
+                    </div>
+                    <div class="credit__form">
+                        <input type="text" placeholder="卡號" value="">
+                        <div>
+                            <input type="text" placeholder="到期日" value="">
+                            <input type="text" placeholder="CVV" value="">
+                        </div>
+                        <label class="check">
+                            <input type="checkbox" name="checkbox3" checked> <!-- checked -->
+                            <span class="checkmark checkbox"></span>
+                            <span>儲存信用卡</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="center">
+                    <a onclick="popApple()">
+                        <img src="./icon/pApple.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pGoogle.svg">
+                    </a>
+                </div>
+                <div class="center">
+                    <a class="active">
+                        <img src="./icon/pLine.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pJko.svg">
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/pEasy.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pIcash.svg">
+                    </a>
+                </div>
+                <div class="center">
+                    <a class="error">
+                        <img src="./icon/pPx.png">
+                        <img src="./icon/error.svg" class="error__icon">
+                    </a>
+                    <a>
+                        <img src="./icon/pPlus.png">
+                    </a>
+                </div>
+                <div class="center">
+                    <a class="disabled">
+                        <img src="./icon/pTaiwan.png">
+                    </a>
+                    <a>
+                        <img src="./icon/pGcash.png">
+                    </a>
+                </div>
+                <div class="center">
+                    <a>
+                        <img src="./icon/pMaya.svg">
+                    </a>
+                    <a>
+                        <img src="./icon/pQrph.png">
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <!-- 點數popup -->
+        <section id="popPoints" class="pop points" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><u>不使用點數</u></a>
+                <span class="title">選擇點數</span>
+                <!-- 點數Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pPoint.svg">
+                <div></div></div></div>
+                <!-- 無點數 -->
+                <div class="points--none">
+                    <img src="./icon/pPoint.svg">
+                    <span>未綁定任何點數</span>
+                    <a href="./wallet.html">前往錢包綁定 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <div class="card__top">
+                            <span class="card__name">
+                                <div class="card__icon"><img src="icon/tree.svg"></div>小樹點
+                            </span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <!-- 點數Loading -->
+                                <div class="loading transparent loading--body">
+                                    <div><div></div></div>
+                                </div>
+                                         
+                                <!--<div class="card__content__input">
+                                    <input type="text" value="1000000" placeholder="10">
+                                    <span>/1000000</span>
+                                </div>-->
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
+                        </div>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用小數點</span>
+                        </a>
+                        <div class="card__rate">
+                            <div class="card__icon"><img src="icon/tree.svg"></div>
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <div class="card__top">
+                            <span class="card__name">
+                                <div class="card__icon"><img src="icon/momo-point.png"></div>Momo幣
+                            </span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
+                        </div>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用Momo幣</span>
+                        </a>
+                        <div class="card__rate">
+                            <div class="card__icon"><img src="icon/momo-point.png"></div>
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <div class="card__top">
+                            <span class="card__name">
+                                <div class="card__icon"><img src="icon/tycg-point.svg"></div>紅利桃子
+                            </span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
+                        </div>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用紅利桃子</span>
+                        </a>
+                        <div class="card__rate">
+                            <div class="card__icon"><img src="icon/tycg-point.svg"></div>
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+
+                <!-- 點數 -->
+                <div class="point__card">
+                    <div>
+                        <div class="card__top">
+                            <span class="card__name">
+                                <div class="card__icon"><img src="icon/qc-point.svg"></div>筷點
+                            </span>
+                            <span class="card__content">
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-down"></i></a>
+                            </span>
+                            <span class="card__content opened">
+                                <div class="card__content__input">
+                                    <input type="text" value="10" placeholder="10">
+                                    <span>/10</span>
+                                </div>
+                                <a class="card__content__btn" onclick="pointCard(this)"><i class="fa-solid fa-caret-up"></i></a>
+                            </span>
+                        </div>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用筷點</span>
+                        </a>
+                        <div class="card__rate">
+                            <div class="card__icon"><img src="icon/qc-point.svg"></div>
+                            <span>1 = NT$1</span>
+                        </div>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 票券popup -->
+        <section id="popCoupons" class="pop coupons" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><u>不使用票券</u></a>
+                <span class="title">票券</span>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                    <div class="card__tag">
+                        <span>已選取</span>
+                    </div>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+                <!-- 票券 -->
+                <div class="coupon--ddp">
+                    <a class="card__top" onclick="popClose(this)">
+                        <div class="card__info">
+                            <span class="card__name">新春九五折優惠</span>
+                            <span class="card__detail">臺東美味麵食店</span>
+                            <span class="card__detail">全品項九五折優惠</span>
+                            <span class="card__detail">有效期限：2023-12-31</span>
+                        </div>
+                        <img src="./img/food.png">
+                    </a>
+                    <div class="dash"></div>
+                    <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    <a class="card__action" onclick="couponMore(this)">
+                        <span>查看更多</span>
+                        <i class="card__arrow fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+                <!-- 票券Loading -->
+                <div class="loading transparent loading--body"><div>
+                    <img src="./icon/pCoupon.svg">
+                <div></div></div></div>
+                <!-- 無票券 -->
+                <div class="coupons--none">
+                    <img src="./icon/pCoupon.svg">
+                    <span>暫無可用票券</span>
+                </div>
+                <!-- 票券 -->
+                <!-- <div class="coupon__card">
+                    <div>
+                        <a class="card__top" onclick="couponCard(this)">
+                            <div class="card__info">
+                                <span class="card__name">新春九五折優惠</span>
+                                <span class="card__detail">臺東美味麵食店</span>
+                                <span class="card__detail">全品項九五折優惠</span>
+                                <span class="card__detail">有效期限：2023-12-31</span>
+                            </div>
+                            <img src="./img/food.png">
+                        </a>
+                        <a class="card__action" onclick="popClose(this)">
+                            <span>使用票券</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <hr>
+                        <span class="card__description">更多優惠說明，請參閱店內公告。考但我個一他球一！而行的不做，羅裡信下花金大受名自有達南一這生水樂冷魚有間像自心今有資集雖生呢果長；兩香對一物果兒感健國：是大較大看國大也主境戲黨間運近列己記就這說角參害。</span>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- 信用卡popup -->
+        <section id="popCredit" class="pop credit" onclick="popClose(this)">
+            <div class="popBody">
+                <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a>
+                <span class="title">信用卡</span>
+                <span class="message">信用卡資訊不正確，請確認後重新付款，或選擇其他支付方式</span>
+                <div class="list">
+                    <a class="active">
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cVisa.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cMaster.svg">
+                    </a>
+                    <a>
+                        <span>富邦</span>
+                        <span>**** **** **** 1234</span>
+                        <img src="./icon/cJcb.svg">
+                    </a>
+                </div>
+                <div class="new">
+                    <span class="title">新增信用卡</span>
+                    <div>
+                        <span>卡號</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span>到期日</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                        <div>
+                            <span>CVC / CVV</span>
+                            <input type="text" placeholder="" value="">
+                        </div>
+                    </div>
+                    <div>
+                        <span>卡片上姓名</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <div>
+                        <span>卡片暱稱 (非必填)</span>
+                        <input type="text" placeholder="" value="">
+                    </div>
+                    <label class="check">
+                        <input type="checkbox" name="checkbox2" checked> <!-- checked -->
+                        <span class="checkmark checkbox"></span>
+                        <span>儲存信用卡</span>
+                    </label>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="popClose(this)">
+                        <span>確定</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 確認popup -->
+        <section id="popConfirm" class="pop confirm bg" onclick="popClose(this)">
+            <div class="popBody">
+                <span class="title">即將支付</span>
+                <div>
+                    <span class="cost">NT$100</span>
+                    <div>
+                        <img src="./icon/pLine.svg">
+                        <span>NT$90</span>
+                        <span>+</span>
+                        <img src="./icon/point.svg">
+                        <span>10</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="subTitle">給</span>
+                    <span class="title">特約店家名稱</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button onclick="window.location.href='pResult.html'">
+                        <span>確定送出</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 點餐須知popup -->
+        <section id="popOrder" class="pop notice order" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <span class="title">線上點餐須知</span>
+                </div>
+                <div class="content">
+                    <span class="header">一、點餐說明</span>
+                    <span class="subheader">一般點餐訂購流程</span>
+                    <span>選擇用方式 -> 選購餐點 -> 前往結帳 -> 填寫資料  -> 選擇付款方式 -> 一鍵下訂 -> 選擇付款方式 -> 購物需知確認 -> 訂購完成</span>
+                    <span class="subheader">訂單查詢</span>
+                    <span>當您完成訂購程序後，您可以利用頁面下方選單的「訂單」訂單查詢功能，查詢目前的訂單狀態。</span>
+                    <span class="header">二、付款方式</span>
+                    <span>目前提供多種支付方式。</span>
+                    <span class="subheader">信用卡線上刷卡</span>
+                    <span>您可使用信用卡的線上刷卡服務，當您在結帳頁面進行信用卡相關資料填寫時，請務必詳實填寫正確資料，以利銀行做信用卡資料的審核。</span>
+                    <span>※【提醒您】使用信用卡付費時，依據信用卡定型化契約第六條（契約雙方之基本義務）之規定：銀行僅授權持卡人本人在信用卡有效期限內分別使用，不得讓與、轉借、提供擔保或以其他方式將信用卡之占有轉讓予第三人或交其使用。</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 公告popup -->
+        <section id="popError" class="pop notice error" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <div><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">重要公告</span>
+                </div>
+                <html>
+                    <p style="color: #828282; text-align: center;">接獲銀行端通知，目前信用卡、Apple Pay、以Google Pay服務可能會有刷卡失敗的狀況，請大家選擇其他支付方式，造成不便，敬請見諒</p>
+                    <p style="color: #828282; text-align: center;">如有疑慮，可來電<a href="tel:02-77515336" style="color: red;">02-77515336</a>，或透過我們的<a style="color: red;">LINE客服</a>詢問。</p>
+                </html>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 退款popup -->
+        <section id="popRefund" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <span class="title">退款流程及方式</span>
+                </div>
+                <ol>
+                    <li>已經完成接單的訂單，無法線上退款。</li>
+                    <li>若需退單退款，請直接聯絡門市人員，門市人員確認訂單狀況，會協助進行退單退款。</li>
+                </ol>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Apple Pay popup -->
+        <section id="popApple" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <div>
+                    <div class="icon">
+                        <img src="./icon/pApple.svg">
+                    </div>
+                    <span class="title">即將支付$50</span>
+                    <span>給<br>快點吃早餐店</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 訊息popup -->
+        <section id="popNotice" class="pop notice" onclick="popClose(this)">
+            <div class="popBody">
+                <!-- <a class="close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></a> -->
+                <div>
+                    <div class="icon">
+                        <i class="fa-regular fa-circle-check fa-5x"></i>
+                        <i class="fa-regular fa-circle-xmark fa-5x"></i>
+                        <div class="orange"><i class="fa-solid fa-exclamation fa-3x"></i></div>
+                    </div>
+                    <span class="title">訊息標題</span>
+                    <span>內容說明</span>
+                </div>
+                <button onclick="popClose(this)">
+                    <span>確認</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 登出popup -->
+        <section id="pop__logout" class="pop pop--full pop__login" onclick="popClose(this)">
+            <div class="pop__body">
+                <a class="close" onclick="popClose(this)"><img src="./icon/cross.svg"></a>
+                <div class="top">
+                    <img class="top__profile" src="./img/profile.png">
+                    <div class="top__content">
+                        <span class="top__title">陳大文</span>
+                        <span class="top__description">點點付會員</span>
+                    </div>
+                </div>
+                <div class="middle">
+                    <a class="login__button login__button--secondary" onclick="popClose(this)">
+                        <img class="login__icon" src="./icon/logout.svg">
+                        <span class="login__text">會員登出</span>
+                    </a>
+                </div>
+                <!-- <span class="message">訊息</span> -->
+                <div class="bottom">
+                    <span class="bottom__text">服務由</span>
+                    <img class="bottom__logo" src="./icon/ddpayW.svg">
+                    <span class="bottom__text">提供</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script -->
+        <script src="./js/payment.js"></script>
+    </body>
+</html>

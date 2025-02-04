@@ -656,7 +656,7 @@ section.pop.coupons { padding: 0;
         }
         // 付款
         section.type {
-            .active { border: 1.5px solid var(--q1) !important; }
+            .active { border: 2px solid var(--q1) !important; }
             div.top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 5px;
                 span:not(.title) { font-size: var(--fS); color: var(--cRed); text-align: right; line-height: unset; }
                 i, svg { color: var(--cRed); }}
@@ -1621,5 +1621,15 @@ section.pop.coupons { padding: 0;
             .order-record__list:last-child { border-bottom: none; }
             .order-record__list__right { text-align: right; }
         }
+    }
+}
+
+//付款碼
+.payment.code {
+    .head { height: 60px; padding: 15px 20px; background: #FFFFFF;
+        img { height: 34px; }
+    }
+    .main { padding: 70px 20px; gap: 10px;
+        .qrcode > img { display: block; width: 60%; max-width: 320px; margin: 30px auto 40px auto; }
     }
 }
