@@ -7150,9 +7150,27 @@ section.pop.coupons div.coupon__card > div .card__description {
   padding: 70px 20px;
   gap: 10px;
 }
+.payment.code .main .qrcode {
+  margin: 30px 0;
+}
 .payment.code .main .qrcode > img {
   display: block;
   width: 60%;
   max-width: 320px;
-  margin: 30px auto 40px auto;
+  margin: 0 auto 30px auto;
+}
+.payment.code .main .qrcode .qrcode__refresh {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fS);
+}
+.payment.code .main .qrcode .qrcode__refresh .qrcode__refresh__btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  color: var(--cG2);
+  border-radius: 99em;
+  background-color: var(--cBg);
 }
